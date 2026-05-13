@@ -42,6 +42,38 @@ The a lit green LED indicates power is being supplied from the Morningstar contr
 
 A blinking red LED indicates data is being sent from the ESP32 to the Morningstar controller (TX).
 
+## Hardware Observations
+
+This section contains measurements and observations of the Morningstar charge controller and MeterBus interface at various voltages applied to the controller's battery terminals.
+
+### General Observations
+
+- The MPPT charge controller supports both **12VDC** and **24VDC** battery systems.
+- The controller appears to shut down at approximately **4.5VDC** battery voltage.
+- The controller boots again at approximately **5.6VDC** battery voltage.
+- Current sourcing capability of the MeterBus `POWER` pins is currently unknown.
+- The MeterBus `POWER` pins appear to be internally regulated to approximately **12VDC** during normal operation.
+- The document [`Meterbus Adapter Instructions`](./docs/operation-manual-pc-meterbus-adapter-en.pdf) specifies a valid MeterBus power range of **8VDC – 15.5VDC**.
+- All `GND` pins appear to be internally bridged together.
+- All `POWER` pins appear to be internally bridged together.
+- All measurements are relative to MeterBus `GND`.
+
+### MeterBus Measurements
+
+| Battery Voltage | MeterBus POWER | MeterBus TX/RX Idle |
+|---|---:|---:|
+| 24VDC | 11.9VDC | 7.5VDC |
+| 13.9VDC | 11.9VDC | - |
+| 12VDC | 11.0VDC | 7.5VDC |
+| 8VDC | 7.0VDC | 6.5VDC |
+| 7VDC | 6.0VDC | 5.6VDC |
+
+### Preliminary Conclusions
+
+- The MeterBus `POWER` pins appear to provide a maximum voltage output of around **11.9VDC** which roughly follows the battery voltage.
+- The TX/RX line appears to idle below the MeterBus `POWER` voltage.
+- The TX/RX idle voltage remains relatively stable across both 12V and 24V systems, but drops as the battery voltage goes below **12VDC**.
+
 ## Disclaimer
 
 This project is experimental and not affiliated with or endorsed by Morningstar Corporation.
