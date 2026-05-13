@@ -68,6 +68,12 @@ This section contains measurements and observations of the Morningstar charge co
 | 8VDC | 7.0VDC | 6.5VDC |
 | 7VDC | 6.0VDC | 5.6VDC |
 
+Resistance measurements taken while the unit was powered off
+
+- 330 uA shorting TX/RX to GND
+- 35 KOhm between TX/RX and GND
+- 20 KOhm between TX/RX and POWER
+
 ### Preliminary Conclusions
 
 - The MeterBus `POWER` pins appear to provide a maximum voltage output of around **11.9VDC** which roughly follows the battery voltage.
