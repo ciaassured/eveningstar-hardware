@@ -416,13 +416,21 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "J1,#FLG1-4,R1-7,TP1-6,C1-6,D1-7,#PWR1-20,Q1,U1-3,F1-2",
+    "used_designators": "L1,TP1-11,R1-11,J1-2,U1-5,Q1,F1-3,D1-9,C1-10,#PWR1-30,#FLG1-4",
     "variants": []
   },
   "sheets": [
     [
       "4c61f5a2-f8d4-462a-9bc3-d74437d30372",
       "EveningStar"
+    ],
+    [
+      "20698281-7733-498d-8537-9736b11e1ce7",
+      "meterbus_frontend"
+    ],
+    [
+      "2e538fbd-4766-4d3c-804f-b602af6e3385",
+      "psu"
     ]
   ],
   "text_variables": {},
