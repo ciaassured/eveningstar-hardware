@@ -118,7 +118,113 @@
 		)
 	)
 	(sheet
-		(at 134.62 116.84)
+		(at 177.8 38.735)
+		(size 37.465 26.035)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "561d5dbe-6020-48c7-be42-1a6149a1119b")
+		(property "Sheetname" "ethernet"
+			(at 177.8 38.0234 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ethernet.kicad_sch"
+			(at 177.8 65.3546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "INTn" output
+			(at 177.8 45.72 180)
+			(uuid "4431920e-989b-4ec8-bb33-c84f1006aaec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MISO" output
+			(at 177.8 49.53 180)
+			(uuid "9d6269bf-7081-471d-b071-f25f2c606503")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOSI" input
+			(at 177.8 53.34 180)
+			(uuid "58bc896c-2838-4ae3-8776-b77ef1f85ece")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RSTn" input
+			(at 177.8 41.91 180)
+			(uuid "cd574f72-214d-4adb-8dc3-904a64ce3f5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCLK" input
+			(at 177.8 57.15 180)
+			(uuid "272de590-29e8-4f2a-a944-77e959ebe8b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCSn" input
+			(at 177.8 60.96 180)
+			(uuid "951a2097-8af8-4263-bf3e-4ba3e7851656")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 100.965 38.1)
 		(size 43.18 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -134,7 +240,7 @@
 		)
 		(uuid "83e90eda-4c3c-4f86-9f5b-c472ac53896a")
 		(property "Sheetname" "mcu"
-			(at 134.62 116.1284 0)
+			(at 100.965 37.3884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -145,7 +251,7 @@
 			)
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
-			(at 134.62 137.7446 0)
+			(at 100.965 59.0046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
