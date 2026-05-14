@@ -1458,6 +1458,184 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Jumper:SolderJumper_2_Open"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "JP"
+				(at 0 2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SolderJumper_2_Open"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Solder Jumper, 2-pole, open"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "solder jumper SPST"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SolderJumper*Open*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SolderJumper_2_Open_0_1"
+				(polyline
+					(pts
+						(xy -0.254 1.016) (xy -0.254 -1.016)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2656 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2656 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 1.016) (xy 0.254 -1.016)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SolderJumper_2_Open_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "custom_symbols:LMR16010"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2049,96 +2227,108 @@
 		)
 	)
 	(junction
-		(at 76.2 36.83)
+		(at 78.74 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "03e61962-c736-4085-a9a1-469c9fe3c9d1")
+		(uuid "3dc73932-d29d-4001-99d4-894afabcab73")
 	)
 	(junction
-		(at 167.64 33.02)
+		(at 158.75 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "09c761db-0f12-474c-a285-a85db6a4ce48")
+		(uuid "427429de-540a-4c17-bbbb-cc1af5875ec7")
 	)
 	(junction
-		(at 96.52 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0a2470f1-fd56-4d9b-82c5-9060fa7cd69c")
-	)
-	(junction
-		(at 156.21 62.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0a8d3fa5-c9b0-464d-813d-670a6000beb5")
-	)
-	(junction
-		(at 142.24 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "21b60fff-d533-4a46-8ab3-106a23dba6e2")
-	)
-	(junction
-		(at 135.89 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2a6b6276-e7c9-44c5-9763-b5da3c62cc15")
-	)
-	(junction
-		(at 88.9 26.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "42b06f15-e36b-466b-9e2d-2a748b98ffa2")
-	)
-	(junction
-		(at 46.99 36.83)
+		(at 46.99 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "456f8814-bc63-4199-826e-37c77a72eebe")
 	)
 	(junction
-		(at 46.99 26.67)
+		(at 158.75 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5bd5ea00-bdc7-4166-945a-b8121bfba274")
+	)
+	(junction
+		(at 46.99 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8c423caa-e0ab-4649-a2b5-0c7288f66753")
 	)
 	(junction
-		(at 156.21 52.07)
+		(at 212.09 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ad43057b-c9ac-4e40-8db5-c277d4f3d069")
+		(uuid "9c81eea3-95fa-415d-983f-12cc224c9314")
 	)
 	(junction
-		(at 96.52 26.67)
+		(at 78.74 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "be5ac0bc-665e-401e-922f-79ba5bed272d")
+		(uuid "a4258832-16fb-4f19-a869-0ef8e3ef5f39")
 	)
 	(junction
-		(at 76.2 26.67)
+		(at 144.78 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c6b3341e-9644-42d0-bec6-fbaa5843e003")
+		(uuid "c5436d62-e137-4c6e-a60a-98602c4c2d52")
 	)
 	(junction
-		(at 38.1 36.83)
+		(at 138.43 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d48cecc9-cea9-4d2e-b121-6452667f00a2")
+	)
+	(junction
+		(at 63.5 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "db65e4e7-d915-42ac-9621-88b9f3d63532")
+	)
+	(junction
+		(at 38.1 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dbf767df-be64-4531-bf0c-8bce89ab38dc")
 	)
+	(junction
+		(at 158.75 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f1c9445c-07b0-4a4d-bb3b-14538bf69a8f")
+	)
+	(junction
+		(at 99.06 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f1fccc6d-5224-48dd-801e-c3756c22da16")
+	)
+	(junction
+		(at 170.18 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4962ab8-56f4-4fc2-bbc7-e641db97d2d9")
+	)
+	(junction
+		(at 91.44 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fa16b666-3c00-4aa7-9789-4608f1b2ae45")
+	)
 	(wire
 		(pts
-			(xy 93.98 52.07) (xy 96.52 52.07)
+			(xy 100.33 57.15) (xy 99.06 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "04149cf7-1a12-412b-8c8a-80e022a4c92d")
+		(uuid "008b072e-16c4-4177-ab59-b28d9fe5dc39")
 	)
 	(wire
 		(pts
-			(xy 46.99 26.67) (xy 48.26 26.67)
+			(xy 46.99 57.15) (xy 48.26 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2148,87 +2338,87 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 35.56) (xy 88.9 36.83)
+			(xy 144.78 82.55) (xy 158.75 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "088f1153-99bb-4e65-9b9d-b62d48532fa2")
+		(uuid "0bfee64e-9092-4b0e-afdd-8ac22aa3fdd2")
 	)
 	(wire
 		(pts
-			(xy 135.89 33.02) (xy 139.7 33.02)
+			(xy 128.27 63.5) (xy 138.43 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0e27a747-59b4-4ade-ab29-55a659c0f518")
+		(uuid "185345a2-ef6e-47ae-bfad-099b21274d4a")
 	)
 	(wire
 		(pts
-			(xy 76.2 25.4) (xy 76.2 26.67)
+			(xy 158.75 93.98) (xy 158.75 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0e30c34b-320e-42d5-b2c4-1c3427a20f29")
+		(uuid "1cad27b8-2620-4b32-a92b-5630892d690e")
 	)
 	(wire
 		(pts
-			(xy 96.52 52.07) (xy 97.79 52.07)
+			(xy 99.06 92.71) (xy 99.06 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1325688b-34dd-40dd-9901-b0bf229aef0e")
+		(uuid "2322c816-f91b-4fb8-af60-c01923f5b1aa")
 	)
 	(wire
 		(pts
-			(xy 135.89 33.02) (xy 135.89 26.67)
+			(xy 212.09 63.5) (xy 222.25 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a6825d1-b5e7-43ee-95cf-50688446cae1")
+		(uuid "2531c574-11f4-4b02-a463-9355859d8bcb")
 	)
 	(wire
 		(pts
-			(xy 135.89 41.91) (xy 135.89 43.18)
+			(xy 63.5 43.18) (xy 63.5 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1b1bb5b1-6240-4542-a6ec-e036889c5b69")
+		(uuid "2eee7f95-533c-47bc-a3ea-3f41766386c6")
 	)
 	(wire
 		(pts
-			(xy 167.64 33.02) (xy 167.64 34.29)
+			(xy 158.75 72.39) (xy 158.75 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2fbace1c-7610-4230-a8b9-bdc2b85ea34d")
+		(uuid "2fb63af8-6ec1-41ad-b3ee-f1d70697b9ab")
 	)
 	(wire
 		(pts
-			(xy 76.2 38.1) (xy 76.2 36.83)
+			(xy 138.43 72.39) (xy 138.43 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2ff826b9-3dac-44b9-9f04-d9c8a6773150")
+		(uuid "32a60ec1-2bb5-45d8-a277-7f8265740532")
 	)
 	(wire
 		(pts
-			(xy 36.83 26.67) (xy 38.1 26.67)
+			(xy 36.83 57.15) (xy 38.1 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2238,27 +2428,17 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 31.75) (xy 167.64 33.02)
+			(xy 158.75 91.44) (xy 158.75 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "410073dc-e721-4003-b161-63a2f4dabb34")
+		(uuid "3c2929a6-e703-4228-831c-b1e388d214ae")
 	)
 	(wire
 		(pts
-			(xy 88.9 26.67) (xy 88.9 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42aab9e9-d1ae-473a-aadc-e565959785e6")
-	)
-	(wire
-		(pts
-			(xy 38.1 36.83) (xy 38.1 38.1)
+			(xy 38.1 67.31) (xy 38.1 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2268,67 +2448,47 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 52.07) (xy 156.21 52.07)
+			(xy 99.06 82.55) (xy 100.33 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4324e330-1f39-44e4-b29e-f7ca70bdbf31")
+		(uuid "4558c840-a46f-4bdd-91e6-0b22adec45d4")
 	)
 	(wire
 		(pts
-			(xy 147.32 33.02) (xy 167.64 33.02)
+			(xy 55.88 43.18) (xy 63.5 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "44255db6-de8a-435e-8901-b21bc96e6b61")
+		(uuid "48e3a31d-3949-497a-b31a-6eb7ed1bded7")
 	)
 	(wire
 		(pts
-			(xy 125.73 62.23) (xy 156.21 62.23)
+			(xy 99.06 81.28) (xy 99.06 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4d7000a4-4074-45a7-9591-ed5262f93660")
+		(uuid "49555ba1-7583-476b-8c73-26f8cc15f96d")
 	)
 	(wire
 		(pts
-			(xy 125.73 52.07) (xy 142.24 52.07)
+			(xy 149.86 63.5) (xy 158.75 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4fc6f9c7-164f-4b33-982b-1b71263da496")
+		(uuid "49a6fc92-48ca-4907-8d1b-5f0cf8b49e65")
 	)
 	(wire
 		(pts
-			(xy 156.21 31.75) (xy 156.21 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5645316f-ff09-4938-8d89-247c12b0658a")
-	)
-	(wire
-		(pts
-			(xy 96.52 26.67) (xy 96.52 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5868609d-40fe-4b6c-a8c0-3e932ed376d2")
-	)
-	(wire
-		(pts
-			(xy 38.1 36.83) (xy 46.99 36.83)
+			(xy 38.1 67.31) (xy 46.99 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2338,37 +2498,47 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 50.8) (xy 142.24 52.07)
+			(xy 91.44 66.04) (xy 91.44 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "68a408a1-172e-4281-802c-dc34b4f7256d")
+		(uuid "5d5fa3ed-8ee4-4c16-8a43-e41a163f33f4")
 	)
 	(wire
 		(pts
-			(xy 96.52 62.23) (xy 96.52 63.5)
+			(xy 128.27 92.71) (xy 158.75 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6931b3f8-42b7-4b4b-9461-95bba8f13be3")
+		(uuid "5f732ef3-5ebb-4de4-bb34-4f2ad0bf02b2")
 	)
 	(wire
 		(pts
-			(xy 55.88 26.67) (xy 76.2 26.67)
+			(xy 138.43 63.5) (xy 138.43 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6ad532c9-0d55-418e-973a-2aa315a9bf88")
+		(uuid "654fd5e7-4c10-4acc-8918-60e4a694b698")
 	)
 	(wire
 		(pts
-			(xy 38.1 31.75) (xy 38.1 36.83)
+			(xy 138.43 63.5) (xy 142.24 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6acede10-9b87-4436-b5d7-c19ad1dc88f3")
+	)
+	(wire
+		(pts
+			(xy 38.1 62.23) (xy 38.1 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2378,67 +2548,137 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 41.91) (xy 167.64 43.18)
+			(xy 170.18 63.5) (xy 191.77 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7ccb39a8-0108-41b5-aa20-583ac4ce78a2")
+		(uuid "725fccad-e9d7-450d-8800-df99957c0a0c")
 	)
 	(wire
 		(pts
-			(xy 135.89 26.67) (xy 134.62 26.67)
+			(xy 78.74 68.58) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8304a82b-a03b-4bd7-8f30-935ebaa7ec08")
+		(uuid "74e7edba-b0db-4851-8394-e3813d7bcc43")
 	)
 	(wire
 		(pts
-			(xy 135.89 33.02) (xy 135.89 34.29)
+			(xy 63.5 57.15) (xy 78.74 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8492ee33-4647-4c71-b4fb-1af5aaa4eb81")
+		(uuid "7bfe4bf6-c591-405e-a327-abdf7bfecf8c")
 	)
 	(wire
 		(pts
-			(xy 76.2 27.94) (xy 76.2 26.67)
+			(xy 91.44 57.15) (xy 91.44 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8df3ac4d-c885-4fcc-924e-7150529e088f")
+		(uuid "7d4bbf59-9193-4790-9b11-d553cb38b5f4")
 	)
 	(wire
 		(pts
-			(xy 156.21 41.91) (xy 156.21 52.07)
+			(xy 158.75 83.82) (xy 158.75 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8f8089b4-cee8-45f6-82d9-908e8575ba62")
+		(uuid "8cd01b62-e0b5-4f80-a391-951767c1a400")
 	)
 	(wire
 		(pts
-			(xy 96.52 71.12) (xy 96.52 72.39)
+			(xy 170.18 62.23) (xy 170.18 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a360d925-2caf-4670-8728-51a5e9acb57b")
+		(uuid "92fa983b-cae8-4538-a1d6-49fae751396d")
 	)
 	(wire
 		(pts
-			(xy 45.72 26.67) (xy 46.99 26.67)
+			(xy 212.09 62.23) (xy 212.09 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93f3dde2-20ac-4d73-acf7-eb5a20977da9")
+	)
+	(wire
+		(pts
+			(xy 99.06 63.5) (xy 100.33 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94475c73-6c2b-462d-a99c-93f01586a41c")
+	)
+	(wire
+		(pts
+			(xy 201.93 63.5) (xy 212.09 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97a06e9d-6c30-4380-ab8e-dcd43074b1c4")
+	)
+	(wire
+		(pts
+			(xy 100.33 92.71) (xy 99.06 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b152c39-beb5-4c09-bf03-83486b3847fc")
+	)
+	(wire
+		(pts
+			(xy 128.27 57.15) (xy 129.54 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f569c18-af1c-44cc-9395-9af0527a6af3")
+	)
+	(wire
+		(pts
+			(xy 55.88 57.15) (xy 63.5 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f62dc14-6b2d-4ca7-aac5-8165aabb7bf1")
+	)
+	(wire
+		(pts
+			(xy 99.06 72.39) (xy 99.06 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2770285-18bf-4a3c-91c6-11a6c07a7240")
+	)
+	(wire
+		(pts
+			(xy 45.72 57.15) (xy 46.99 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2448,17 +2688,17 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 33.02) (xy 185.42 33.02)
+			(xy 170.18 63.5) (xy 170.18 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a9f971c2-1c9a-4173-bc81-a7072041c716")
+		(uuid "a66cf664-5b89-44c9-90ce-9c55a13fdb66")
 	)
 	(wire
 		(pts
-			(xy 46.99 36.83) (xy 46.99 35.56)
+			(xy 46.99 67.31) (xy 46.99 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2468,17 +2708,27 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 62.23) (xy 96.52 62.23)
+			(xy 158.75 63.5) (xy 158.75 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ac1bc98f-ffe9-4c1c-bebe-80f443a183f7")
+		(uuid "ace3f99e-2926-475a-a921-f1dbe4c03161")
 	)
 	(wire
 		(pts
-			(xy 46.99 26.67) (xy 46.99 27.94)
+			(xy 222.25 63.5) (xy 222.25 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af93f151-6f71-4d06-aca9-5b332498a99e")
+	)
+	(wire
+		(pts
+			(xy 46.99 57.15) (xy 46.99 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2488,117 +2738,57 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 26.67) (xy 127 26.67)
+			(xy 128.27 82.55) (xy 144.78 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b25cc9a1-354e-412f-9c92-ff336cf19190")
+		(uuid "b86ccab5-d5d7-4255-803b-47db5dcd5646")
 	)
 	(wire
 		(pts
-			(xy 76.2 26.67) (xy 88.9 26.67)
+			(xy 138.43 57.15) (xy 137.16 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b2c23b53-996f-4deb-85e7-1b2138239597")
+		(uuid "bd9a2eff-9a17-4f6a-af12-83757d030a55")
 	)
 	(wire
 		(pts
-			(xy 97.79 26.67) (xy 96.52 26.67)
+			(xy 78.74 55.88) (xy 78.74 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b733a69a-d935-4c92-b124-3d7b7d4816cd")
+		(uuid "d0a85cb5-5163-4a03-a3fb-6e38d845e7a6")
 	)
 	(wire
 		(pts
-			(xy 156.21 53.34) (xy 156.21 52.07)
+			(xy 78.74 57.15) (xy 91.44 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b8aa5109-2422-41ad-a667-32b70ed64af1")
+		(uuid "d13c8bc3-f4a5-4dc0-8045-bd4e8bde04d6")
 	)
 	(wire
 		(pts
-			(xy 96.52 26.67) (xy 88.9 26.67)
+			(xy 99.06 57.15) (xy 91.44 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bb8a596c-a00c-4971-9af7-77e9e6b949e0")
+		(uuid "d4b5eab4-7c84-4040-a37d-3aea8d3301d7")
 	)
 	(wire
 		(pts
-			(xy 96.52 50.8) (xy 96.52 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf8a1411-8437-4e8d-b80e-b17f1654ce57")
-	)
-	(wire
-		(pts
-			(xy 96.52 41.91) (xy 96.52 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5655cdf-0fa9-47ab-9d4b-6a471b9776e1")
-	)
-	(wire
-		(pts
-			(xy 125.73 33.02) (xy 135.89 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce04f19a-3ff2-45fd-9a82-c27c117a1f24")
-	)
-	(wire
-		(pts
-			(xy 156.21 60.96) (xy 156.21 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d051f046-c683-4a86-ba06-d20b794a2962")
-	)
-	(wire
-		(pts
-			(xy 185.42 33.02) (xy 185.42 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d462d703-83cf-4f21-8595-b3c521d33c57")
-	)
-	(wire
-		(pts
-			(xy 156.21 63.5) (xy 156.21 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d63d8bbb-c122-4b23-8be2-86f6a1ea2708")
-	)
-	(wire
-		(pts
-			(xy 46.99 38.1) (xy 46.99 36.83)
+			(xy 46.99 68.58) (xy 46.99 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2608,37 +2798,77 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 36.83) (xy 76.2 35.56)
+			(xy 78.74 67.31) (xy 91.44 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ddcfd3b5-f37c-4488-8316-40da7447765a")
+		(uuid "de1e2b4f-04f3-4b0d-a5c3-8d4004f46e41")
 	)
 	(wire
 		(pts
-			(xy 76.2 36.83) (xy 88.9 36.83)
+			(xy 158.75 63.5) (xy 170.18 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e7edd608-912a-4bc0-922e-e35f836a543f")
+		(uuid "e6b47752-3956-4516-b6af-d73f9129e7e4")
 	)
 	(wire
 		(pts
-			(xy 96.52 33.02) (xy 97.79 33.02)
+			(xy 78.74 58.42) (xy 78.74 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ed1d46b0-1c98-40da-8c6b-6ae905a507f0")
+		(uuid "e788643e-8895-4773-8efa-5f3a02c3ae8b")
 	)
 	(wire
 		(pts
-			(xy 38.1 31.75) (xy 36.83 31.75)
+			(xy 99.06 57.15) (xy 99.06 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebd5e5c5-b02e-40f7-b42f-133017159739")
+	)
+	(wire
+		(pts
+			(xy 99.06 101.6) (xy 99.06 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edea4f87-df53-4bad-8f24-7df48aeb3668")
+	)
+	(wire
+		(pts
+			(xy 170.18 72.39) (xy 170.18 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f072e659-0212-47df-a1ae-d9d90b530165")
+	)
+	(wire
+		(pts
+			(xy 78.74 67.31) (xy 78.74 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2e44ffb-d21d-49b6-b0e3-21f3cf41ab93")
+	)
+	(wire
+		(pts
+			(xy 38.1 62.23) (xy 36.83 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2646,53 +2876,39 @@
 		)
 		(uuid "f4f3b2a3-c69d-4490-b875-998bb2a7eda2")
 	)
-	(hierarchical_label "PGOOD"
-		(shape output)
-		(at 93.98 52.07 180)
+	(wire
+		(pts
+			(xy 138.43 63.5) (xy 138.43 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f58e1428-05b2-47fa-995d-69402eecbb67")
+	)
+	(wire
+		(pts
+			(xy 144.78 81.28) (xy 144.78 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa5e313d-441b-4bde-8503-4a456366a18e")
+	)
+	(global_label "USB_PWR"
+		(shape input)
+		(at 48.26 43.18 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "a06a44d4-9dc0-4f68-8885-19329bb4d4c9")
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 88.9 31.75 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "06956a1f-b96c-432e-97d0-61d3cb5d2f22")
-		(property "Reference" "C9"
-			(at 85.09 29.5909 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2.2uF"
-			(at 85.09 32.1309 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 87.9348 35.56 0)
+		(uuid "a5d23849-0987-476e-906f-d718294613bf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 36.5058 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2700,761 +2916,13 @@
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "X7R"
-			(at 88.9 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "bb2641f7-8655-4a49-861e-afe00785b931")
-		)
-		(pin "1"
-			(uuid "268d6df3-4f19-46fa-9c56-89be3943cab1")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 76.2 25.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0b2dc9ce-d76e-4a3e-b96c-52fa0548532c")
-		(property "Reference" "TP9"
-			(at 78.74 20.8279 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 78.74 23.3679 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 81.28 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 76.2 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ce81b7c7-da91-4909-925a-b2808a18b036")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "TP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 156.21 63.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0bec3c9a-cad2-4f61-9c70-786e549e15b0")
-		(property "Reference" "#PWR026"
-			(at 156.21 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 156.21 68.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 156.21 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 156.21 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ed404777-f399-48dc-bab7-3e331a32a220")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 96.52 41.91 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0fd864b7-bbab-417f-aef3-416843d391f8")
-		(property "Reference" "#PWR029"
-			(at 96.52 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 96.52 36.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 96.52 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "366df314-c63b-4d22-8d5c-b5ca087fbcdb")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#PWR029")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 167.64 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "13ce05b9-8386-48db-a4f8-b79f57dbaff7")
-		(property "Reference" "C8"
-			(at 171.45 35.9409 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "47uF"
-			(at 171.45 38.4809 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 168.6052 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 167.64 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "16v 5 mΩ X7R"
-			(at 167.64 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "73f445d6-192d-4431-aac0-c2729ff9faea")
-		)
-		(pin "1"
-			(uuid "f056d940-5bd9-416c-b2cd-444dbfd833cc")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "C8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 156.21 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "31c710df-5535-4a3d-af8d-bf2166918a91")
-		(property "Reference" "#FLG02"
-			(at 156.21 29.845 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 156.21 26.67 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 156.21 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 156.21 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ec794a4d-ac2d-49d8-ad30-39a705689b5e")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#FLG02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 130.81 26.67 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "34010931-0aad-4b01-8abb-0335426dffa5")
-		(property "Reference" "C7"
-			(at 130.81 19.05 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 130.81 21.59 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 134.62 25.7048 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 130.81 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "X7R Ceramic 16V"
-			(at 130.81 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "99222a70-f692-4cb7-a082-8b16d4baa074")
-		)
-		(pin "1"
-			(uuid "47d15225-8b1e-459a-b3a6-78f3c3e1c599")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 96.52 72.39 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3b72a4f0-376f-4e26-abe9-93919c06ee16")
-		(property "Reference" "#PWR027"
-			(at 96.52 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 96.52 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 96.52 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "16c60df3-edf7-4526-9517-82657ce8364b")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 167.64 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "462dd7d6-cef6-4da5-beee-ecc052a49646")
-		(property "Reference" "#PWR025"
-			(at 167.64 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 167.64 48.26 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 167.64 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 167.64 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 167.64 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "25e0ca7d-b60b-46f3-b891-04b2f91a9c49")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#PWR025")
-					(unit 1)
-				)
+				(justify right)
 			)
 		)
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 96.52 46.99 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4b9af7a1-48a3-411f-8971-f3031d1cc23d")
-		(property "Reference" "R11"
-			(at 93.98 45.7199 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "R"
-			(at 93.98 48.2599 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 98.298 46.99 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 96.52 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6cb66b09-e07c-40a7-bd2b-ad0a974ffc71")
-		)
-		(pin "2"
-			(uuid "5faa781f-7b93-474a-bfd7-6214140038d9")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "custom_symbols:LMR16010")
-		(at 111.76 30.48 0)
+		(at 158.75 87.63 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3463,185 +2931,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "542176d5-c659-4ddb-9de1-5ba3109379df")
-		(property "Reference" "U5"
-			(at 111.76 19.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LMR16010"
-			(at 111.76 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:Texas_R-PDSO-G8_EP2.95x4.9mm_Mask2.4x3.1mm"
-			(at 111.76 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C183084.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.0.xh&lcsc_vid=RlFcBVIEFlYKVgVURFhcAVEAFFMPAgdRRFIMUFxSTwcxVlNRT1ZcUlRTQlhdUTsOAxUeFF5JWBYZEEoBGA4JCwFIFA4DSA%3D%3D"
-			(at 111.76 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1edc7d2b-65ea-495a-8508-df7f126f53eb")
-		)
-		(pin "2"
-			(uuid "3295979b-5249-4e32-bb88-00cd14ea047c")
-		)
-		(pin "4"
-			(uuid "416fe339-feeb-4787-8296-4f8e02f249e3")
-		)
-		(pin "6"
-			(uuid "05b6343f-7d4f-4731-a16b-e6d6fcb3d25c")
-		)
-		(pin "8"
-			(uuid "04327f7e-e2d3-4256-99a3-1e0dc94e633f")
-		)
-		(pin "7"
-			(uuid "2cfa9673-834d-4d17-a1cd-2ac402807bc7")
-		)
-		(pin "3"
-			(uuid "8721266f-3c67-4fdd-99d9-65b39ea9b87c")
-		)
-		(pin "5"
-			(uuid "aeadb9bf-75aa-4a9a-8ae5-8bc32b88f2f7")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "U5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 135.89 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "62a0b83e-27bd-4eb6-b8b8-4c274d020625")
-		(property "Reference" "#PWR028"
-			(at 135.89 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 135.89 48.26 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 135.89 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 135.89 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 135.89 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a2640a9a-c7f5-4ef3-aa4d-316fbf803dee")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 156.21 57.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "645decbf-4031-4f66-a246-dd044230616e")
+		(uuid "0c94d854-f91c-4596-a13c-2fce55ba9f32")
 		(property "Reference" "R10"
-			(at 158.75 55.8799 0)
+			(at 161.29 86.3599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3652,7 +2944,7 @@
 			)
 		)
 		(property "Value" "29.4K"
-			(at 158.75 58.4199 0)
+			(at 161.29 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3663,7 +2955,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 154.432 57.15 90)
+			(at 156.972 87.63 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3674,7 +2966,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 57.15 0)
+			(at 158.75 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3685,7 +2977,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 156.21 57.15 0)
+			(at 158.75 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3696,10 +2988,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "04315820-c230-4c62-bc68-024bab97711e")
+			(uuid "1aa0c82d-5b7e-4342-bcdb-0e4a8e9cc352")
 		)
 		(pin "2"
-			(uuid "5be80fd3-e9b2-4b15-ab3f-c8f5dd6cd8a5")
+			(uuid "14bfdf8f-c005-47a7-b0aa-b1596b6bd469")
 		)
 		(instances
 			(project "EveningStar"
@@ -3711,8 +3003,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:L")
-		(at 143.51 33.02 90)
+		(lib_id "power:GND")
+		(at 158.75 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3721,9 +3013,10 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "75ebe3ad-6c5c-4210-8a3d-25785fa3bd56")
-		(property "Reference" "L1"
-			(at 143.51 27.94 90)
+		(uuid "0fe38c9b-2f15-4e68-abf1-2ccf9705f430")
+		(property "Reference" "#PWR026"
+			(at 158.75 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3732,8 +3025,8 @@
 				)
 			)
 		)
-		(property "Value" "10uH"
-			(at 143.51 30.48 90)
+		(property "Value" "GND"
+			(at 158.75 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3743,7 +3036,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 33.02 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3754,7 +3047,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 33.02 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3764,8 +3057,8 @@
 				)
 			)
 		)
-		(property "Description" "1A RMS, 2A saturation"
-			(at 143.51 33.02 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3776,10 +3069,571 @@
 			)
 		)
 		(pin "1"
-			(uuid "a9da63b1-6352-4741-88c2-1a2215ee084f")
+			(uuid "fc59abb0-7d23-429d-a45f-3c4361b8e820")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 91.44 62.23 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1809c7a6-871d-48ed-ac06-3cd5971dcef7")
+		(property "Reference" "C9"
+			(at 87.63 60.0709 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2uF"
+			(at 87.63 62.6109 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.4748 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "X7R"
+			(at 91.44 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "2"
-			(uuid "ec2c227c-8024-4fb8-9ac7-1c0ab7953906")
+			(uuid "2113a397-08cf-408a-bd71-b0f9452cf652")
+		)
+		(pin "1"
+			(uuid "993cffe4-55c3-4aa1-8d09-bcaf9c541478")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 170.18 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "20014aac-2cdf-426b-ab96-02c20e1e3d7d")
+		(property "Reference" "C8"
+			(at 173.99 66.4209 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47uF"
+			(at 173.99 68.9609 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.1452 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "16v 5 mΩ X7R"
+			(at 170.18 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f27e912a-8f67-4633-aa46-bd14d0e1c575")
+		)
+		(pin "1"
+			(uuid "b93dfbce-724e-45ef-8bd2-bd073b52973a")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 170.18 73.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ab760e6-8425-4732-b957-148ca95b0ab2")
+		(property "Reference" "#PWR025"
+			(at 170.18 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 170.18 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 170.18 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "faacf9e8-f820-4c49-97c8-390711dc63ae")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 52.07 43.18 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e7a7202-ac7e-4527-b978-b442bdaf9d7b")
+		(property "Reference" "D10"
+			(at 52.3875 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "STPS1H100A"
+			(at 52.3875 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 52.07 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 52.07 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 52.07 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5f8c7640-edde-41ad-bfe6-f9a4cbe30b9c")
+		)
+		(pin "2"
+			(uuid "7820baed-3878-4a36-86f5-ecc7e01d98f1")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 138.43 68.58 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4de7ca05-0145-41ce-b7cf-dcb25aaf16e4")
+		(property "Reference" "D7"
+			(at 140.97 66.9924 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ST STPS1H100A"
+			(at 140.97 69.5324 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 138.43 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4732c975-f411-4096-8f28-7ec86f583e27")
+		)
+		(pin "1"
+			(uuid "516692c6-efd4-4a45-a411-4d7e26c0eb08")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_2_Open")
+		(at 196.85 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56887a26-8dc1-49c9-9e8e-d944c77021ef")
+		(property "Reference" "JP1"
+			(at 196.85 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 196.85 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 196.85 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 196.85 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "87334b0e-935f-4eea-b467-eda3eae0519e")
+		)
+		(pin "1"
+			(uuid "12a3ddc8-bd10-4f57-893b-0ef7250e5064")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "JP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 146.05 63.5 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6e38086b-e9ce-4979-9241-fe4c92b61198")
+		(property "Reference" "L1"
+			(at 146.05 58.42 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10uH"
+			(at 146.05 60.96 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1A RMS, 2A saturation"
+			(at 146.05 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f13e5f1d-774e-4c92-85e1-b19866765de8")
+		)
+		(pin "2"
+			(uuid "ff498f94-5155-416c-9a6f-726884ca4ab1")
 		)
 		(instances
 			(project "EveningStar"
@@ -3791,8 +3645,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Barrel_Jack")
-		(at 29.21 29.21 0)
+		(lib_id "Device:C_Polarized")
+		(at 78.74 62.23 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3800,30 +3655,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "799f06c5-c0f4-40a8-9be0-57d35d24dddd")
-		(property "Reference" "J1"
-			(at 29.21 20.32 0)
+		(uuid "7076abb9-ecb5-49b4-a22a-9766790d9c59")
+		(property "Reference" "C10"
+			(at 74.93 60.0709 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "Barrel_Jack"
-			(at 29.21 22.86 0)
+		(property "Value" "2.2uF"
+			(at 74.93 62.6109 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 30.226 0)
+			(at 77.7748 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3834,7 +3690,247 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 30.226 0)
+			(at 78.74 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "X7R"
+			(at 78.74 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "583fae13-22a8-4067-988c-d5c9cf715b89")
+		)
+		(pin "1"
+			(uuid "d6973625-2b03-45c1-b568-5675a45282dd")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 99.06 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "715ac905-ddbe-4762-9b5d-db87f655c05f")
+		(property "Reference" "#PWR027"
+			(at 99.06 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 99.06 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 99.06 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "26b9fb5e-4390-487b-940d-24eee950e2c8")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 99.06 77.47 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "73f3e485-84ae-495d-97e6-99faf13da9ae")
+		(property "Reference" "R11"
+			(at 96.52 76.1999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 96.52 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.838 77.47 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 99.06 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "655eb6be-5ca6-43a6-9a01-3b2d64e22322")
+		)
+		(pin "2"
+			(uuid "c820b315-3067-451d-b1e1-461e3b07676b")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Barrel_Jack")
+		(at 29.21 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "799f06c5-c0f4-40a8-9be0-57d35d24dddd")
+		(property "Reference" "J1"
+			(at 29.21 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrel_Jack"
+			(at 29.21 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 60.706 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 60.706 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3845,7 +3941,7 @@
 			)
 		)
 		(property "Description" "DC Barrel Jack"
-			(at 29.21 29.21 0)
+			(at 29.21 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3872,7 +3968,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 46.99 38.1 180)
+		(at 46.99 68.58 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3883,7 +3979,7 @@
 		(fields_autoplaced yes)
 		(uuid "7e153617-0c12-4b72-bbbf-d0d2109b2e55")
 		(property "Reference" "TP8"
-			(at 49.53 40.1319 0)
+			(at 49.53 70.6119 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3894,7 +3990,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 49.53 42.6719 0)
+			(at 49.53 73.1519 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3905,7 +4001,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 38.1 0)
+			(at 41.91 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3916,7 +4012,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 41.91 38.1 0)
+			(at 41.91 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3927,7 +4023,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 46.99 38.1 0)
+			(at 46.99 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3950,8 +4046,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 156.21 38.1 0)
+		(lib_id "custom_symbols:LMR16010")
+		(at 114.3 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3960,31 +4056,29 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "84115b6f-5cbe-485f-9a71-bf69bc800f83")
-		(property "Reference" "R9"
-			(at 158.75 36.8299 0)
+		(uuid "91160a30-9c8d-4842-973b-917ae4f642d1")
+		(property "Reference" "U5"
+			(at 114.3 49.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "100K"
-			(at 158.75 39.3699 0)
+		(property "Value" "LMR16010"
+			(at 114.3 52.07 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 154.432 38.1 90)
+		(property "Footprint" "Package_SO:Texas_R-PDSO-G8_EP2.95x4.9mm_Mask2.4x3.1mm"
+			(at 114.3 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3994,8 +4088,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 156.21 38.1 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C183084.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.0.xh&lcsc_vid=RlFcBVIEFlYKVgVURFhcAVEAFFMPAgdRRFIMUFxSTwcxVlNRT1ZcUlRTQlhdUTsOAxUeFF5JWBYZEEoBGA4JCwFIFA4DSA%3D%3D"
+			(at 114.3 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4005,8 +4099,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 156.21 38.1 0)
+		(property "Description" ""
+			(at 114.3 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4017,176 +4111,33 @@
 			)
 		)
 		(pin "1"
-			(uuid "951972ea-1379-4e3a-8371-e320bd4862a4")
+			(uuid "0e6d6cc2-e3a1-4d1f-a53b-7c866fbd7dcc")
 		)
 		(pin "2"
-			(uuid "8048d2c0-c36a-4de3-8647-acb5224ff692")
+			(uuid "0dfcd275-f6c1-45a2-99a0-86d354fe1e07")
+		)
+		(pin "4"
+			(uuid "9a38cea0-8890-40fa-8d5d-4ef5b076b86d")
+		)
+		(pin "6"
+			(uuid "7309f24b-fc9c-4755-b1ea-43d00e929439")
+		)
+		(pin "8"
+			(uuid "d68f7949-1c49-4649-bc2e-19dbefe9ed9b")
+		)
+		(pin "7"
+			(uuid "052ebb61-0f17-456c-91e1-9dea4d35e11b")
+		)
+		(pin "3"
+			(uuid "a891f66f-b808-4eef-b11f-7598b47e41a3")
+		)
+		(pin "5"
+			(uuid "bc5f8bc0-62a6-4f50-a3d5-e1ebfae1be4e")
 		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 135.89 38.1 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8fd39b5c-900c-448e-8fd5-1c01702b2c47")
-		(property "Reference" "D7"
-			(at 138.43 36.5124 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ST STPS1H100A"
-			(at 138.43 39.0524 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 135.89 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 135.89 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 135.89 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "fe54cd42-8d58-4903-a9f3-1627470f4107")
-		)
-		(pin "1"
-			(uuid "ffb94507-adb0-472a-9bc3-767ac8ec5788")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 167.64 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "942d2c8a-dc02-47ba-9a1d-d0247b4de317")
-		(property "Reference" "TP7"
-			(at 170.18 27.1779 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 170.18 29.7179 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 167.64 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "647acd45-9b0d-485c-ae6f-1489f28dc72a")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "TP7")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -4194,7 +4145,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 38.1 38.1 0)
+		(at 38.1 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4205,7 +4156,7 @@
 		(fields_autoplaced yes)
 		(uuid "96fa7933-98a6-4dda-b0cd-ad2cc4177829")
 		(property "Reference" "#PWR030"
-			(at 38.1 44.45 0)
+			(at 38.1 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4216,7 +4167,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 38.1 43.18 0)
+			(at 38.1 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4226,7 +4177,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 38.1 38.1 0)
+			(at 38.1 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4237,7 +4188,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 38.1 0)
+			(at 38.1 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4248,7 +4199,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 38.1 38.1 0)
+			(at 38.1 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4271,8 +4222,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 52.07 26.67 180)
+		(lib_id "power:+3V3")
+		(at 222.25 62.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4281,9 +4232,10 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9fc773f1-c2d2-423e-83b2-12d92ba35ffc")
-		(property "Reference" "D9"
-			(at 52.3875 20.32 0)
+		(uuid "97ca3ba0-871b-4d68-8a75-2a371e434daa")
+		(property "Reference" "#PWR023"
+			(at 222.25 66.04 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4292,8 +4244,8 @@
 				)
 			)
 		)
-		(property "Value" "STPS1H100A"
-			(at 52.3875 22.86 0)
+		(property "Value" "+3V3"
+			(at 222.25 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4303,7 +4255,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 26.67 0)
+			(at 222.25 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4314,7 +4266,84 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 26.67 0)
+			(at 222.25 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 222.25 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ad2e92bc-738f-4b98-9591-c40f140030c5")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 52.07 57.15 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9fc773f1-c2d2-423e-83b2-12d92ba35ffc")
+		(property "Reference" "D9"
+			(at 52.3875 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "STPS1H100A"
+			(at 52.3875 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 52.07 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 52.07 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4325,7 +4354,7 @@
 			)
 		)
 		(property "Description" "Schottky diode"
-			(at 52.07 26.67 0)
+			(at 52.07 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4351,8 +4380,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 142.24 50.8 0)
+		(lib_id "Device:R")
+		(at 158.75 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4361,9 +4390,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a6b1c301-f47c-43b8-984d-8273c0bb84de")
-		(property "Reference" "TP10"
-			(at 144.78 46.2279 0)
+		(uuid "a1dbc207-1be7-4357-948c-4efe43d87237")
+		(property "Reference" "R9"
+			(at 161.29 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4373,8 +4402,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
-			(at 144.78 48.7679 0)
+		(property "Value" "100K"
+			(at 161.29 69.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4385,7 +4414,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 50.8 0)
+			(at 156.972 68.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4396,7 +4425,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 50.8 0)
+			(at 158.75 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4406,8 +4435,8 @@
 				)
 			)
 		)
-		(property "Description" "test point"
-			(at 142.24 50.8 0)
+		(property "Description" "Resistor"
+			(at 158.75 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4418,12 +4447,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "1165f644-4104-4d09-89d8-fda765fe6b54")
+			(uuid "db2aca9b-d998-4f67-b7d5-130d8034eca2")
+		)
+		(pin "2"
+			(uuid "f38cb3bb-28e1-4d09-bf81-7ad07945194a")
 		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "TP10")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -4431,7 +4463,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 76.2 38.1 0)
+		(at 78.74 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4440,9 +4472,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "bf1edea0-31db-4cbd-952e-e86e8f69eabc")
+		(uuid "a40dc08d-978a-4744-ad2f-8851ab425f25")
 		(property "Reference" "#PWR024"
-			(at 76.2 44.45 0)
+			(at 78.74 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4453,7 +4485,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 76.2 43.18 0)
+			(at 78.74 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4463,7 +4495,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 76.2 38.1 0)
+			(at 78.74 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4474,7 +4506,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 76.2 38.1 0)
+			(at 78.74 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4485,7 +4517,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 76.2 38.1 0)
+			(at 78.74 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4496,7 +4528,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ca16e0f3-0667-4d0e-9e2a-77256ba71ba8")
+			(uuid "91acc869-c5ab-4b99-a86d-b569df446829")
 		)
 		(instances
 			(project "EveningStar"
@@ -4508,9 +4540,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 76.2 31.75 0)
-		(mirror y)
+		(lib_id "Device:C")
+		(at 133.35 57.15 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4518,31 +4549,30 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d1173737-7760-4ce5-9b73-612e02326771")
-		(property "Reference" "C10"
-			(at 72.39 29.5909 0)
+		(fields_autoplaced yes)
+		(uuid "b700f21c-a100-49ed-92a6-da58acc36da7")
+		(property "Reference" "C7"
+			(at 133.35 49.53 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "2.2uF"
-			(at 72.39 32.1309 0)
+		(property "Value" "0.1uF"
+			(at 133.35 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 75.2348 35.56 0)
+			(at 137.16 56.1848 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4553,7 +4583,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 76.2 31.75 0)
+			(at 133.35 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4563,8 +4593,8 @@
 				)
 			)
 		)
-		(property "Description" "X7R"
-			(at 76.2 31.75 0)
+		(property "Description" "X7R Ceramic 16V"
+			(at 133.35 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4575,23 +4605,24 @@
 			)
 		)
 		(pin "2"
-			(uuid "4d5d6571-f18d-48c4-b3e0-ff058cf28115")
+			(uuid "8652e6f8-7afd-404d-9f6e-8fca03576e06")
 		)
 		(pin "1"
-			(uuid "0b0b7a09-f1bf-4e4c-9bf6-cd1777a3dda5")
+			(uuid "4112a687-96e5-401a-a277-fa4291fb3f92")
 		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "C10")
+					(reference "C7")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:D_TVS")
-		(at 46.99 31.75 90)
+		(lib_id "Device:R")
+		(at 99.06 97.79 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4599,32 +4630,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e348266b-eae5-45b8-9334-290692c3e4a1")
-		(property "Reference" "D8"
-			(at 49.53 30.4799 90)
+		(uuid "b9021978-a89b-408d-873c-df524a1bc71b")
+		(property "Reference" "R8"
+			(at 96.52 96.5199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "SMAJ28CA"
-			(at 49.53 33.0199 90)
+		(property "Value" "34.8K"
+			(at 96.52 99.0599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 46.99 31.75 0)
+			(at 100.838 97.79 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4635,7 +4665,404 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 46.99 31.75 0)
+			(at 99.06 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 99.06 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4b070ed3-26b8-470f-b6b8-db043e008d44")
+		)
+		(pin "2"
+			(uuid "21017171-5651-453e-8ea1-6ee07d7e860e")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 78.74 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c202fa06-15a4-4ad5-87b8-696a391fa635")
+		(property "Reference" "TP9"
+			(at 81.28 51.3079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 81.28 53.8479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 78.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b269e5d5-2707-422b-89db-1638d2c69436")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "TP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 170.18 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdc8cea2-39dc-47a6-91a7-b182d8d46999")
+		(property "Reference" "TP7"
+			(at 172.72 57.6579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 172.72 60.1979 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 175.26 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 170.18 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "99f2eeb1-583d-47fc-a5ba-4bad9780cb37")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 144.78 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dded534f-9156-4f52-8f9f-18c44ae04146")
+		(property "Reference" "TP10"
+			(at 147.32 76.7079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 147.32 79.2479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 144.78 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b08ba6ac-61a7-4adf-a734-8001d9a630c8")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "TP10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 212.09 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "df7372d9-6204-40f4-83bf-03be2a66e32c")
+		(property "Reference" "#FLG02"
+			(at 212.09 60.325 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 212.09 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 212.09 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8c69cf2a-c388-4a7b-ad52-e9ed19ce9d1d")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 46.99 62.23 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e348266b-eae5-45b8-9334-290692c3e4a1")
+		(property "Reference" "D8"
+			(at 49.53 60.9599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SMAJ28CA"
+			(at 49.53 63.4999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4646,7 +5073,7 @@
 			)
 		)
 		(property "Description" "Bidirectional transient-voltage-suppression diode"
-			(at 46.99 31.75 0)
+			(at 46.99 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4673,7 +5100,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 185.42 31.75 0)
+		(at 99.06 72.39 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4682,9 +5109,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f1d71ce4-53e3-4617-b3e8-d7d8121fb65b")
-		(property "Reference" "#PWR023"
-			(at 185.42 35.56 0)
+		(uuid "e7e27c92-d57d-41e5-add1-485c8f7a774e")
+		(property "Reference" "#PWR029"
+			(at 99.06 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4695,7 +5122,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 185.42 26.67 0)
+			(at 99.06 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4705,7 +5132,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 185.42 31.75 0)
+			(at 99.06 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4716,7 +5143,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 31.75 0)
+			(at 99.06 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4727,7 +5154,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 185.42 31.75 0)
+			(at 99.06 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4738,20 +5165,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a0d1b21-8f12-47bf-bd59-9c6d1c5ac264")
+			(uuid "3081e337-d00f-4fbb-877a-d37d370e6b83")
 		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "#PWR023")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:Fuse")
-		(at 41.91 26.67 90)
+		(lib_id "power:GND")
+		(at 138.43 73.66 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4760,9 +5187,10 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f8c4fe63-951c-4b5d-b3d8-967618d0c293")
-		(property "Reference" "F3"
-			(at 41.91 20.32 90)
+		(uuid "f55eebf6-354b-469b-be09-f261d1a67772")
+		(property "Reference" "#PWR028"
+			(at 138.43 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4771,8 +5199,8 @@
 				)
 			)
 		)
-		(property "Value" "1A"
-			(at 41.91 22.86 90)
+		(property "Value" "GND"
+			(at 138.43 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4782,7 +5210,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 28.448 90)
+			(at 138.43 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4793,7 +5221,84 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 41.91 26.67 0)
+			(at 138.43 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 138.43 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "606bb4eb-efe4-4e03-ac34-5009ae232952")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 41.91 57.15 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f8c4fe63-951c-4b5d-b3d8-967618d0c293")
+		(property "Reference" "F3"
+			(at 41.91 50.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A"
+			(at 41.91 53.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 58.928 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4804,7 +5309,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 41.91 26.67 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4824,88 +5329,6 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
 					(reference "F3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 96.52 67.31 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fde54b7c-e5db-4427-99ca-abd778e08669")
-		(property "Reference" "R8"
-			(at 93.98 66.0399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "34.8K"
-			(at 93.98 68.5799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 98.298 67.31 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 96.52 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "51215348-6466-485b-8e17-81bc46be50d8")
-		)
-		(pin "2"
-			(uuid "99cee67c-5215-4c22-b3f2-f9d279b0e614")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "R8")
 					(unit 1)
 				)
 			)
