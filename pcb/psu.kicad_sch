@@ -7374,7 +7374,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "3V3"
 			(at 201.93 55.1179 0)
 			(show_name no)
 			(do_not_autoplace no)

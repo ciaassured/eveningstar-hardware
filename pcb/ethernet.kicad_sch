@@ -12924,7 +12924,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "31513e2d-3a67-4b84-9f1d-3ee2563e0f82")
 		(property "Reference" "C29"
 			(at 151.13 111.7599 0)
