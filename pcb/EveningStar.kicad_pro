@@ -69,7 +69,13 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -203,7 +209,11 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.2,
+        0.5
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -230,7 +240,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -900,7 +915,7 @@
           "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "TP",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -948,7 +963,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "#FLG1-8,X1,SW1-6,Q1-2,CN1,J1-5,J7,U1-11,D1-13,C1-36,Y1,#PWR1-69,TP1-11,R1-58,F1-4,RJ1,L1-3,H1,S1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

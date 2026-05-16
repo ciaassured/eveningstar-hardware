@@ -7811,7 +7811,7 @@
 		)
 	)
 	(junction
-		(at 100.33 170.18)
+		(at 106.68 170.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "002c188b-f6f8-4965-82ab-4f38f85c141c")
@@ -7827,12 +7827,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "08618e7b-1a92-4b19-b226-88998ec9f2a7")
-	)
-	(junction
-		(at 57.15 48.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0f59edf5-f1d8-4d03-a707-e09e10e17fac")
 	)
 	(junction
 		(at 124.46 99.06)
@@ -7853,19 +7847,13 @@
 		(uuid "22807a83-0875-46c2-8fe5-ab765c9aca49")
 	)
 	(junction
-		(at 57.15 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2868eb87-684f-480f-b064-a75b3322c81a")
-	)
-	(junction
 		(at 100.33 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2e43b981-4116-40ca-b8b8-248781208593")
 	)
 	(junction
-		(at 115.57 170.18)
+		(at 121.92 170.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "303ab0b0-9c1f-4dd3-950f-f6956a675d5b")
@@ -7883,7 +7871,13 @@
 		(uuid "388b233c-d6f4-4a66-870b-eabdee3aa575")
 	)
 	(junction
-		(at 255.27 44.45)
+		(at 54.61 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3b289524-615a-469a-a423-23935e9783bf")
+	)
+	(junction
+		(at 265.43 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4bacba6f-6d19-480c-b4cf-cbb9bef9af54")
@@ -7895,10 +7889,28 @@
 		(uuid "5034bcd0-f760-469f-82d4-1e49c50f130a")
 	)
 	(junction
-		(at 255.27 55.88)
+		(at 265.43 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6301c28c-42d1-47f8-bfa2-6e65fbbc7bb4")
+	)
+	(junction
+		(at 161.29 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "655b660f-6c87-4837-90d6-2ffdd3765a01")
+	)
+	(junction
+		(at 54.61 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "690ccbb4-e80a-4f37-8676-d9d8fcd13bd9")
+	)
+	(junction
+		(at 54.61 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ab082a3-a836-4d34-8fe8-aa0d01516bd4")
 	)
 	(junction
 		(at 49.53 170.18)
@@ -7925,13 +7937,13 @@
 		(uuid "86844dbf-aeb9-43db-b8d8-7675486e052a")
 	)
 	(junction
-		(at 100.33 180.34)
+		(at 106.68 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "90844d25-6b1e-4d39-b0b0-f5e4b653e37a")
 	)
 	(junction
-		(at 259.08 58.42)
+		(at 269.24 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "99480dc2-b105-4c91-adc4-b34da311d6b3")
@@ -7961,6 +7973,12 @@
 		(uuid "b1a4b444-0b2d-4b9f-924f-879a6bc42ebc")
 	)
 	(junction
+		(at 250.19 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c0756cb1-fb4b-4db6-85a2-a1e8553a7a25")
+	)
+	(junction
 		(at 179.07 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7979,6 +7997,12 @@
 		(uuid "d85ab79d-2a3b-4770-a9c8-1c74559edfd6")
 	)
 	(junction
+		(at 189.23 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8afc762-f127-49cb-8afc-521d5564d7ee")
+	)
+	(junction
 		(at 142.24 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7991,13 +8015,19 @@
 		(uuid "e376b751-8309-4000-aacf-99e41ef3d301")
 	)
 	(junction
+		(at 250.19 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6930c3e-b53e-4d8a-b660-9ed092724608")
+	)
+	(junction
 		(at 48.26 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "efacf115-1293-4b32-b47b-566a9c34183a")
 	)
 	(junction
-		(at 90.17 180.34)
+		(at 96.52 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f42dba1c-c443-43e7-a2c4-9874dcb857f3")
@@ -8038,17 +8068,17 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 48.26) (xy 67.31 48.26)
+			(xy 189.23 55.88) (xy 210.82 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "01ab70cf-260f-4ebf-83dc-ed7750a59d55")
+		(uuid "086c841f-e6cf-4a55-848c-36e833e2ba22")
 	)
 	(wire
 		(pts
-			(xy 255.27 55.88) (xy 255.27 53.34)
+			(xy 265.43 55.88) (xy 265.43 53.34)
 		)
 		(stroke
 			(width 0)
@@ -8065,6 +8095,16 @@
 			(type default)
 		)
 		(uuid "08e60d3e-757f-4a4c-a45f-73d34289ea0b")
+	)
+	(wire
+		(pts
+			(xy 121.92 170.18) (xy 132.08 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09afa5b6-f60e-493f-aedf-22b49bd4ef21")
 	)
 	(wire
 		(pts
@@ -8168,6 +8208,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 55.88) (xy 73.66 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b459f77-3b95-41bb-9535-7095492596aa")
+	)
+	(wire
+		(pts
 			(xy 100.33 55.88) (xy 100.33 85.09)
 		)
 		(stroke
@@ -8178,7 +8228,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 180.34) (xy 100.33 179.07)
+			(xy 106.68 180.34) (xy 106.68 179.07)
 		)
 		(stroke
 			(width 0)
@@ -8188,7 +8238,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 43.18) (xy 255.27 44.45)
+			(xy 265.43 43.18) (xy 265.43 44.45)
 		)
 		(stroke
 			(width 0)
@@ -8228,7 +8278,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 170.18) (xy 100.33 170.18)
+			(xy 99.06 170.18) (xy 106.68 170.18)
 		)
 		(stroke
 			(width 0)
@@ -8248,6 +8298,16 @@
 	)
 	(wire
 		(pts
+			(xy 250.19 55.88) (xy 265.43 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32b10ced-65d9-494c-9bfa-da393a7f914c")
+	)
+	(wire
+		(pts
 			(xy 207.01 60.96) (xy 210.82 60.96)
 		)
 		(stroke
@@ -8258,7 +8318,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 58.42) (xy 57.15 58.42)
+			(xy 48.26 58.42) (xy 54.61 58.42)
 		)
 		(stroke
 			(width 0)
@@ -8318,13 +8378,23 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 55.88) (xy 255.27 55.88)
+			(xy 231.14 55.88) (xy 250.19 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "410d862b-f032-4ea2-b581-c636689f61c7")
+	)
+	(wire
+		(pts
+			(xy 54.61 48.26) (xy 67.31 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44330cb1-ed71-40af-98ad-4fe767c15967")
 	)
 	(wire
 		(pts
@@ -8398,7 +8468,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 55.88) (xy 262.89 55.88)
+			(xy 265.43 55.88) (xy 273.05 55.88)
 		)
 		(stroke
 			(width 0)
@@ -8418,7 +8488,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 180.34) (xy 115.57 180.34)
+			(xy 106.68 180.34) (xy 121.92 180.34)
 		)
 		(stroke
 			(width 0)
@@ -8448,7 +8518,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 55.88) (xy 73.66 55.88)
+			(xy 46.99 55.88) (xy 54.61 55.88)
 		)
 		(stroke
 			(width 0)
@@ -8458,7 +8528,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 171.45) (xy 115.57 170.18)
+			(xy 121.92 171.45) (xy 121.92 170.18)
 		)
 		(stroke
 			(width 0)
@@ -8468,7 +8538,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 168.91) (xy 115.57 170.18)
+			(xy 121.92 168.91) (xy 121.92 170.18)
 		)
 		(stroke
 			(width 0)
@@ -8498,7 +8568,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 44.45) (xy 259.08 44.45)
+			(xy 265.43 44.45) (xy 269.24 44.45)
 		)
 		(stroke
 			(width 0)
@@ -8545,16 +8615,6 @@
 			(type default)
 		)
 		(uuid "6439cb70-1bf3-4132-a80b-e73ca023d571")
-	)
-	(wire
-		(pts
-			(xy 57.15 58.42) (xy 67.31 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6529a9b3-bcf4-4f25-824a-16b3be0c92be")
 	)
 	(wire
 		(pts
@@ -8638,7 +8698,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 48.26) (xy 57.15 48.26)
+			(xy 48.26 48.26) (xy 54.61 48.26)
 		)
 		(stroke
 			(width 0)
@@ -8648,7 +8708,17 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 58.42) (xy 259.08 58.42)
+			(xy 250.19 58.42) (xy 269.24 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78a63127-5414-4d36-a14d-8776bd24191f")
+	)
+	(wire
+		(pts
+			(xy 231.14 58.42) (xy 250.19 58.42)
 		)
 		(stroke
 			(width 0)
@@ -8658,7 +8728,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 99.06) (xy 142.24 99.06)
+			(xy 195.58 99.06) (xy 161.29 99.06)
 		)
 		(stroke
 			(width 0)
@@ -8778,7 +8848,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 180.34) (xy 115.57 179.07)
+			(xy 121.92 180.34) (xy 121.92 179.07)
 		)
 		(stroke
 			(width 0)
@@ -8788,7 +8858,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 170.18) (xy 87.63 168.91)
+			(xy 93.98 170.18) (xy 93.98 168.91)
 		)
 		(stroke
 			(width 0)
@@ -8808,7 +8878,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 55.88) (xy 210.82 55.88)
+			(xy 179.07 55.88) (xy 189.23 55.88)
 		)
 		(stroke
 			(width 0)
@@ -8848,7 +8918,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 168.91) (xy 90.17 180.34)
+			(xy 96.52 168.91) (xy 96.52 180.34)
 		)
 		(stroke
 			(width 0)
@@ -8868,7 +8938,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 45.72) (xy 255.27 44.45)
+			(xy 265.43 45.72) (xy 265.43 44.45)
 		)
 		(stroke
 			(width 0)
@@ -8878,7 +8948,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 170.18) (xy 87.63 170.18)
+			(xy 69.85 170.18) (xy 93.98 170.18)
 		)
 		(stroke
 			(width 0)
@@ -8918,7 +8988,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 53.34) (xy 259.08 58.42)
+			(xy 269.24 53.34) (xy 269.24 58.42)
 		)
 		(stroke
 			(width 0)
@@ -8938,7 +9008,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 58.42) (xy 262.89 58.42)
+			(xy 269.24 58.42) (xy 273.05 58.42)
 		)
 		(stroke
 			(width 0)
@@ -8955,6 +9025,16 @@
 			(type default)
 		)
 		(uuid "bdf47163-c034-48ab-85d7-9bc96349e9b9")
+	)
+	(wire
+		(pts
+			(xy 132.08 170.18) (xy 132.08 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf120c24-e5e1-43da-b8b3-a5c7bb420274")
 	)
 	(wire
 		(pts
@@ -8978,6 +9058,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 180.34) (xy 96.52 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c29eba52-bd9e-4fe6-863f-9b7e40bb3843")
+	)
+	(wire
+		(pts
 			(xy 124.46 99.06) (xy 125.73 99.06)
 		)
 		(stroke
@@ -8988,7 +9078,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 170.18) (xy 100.33 171.45)
+			(xy 106.68 170.18) (xy 106.68 171.45)
 		)
 		(stroke
 			(width 0)
@@ -8998,7 +9088,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 170.18) (xy 92.71 168.91)
+			(xy 99.06 170.18) (xy 99.06 168.91)
 		)
 		(stroke
 			(width 0)
@@ -9088,17 +9178,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 180.34) (xy 90.17 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7239d19-f8df-4126-af88-d3d72970a085")
-	)
-	(wire
-		(pts
-			(xy 90.17 180.34) (xy 100.33 180.34)
+			(xy 96.52 180.34) (xy 106.68 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9168,7 +9248,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 44.45) (xy 259.08 45.72)
+			(xy 269.24 44.45) (xy 269.24 45.72)
 		)
 		(stroke
 			(width 0)
@@ -9288,7 +9368,27 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 170.18) (xy 115.57 170.18)
+			(xy 161.29 99.06) (xy 142.24 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb06edb8-2fef-4ffd-ab71-6ed5deebe37b")
+	)
+	(wire
+		(pts
+			(xy 54.61 58.42) (xy 67.31 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef73a186-1e72-43a6-9336-af1d49669897")
+	)
+	(wire
+		(pts
+			(xy 106.68 170.18) (xy 121.92 170.18)
 		)
 		(stroke
 			(width 0)
@@ -9358,7 +9458,7 @@
 	)
 	(global_label "MB_READ"
 		(shape output)
-		(at 262.89 55.88 0)
+		(at 273.05 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9368,7 +9468,7 @@
 		)
 		(uuid "0e55a5b5-8534-4698-90c1-b47cda766e49")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 274.3418 55.88 0)
+			(at 284.5018 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9382,7 +9482,7 @@
 	)
 	(global_label "MB_WRITE"
 		(shape input)
-		(at 262.89 58.42 0)
+		(at 273.05 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9392,7 +9492,7 @@
 		)
 		(uuid "ece9bb61-b7a7-43d6-8c62-259e4b4dd658")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 275.007 58.42 0)
+			(at 285.167 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9416,7 +9516,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0342b6b1-a9d3-43a8-8ab8-b77577240825")
-		(property "Reference" "R7"
+		(property "Reference" "R1"
 			(at 102.87 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9699,7 +9799,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R7")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -9728,7 +9828,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "GND_ISO"
 			(at 73.66 186.1819 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9940,7 +10040,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "BAT_ISO_PROT"
 			(at 72.39 163.0679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10063,7 +10163,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0cab7d84-ccdc-4af1-a8a0-c2bb2d35e269")
-		(property "Reference" "R5"
+		(property "Reference" "R6"
 			(at 127 105.4099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10346,7 +10446,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R5")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -10354,7 +10454,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 115.57 168.91 0)
+		(at 121.92 168.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10365,7 +10465,7 @@
 		(fields_autoplaced yes)
 		(uuid "17a79c68-d4d5-4516-919a-773c572c6018")
 		(property "Reference" "#PWR010"
-			(at 115.57 172.72 0)
+			(at 121.92 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10376,7 +10476,7 @@
 			)
 		)
 		(property "Value" "+5V_ISO"
-			(at 115.57 163.83 0)
+			(at 121.92 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10386,7 +10486,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 168.91 0)
+			(at 121.92 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10397,7 +10497,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 168.91 0)
+			(at 121.92 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10408,7 +10508,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 115.57 168.91 0)
+			(at 121.92 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10453,7 +10553,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "BUS_PROT"
 			(at 102.87 44.9579 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10576,7 +10676,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a28bba2-a253-4126-8059-bff7a2cdb6f2")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR023"
 			(at 259.08 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -10636,7 +10736,275 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR022")
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 161.29 99.06 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1b8b95b9-2736-4ce5-8bda-112f38561f41")
+		(property "Reference" "TP15"
+			(at 163.83 94.4879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TX_MB"
+			(at 163.83 97.0279 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:TEST-TH_BD2.54-P1.4_BLACK"
+			(at 166.37 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 161.29 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5199801"
+			(at 161.29 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 161.29 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 161.29 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 161.29 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RH-5001"
+			(at 161.29 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "616989cb-bc2a-4664-89ec-eed413600589")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "TP15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 189.23 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24e90c44-b6d7-46dd-bce7-96b71e1ba33b")
+		(property "Reference" "TP14"
+			(at 191.77 51.3079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RX_MB"
+			(at 191.77 53.8479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:TEST-TH_BD2.54-P1.4_BLACK"
+			(at 194.31 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 189.23 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5199801"
+			(at 189.23 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 189.23 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 189.23 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 189.23 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RH-5001"
+			(at 189.23 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "35385e45-1550-46a8-b065-eb3dc3f4fd14")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "TP14")
 					(unit 1)
 				)
 			)
@@ -10665,7 +11033,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "RX_DIV"
 			(at 129.54 44.9579 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10771,6 +11139,274 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
 					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 132.08 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2babe8ea-1d1f-4cdb-aeae-fac51f30c829")
+		(property "Reference" "TP13"
+			(at 134.62 164.3379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5V_ISO"
+			(at 134.62 166.8779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:TEST-TH_BD2.54-P1.4_BLACK"
+			(at 137.16 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 132.08 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5199801"
+			(at 132.08 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 132.08 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 132.08 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 132.08 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RH-5001"
+			(at 132.08 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19047c15-4953-4d3c-b34c-169198ea2eab")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "TP13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 54.61 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2bc6affd-a27e-47da-9507-de1751f52bbc")
+		(property "Reference" "TP12"
+			(at 57.15 51.3079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BUS"
+			(at 57.15 53.8479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:TEST-TH_BD2.54-P1.4_BLACK"
+			(at 59.69 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 54.61 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5199801"
+			(at 54.61 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 54.61 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 54.61 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 54.61 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RH-5001"
+			(at 54.61 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "87088f98-aa45-4fbb-a2c3-fae36c2d695e")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "TP12")
 					(unit 1)
 				)
 			)
@@ -10933,6 +11569,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 242.57 46.99 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2f976415-cb72-49f4-b65d-3ff40b59e629")
+		(property "Reference" "#PWR019"
+			(at 242.57 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 242.57 52.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 242.57 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "044b6808-8438-4855-8c5c-54015f4458a6")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,100kΩ")
 		(at 179.07 50.8 0)
 		(unit 1)
@@ -10944,7 +11658,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "30bc8e1c-16c7-4283-8ce4-24da1225cedf")
-		(property "Reference" "R9"
+		(property "Reference" "R7"
 			(at 181.61 50.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11227,7 +11941,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R9")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -11245,7 +11959,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "30fcc27f-74f2-4bef-90dc-130bff3d95fd")
-		(property "Reference" "C35"
+		(property "Reference" "C1"
 			(at 59.69 172.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11496,7 +12210,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "C35")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -11843,7 +12557,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3bb4e8a5-d276-4157-b96e-4f28a1974c95")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR020"
 			(at 242.57 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -11903,7 +12617,141 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR019")
+					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 250.19 58.42 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4742aaf0-c043-40a1-b7d6-ed34cec915fa")
+		(property "Reference" "TP16"
+			(at 252.73 60.4519 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TX_MCU"
+			(at 252.73 62.9919 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "EasyEDA:TEST-TH_BD2.54-P1.4_BLACK"
+			(at 245.11 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 250.19 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5199801"
+			(at 250.19 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 250.19 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 250.19 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 250.19 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RH-5001"
+			(at 250.19 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8d7f8db9-e128-4b60-a1ec-c17678ce371b")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "TP16")
 					(unit 1)
 				)
 			)
@@ -11932,7 +12780,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "BAT_ISO"
 			(at 39.37 149.0979 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12480,7 +13328,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "585681e9-489a-4c86-aed6-5ae9c7dde8a7")
-		(property "Reference" "D11"
+		(property "Reference" "D4"
 			(at 127 112.9346 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12491,7 +13339,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Red"
+		(property "Value" "TX"
 			(at 127 115.4747 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12797,7 +13645,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "D11")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -12893,7 +13741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5ecea5e5-a465-40e4-b2ce-3d27c76a270b")
-		(property "Reference" "D2"
+		(property "Reference" "D1"
 			(at 31.75 173.9899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13221,7 +14069,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "D2")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -13410,7 +14258,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62bfd47c-38e9-42d4-82de-fd4046a0aaa8")
-		(property "Reference" "C36"
+		(property "Reference" "C6"
 			(at 245.11 40.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13661,7 +14509,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "C36")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -13669,7 +14517,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 255.27 43.18 0)
+		(at 265.43 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13679,8 +14527,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "69286d2a-223d-4ae6-89b4-73cd5e8ab6c4")
-		(property "Reference" "#PWR020"
-			(at 255.27 46.99 0)
+		(property "Reference" "#PWR021"
+			(at 265.43 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13691,7 +14539,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 255.27 38.1 0)
+			(at 265.43 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13701,7 +14549,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 255.27 43.18 0)
+			(at 265.43 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13712,7 +14560,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 255.27 43.18 0)
+			(at 265.43 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13723,7 +14571,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 255.27 43.18 0)
+			(at 265.43 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13739,85 +14587,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 242.57 46.99 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6a46d4e8-b100-4468-822b-50f795979be6")
-		(property "Reference" "#PWR069"
-			(at 242.57 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND_ISO"
-			(at 242.57 52.07 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 242.57 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 242.57 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 242.57 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "72e8da01-cb02-4ee5-8c62-4e3f954cb91f")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR069")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -13835,7 +14605,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e0c7a61-e367-41d0-bb47-01109bb2e83c")
-		(property "Reference" "F4"
+		(property "Reference" "F2"
 			(at 78.74 49.53 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13963,7 +14733,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "F4")
+					(reference "F2")
 					(unit 1)
 				)
 			)
@@ -13971,7 +14741,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0603,100nF")
-		(at 100.33 175.26 0)
+		(at 106.68 175.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13981,8 +14751,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "736b09aa-fe16-4edb-a5d7-31aa1c9ba659")
-		(property "Reference" "C4"
-			(at 102.87 172.7199 0)
+		(property "Reference" "C3"
+			(at 109.22 172.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13993,7 +14763,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 102.87 175.26 0)
+			(at 109.22 175.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14004,7 +14774,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_0603"
-			(at 98.552 175.26 90)
+			(at 104.902 175.26 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14015,7 +14785,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14026,7 +14796,7 @@
 			)
 		)
 		(property "Description" "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14037,7 +14807,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14048,7 +14818,7 @@
 			)
 		)
 		(property "Stock" "70324515"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14059,7 +14829,7 @@
 			)
 		)
 		(property "Price" "0.006USD"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14070,7 +14840,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14081,7 +14851,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14092,7 +14862,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14103,7 +14873,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14114,7 +14884,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14125,7 +14895,7 @@
 			)
 		)
 		(property "Manufacturer" "YAGEO"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14136,7 +14906,7 @@
 			)
 		)
 		(property "Part" "CC0603KRX7R9BB104"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14147,7 +14917,7 @@
 			)
 		)
 		(property "Voltage Rated" "50V"
-			(at 102.87 177.8 0)
+			(at 109.22 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14158,7 +14928,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14169,7 +14939,7 @@
 			)
 		)
 		(property "Capacitance" "100nF"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14180,7 +14950,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14191,7 +14961,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14202,7 +14972,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14213,7 +14983,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 100.33 175.26 0)
+			(at 106.68 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14232,7 +15002,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "C4")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -14250,7 +15020,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "759c7e3c-c7de-4501-a25a-7ffe8e5da68c")
-		(property "Reference" "C1"
+		(property "Reference" "C2"
 			(at 72.39 172.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14501,7 +15271,141 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "C1")
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 250.19 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7b537d4b-e161-4c0a-8b65-ab6a42750c48")
+		(property "Reference" "TP17"
+			(at 252.73 51.3079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RX_MCU"
+			(at 252.73 53.8479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:TEST-TH_BD2.54-P1.4_BLACK"
+			(at 255.27 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 255.27 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 250.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C5199801"
+			(at 250.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 250.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 250.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 250.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RH-5001"
+			(at 250.19 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "705578d6-1072-42d5-82f5-89e7e7d18172")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "TP17")
 					(unit 1)
 				)
 			)
@@ -14677,7 +15581,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8137d5bb-a1e1-4b95-a5b6-97822b723cde")
-		(property "Reference" "R10"
+		(property "Reference" "R3"
 			(at 114.3 105.4099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14960,7 +15864,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R10")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -15134,7 +16038,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8a9e2661-32ec-46e1-84b2-0d9e41de6bbe")
-		(property "Reference" "Q2"
+		(property "Reference" "Q1"
 			(at 95.25 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15267,7 +16171,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "Q2")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -15363,7 +16267,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f11569e-a754-47c5-b342-840aa09fd731")
-		(property "Reference" "U11"
+		(property "Reference" "U3"
 			(at 220.98 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15488,7 +16392,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "U11")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -15584,7 +16488,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1885de3-5467-4e04-a0d8-62e23a630535")
-		(property "Reference" "D4"
+		(property "Reference" "D6"
 			(at 181.61 68.4846 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15595,7 +16499,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Green"
+		(property "Value" "RX"
 			(at 181.61 71.0247 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15802,7 +16706,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "D4")
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -15820,7 +16724,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a527043a-9314-422c-8c74-e9e278d75cce")
-		(property "Reference" "D6"
+		(property "Reference" "D3"
 			(at 87.63 60.7049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15950,7 +16854,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "D6")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -15958,7 +16862,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 57.15 48.26 0)
+		(at 54.61 48.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15969,7 +16873,7 @@
 		(fields_autoplaced yes)
 		(uuid "a6704e1b-3dd7-4203-a80b-606014a7e81b")
 		(property "Reference" "#FLG02"
-			(at 57.15 46.355 0)
+			(at 54.61 46.355 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15980,7 +16884,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 57.15 43.18 0)
+			(at 54.61 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15990,7 +16894,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 48.26 0)
+			(at 54.61 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16001,7 +16905,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 48.26 0)
+			(at 54.61 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16012,7 +16916,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 57.15 48.26 0)
+			(at 54.61 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16046,7 +16950,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7585925-1ba1-48f9-8b05-0024794d5be8")
-		(property "Reference" "R6"
+		(property "Reference" "R8"
 			(at 181.61 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16329,7 +17233,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R6")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -16415,7 +17319,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,10kΩ")
-		(at 255.27 49.53 0)
+		(at 265.43 49.53 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -16425,8 +17329,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b6bbb524-7a55-4f5f-b745-cf4a06b2e864")
-		(property "Reference" "R49"
-			(at 252.73 49.5299 0)
+		(property "Reference" "R9"
+			(at 262.89 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16437,7 +17341,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 255.27 49.53 90)
+			(at 265.43 49.53 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -16447,7 +17351,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 257.048 49.53 90)
+			(at 267.208 49.53 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16458,7 +17362,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16469,7 +17373,7 @@
 			)
 		)
 		(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 10kΩ 0603 Chip Resistor - Surface Mount ROHS"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16480,7 +17384,7 @@
 			)
 		)
 		(property "LCSC" "C25804"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16491,7 +17395,7 @@
 			)
 		)
 		(property "Stock" "51181774"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16502,7 +17406,7 @@
 			)
 		)
 		(property "Price" "0.004USD"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16513,7 +17417,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16524,7 +17428,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16535,7 +17439,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16546,7 +17450,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16557,7 +17461,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16568,7 +17472,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16579,7 +17483,7 @@
 			)
 		)
 		(property "Part" "0603WAF1002T5E"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16590,7 +17494,7 @@
 			)
 		)
 		(property "Resistance" "10kΩ"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16601,7 +17505,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16612,7 +17516,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16623,7 +17527,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16634,7 +17538,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16645,7 +17549,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16656,7 +17560,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "±100ppm/°C"
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16667,7 +17571,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16678,7 +17582,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16689,7 +17593,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 255.27 49.53 0)
+			(at 265.43 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16708,7 +17612,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R49")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -16882,7 +17786,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c61a7d79-1f73-4bd2-8621-0a87b1634692")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR022"
 			(at 259.08 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16942,7 +17846,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR021")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -17365,7 +18269,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6f34487-a753-4a33-bf30-70aae0b7cd87")
-		(property "Reference" "C34"
+		(property "Reference" "C7"
 			(at 245.11 130.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17616,7 +18520,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "C34")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -17634,7 +18538,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e96e1b67-4742-46ae-b07f-97943afaae80")
-		(property "Reference" "R1"
+		(property "Reference" "R2"
 			(at 106.68 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17916,7 +18820,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R1")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -17924,7 +18828,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0603,10uF,(2)")
-		(at 115.57 175.26 0)
+		(at 121.92 175.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17934,8 +18838,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea0c3790-7c57-4d31-9343-095d4463f9d3")
-		(property "Reference" "C2"
-			(at 118.11 172.7199 0)
+		(property "Reference" "C4"
+			(at 124.46 172.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17946,7 +18850,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 118.11 175.26 0)
+			(at 124.46 175.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17957,7 +18861,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_0603"
-			(at 113.792 175.26 90)
+			(at 120.142 175.26 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17968,7 +18872,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A106MA8NRNC_C96446.pdf"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17979,7 +18883,7 @@
 			)
 		)
 		(property "Description" "25V 10uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17990,7 +18894,7 @@
 			)
 		)
 		(property "LCSC" "C96446"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18001,7 +18905,7 @@
 			)
 		)
 		(property "Stock" "3388297"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18012,7 +18916,7 @@
 			)
 		)
 		(property "Price" "0.021USD"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18023,7 +18927,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18034,7 +18938,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18045,7 +18949,7 @@
 			)
 		)
 		(property "Attrition Qty" "8"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18056,7 +18960,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18067,7 +18971,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18078,7 +18982,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18089,7 +18993,7 @@
 			)
 		)
 		(property "Part" "CL10A106MA8NRNC"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18100,7 +19004,7 @@
 			)
 		)
 		(property "Voltage Rated" "25V"
-			(at 118.11 177.8 0)
+			(at 124.46 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18111,7 +19015,7 @@
 			)
 		)
 		(property "Tolerance" "±20%"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18122,7 +19026,7 @@
 			)
 		)
 		(property "Capacitance" "10uF"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18133,7 +19037,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18144,7 +19048,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18155,7 +19059,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18166,7 +19070,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 115.57 175.26 0)
+			(at 121.92 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18185,7 +19089,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "C2")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -18203,7 +19107,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed43d1e5-a430-402c-a64c-27f5970c6b59")
-		(property "Reference" "D5"
+		(property "Reference" "D2"
 			(at 37.1475 163.83 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18474,7 +19378,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "D5")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -18492,7 +19396,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "edad3f14-9422-4a82-b644-c80b38b6dbd0")
-		(property "Reference" "R3"
+		(property "Reference" "R5"
 			(at 119.38 95.25 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18774,7 +19678,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R3")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -18782,7 +19686,7 @@
 	)
 	(symbol
 		(lib_id "EasyEDA:AMS1117S-5.0")
-		(at 88.9 163.83 90)
+		(at 95.25 163.83 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18792,8 +19696,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eddfcd7e-5cbd-4616-9626-c43cb0c3754b")
-		(property "Reference" "U6"
-			(at 95.25 161.2899 90)
+		(property "Reference" "U1"
+			(at 101.6 161.2899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18804,7 +19708,7 @@
 			)
 		)
 		(property "Value" "AMS1117S-5.0"
-			(at 95.25 163.8299 90)
+			(at 101.6 163.8299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18815,7 +19719,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR"
-			(at 99.06 163.83 0)
+			(at 105.41 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18826,7 +19730,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Dropout-Regulators-LDO_JSMSEMI-AMS1117S-5-0_C917182.html"
-			(at 101.6 163.83 0)
+			(at 107.95 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18837,7 +19741,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 88.9 163.83 0)
+			(at 95.25 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18848,7 +19752,7 @@
 			)
 		)
 		(property "Manufacturer" "JSMSEMI(杰盛微)"
-			(at 104.14 163.83 0)
+			(at 110.49 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18859,7 +19763,7 @@
 			)
 		)
 		(property "MPN" "AMS1117S-5.0"
-			(at 106.68 163.83 0)
+			(at 113.03 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18870,7 +19774,7 @@
 			)
 		)
 		(property "LCSC Part" "C917182"
-			(at 109.22 163.83 0)
+			(at 115.57 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18881,7 +19785,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 88.9 163.83 90)
+			(at 95.25 163.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18892,7 +19796,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 88.9 163.83 90)
+			(at 95.25 163.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18903,7 +19807,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 88.9 163.83 90)
+			(at 95.25 163.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18925,7 +19829,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "U6")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -18933,7 +19837,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 57.15 58.42 180)
+		(at 54.61 58.42 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18944,7 +19848,7 @@
 		(fields_autoplaced yes)
 		(uuid "ef994858-c134-4f18-aa3c-3545ed622998")
 		(property "Reference" "#FLG03"
-			(at 57.15 60.325 0)
+			(at 54.61 60.325 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18955,7 +19859,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 57.15 63.5 0)
+			(at 54.61 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18965,7 +19869,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 58.42 0)
+			(at 54.61 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18976,7 +19880,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 58.42 0)
+			(at 54.61 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18987,7 +19891,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 57.15 58.42 0)
+			(at 54.61 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19192,7 +20096,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f39cfcef-9b88-476f-ab74-ecebdf261191")
-		(property "Reference" "D3"
+		(property "Reference" "D5"
 			(at 130.81 61.7199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19322,7 +20226,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "D3")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -19351,7 +20255,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "TX_GATE"
 			(at 114.3 89.4079 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19464,7 +20368,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,10kΩ")
-		(at 259.08 49.53 0)
+		(at 269.24 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19474,8 +20378,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f884b053-92e9-4c35-a30f-438bf382afed")
-		(property "Reference" "R48"
-			(at 261.62 49.5299 0)
+		(property "Reference" "R10"
+			(at 271.78 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19486,7 +20390,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 259.08 49.53 90)
+			(at 269.24 49.53 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -19496,7 +20400,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 257.302 49.53 90)
+			(at 267.462 49.53 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19507,7 +20411,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19518,7 +20422,7 @@
 			)
 		)
 		(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 10kΩ 0603 Chip Resistor - Surface Mount ROHS"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19529,7 +20433,7 @@
 			)
 		)
 		(property "LCSC" "C25804"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19540,7 +20444,7 @@
 			)
 		)
 		(property "Stock" "51181774"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19551,7 +20455,7 @@
 			)
 		)
 		(property "Price" "0.004USD"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19562,7 +20466,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19573,7 +20477,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19584,7 +20488,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19595,7 +20499,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19606,7 +20510,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19617,7 +20521,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19628,7 +20532,7 @@
 			)
 		)
 		(property "Part" "0603WAF1002T5E"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19639,7 +20543,7 @@
 			)
 		)
 		(property "Resistance" "10kΩ"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19650,7 +20554,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19661,7 +20565,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19672,7 +20576,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19683,7 +20587,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19694,7 +20598,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19705,7 +20609,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "±100ppm/°C"
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19716,7 +20620,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19727,7 +20631,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19738,7 +20642,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 259.08 49.53 0)
+			(at 269.24 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19757,7 +20661,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R48")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -19775,7 +20679,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f9063bc8-f75d-41cd-8089-e282be0250f2")
-		(property "Reference" "F2"
+		(property "Reference" "F1"
 			(at 30.48 157.4799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19905,7 +20809,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "F2")
+					(reference "F1")
 					(unit 1)
 				)
 			)
@@ -20094,7 +20998,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fced5326-9991-44d6-9f63-19f3a1a08bcf")
-		(property "Reference" "R2"
+		(property "Reference" "R4"
 			(at 115.57 62.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20377,7 +21281,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "R2")
+					(reference "R4")
 					(unit 1)
 				)
 			)

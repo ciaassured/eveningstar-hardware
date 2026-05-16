@@ -21,6 +21,7 @@ _autosave-*
 fp-info-cache
 ~*.lck
 \#auto_saved_files#
+_restore_backup_*
 
 # Netlist files (exported from Eeschema)
 *.net

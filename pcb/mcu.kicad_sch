@@ -7998,7 +7998,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0414042e-fb17-4d06-8e9a-535b4145fb81")
-		(property "Reference" "R50"
+		(property "Reference" "R17"
 			(at 60.96 167.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8281,7 +8281,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R50")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -8299,7 +8299,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11c25574-b69f-4ae9-be75-ea8690708ceb")
-		(property "Reference" "R21"
+		(property "Reference" "R26"
 			(at 245.11 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8581,7 +8581,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R21")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -8599,7 +8599,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "13138d34-8fc2-4578-ad30-b2b5c5774c52")
-		(property "Reference" "U7"
+		(property "Reference" "U8"
 			(at 198.9933 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8871,7 +8871,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "U7")
+					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -8889,7 +8889,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "161b3bf4-77f7-458f-bcae-67f5181b41d2")
-		(property "Reference" "R14"
+		(property "Reference" "R19"
 			(at 63.5 39.37 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9171,7 +9171,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R14")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -9189,7 +9189,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "26058c8c-971a-4a3e-8283-7ae731009c9d")
-		(property "Reference" "J7"
+		(property "Reference" "J2"
 			(at 34.29 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9331,7 +9331,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "J7")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -9349,7 +9349,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "26ba5ddd-765a-4042-9944-146aaead1a09")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR045"
 			(at 148.59 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -9409,7 +9409,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR043")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -9427,7 +9427,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27c734d4-f998-46d0-bc38-c0298805b9ca")
-		(property "Reference" "R19"
+		(property "Reference" "R16"
 			(at 38.1 142.2399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9710,7 +9710,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R19")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -9728,7 +9728,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "322bd6ee-e342-4525-9f79-712a994d1176")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR033"
 			(at 25.4 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -9788,7 +9788,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR034")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -9806,7 +9806,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "342a24aa-93ea-4971-96b2-a4c6487f6668")
-		(property "Reference" "C10"
+		(property "Reference" "C14"
 			(at 77.47 176.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10057,7 +10057,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "C10")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -10075,7 +10075,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34e76564-0323-474d-8adc-8731229a9ca5")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR049"
 			(at 196.85 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -10135,7 +10135,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR047")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -10153,7 +10153,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "35132bb8-f4d1-40ba-b4cb-7e5af1d8a941")
-		(property "Reference" "SW6"
+		(property "Reference" "SW3"
 			(at 166.37 68.5799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10289,7 +10289,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "SW6")
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -10307,7 +10307,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3a0d76b2-b2f4-4710-883a-4c3ad33d52b9")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR034"
 			(at 25.4 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -10367,7 +10367,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR035")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -10385,7 +10385,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d126a39-f4d9-4c2d-8e90-9dd90ce6b924")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR039"
 			(at 58.42 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -10445,7 +10445,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR037")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -10464,7 +10464,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4610c3d3-15d7-42e6-9b2b-bc74db511f99")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR032"
 			(at 22.86 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10524,7 +10524,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR036")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -10542,7 +10542,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46e2aa30-cf70-4061-8699-d8a9e507a5a8")
-		(property "Reference" "SW4"
+		(property "Reference" "SW1"
 			(at 64.77 177.7999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10678,7 +10678,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "SW4")
+					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -10696,7 +10696,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "47eafb95-6882-4930-8614-6f669252cc35")
-		(property "Reference" "R20"
+		(property "Reference" "R25"
 			(at 245.11 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10978,7 +10978,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R20")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -10996,7 +10996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5d1425dc-f0be-4231-8800-2199aeb13ad0")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR051"
 			(at 252.73 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -11056,7 +11056,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR049")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -11074,7 +11074,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "67c3d803-1347-4eb0-99ca-203ee02d0d20")
-		(property "Reference" "R22"
+		(property "Reference" "R27"
 			(at 245.11 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11356,7 +11356,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R22")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -11374,7 +11374,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "67f34ff3-dcb8-45a8-8de1-4bcb04fef9f0")
-		(property "Reference" "R54"
+		(property "Reference" "R29"
 			(at 262.89 85.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11657,7 +11657,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R54")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -11675,7 +11675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a1e7b28-b564-4b63-b87a-a887a212cc92")
-		(property "Reference" "R16"
+		(property "Reference" "R23"
 			(at 245.11 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11957,7 +11957,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R16")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -11975,7 +11975,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b902d7e-f499-4ec6-bf9f-8cab0b08df22")
-		(property "Reference" "C9"
+		(property "Reference" "C13"
 			(at 34.29 82.55 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12223,7 +12223,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "C9")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -12241,7 +12241,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7d11a6e6-abc4-42a1-b033-5e8fe7efae0c")
-		(property "Reference" "R53"
+		(property "Reference" "R28"
 			(at 255.27 85.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12524,7 +12524,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R53")
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -12542,7 +12542,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e465887-5e2b-4009-8bcc-f829e9d0e2b2")
-		(property "Reference" "#FLG07"
+		(property "Reference" "#FLG06"
 			(at 54.61 20.955 0)
 			(hide yes)
 			(show_name no)
@@ -12602,7 +12602,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#FLG07")
+					(reference "#FLG06")
 					(unit 1)
 				)
 			)
@@ -12620,7 +12620,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8ec850d9-54c2-46d7-9a27-be8556c7a677")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR040"
 			(at 58.42 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -12680,7 +12680,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR038")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -12697,7 +12697,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "998d3ce0-c973-4179-9af7-ba50a448525f")
-		(property "Reference" "U5"
+		(property "Reference" "U7"
 			(at 39.37 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12828,7 +12828,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "U5")
+					(reference "U7")
 					(unit 1)
 				)
 			)
@@ -12846,7 +12846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "abd07ad0-8506-4f12-a1c8-995c9e970fec")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR038"
 			(at 52.07 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -12906,7 +12906,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR068")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -12924,7 +12924,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "acb58b12-4c08-4940-bc36-e4bacf72e4a5")
-		(property "Reference" "SW5"
+		(property "Reference" "SW2"
 			(at 148.59 182.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13060,7 +13060,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "SW5")
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -13078,7 +13078,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "adb3a449-065e-4077-ae5c-7b7eff55384c")
-		(property "Reference" "R55"
+		(property "Reference" "R30"
 			(at 270.51 85.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13361,7 +13361,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R55")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -13379,7 +13379,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ae6c5d38-6f6b-43bb-bcb6-7cf222441979")
-		(property "Reference" "C11"
+		(property "Reference" "C12"
 			(at 22.86 175.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13630,7 +13630,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "C11")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -13648,7 +13648,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b7a87845-288b-45c8-8773-ee2e7ecb94bd")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR046"
 			(at 158.75 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -13708,7 +13708,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR044")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -13726,7 +13726,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8963fc7-580e-48ee-83b4-b0810b6b0639")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR043"
 			(at 137.16 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -13786,7 +13786,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR041")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -13804,7 +13804,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bffd8b74-6b2e-4506-8fc5-7309d726eece")
-		(property "Reference" "R17"
+		(property "Reference" "R24"
 			(at 245.11 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14086,7 +14086,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R17")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -14104,7 +14104,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2c94b1e-d605-4ab7-8713-8c5469db1a3f")
-		(property "Reference" "D13"
+		(property "Reference" "D11"
 			(at 110.49 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14240,7 +14240,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "D13")
+					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -14259,7 +14259,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2c98caf-95e9-4f09-8b15-574a958595a9")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR047"
 			(at 167.64 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -14319,7 +14319,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR045")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -14471,7 +14471,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c69e6550-05b2-4df1-9cf4-8b37beb76589")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR041"
 			(at 69.85 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -14531,7 +14531,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR039")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -14549,7 +14549,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c9b2c50e-d4fc-4b87-8dcb-9cc3361d65de")
-		(property "Reference" "R18"
+		(property "Reference" "R15"
 			(at 29.21 142.2399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14832,7 +14832,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R18")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -14850,7 +14850,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cda703a4-a544-480f-890d-bed79e5c9e28")
-		(property "Reference" "R52"
+		(property "Reference" "R21"
 			(at 161.29 171.4499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15133,7 +15133,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R52")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -15151,7 +15151,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d199c4f1-dcef-49ae-86e3-f087d89c4263")
-		(property "Reference" "J5"
+		(property "Reference" "J3"
 			(at 127 165.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15280,7 +15280,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "J5")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -15298,7 +15298,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d975ee55-5e60-40dd-b3f7-e1138453bc8c")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR044"
 			(at 137.16 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -15358,7 +15358,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR042")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -15376,7 +15376,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d9cebde0-9db6-410c-8c12-80630cbeb14b")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR042"
 			(at 96.52 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -15436,7 +15436,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR040")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -15454,7 +15454,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dbc5fea4-2db4-456b-aa92-97b2edaa838f")
-		(property "Reference" "R13"
+		(property "Reference" "R18"
 			(at 63.5 29.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15736,7 +15736,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R13")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -15754,7 +15754,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dea15655-f5ea-48c3-b535-d395bb1db603")
-		(property "Reference" "C12"
+		(property "Reference" "C16"
 			(at 190.5 34.29 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16002,7 +16002,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "C12")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -16020,7 +16020,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0c83591-3007-4f3c-b4dd-5af6e1beb12b")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR048"
 			(at 185.42 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -16080,7 +16080,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR046")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -16099,7 +16099,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e5c8b946-dd61-4e56-ba56-24637108d485")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR036"
 			(at 26.67 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -16159,7 +16159,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR033")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -16177,7 +16177,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e61d9fc6-5c61-4b4f-9bd4-b425be3039e4")
-		(property "Reference" "R51"
+		(property "Reference" "R20"
 			(at 144.78 171.4499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16460,7 +16460,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R51")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -16478,7 +16478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6a4b58a-0229-41ab-b374-29379209e061")
-		(property "Reference" "U9"
+		(property "Reference" "U6"
 			(at 34.29 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16618,7 +16618,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "U9")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -16636,7 +16636,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e79e7edc-d299-4513-8700-266e5a33301e")
-		(property "Reference" "C13"
+		(property "Reference" "C15"
 			(at 190.5 22.86 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16884,7 +16884,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "C13")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -16902,7 +16902,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ec2402c9-e405-4215-8d42-fb668cfc530b")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR035"
 			(at 26.67 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -16962,7 +16962,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR032")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -16981,7 +16981,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ecfc0659-9c89-40c3-9e1e-83d7d429d35b")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR037"
 			(at 49.53 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -17041,7 +17041,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR031")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -17059,7 +17059,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f63a2c83-bbba-4f40-ba73-3e4e74c1743a")
-		(property "Reference" "D10"
+		(property "Reference" "D12"
 			(at 153.7652 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17264,7 +17264,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "D10")
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -17282,7 +17282,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f98cb37b-538e-4512-a2a7-d98bb76e0cb6")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR050"
 			(at 196.85 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -17342,7 +17342,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "#PWR048")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -17360,7 +17360,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fd14b59a-fbef-41ca-bad9-18e731ec82d1")
-		(property "Reference" "R15"
+		(property "Reference" "R22"
 			(at 162.56 57.15 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17642,7 +17642,7 @@
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "R15")
+					(reference "R22")
 					(unit 1)
 				)
 			)
