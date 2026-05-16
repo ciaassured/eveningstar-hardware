@@ -15414,7 +15414,6 @@
 	(symbol
 		(lib_id "EasyEDA:5301-6P6C")
 		(at 35.56 54.61 90)
-		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15424,7 +15423,7 @@
 		(dnp no)
 		(uuid "7ed53fdd-61b3-4d12-93af-ec342052aabc")
 		(property "Reference" "RJ1"
-			(at 33.655 69.85 90)
+			(at 33.655 39.37 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15434,7 +15433,7 @@
 			)
 		)
 		(property "Value" "5301-6P6C"
-			(at 33.655 67.31 90)
+			(at 33.655 41.91 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
