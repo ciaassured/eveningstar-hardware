@@ -10169,6 +10169,56 @@
 		)
 		(uuid "3395c6e4-224d-44e5-bdf5-8810d0dd32d0")
 	)
+	(label "RXP1"
+		(at 135.89 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f07baf0-ef0a-4d12-a493-2b50da1db474")
+	)
+	(label "TXN"
+		(at 99.06 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "533e45e1-040c-46e1-90d7-bd9620b5c5a2")
+	)
+	(label "RXN1"
+		(at 135.89 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "56624b52-c055-4df0-afde-ea16bb9238fc")
+	)
+	(label "TXP"
+		(at 99.06 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "57c4d9c2-2432-448e-b510-bfeac2d2ad7d")
+	)
+	(label "TD-"
+		(at 198.12 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "66be3050-aaf2-449d-ba79-5173c900fc5c")
+	)
 	(label "LINK_LED"
 		(at 255.27 71.12 0)
 		(effects
@@ -10188,6 +10238,16 @@
 			(justify right bottom)
 		)
 		(uuid "9f766778-b3cc-4fe0-950c-d9b07ddcd1c4")
+	)
+	(label "RXN"
+		(at 99.06 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a0297612-9117-4517-b20c-eaa70a2f2edd")
 	)
 	(label "ACT_LED"
 		(at 100.33 106.68 0)
@@ -10209,6 +10269,16 @@
 		)
 		(uuid "b42f24b4-60f7-43bd-b15d-068a7ddd3654")
 	)
+	(label "RD+"
+		(at 198.12 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cc4096d3-804c-4bef-a90f-ec5f2653e925")
+	)
 	(label "LINK_LED"
 		(at 100.33 101.6 0)
 		(effects
@@ -10229,6 +10299,16 @@
 		)
 		(uuid "dc649bae-ceb4-4b89-84d4-2cd641a539ae")
 	)
+	(label "TD+"
+		(at 198.12 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e3f2df13-4a6a-4e30-8c7f-aebb7cb8c0f7")
+	)
 	(label "ACT_LED"
 		(at 255.27 81.28 0)
 		(effects
@@ -10238,6 +10318,26 @@
 			(justify left bottom)
 		)
 		(uuid "edbd9186-703d-4d1f-a79c-cf6c90fcfe17")
+	)
+	(label "RXP"
+		(at 99.06 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f0fd2bb9-dc47-42b4-aa64-5e51fb241fd6")
+	)
+	(label "RD-"
+		(at 198.12 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f7ee17ac-b1aa-4564-b9e7-bd5126c7c04f")
 	)
 	(global_label "MISO"
 		(shape output)
