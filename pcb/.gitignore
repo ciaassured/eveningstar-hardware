@@ -30,10 +30,6 @@ _restore_backup_*
 *.dsn
 *.ses
 
-# Exported BOM files
-*.xml
-*.csv
-
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
 
@@ -43,3 +39,5 @@ _restore_backup_*
 # Local project settings
 *.kicad_prl
 
+# Production backup revisions
+production/backups

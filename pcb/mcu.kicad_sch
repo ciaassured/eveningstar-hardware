@@ -402,7 +402,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "EasyEDA:AHT20_C2757850"
+		(symbol "EasyEDA:AHT20-F"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -418,7 +418,7 @@
 					)
 				)
 			)
-			(property "Value" "AHT20_C2757850"
+			(property "Value" "AHT20-F"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -428,7 +428,7 @@
 					)
 				)
 			)
-			(property "Footprint" "EasyEDA:SENSOR-SMD_L3.0-W3.0-P1.00-BR"
+			(property "Footprint" "EasyEDA:SENSOR-SMD-6_AHT20"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -439,7 +439,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/C2757850.pdf"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C3012622.pdf"
 				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -472,7 +472,7 @@
 					)
 				)
 			)
-			(property "MPN" "AHT20"
+			(property "MPN" "AHT20-F"
 				(at 0 -17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -483,7 +483,7 @@
 					)
 				)
 			)
-			(property "LCSC Part" "C2757850"
+			(property "LCSC Part" "C3012622"
 				(at 0 -20.32 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -505,7 +505,7 @@
 					)
 				)
 			)
-			(symbol "AHT20_C2757850_0_1"
+			(symbol "AHT20-F_0_1"
 				(rectangle
 					(start -6.35 5.08)
 					(end 6.35 -5.08)
@@ -564,7 +564,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin passive line
 					(at -8.89 -2.54 0)
 					(length 2.54)
 					(name "SCL"
@@ -582,7 +582,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin passive line
 					(at 8.89 -2.54 180)
 					(length 2.54)
 					(name "SDA"
@@ -8696,7 +8696,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ESP32-C6-MINI-1"
+		(property "Value" "ESP32-C6-MINI-1U-H4"
 			(at 198.9933 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8707,7 +8707,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "EasyEDA:WIFIM-SMD_61P-L16.6-W13.2-P0.80-ESP32-C6-MINI-1-N4"
+		(property "Footprint" "EasyEDA:WIFIM-SMD_61P-L13.2-W12.5-P0.80"
 			(at 214.63 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -8718,7 +8718,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-c6-mini-1_mini-1u_datasheet_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C20627095.pdf"
 			(at 196.85 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -8740,7 +8740,7 @@
 				)
 			)
 		)
-		(property "MPN" "ESP32-C6-MINI-1-N4"
+		(property "MPN" "ESP32-C6-MINI-1U-H4"
 			(at 196.85 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -8751,7 +8751,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C5736265"
+		(property "LCSC Part" "C20627095"
 			(at 196.85 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -9808,10 +9808,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2e8b8069-057a-417c-b82a-8a09976fd211")
 		(property "Reference" "TP21"
@@ -9826,7 +9826,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ETH_CS"
+		(property "Value" "TestPad"
 			(at 243.84 112.2679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9837,7 +9837,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "EasyEDA:TestPoint_Pad_1.0x1.0mm"
 			(at 246.38 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -9859,7 +9859,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "ETH_CS"
 			(at 241.3 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -10330,8 +10330,9 @@
 				(justify right)
 			)
 		)
-		(property "Value" "CFG_SW"
+		(property "Value" "TS-1095PS-A1B2-C3D2"
 			(at 166.37 71.1199 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10363,9 +10364,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 171.45 69.85 0)
-			(hide yes)
+		(property "Description" "CFG_SW"
+			(at 162.56 70.612 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10467,10 +10467,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "37db8d76-e535-4c17-b15a-1d50c16a70b0")
 		(property "Reference" "TP18"
@@ -10485,7 +10485,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MOSI"
+		(property "Value" "TestPad"
 			(at 243.84 93.2179 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10496,7 +10496,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "EasyEDA:TestPoint_Pad_1.0x1.0mm"
 			(at 246.38 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -10518,7 +10518,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "MOSI"
 			(at 241.3 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -10786,7 +10786,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "46e2aa30-cf70-4061-8699-d8a9e507a5a8")
 		(property "Reference" "SW1"
 			(at 64.77 177.7999 90)
@@ -10799,8 +10798,9 @@
 				(justify right)
 			)
 		)
-		(property "Value" "RST_SW"
+		(property "Value" "TS-1095PS-A1B2-C3D2"
 			(at 64.77 180.3399 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10832,9 +10832,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 59.69 179.07 0)
-			(hide yes)
+		(property "Description" "RST_SW"
+			(at 68.326 179.832 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11236,10 +11235,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "5ca75fba-e104-40e2-bf01-7d73ea8d2751")
 		(property "Reference" "TP23"
@@ -11254,7 +11253,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ETH_RST"
+		(property "Value" "TestPad"
 			(at 243.84 124.9679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11265,7 +11264,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "EasyEDA:TestPoint_Pad_1.0x1.0mm"
 			(at 246.38 127 0)
 			(hide yes)
 			(show_name no)
@@ -11287,7 +11286,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "ETH_RST"
 			(at 241.3 127 0)
 			(hide yes)
 			(show_name no)
@@ -13013,6 +13012,131 @@
 		)
 	)
 	(symbol
+		(lib_id "EasyEDA:AHT20-F")
+		(at 34.29 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90135014-4ba9-4bf0-862e-fe0e30c5313c")
+		(property "Reference" "U6"
+			(at 34.29 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AHT20-F"
+			(at 34.29 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "EasyEDA:SENSOR-SMD-6_AHT20"
+			(at 34.29 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C3012622.pdf"
+			(at 34.29 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 34.29 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "广州奥松"
+			(at 34.29 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AHT20-F"
+			(at 34.29 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C3012622"
+			(at 34.29 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "1d927406-9cbd-4533-8182-c43e2285a8e2")
+		)
+		(pin "4"
+			(uuid "85cf4157-4881-4b51-ac5c-5b2ed5e80983")
+		)
+		(pin "1"
+			(uuid "8097db98-4828-4b9c-b208-6b8cd80cf56c")
+		)
+		(pin "2"
+			(uuid "61a930ae-b9a7-4aac-9592-c189cefe829f")
+		)
+		(pin "5"
+			(uuid "33a9f731-b9ef-47fa-8b46-7f37c31c0b7f")
+		)
+		(pin "6"
+			(uuid "134b83d3-13fe-48fe-88e9-aebbc04b0c5b")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
+					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "EasyEDA:TLV803SDBZR")
 		(at 39.37 173.99 180)
 		(unit 1)
@@ -13248,7 +13372,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "acb58b12-4c08-4940-bc36-e4bacf72e4a5")
 		(property "Reference" "SW2"
 			(at 148.59 182.8799 90)
@@ -13261,8 +13384,9 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BOOT_SW"
+		(property "Value" "TS-1095PS-A1B2-C3D2"
 			(at 148.59 185.4199 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13294,9 +13418,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 143.51 184.15 0)
-			(hide yes)
+		(property "Description" "BOOT_SW"
+			(at 153.162 184.912 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14674,7 +14797,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCU_RST"
+		(property "Value" "RH-5001"
 			(at 69.85 170.6879 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14707,7 +14830,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "MCU_RST"
 			(at 67.31 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -16418,10 +16541,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "e3daec7d-94d4-4c00-bc1b-9ec192bee63b")
 		(property "Reference" "TP19"
@@ -16436,7 +16559,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SCK"
+		(property "Value" "TestPad"
 			(at 243.84 99.5679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16447,7 +16570,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "EasyEDA:TestPoint_Pad_1.0x1.0mm"
 			(at 246.38 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -16469,7 +16592,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "SCK"
 			(at 241.3 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -16498,10 +16621,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "e3ef50c8-9ccf-4b08-9913-577c97852b17")
 		(property "Reference" "TP20"
@@ -16516,7 +16639,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MISO"
+		(property "Value" "TestPad"
 			(at 243.84 105.9179 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16527,7 +16650,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "EasyEDA:TestPoint_Pad_1.0x1.0mm"
 			(at 246.38 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -16549,7 +16672,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "MISO"
 			(at 241.3 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -16947,164 +17070,6 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
 					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "EasyEDA:AHT20_C2757850")
-		(at 34.29 106.68 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e6a4b58a-0229-41ab-b374-29379209e061")
-		(property "Reference" "U6"
-			(at 34.29 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AHT20_C2757850"
-			(at 34.29 99.06 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "EasyEDA:SENSOR-SMD_L3.0-W3.0-P1.00-BR"
-			(at 34.29 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C2757850.pdf"
-			(at 34.29 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 34.29 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "广州奥松"
-			(at 34.29 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "AHT20"
-			(at 34.29 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2757850"
-			(at 34.29 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 34.29 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KLC_S3.3" ""
-			(at 34.29 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KLC_S4.1" ""
-			(at 34.29 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "0db52dcb-05b8-4032-b6af-33d89ccfc221")
-		)
-		(pin "6"
-			(uuid "0e08cc17-a82d-4a1e-b757-12f999b980e2")
-		)
-		(pin "5"
-			(uuid "abffca01-4486-42d1-8b0e-9e271c7f18ff")
-		)
-		(pin "2"
-			(uuid "0ddfb874-e0b4-4dde-9b50-7478487adfaa")
-		)
-		(pin "1"
-			(uuid "ce1874eb-14b1-4a61-8149-20b515b1a92e")
-		)
-		(pin "3"
-			(uuid "0f955f76-e193-4bb4-ae47-661ab6fa9542")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
-					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -17539,10 +17504,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ee4609b3-d8bd-41ee-a51b-3349fece133f")
 		(property "Reference" "TP22"
@@ -17557,7 +17522,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ETH_INT"
+		(property "Value" "TestPad"
 			(at 243.84 118.6179 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17568,7 +17533,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "EasyEDA:TestPoint_Pad_1.0x1.0mm"
 			(at 246.38 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -17590,7 +17555,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "ETH_INT"
 			(at 241.3 120.65 0)
 			(hide yes)
 			(show_name no)

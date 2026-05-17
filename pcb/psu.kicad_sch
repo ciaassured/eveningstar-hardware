@@ -4658,7 +4658,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "RH-5001"
 			(at 78.74 68.0719 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4691,7 +4691,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "GND"
 			(at 76.2 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6534,7 +6534,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3V3_JMP"
+		(property "Value" "PZ254V-11-02P"
 			(at 218.44 53.9749 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6567,7 +6567,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
+		(property "Description" "3V3_JMP"
 			(at 217.17 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -6671,7 +6671,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VIN"
+		(property "Value" "RH-5001"
 			(at 110.49 48.7679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6704,7 +6704,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "VIN"
 			(at 107.95 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -7031,7 +7031,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3V3"
+		(property "Value" "RH-5001"
 			(at 201.93 55.1179 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7064,7 +7064,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "3V3"
 			(at 199.39 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -7606,7 +7606,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DCDC_FB"
+		(property "Value" "RH-5001"
 			(at 176.53 74.1679 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7639,7 +7639,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "DCDC_FB"
 			(at 173.99 76.2 0)
 			(hide yes)
 			(show_name no)

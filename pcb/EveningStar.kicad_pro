@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 0.0,
+          "height": 3.54,
+          "width": 2.465
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -626,7 +626,7 @@
           "group_by": false,
           "label": "Description",
           "name": "Description",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -917,7 +917,7 @@
           "show": false
         }
       ],
-      "filter_string": "TP",
+      "filter_string": "C",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -965,7 +965,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "",
+    "used_designators": "C35,H1-4,U10,CN1,SW4",
     "variants": []
   },
   "sheets": [
@@ -990,7 +990,9 @@
       "ethernet"
     ]
   ],
-  "text_variables": {},
+  "text_variables": {
+    "REV": "V1.0"
+  },
   "tuning_profiles": {
     "meta": {
       "version": 0
