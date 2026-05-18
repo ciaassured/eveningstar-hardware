@@ -10,13 +10,11 @@ This guide includes instructions on how to order an assembled PCB from [JLCPCB](
 
 3. Select **Add gerber file** and upload [EveningStar.zip](/pcb/production/EveningStar.zip).
 
-4. If the board dimensions are missing, enter them as **145.5mm x 43.6mm**.
+4. Select the number of PCBs you want to order.
 
-5. Select the number of PCBs you want to order.
+5. Select desired PCB colour (Be aware that this increases lead-time).
 
-6. Select desired PCB colour (Be aware that this increases lead-time).
-
-7. Update **Mark on PCB** to **2D barcode (Serial Number)**.
+6. Update **Mark on PCB** to **2D barcode (Serial Number)**.
 
     1. Update **Printing** to **2D barcode & Number**.
 
@@ -26,15 +24,15 @@ This guide includes instructions on how to order an assembled PCB from [JLCPCB](
 
     4. Update **2D Barcode Position** to **Specify Position**.
 
-8. Enable PCB Assembly.
+7. Enable PCB Assembly.
 
-9. Update **Tooling holes** to **Added by Customer**
+8. Update **Tooling holes** to **Added by Customer**
 
-10. Select desired lead-time and shipping options on the right-hand side-bar.
+9. Select desired lead-time and shipping options on the right-hand side-bar.
 
-11. Review options and compare with this [screenshot](/image/jlcpcb_quote_screenshot.png).
+10. Review options and compare with this [screenshot](/image/jlcpcb_quote_screenshot.png).
 
-12. Click **Next**.
+11. Click **Next**.
 
 ## Assembly Parts
 
@@ -58,5 +56,19 @@ At this point you should be looking at a render of the PCB with no parts.
 6. At this point you should see a list of all the parts and how much they cost.
 It's important that all parts are selected otherwise they will be missing when you get your board.
 
+If parts are missing un unavailable, substitutes must be found.
+
 > [!NOTE]
 > Extended parts cost much more than Basic parts because there's a loading fee for each extended part. This is not really something to worry about at this stage, but should be considered when updating the board design.
+
+7. Click **NEXT**.
+
+8. The component placement screen should show you a 3D render of the board with the parts populated. Make sure to have a look and check that components things look like they're in the right place, and it's also a good idea to check that the components are rotated correctly by checking the pads on the board match the component pads, and any corner indicators (usually small circle) match on the component and the board.
+
+9. Click **NEXT**.
+
+10. Select something for the product decription. I used **Sensor\Controller\Precision Instrument > Temperature Sensor**.
+
+10. Click **SAVE TO CART**.
+
+11. The rest of the process should be reasonably self explanatory.
