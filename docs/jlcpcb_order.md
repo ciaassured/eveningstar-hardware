@@ -39,7 +39,6 @@ This guide includes instructions on how to order an assembled PCB from [JLCPCB](
 At this point you should be looking at a render of the PCB with no parts.
 
 
-
 1. Check that both the Top and Bottom sides look good.
 
 > [!NOTE]
