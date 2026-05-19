@@ -6,7 +6,7 @@
 	(property "Reference" "REF**"
 		(at 0 -5 0)
 		(layer "F.SilkS")
-		(uuid "7bdf8f46-0ab4-4e29-b032-28afaa65ca2b")
+		(uuid "24c14339-c631-47ba-a572-a620dc104000")
 		(effects
 			(font
 				(size 1 1)
@@ -17,7 +17,7 @@
 	(property "Value" "SENSOR-SMD-6_AHT20"
 		(at 0 5 0)
 		(layer "F.Fab")
-		(uuid "5af9ea27-db3e-4f17-9cce-871b637071be")
+		(uuid "4c09b070-dfef-4b2f-aa7c-d9af5c1a4023")
 		(effects
 			(font
 				(size 1 1)
@@ -29,7 +29,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "d33b4b07-b49b-486b-81e9-32d6e5de216a")
+		(uuid "758939fd-53a2-469a-9b34-676ef140520c")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -40,7 +40,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "be78aea2-8d4f-4889-9903-c7d8f8274d01")
+		(uuid "cbb9c0a5-51ae-45bc-bb2a-c870beb60f08")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51,7 +51,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "56aa6541-424c-40b5-8228-57eb5fdd81e3")
+		(uuid "a98b02e9-33b0-4a31-a331-e0fc4e5fa8f1")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -68,7 +68,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "4993783a-c9d3-41cf-ba1d-956726501547")
+		(uuid "1f17a567-0cd3-4bfa-aa7b-b21dd2e871d9")
 	)
 	(fp_line
 		(start 1.5 1.6)
@@ -78,7 +78,19 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "66cb81cc-6e59-4c20-9436-ce65a0fada66")
+		(uuid "5fbe8c4d-84e7-40f6-b2c9-a800b9c1beb8")
+	)
+	(fp_poly
+		(pts
+			(xy -2 -1.8) (xy -2 -1.5) (xy -1.7 -1.8)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "274e6200-1a39-471b-9b55-18b87662d205")
 	)
 	(fp_rect
 		(start -1.8 -1.5)
@@ -89,12 +101,12 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "a3040c94-c920-496a-b594-7fed1049dd43")
+		(uuid "c15b4216-9c74-4d82-bb89-6e5eff659e21")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "663fa131-5327-4a61-8752-575344f39dca")
+		(uuid "025e35d2-8397-4275-a0b9-b570f4e47548")
 		(effects
 			(font
 				(size 1 1)
@@ -106,37 +118,37 @@
 		(at -1.2 -1)
 		(size 1 0.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "6374241c-e246-4a88-998f-5faccc10085e")
+		(uuid "d6bdcd0d-e34e-4554-b31c-41d306242f3d")
 	)
 	(pad "2" smd rect
 		(at -1.2 0)
 		(size 1 0.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "2323cf85-b6ff-4c7e-8847-5ec8ba2ee8e0")
+		(uuid "0e118cb5-705c-4083-a618-91b7045caed6")
 	)
 	(pad "3" smd rect
 		(at -1.2 1)
 		(size 1 0.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "74d991f0-63cd-4f0d-958c-dfc2d1c5705a")
+		(uuid "62bb1748-08b9-47f8-a445-b7abd943f5c9")
 	)
 	(pad "4" smd rect
 		(at 1.2 1)
 		(size 1 0.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "ed514686-6e6b-45b9-915c-898b2eb1cc56")
+		(uuid "4d61ace4-4fbc-40a6-ac36-b297ebb3ce93")
 	)
 	(pad "5" smd rect
 		(at 1.2 0)
 		(size 1 0.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "10a85330-5299-43be-beaa-24534d1158ee")
+		(uuid "d4068a41-3de8-4ed3-bc73-28e1dbbaa879")
 	)
 	(pad "6" smd rect
 		(at 1.2 -1)
 		(size 1 0.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "b8c8e5c9-fdf7-4bcb-92ec-9c3fdf6353f0")
+		(uuid "7bcf6f55-059d-4b07-8af1-a8d3268e046c")
 	)
 	(embedded_fonts no)
 	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SENSOR-SMD-6_AHT20.wrl"
