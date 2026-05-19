@@ -1,0 +1,292 @@
+(footprint "SMA_L4.3-W2.6-LS5.2-RD"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "D9"
+		(at 0 -4 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "b66f38ac-c6a9-4456-a7ef-2adde8dbb886")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "STPS1H100A"
+		(at 0 4 0)
+		(layer "F.Fab")
+		(uuid "f29c78c2-2130-4c81-b268-e1c135c6efac")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_STMicroelectronics_STPS1H100A_STPS1H100A_C165701.html"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d4c9f4dd-6763-47ac-bc1b-10d23a52df0c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e21a64cf-79a0-4cda-900a-efe43bb32a57")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "LCSC Part" "C165701"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "70db3a70-1310-4e78-97fe-03a69e7e3c2e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "ST(意法半导体)"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b80c4101-bfa0-4144-aa9f-06a5bff9c701")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "STPS1H100A"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3585dd19-3c27-4c70-a169-6727076c914f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Pins" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "16a5e9e1-69bb-439b-a9fa-06e2189647e0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "KLC_S3.3" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "96da657a-1d58-40f1-8377-8ff7e71d8e1d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "KLC_S4.1" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f267c6b2-3d6b-482e-b121-25fd04c561ee")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/psu/")
+	(sheetfile "psu.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.6 -1.43)
+		(end 2.6 -1.43)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "533d6d56-fba4-4c22-9862-e6f35f67d854")
+	)
+	(fp_line
+		(start -2.6 1.43)
+		(end 2.6 1.43)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6c45e409-7cee-4db0-8f56-63dae17e36b1")
+	)
+	(fp_line
+		(start -0.88 -1.43)
+		(end -0.88 1.43)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30e307a9-d357-40e6-9fbd-d9b2cec17736")
+	)
+	(fp_line
+		(start 2.6 -1.43)
+		(end 2.6 -1.3)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "34c195c4-f7b3-4f98-be51-762ea7eed2f4")
+	)
+	(fp_line
+		(start 2.6 1.3)
+		(end 2.6 1.41)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7a540afd-16fb-4aa2-935a-150bafac362c")
+	)
+	(fp_circle
+		(center -2.61 1.3)
+		(end -2.58 1.3)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "595b8136-5934-4c9b-9846-84469f7abbeb")
+	)
+	(fp_poly
+		(pts
+			(xy -2.52001 -1.50241) (xy -2.521009 -1.195803) (xy -2.979953 -1.200319) (xy -2.97721 -1.50241)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "caa9de4f-6658-4a62-91a3-c47d649822b7")
+	)
+	(fp_poly
+		(pts
+			(xy -2.511781 1.2) (xy -2.513101 1.502562) (xy -2.972638 1.498041) (xy -2.969902 1.19596) (xy -2.512094 1.19596)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "748b2e93-f748-41f6-8989-278247b939c5")
+	)
+	(fp_line
+		(start -2.16 -1.3)
+		(end 2.16 -1.3)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e978cb57-a976-4576-9665-1dcf54078e24")
+	)
+	(fp_line
+		(start -2.16 1.3)
+		(end -2.16 -1.3)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6b43b450-1e9d-4c8d-b108-0d9b6e577ffa")
+	)
+	(fp_line
+		(start 2.16 -1.3)
+		(end 2.16 1.3)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3e0da2c6-ae4d-4d91-887a-cd04bb547855")
+	)
+	(fp_line
+		(start 2.16 1.3)
+		(end -2.16 1.3)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "092150e2-85dc-4268-99bf-2915b4e57322")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "077208f6-4d8e-4224-a897-ac107d4d7f48")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.2 0 180)
+		(size 2 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2caf266a-0dea-4b88-8978-07eee85193e0")
+	)
+	(pad "2" smd rect
+		(at 2.2 0 180)
+		(size 2 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "786b691a-83cd-4599-a95e-4a8421735b9c")
+	)
+	(embedded_fonts no)
+	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SMA_L4.3-W2.6-LS5.2-RD.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

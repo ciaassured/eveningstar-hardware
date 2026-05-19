@@ -1977,7 +1977,7 @@
 						(type none)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 2.54 0)
 					(length 2.54)
 					(name "A"
@@ -1995,7 +1995,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 -5.08 0)
 					(length 2.54)
 					(name "B"
