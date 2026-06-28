@@ -157,9 +157,9 @@ The KiCad library nicknames are kept stable in `sym-lib-table` and
 
 This board has used external KiCad plugins and data sources during development:
 
-- ImpartGUI
-- JLCPCB Fabrication Toolkit
-- `CDFER/JLCPCB-Kicad-Library`
+- [ImpartGUI](https://github.com/Steffen-W/Import-LIB-KiCad-Plugin)
+- [JLCPCB Fabrication Toolkit](https://github.com/bennymeg/Fabrication-Toolkit)
+- [JLCPCB-Kicad-Library](https://github.com/CDFER/JLCPCB-Kicad-Library)
 
 Those tools are useful if you are actively adding or updating parts, generating
 fabrication outputs, or syncing vendor metadata. Someone working on the board
