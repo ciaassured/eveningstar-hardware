@@ -1321,7 +1321,7 @@
 			(uuid "45633187-4891-4d0a-b255-a5bce5e4ac73")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOT-223-4P_L6.5-W3.5-H1.6-LS7.0-P2.30.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/SOT-223-4P_L6.5-W3.5-H1.6-LS7.0-P2.30.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -3990,7 +3990,7 @@
 			(uuid "6e04f635-dcae-4354-be9f-ad55f21a6c28")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/WIFIM-SMD_61P-L13.2-W12.5-P0.80.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/WIFIM-SMD_61P-L13.2-W12.5-P0.80.step"
 			(offset
 				(xyz 0 0.5 0)
 			)
@@ -4438,7 +4438,7 @@
 			(uuid "e74ff49b-34c6-483e-b086-fe14d7b62f87")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/RJ45-TH_5301-6P6C.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/RJ45-TH_5301-6P6C.step"
 			(offset
 				(xyz -6.57 0 5.5)
 			)
@@ -4851,7 +4851,7 @@
 			(uuid "8aa96b00-bd61-42f1-a1f0-5c62084b79e9")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOIC-14_L8.6-W3.9-H1.8-LS6.0-P1.27.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/SOIC-14_L8.6-W3.9-H1.8-LS6.0-P1.27.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7177,7 +7177,7 @@
 			(uuid "e7c02938-885b-44e0-9241-4f9dab5eb1c9")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7862,7 +7862,7 @@
 			(uuid "e74dfcc1-4a1c-43ab-8e08-e495e71a8fa4")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/HDR2.54-M-LI-1X2P.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/HDR2.54-M-LI-1X2P.step"
 			(offset
 				(xyz 1.3 0 0)
 			)
@@ -8113,7 +8113,7 @@
 			(uuid "bb8beaf6-07ed-44f4-be8d-a6712450238b")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/IND-SMD_L6.6-W7.1-H3.0.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/IND-SMD_L6.6-W7.1-H3.0.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9091,7 +9091,7 @@
 			(uuid "7c7a691d-05d7-47ce-b55d-cfcf41b3b15c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10184,7 +10184,7 @@
 			(uuid "816f3196-2193-4687-9d32-2deceb657901")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11675,7 +11675,7 @@
 			(uuid "93e65383-f60c-408b-a067-9263081b0fc4")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SENSOR-SMD-6_AHT20.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/SENSOR-SMD-6_AHT20.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11869,7 +11869,7 @@
 			(uuid "4084d909-e708-4b16-9b4c-a53dd3cb003c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -12782,7 +12782,7 @@
 			(uuid "49c9e179-da6b-48a6-8edb-372305092454")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/RJ45-TH_HR911105A.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/RJ45-TH_HR911105A.step"
 			(offset
 				(xyz 0 -2.2 0)
 			)
@@ -15231,7 +15231,7 @@
 			(uuid "01b9d84e-aa15-448a-9ab4-e07aa412829c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15425,7 +15425,7 @@
 			(uuid "1c5838da-68cc-4dee-8251-86e5ead9e065")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -18637,7 +18637,7 @@
 			(uuid "d139797f-0498-45ad-8c25-58e7a855802a")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -19281,7 +19281,7 @@
 			(uuid "07d0612e-1e20-4699-b8a9-e168dbe2dcbd")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -23913,7 +23913,7 @@
 			(uuid "62ca687d-ecfe-4b1f-b1fa-72a106499b1c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -25844,7 +25844,7 @@
 			(uuid "7cad3368-4675-4e97-946d-51a0c3a69427")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/LQFP-48_L7.0-W7.0-H1.4-LS9.0-P0.50.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/LQFP-48_L7.0-W7.0-H1.4-LS9.0-P0.50.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -30153,7 +30153,7 @@
 			(uuid "c0aa705d-8553-46ca-b8a7-62a776f6f0d2")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -36740,7 +36740,7 @@
 			(uuid "862bb15a-8aaf-4192-9c23-9854948db385")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/DC-IN-TH_G-SWITCH_DC-005H-D020.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/DC-IN-TH_G-SWITCH_DC-005H-D020.step"
 			(offset
 				(xyz -10.6 2.4 5.5)
 			)
@@ -39158,7 +39158,7 @@
 			(uuid "374c6adb-5fe7-41cb-89fa-f7250c7a497e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/L0603_L1.6-W0.8-H0.5_BEAD.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/L0603_L1.6-W0.8-H0.5_BEAD.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -39352,7 +39352,7 @@
 			(uuid "6ddbf896-9d4b-4876-b5b4-9da83060855e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -41961,7 +41961,7 @@
 			(uuid "33dd064a-e7a0-42ee-b184-57c3ff9b8a6c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -43043,7 +43043,7 @@
 			(uuid "21f2c2bb-e16e-46ff-9e3a-0d164f22752e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOT-223-4P_L6.5-W3.5-H1.6-LS7.0-P2.30.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/SOT-223-4P_L6.5-W3.5-H1.6-LS7.0-P2.30.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -46762,7 +46762,7 @@
 			(uuid "f91fc025-cc22-49ed-928d-aef32aa747d1")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/ESOP-8_L4.9-W3.9-P1.27-LS6.0-TL-EP.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/ESOP-8_L4.9-W3.9-P1.27-LS6.0-TL-EP.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -51967,7 +51967,7 @@
 			(uuid "43dcd5f1-0856-46b3-b6b1-90671f05cf2a")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -52247,7 +52247,7 @@
 			(uuid "ad441bef-b657-4ee6-bd86-2dc8ee2f48ca")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOP-8_L4.9-W3.9-P1.27-LS6.0-BL_ISO6721RBDR.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/SOP-8_L4.9-W3.9-P1.27-LS6.0-BL_ISO6721RBDR.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -53751,7 +53751,7 @@
 			(uuid "d3443fb0-e515-4758-b90b-fd735f41c3fc")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -53945,7 +53945,7 @@
 			(uuid "1ddc84f5-026f-4ee0-a694-9e8b9b43b643")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -54456,7 +54456,7 @@
 			(uuid "26e05bcb-4c9a-4cd8-b2be-679f6ba0cf84")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/IDC-TH_6P-P2.54-V-R2-C3-S2.54.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/IDC-TH_6P-P2.54-V-R2-C3-S2.54.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -56860,7 +56860,7 @@
 			(uuid "1c4c201f-fa0c-4424-b75d-aac2d6b83a00")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
+		(model "${KIPRJMOD}/lib/EasyEDA/3dmodels/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 			(offset
 				(xyz 0 0 0)
 			)
