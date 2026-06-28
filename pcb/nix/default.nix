@@ -21,6 +21,15 @@
           text = withKicadSymbolDir ./scripts/pcb-review.sh;
         };
 
+        pcb-renders = pkgs.writeShellApplication {
+          name = "eveningstar-pcb-renders";
+          runtimeInputs = [
+            pkgs.coreutils
+            pkgs.kicad
+          ];
+          text = withKicadSymbolDir ./scripts/pcb-renders.sh;
+        };
+
         drc = pkgs.writeShellApplication {
           name = "eveningstar-drc";
           runtimeInputs = [ pkgs.kicad ];
@@ -55,6 +64,11 @@
           program = "${self'.packages.pcb-review}/bin/eveningstar-pcb-review";
         };
 
+        pcb-renders = {
+          type = "app";
+          program = "${self'.packages.pcb-renders}/bin/eveningstar-pcb-renders";
+        };
+
         drc = {
           type = "app";
           program = "${self'.packages.drc}/bin/eveningstar-drc";
@@ -76,6 +90,11 @@
       devShells.default = pkgs.mkShell {
         packages = [
           pkgs.kicad
+          self'.packages.drc
+          self'.packages.kicad-locality
+          self'.packages.pcb-renders
+          self'.packages.pcb-review
+          self'.packages.subtree-drift
         ];
 
         KICAD_SYMBOL_DIR = kicadSymbolDir;
