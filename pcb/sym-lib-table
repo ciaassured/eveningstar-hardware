@@ -2,7 +2,6 @@
 	(version 7)
 	(lib (name "EasyEDA") (type "KiCad") (uri "${KIPRJMOD}/lib/EasyEDA.kicad_sym") (options "") (descr ""))
 	(lib (name "custom_symbols") (type "KiCad") (uri "${KIPRJMOD}/lib/custom_symbols.kicad_sym") (options "") (descr ""))
-	(lib (name "JLCPCB-Kicad-Library") (type "KiCad") (uri "${KIPRJMOD}/lib/JLCPCB-Kicad-Library/symbols") (options "") (descr "") (disabled))
 	(lib (name "PCM_JLCPCB-Resistors") (type "KiCad") (uri "${KIPRJMOD}/lib/JLCPCB-Kicad-Library/symbols/JLCPCB-Resistors.kicad_sym") (options "") (descr ""))
 	(lib (name "PCM_JLCPCB-Diodes") (type "KiCad") (uri "${KIPRJMOD}/lib/JLCPCB-Kicad-Library/symbols/JLCPCB-Diodes.kicad_sym") (options "") (descr ""))
 	(lib (name "PCM_JLCPCB-Capacitors") (type "KiCad") (uri "${KIPRJMOD}/lib/JLCPCB-Kicad-Library/symbols/JLCPCB-Capacitors.kicad_sym") (options "") (descr ""))
