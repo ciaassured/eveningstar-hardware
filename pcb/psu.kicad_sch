@@ -1204,7 +1204,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "100nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1226,7 +1226,7 @@
 					)
 				)
 			)
-			(property "Stock" "70324515"
+			(property "Stock" "37493696"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1502,7 +1502,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 10nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1524,7 +1524,7 @@
 					)
 				)
 			)
-			(property "Stock" "5921160"
+			(property "Stock" "2223405"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1535,7 +1535,7 @@
 					)
 				)
 			)
-			(property "Price" "0.005USD"
+			(property "Price" "0.006USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1800,7 +1800,7 @@
 					)
 				)
 			)
-			(property "Description" "25V 10uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10uF 25V X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1822,7 +1822,7 @@
 					)
 				)
 			)
-			(property "Stock" "3388297"
+			(property "Stock" "3475471"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1833,7 +1833,7 @@
 					)
 				)
 			)
-			(property "Price" "0.021USD"
+			(property "Price" "0.020USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2098,7 +2098,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 150pF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "150pF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2120,7 +2120,7 @@
 					)
 				)
 			)
-			(property "Stock" "179177"
+			(property "Stock" "457309"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2396,7 +2396,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 1nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "1nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2418,7 +2418,7 @@
 					)
 				)
 			)
-			(property "Stock" "6068974"
+			(property "Stock" "15568229"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2694,7 +2694,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 10uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10uF 50V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2716,7 +2716,7 @@
 					)
 				)
 			)
-			(property "Stock" "1422246"
+			(property "Stock" "1940473"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2727,7 +2727,7 @@
 					)
 				)
 			)
-			(property "Price" "0.066USD"
+			(property "Price" "0.070USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2992,7 +2992,7 @@
 					)
 				)
 			)
-			(property "Description" "6.3V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "100uF 6.3V X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3014,7 +3014,7 @@
 					)
 				)
 			)
-			(property "Stock" "1472723"
+			(property "Stock" "1652143"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3025,7 +3025,7 @@
 					)
 				)
 			)
-			(property "Price" "0.066USD"
+			(property "Price" "0.060USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3290,7 +3290,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 10uF X5R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10uF 50V X5R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3312,7 +3312,7 @@
 					)
 				)
 			)
-			(property "Stock" "3698334"
+			(property "Stock" "1900877"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3323,7 +3323,7 @@
 					)
 				)
 			)
-			(property "Price" "0.035USD"
+			(property "Price" "0.061USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3588,7 +3588,7 @@
 					)
 				)
 			)
-			(property "Description" "40V Independent Type 1A 550mV@1A SMA(DO-214AC) Schottky Diodes ROHS"
+			(property "Description" "-55°C~+150°C 1A 25A 300uA@40V 40V 550mV@1A Independent SMA(DO-214AC) Schottky Diodes ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3610,7 +3610,7 @@
 					)
 				)
 			)
-			(property "Stock" "1115112"
+			(property "Stock" "1664025"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3621,7 +3621,7 @@
 					)
 				)
 			)
-			(property "Price" "0.018USD"
+			(property "Price" "0.019USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3897,7 +3897,7 @@
 					)
 				)
 			)
-			(property "Description" "100V 850mV@2A 2A SMA(DO-214AC) Schottky Diodes ROHS"
+			(property "Description" "-55°C~+150°C 1 Independent 100V 2A 500uA@100V 850mV@2A SMA(DO-214AC) Schottky Diodes ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3919,7 +3919,7 @@
 					)
 				)
 			)
-			(property "Stock" "272493"
+			(property "Stock" "1058068"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3930,7 +3930,7 @@
 					)
 				)
 			)
-			(property "Price" "0.029USD"
+			(property "Price" "0.030USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4173,7 +4173,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "PCM_JLCPCB:D_SMA"
+			(property "Footprint" "PCM_JLCPCB:D_DO-214AC(SMA)"
 				(at -1.778 0 90)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4195,7 +4195,7 @@
 					)
 				)
 			)
-			(property "Description" "8.8A 45.4V 400W 34.4V Bidirectional 28V SMA ESD and Surge Protection (TVS/ESD) ROHS"
+			(property "Description" "-55°C~+150°C 1uA 28V 34.4V 400W@10/1000us 45.4V 8.8A Bidirectional IEC 61000-4-2 TVS DO-214AC(SMA) ESD and Surge Protection (TVS/ESD) ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4217,7 +4217,7 @@
 					)
 				)
 			)
-			(property "Stock" "103246"
+			(property "Stock" "77690"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4228,7 +4228,7 @@
 					)
 				)
 			)
-			(property "Price" "0.038USD"
+			(property "Price" "0.039USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4460,7 +4460,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 10kΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 10kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4482,7 +4482,7 @@
 					)
 				)
 			)
-			(property "Stock" "51181774"
+			(property "Stock" "22319909"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4493,7 +4493,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4777,7 +4777,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±1% ±200ppm/°C 2Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 2Ω 75V Thick Film Resistor ±1% ±200ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4799,7 +4799,7 @@
 					)
 				)
 			)
-			(property "Stock" "880724"
+			(property "Stock" "235771"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5094,7 +5094,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 300Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 300Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5116,7 +5116,7 @@
 					)
 				)
 			)
-			(property "Stock" "372967"
+			(property "Stock" "1130466"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5127,7 +5127,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5411,7 +5411,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 470Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 470Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5433,7 +5433,7 @@
 					)
 				)
 			)
-			(property "Stock" "3910258"
+			(property "Stock" "2978459"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5444,7 +5444,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5728,7 +5728,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 5.6kΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 5.6kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5750,7 +5750,7 @@
 					)
 				)
 			)
-			(property "Stock" "401557"
+			(property "Stock" "785954"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6045,7 +6045,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±1% ±200ppm/°C 75Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 75V 75Ω Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6067,7 +6067,7 @@
 					)
 				)
 			)
-			(property "Stock" "985553"
+			(property "Stock" "2923669"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6078,7 +6078,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7861,7 +7861,7 @@
 				)
 			)
 		)
-		(property "Stock" "5921160"
+		(property "Stock" "2223405"
 			(at 165.1 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -7872,7 +7872,7 @@
 				)
 			)
 		)
-		(property "Price" "0.005USD"
+		(property "Price" "0.006USD"
 			(at 165.1 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -8072,7 +8072,7 @@
 				)
 			)
 		)
-		(property "Description" "100V 850mV@2A 2A SMA(DO-214AC) Schottky Diodes ROHS"
+		(property "Description" "-55°C~+150°C 1 Independent 100V 2A 500uA@100V 850mV@2A SMA(DO-214AC) Schottky Diodes ROHS"
 			(at 87.63 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -8094,7 +8094,7 @@
 				)
 			)
 		)
-		(property "Stock" "272493"
+		(property "Stock" "1058068"
 			(at 87.63 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -8105,7 +8105,7 @@
 				)
 			)
 		)
-		(property "Price" "0.029USD"
+		(property "Price" "0.030USD"
 			(at 87.63 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -8329,7 +8329,7 @@
 				)
 			)
 		)
-		(property "Stock" "401557"
+		(property "Stock" "785954"
 			(at 186.69 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8675,7 +8675,7 @@
 				)
 			)
 		)
-		(property "Stock" "372967"
+		(property "Stock" "1130466"
 			(at 186.69 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -8686,7 +8686,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 186.69 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -8942,7 +8942,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 201.93 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -8953,7 +8953,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 201.93 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -9289,7 +9289,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 175.26 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -9523,7 +9523,7 @@
 				)
 			)
 		)
-		(property "Stock" "1115112"
+		(property "Stock" "1664025"
 			(at 204.47 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -9534,7 +9534,7 @@
 				)
 			)
 		)
-		(property "Price" "0.018USD"
+		(property "Price" "0.019USD"
 			(at 204.47 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -9769,7 +9769,7 @@
 				)
 			)
 		)
-		(property "Stock" "985553"
+		(property "Stock" "2923669"
 			(at 175.26 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9780,7 +9780,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 175.26 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10038,7 +10038,7 @@
 				)
 			)
 		)
-		(property "Stock" "272493"
+		(property "Stock" "1058068"
 			(at 173.99 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -10049,7 +10049,7 @@
 				)
 			)
 		)
-		(property "Price" "0.029USD"
+		(property "Price" "0.030USD"
 			(at 173.99 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -10272,7 +10272,7 @@
 				)
 			)
 		)
-		(property "MPN" "AMS1117-3.3"
+		(property "MPN" "AMS1117-5.0"
 			(at 162.56 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -10283,7 +10283,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C6186"
+		(property "LCSC Part" "C6187"
 			(at 162.56 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -10390,7 +10390,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 105.41 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10739,7 +10739,7 @@
 				)
 			)
 		)
-		(property "Stock" "1472723"
+		(property "Stock" "1652143"
 			(at 214.63 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -10750,7 +10750,7 @@
 				)
 			)
 		)
-		(property "Price" "0.066USD"
+		(property "Price" "0.060USD"
 			(at 214.63 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -11065,7 +11065,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "PCM_JLCPCB:D_SMA"
+		(property "Footprint" "PCM_JLCPCB:D_DO-214AC(SMA)"
 			(at 74.422 57.15 90)
 			(hide yes)
 			(show_name no)
@@ -11087,7 +11087,7 @@
 				)
 			)
 		)
-		(property "Description" "8.8A 45.4V 400W 34.4V Bidirectional 28V SMA ESD and Surge Protection (TVS/ESD) ROHS"
+		(property "Description" "-55°C~+150°C 1uA 28V 34.4V 400W@10/1000us 45.4V 8.8A Bidirectional IEC 61000-4-2 TVS DO-214AC(SMA) ESD and Surge Protection (TVS/ESD) ROHS"
 			(at 76.2 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -11109,7 +11109,7 @@
 				)
 			)
 		)
-		(property "Stock" "103246"
+		(property "Stock" "77690"
 			(at 76.2 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -11120,7 +11120,7 @@
 				)
 			)
 		)
-		(property "Price" "0.038USD"
+		(property "Price" "0.039USD"
 			(at 76.2 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -11333,7 +11333,7 @@
 				)
 			)
 		)
-		(property "Stock" "880724"
+		(property "Stock" "235771"
 			(at 175.26 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -11600,7 +11600,7 @@
 				)
 			)
 		)
-		(property "Stock" "6068974"
+		(property "Stock" "15568229"
 			(at 201.93 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -11991,7 +11991,7 @@
 				)
 			)
 		)
-		(property "Stock" "179177"
+		(property "Stock" "457309"
 			(at 161.29 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -12305,7 +12305,7 @@
 				)
 			)
 		)
-		(property "Stock" "1472723"
+		(property "Stock" "1652143"
 			(at 193.04 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -12316,7 +12316,7 @@
 				)
 			)
 		)
-		(property "Price" "0.066USD"
+		(property "Price" "0.060USD"
 			(at 193.04 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -12541,7 +12541,7 @@
 				)
 			)
 		)
-		(property "Stock" "3698334"
+		(property "Stock" "1900877"
 			(at 127 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -12552,7 +12552,7 @@
 				)
 			)
 		)
-		(property "Price" "0.035USD"
+		(property "Price" "0.061USD"
 			(at 127 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -12788,7 +12788,7 @@
 				)
 			)
 		)
-		(property "Description" "50V 10uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+		(property "Description" "10uF 50V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 			(at 97.79 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -12810,7 +12810,7 @@
 				)
 			)
 		)
-		(property "Stock" "1422246"
+		(property "Stock" "1940473"
 			(at 97.79 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -12821,7 +12821,7 @@
 				)
 			)
 		)
-		(property "Price" "0.066USD"
+		(property "Price" "0.070USD"
 			(at 97.79 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -13046,7 +13046,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 139.7 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -13314,7 +13314,7 @@
 				)
 			)
 		)
-		(property "Stock" "3910258"
+		(property "Stock" "2978459"
 			(at 175.26 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -13325,7 +13325,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 175.26 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -13720,7 +13720,7 @@
 				)
 			)
 		)
-		(property "Stock" "3388297"
+		(property "Stock" "3475471"
 			(at 191.77 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -13731,7 +13731,7 @@
 				)
 			)
 		)
-		(property "Price" "0.021USD"
+		(property "Price" "0.020USD"
 			(at 191.77 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -14618,7 +14618,7 @@
 				)
 			)
 		)
-		(property "Stock" "880724"
+		(property "Stock" "235771"
 			(at 175.26 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -15248,7 +15248,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 176.53 143.51 0)
 			(hide yes)
 			(show_name no)
