@@ -1,6 +1,9 @@
 {
   perSystem =
     { pkgs, self', ... }:
+    let
+      kicadSymbolDir = "${pkgs.kicad.libraries.symbols}/share/kicad/symbols";
+    in
     {
       packages = {
         drc = pkgs.writeShellApplication {
@@ -9,6 +12,7 @@
           text = ''
             set +e
 
+            export KICAD_SYMBOL_DIR="${kicadSymbolDir}"
             mkdir -p reports
 
             echo "::group::KiCad ERC"
@@ -58,6 +62,8 @@
         packages = [
           pkgs.kicad
         ];
+
+        KICAD_SYMBOL_DIR = kicadSymbolDir;
       };
     };
 }
