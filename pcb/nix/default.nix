@@ -30,6 +30,15 @@
           text = withKicadSymbolDir ./scripts/pcb-renders.sh;
         };
 
+        pcb-models = pkgs.writeShellApplication {
+          name = "eveningstar-pcb-models";
+          runtimeInputs = [
+            pkgs.coreutils
+            pkgs.kicad
+          ];
+          text = withKicadSymbolDir ./scripts/pcb-models.sh;
+        };
+
         drc = pkgs.writeShellApplication {
           name = "eveningstar-drc";
           runtimeInputs = [ pkgs.kicad ];
@@ -69,6 +78,11 @@
           program = "${self'.packages.pcb-renders}/bin/eveningstar-pcb-renders";
         };
 
+        pcb-models = {
+          type = "app";
+          program = "${self'.packages.pcb-models}/bin/eveningstar-pcb-models";
+        };
+
         drc = {
           type = "app";
           program = "${self'.packages.drc}/bin/eveningstar-drc";
@@ -92,6 +106,7 @@
           pkgs.kicad
           self'.packages.drc
           self'.packages.kicad-locality
+          self'.packages.pcb-models
           self'.packages.pcb-renders
           self'.packages.pcb-review
           self'.packages.subtree-drift

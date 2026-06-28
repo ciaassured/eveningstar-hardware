@@ -81,8 +81,20 @@ nix run .#pcb-review
 eveningstar-pcb-review
 ```
 
-This generates schematic PDF/SVG, board PDF/SVG, STEP, and GLB outputs under
+This generates schematic PDF/SVG and 2D board PDF/SVG outputs under
 `reports/review`. It is intended to be fast enough for CI.
+
+Generate local 3D model exports:
+
+```sh
+nix run .#pcb-models
+# or, inside nix develop:
+eveningstar-pcb-models
+```
+
+This generates STEP and GLB outputs under `reports/review/3d-models`. It is
+intended for local use because KiCad 3D model exports are slow in CI, but the
+outputs are useful for mechanical CAD, enclosure checks, and richer PR review.
 
 Generate local PNG 3D renders:
 
@@ -110,7 +122,7 @@ The workflow:
 - Verifies the KiCad dev shell.
 - Runs the repo-local reference check.
 - Runs ERC and DRC.
-- Generates and uploads review artifacts.
+- Generates and uploads the fast schematic and 2D board review artifacts.
 
 ERC/DRC and artifact generation run with `always()` so a failing locality check
 still leaves useful reports on the PR.

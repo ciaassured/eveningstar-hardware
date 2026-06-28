@@ -4,7 +4,7 @@ set -euo pipefail
 #
 # This is intentionally separate from pcb-review.sh because KiCad 3D rendering is
 # slow in CI. Use this locally when visual inspection of the assembled board is
-# useful; CI still generates the faster schematic/2D/STEP/GLB review artifacts.
+# useful; CI still generates the faster schematic and 2D board review artifacts.
 
 render_dir="reports/review/renders"
 
