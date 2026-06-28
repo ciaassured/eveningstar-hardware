@@ -40,13 +40,32 @@ jobs:
       - name: Check vendored subtree drift
         run: nix run .#subtree-drift
 
+      - name: Check KiCad dev shell
+        run: nix develop --command kicad-cli version
+
+      - name: Check KiCad repo-local references
+        run: nix run .#kicad-locality
+
       - name: Run ERC and DRC
+        if: always()
         run: nix run .#drc
 
-      - name: Upload KiCad reports
+      - name: Generate PCB review artifacts
         if: always()
+        run: nix run .#pcb-review
+
+      - name: Upload KiCad reports
+        if: ${{ always() && hashFiles('reports/*.rpt') != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: kicad-rule-check-reports
           path: reports/*.rpt
+          if-no-files-found: error
+
+      - name: Upload PCB review artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pcb-review-artifacts
+          path: reports/review/**
           if-no-files-found: error
