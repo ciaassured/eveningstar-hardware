@@ -144,7 +144,7 @@
 		(uuid "57ee3c50-3bc1-4508-a44d-3f9a71bd4584")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/IND-SMD_L4.0-W4.0-H2.6_FNR40XXS.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/IND-SMD_L4.0-W4.0-H2.6_FNR40XXS.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

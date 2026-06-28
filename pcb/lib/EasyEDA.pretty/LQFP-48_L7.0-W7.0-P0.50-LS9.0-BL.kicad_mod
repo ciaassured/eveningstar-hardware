@@ -474,7 +474,7 @@
 		(uuid "9f5c0823-b335-4e39-9dca-c7ee92ca794d")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/LQFP-48_L7.0-W7.0-H1.4-LS9.0-P0.50.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/LQFP-48_L7.0-W7.0-H1.4-LS9.0-P0.50.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

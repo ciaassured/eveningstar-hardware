@@ -550,7 +550,7 @@
 		(uuid "ee927ce8-a54e-4d84-8bd1-e391c2df8507")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/WIFIM-SMD_61P-L16.6-W13.2-P0.80-ESP32-C6-MINI-1-N4.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/WIFIM-SMD_61P-L16.6-W13.2-P0.80-ESP32-C6-MINI-1-N4.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

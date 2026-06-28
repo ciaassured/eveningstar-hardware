@@ -25,7 +25,7 @@
 	(pad 1 smd rect (at -1.90 2.75 0.00) (size 0.600 1.400) (layers F.Cu F.Paste F.Mask))
 	(fp_circle (center -1.90 1.02) (end -1.75 1.02) (layer F.SilkS) (width 0.30))
 	(fp_arc (start -2.50 -0.00) (end -2.50 -0.63) (angle 180.00) (layer F.SilkS) (width 0.25))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SOP-8_L4.9-W3.9-P1.27-LS6.0-BL_ISO6721RBDR.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOP-8_L4.9-W3.9-P1.27-LS6.0-BL_ISO6721RBDR.wrl"
 		(offset (xyz 0.000 0.000 0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

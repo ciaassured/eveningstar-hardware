@@ -151,7 +151,7 @@
 		(uuid "7bcf6f55-059d-4b07-8af1-a8d3268e046c")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SENSOR-SMD-6_AHT20.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SENSOR-SMD-6_AHT20.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

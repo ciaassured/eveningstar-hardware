@@ -207,7 +207,7 @@
 		(uuid "864f3747-9d59-48f6-b0b2-5ceb4fda25b7")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/DC-IN-TH_G-SWITCH_DC-005H-D020.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/DC-IN-TH_G-SWITCH_DC-005H-D020.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

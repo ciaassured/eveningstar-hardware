@@ -218,7 +218,7 @@
 		(uuid "f6d0e4aa-8381-46bf-b89d-535bd3de4bee")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/ESOP-8_L4.9-W3.9-P1.27-LS6.0-TL-EP.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/ESOP-8_L4.9-W3.9-P1.27-LS6.0-TL-EP.wrl"
 		(offset
 			(xyz 0 0 0)
 		)
