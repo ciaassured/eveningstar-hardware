@@ -260,7 +260,7 @@
 		(uuid "ba19675a-5ee7-4c25-ad6a-9cdb777e367f")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SOPOWERPAD-8_L4.9-W3.9-H1.7-LS6.0-P1.27.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOPOWERPAD-8_L4.9-W3.9-H1.7-LS6.0-P1.27.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

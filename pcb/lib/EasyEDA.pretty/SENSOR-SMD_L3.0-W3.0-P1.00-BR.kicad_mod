@@ -230,7 +230,7 @@
 		(uuid "13001fc5-30a5-4966-b433-64a02eaa575f")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SENSOR-SMD_L3.0-W3.0-P1.00-BL.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SENSOR-SMD_L3.0-W3.0-P1.00-BL.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

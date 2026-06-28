@@ -291,7 +291,7 @@
 		(uuid "faf9efa5-a883-42ed-8976-13b323583363")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SOIC-14_L8.6-W3.9-H1.8-LS6.0-P1.27.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA.3dshapes/SOIC-14_L8.6-W3.9-H1.8-LS6.0-P1.27.wrl"
 		(offset
 			(xyz 0 0 0)
 		)
