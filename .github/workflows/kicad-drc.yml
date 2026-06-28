@@ -6,57 +6,37 @@ on:
       - main
     paths:
       - "pcb/**"
+      - "flake.nix"
+      - "flake.lock"
+      - "pcb/nix/**"
       - ".github/workflows/kicad-drc.yml"
 
 jobs:
   electrical-and-design-rules:
     name: ERC and DRC
     runs-on: ubuntu-24.04
+    env:
+      CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Install KiCad
-        run: |
-          sudo add-apt-repository --yes ppa:kicad/kicad-10.0-releases
-          sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends kicad
-          kicad-cli --version
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Cachix
+        if: ${{ vars.CACHIX_CACHE_NAME != '' }}
+        uses: cachix/cachix-action@v17
+        with:
+          name: ${{ vars.CACHIX_CACHE_NAME }}
+          authToken: ${{ env.CACHIX_AUTH_TOKEN }}
+          skipPush: ${{ env.CACHIX_AUTH_TOKEN == '' }}
 
       - name: Run ERC and DRC
-        run: |
-          set +e
-          mkdir -p reports
-
-          echo "::group::KiCad ERC"
-          kicad-cli sch erc \
-            --severity-error \
-            --severity-warning \
-            --exit-code-violations \
-            --format report \
-            --output reports/erc.rpt \
-            pcb/EveningStar.kicad_sch
-          erc_status=$?
-          cat reports/erc.rpt
-          echo "::endgroup::"
-
-          echo "::group::KiCad DRC"
-          kicad-cli pcb drc \
-            --severity-error \
-            --severity-warning \
-            --schematic-parity \
-            --exit-code-violations \
-            --format report \
-            --output reports/drc.rpt \
-            pcb/EveningStar.kicad_pcb
-          drc_status=$?
-          cat reports/drc.rpt
-          echo "::endgroup::"
-
-          if [ "${erc_status}" -ne 0 ] || [ "${drc_status}" -ne 0 ]; then
-            exit 1
-          fi
+        run: nix run .#drc
 
       - name: Upload KiCad reports
         if: always()
