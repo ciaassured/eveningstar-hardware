@@ -3,8 +3,9 @@ set -euo pipefail
 # Generate deterministic PCB review artifacts for CI pull requests.
 #
 # Outputs are written under reports/review and are intended for human review:
-# schematic PDF/SVG, 2D board PDFs/SVGs, STEP/GLB 3D models, and several PNG
-# renders. The temporary KICAD*_3RD_PARTY variables are a compatibility shim for
+# schematic PDF/SVG, 2D board PDFs/SVGs, and STEP/GLB 3D models. PNG 3D renders
+# are intentionally not generated here because KiCad render exports are slow in
+# CI. The temporary KICAD*_3RD_PARTY variables are a compatibility shim for
 # currently embedded model paths that still reference KiCad third-party library
 # variables; kicad-locality.sh is the enforcement check that should eventually
 # make that shim unnecessary.
@@ -12,11 +13,10 @@ set -euo pipefail
 review_dir="reports/review"
 schematic_dir="$review_dir/schematic"
 board_dir="$review_dir/board"
-render_dir="$review_dir/renders"
 model_dir="$review_dir/3d-models"
 
 rm -rf "$review_dir"
-mkdir -p "$schematic_dir/svg" "$board_dir/pdf" "$board_dir/svg" "$render_dir" "$model_dir"
+mkdir -p "$schematic_dir/svg" "$board_dir/pdf" "$board_dir/svg" "$model_dir"
 
 third_party_dir="$(mktemp -d)"
 trap 'rm -rf "$third_party_dir"' EXIT
@@ -90,57 +90,6 @@ kicad-cli pcb export glb \
   --include-silkscreen \
   --include-soldermask \
   --output "$model_dir/EveningStar.glb" \
-  pcb/EveningStar.kicad_pcb
-echo "::endgroup::"
-
-echo "::group::PCB 3D render exports"
-kicad-cli pcb render \
-  --side top \
-  --width 2400 \
-  --height 1800 \
-  --quality high \
-  --background opaque \
-  --output "$render_dir/top.png" \
-  pcb/EveningStar.kicad_pcb
-kicad-cli pcb render \
-  --side bottom \
-  --width 2400 \
-  --height 1800 \
-  --quality high \
-  --background opaque \
-  --output "$render_dir/bottom.png" \
-  pcb/EveningStar.kicad_pcb
-kicad-cli pcb render \
-  --side front \
-  --width 2400 \
-  --height 1600 \
-  --quality high \
-  --background opaque \
-  --output "$render_dir/front.png" \
-  pcb/EveningStar.kicad_pcb
-kicad-cli pcb render \
-  --side back \
-  --width 2400 \
-  --height 1600 \
-  --quality high \
-  --background opaque \
-  --output "$render_dir/back.png" \
-  pcb/EveningStar.kicad_pcb
-kicad-cli pcb render \
-  --rotate "55,0,35" \
-  --width 2400 \
-  --height 1800 \
-  --quality high \
-  --background opaque \
-  --output "$render_dir/isometric-front.png" \
-  pcb/EveningStar.kicad_pcb
-kicad-cli pcb render \
-  --rotate "55,0,215" \
-  --width 2400 \
-  --height 1800 \
-  --quality high \
-  --background opaque \
-  --output "$render_dir/isometric-back.png" \
   pcb/EveningStar.kicad_pcb
 echo "::endgroup::"
 
