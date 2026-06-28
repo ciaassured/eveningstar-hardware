@@ -3029,7 +3029,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "100nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3051,7 +3051,7 @@
 					)
 				)
 			)
-			(property "Stock" "70324515"
+			(property "Stock" "37493696"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3327,7 +3327,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 10nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3349,7 +3349,7 @@
 					)
 				)
 			)
-			(property "Stock" "5921160"
+			(property "Stock" "2223405"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3360,7 +3360,7 @@
 					)
 				)
 			)
-			(property "Price" "0.005USD"
+			(property "Price" "0.006USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3625,7 +3625,7 @@
 					)
 				)
 			)
-			(property "Description" "25V 10uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10uF 25V X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3647,7 +3647,7 @@
 					)
 				)
 			)
-			(property "Stock" "3388297"
+			(property "Stock" "3475471"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3658,7 +3658,7 @@
 					)
 				)
 			)
-			(property "Price" "0.021USD"
+			(property "Price" "0.020USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3923,7 +3923,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 18pF C0G ±5% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "18pF 50V C0G ±5% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3945,7 +3945,7 @@
 					)
 				)
 			)
-			(property "Stock" "253196"
+			(property "Stock" "651661"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4221,7 +4221,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 22nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "22nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4243,7 +4243,7 @@
 					)
 				)
 			)
-			(property "Stock" "746157"
+			(property "Stock" "1647364"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4541,7 +4541,7 @@
 					)
 				)
 			)
-			(property "Stock" "4246728"
+			(property "Stock" "5643370"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4839,7 +4839,7 @@
 					)
 				)
 			)
-			(property "Stock" "135842"
+			(property "Stock" "491854"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4850,7 +4850,7 @@
 					)
 				)
 			)
-			(property "Price" "0.006USD"
+			(property "Price" "0.007USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5115,7 +5115,7 @@
 					)
 				)
 			)
-			(property "Description" "2kV 1nF X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "1nF 2kV X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5137,7 +5137,7 @@
 					)
 				)
 			)
-			(property "Stock" "2094039"
+			(property "Stock" "3193587"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5148,7 +5148,7 @@
 					)
 				)
 			)
-			(property "Price" "0.011USD"
+			(property "Price" "0.012USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5412,7 +5412,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±1% 0Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5434,7 +5434,7 @@
 					)
 				)
 			)
-			(property "Stock" "7706573"
+			(property "Stock" "13902554"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5445,7 +5445,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5718,7 +5718,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 10kΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 10kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5740,7 +5740,7 @@
 					)
 				)
 			)
-			(property "Stock" "51181774"
+			(property "Stock" "22319909"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5751,7 +5751,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6035,7 +6035,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±1% ±400ppm/°C 10Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 10Ω 75V Thick Film Resistor ±1% ±400ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6057,7 +6057,7 @@
 					)
 				)
 			)
-			(property "Stock" "5764851"
+			(property "Stock" "2613887"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6068,7 +6068,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6352,7 +6352,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 12kΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 12kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6374,7 +6374,7 @@
 					)
 				)
 			)
-			(property "Stock" "998337"
+			(property "Stock" "1125311"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6385,7 +6385,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6669,7 +6669,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 1MΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 1MΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6691,7 +6691,7 @@
 					)
 				)
 			)
-			(property "Stock" "3961571"
+			(property "Stock" "4092207"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6702,7 +6702,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6986,7 +6986,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 200Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 200Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7008,7 +7008,7 @@
 					)
 				)
 			)
-			(property "Stock" "2444311"
+			(property "Stock" "1041103"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7019,7 +7019,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7303,7 +7303,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 330Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7325,7 +7325,7 @@
 					)
 				)
 			)
-			(property "Stock" "2977706"
+			(property "Stock" "3511720"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7336,7 +7336,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7620,7 +7620,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 33Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 33Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7642,7 +7642,7 @@
 					)
 				)
 			)
-			(property "Stock" "2319032"
+			(property "Stock" "2873644"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7653,7 +7653,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7937,7 +7937,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 49.9Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 49.9Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7959,7 +7959,7 @@
 					)
 				)
 			)
-			(property "Stock" "983409"
+			(property "Stock" "1586884"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7970,7 +7970,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -11200,7 +11200,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 137.16 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -11211,7 +11211,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 137.16 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -11500,7 +11500,7 @@
 				)
 			)
 		)
-		(property "Stock" "2094039"
+		(property "Stock" "3193587"
 			(at 88.9 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -11511,7 +11511,7 @@
 				)
 			)
 		)
-		(property "Price" "0.011USD"
+		(property "Price" "0.012USD"
 			(at 88.9 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -11847,7 +11847,7 @@
 				)
 			)
 		)
-		(property "Stock" "746157"
+		(property "Stock" "1647364"
 			(at 175.26 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -12114,7 +12114,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -12125,7 +12125,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -12416,7 +12416,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 129.54 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -12761,7 +12761,7 @@
 				)
 			)
 		)
-		(property "Stock" "135842"
+		(property "Stock" "491854"
 			(at 163.83 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -12772,7 +12772,7 @@
 				)
 			)
 		)
-		(property "Price" "0.006USD"
+		(property "Price" "0.007USD"
 			(at 163.83 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -13027,7 +13027,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 118.11 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -13038,7 +13038,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 118.11 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -13328,7 +13328,7 @@
 				)
 			)
 		)
-		(property "Stock" "5921160"
+		(property "Stock" "2223405"
 			(at 148.59 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -13339,7 +13339,7 @@
 				)
 			)
 		)
-		(property "Price" "0.005USD"
+		(property "Price" "0.006USD"
 			(at 148.59 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -13596,7 +13596,7 @@
 				)
 			)
 		)
-		(property "Stock" "983409"
+		(property "Stock" "1586884"
 			(at 160.02 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -13607,7 +13607,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 160.02 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -13898,7 +13898,7 @@
 				)
 			)
 		)
-		(property "Stock" "253196"
+		(property "Stock" "651661"
 			(at 48.26 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -14243,7 +14243,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 118.11 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -14254,7 +14254,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 118.11 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -14543,7 +14543,7 @@
 				)
 			)
 		)
-		(property "Stock" "2977706"
+		(property "Stock" "3511720"
 			(at 250.19 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -14554,7 +14554,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 250.19 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -14844,7 +14844,7 @@
 				)
 			)
 		)
-		(property "Stock" "998337"
+		(property "Stock" "1125311"
 			(at 124.46 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -14855,7 +14855,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 124.46 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -15349,7 +15349,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 154.94 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -15695,7 +15695,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 137.16 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -15706,7 +15706,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 137.16 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -16073,7 +16073,7 @@
 				)
 			)
 		)
-		(property "Stock" "2977706"
+		(property "Stock" "3511720"
 			(at 250.19 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -16084,7 +16084,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 250.19 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -16454,7 +16454,7 @@
 				)
 			)
 		)
-		(property "Stock" "3388297"
+		(property "Stock" "3475471"
 			(at 166.37 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -16465,7 +16465,7 @@
 				)
 			)
 		)
-		(property "Price" "0.021USD"
+		(property "Price" "0.020USD"
 			(at 166.37 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -16723,7 +16723,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 104.14 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -17147,7 +17147,7 @@
 				)
 			)
 		)
-		(property "Stock" "983409"
+		(property "Stock" "1586884"
 			(at 148.59 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -17158,7 +17158,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 148.59 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -17449,7 +17449,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 91.44 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -17795,7 +17795,7 @@
 				)
 			)
 		)
-		(property "Stock" "5764851"
+		(property "Stock" "2613887"
 			(at 175.26 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -17806,7 +17806,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 175.26 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -18097,7 +18097,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 142.24 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -18364,7 +18364,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 137.16 173.99 0)
 			(hide yes)
 			(show_name no)
@@ -18375,7 +18375,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 137.16 173.99 0)
 			(hide yes)
 			(show_name no)
@@ -18833,7 +18833,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 116.84 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -19180,7 +19180,7 @@
 				)
 			)
 		)
-		(property "Stock" "3388297"
+		(property "Stock" "3475471"
 			(at 59.69 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -19191,7 +19191,7 @@
 				)
 			)
 		)
-		(property "Price" "0.021USD"
+		(property "Price" "0.020USD"
 			(at 59.69 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -19447,7 +19447,7 @@
 				)
 			)
 		)
-		(property "Stock" "3961571"
+		(property "Stock" "4092207"
 			(at 38.1 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -19458,7 +19458,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 38.1 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -19903,7 +19903,7 @@
 				)
 			)
 		)
-		(property "Stock" "135842"
+		(property "Stock" "491854"
 			(at 163.83 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -19914,7 +19914,7 @@
 				)
 			)
 		)
-		(property "Price" "0.006USD"
+		(property "Price" "0.007USD"
 			(at 163.83 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -20247,7 +20247,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 118.11 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -20258,7 +20258,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 118.11 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -20549,7 +20549,7 @@
 				)
 			)
 		)
-		(property "Stock" "5921160"
+		(property "Stock" "2223405"
 			(at 100.33 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -20560,7 +20560,7 @@
 				)
 			)
 		)
-		(property "Price" "0.005USD"
+		(property "Price" "0.006USD"
 			(at 100.33 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -21092,7 +21092,7 @@
 				)
 			)
 		)
-		(property "Stock" "983409"
+		(property "Stock" "1586884"
 			(at 144.78 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -21103,7 +21103,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 144.78 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -21394,7 +21394,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 71.12 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -21662,7 +21662,7 @@
 				)
 			)
 		)
-		(property "Stock" "2444311"
+		(property "Stock" "1041103"
 			(at 124.46 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -21673,7 +21673,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 124.46 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -22008,7 +22008,7 @@
 				)
 			)
 		)
-		(property "Stock" "983409"
+		(property "Stock" "1586884"
 			(at 133.35 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -22019,7 +22019,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 133.35 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -22597,7 +22597,7 @@
 				)
 			)
 		)
-		(property "Stock" "4246728"
+		(property "Stock" "5643370"
 			(at 111.76 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -22865,7 +22865,7 @@
 				)
 			)
 		)
-		(property "Stock" "7706573"
+		(property "Stock" "13902554"
 			(at 48.26 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -22876,7 +22876,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 48.26 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -23156,7 +23156,7 @@
 				)
 			)
 		)
-		(property "Stock" "253196"
+		(property "Stock" "651661"
 			(at 27.94 121.92 0)
 			(hide yes)
 			(show_name no)

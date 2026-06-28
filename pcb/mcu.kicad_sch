@@ -639,6 +639,909 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "EasyEDA:TVS-Bi,_PSM712-LF-T7"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D2"
+				(at 0.381 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PSM712-LF-T7"
+				(at 0.381 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "PCM_JLCPCB:SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811061632_ProTek-Devices-PSM712-LF-T7_C32677.pdf"
+				(at -2.286 0.127 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "-55°C~+150°C 12V 13.3V 19V 1uA、20uA 30A@8/20us、34A@8/20us 600W@8/20us 75pF IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4 TVS Unidirectional SOT-23 ESD and Surge Protection (TVS/ESD) ROHS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C32677"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Stock" "223826"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.314USD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Process" "SMT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum Qty" "5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Attrition Qty" "0"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Class" "Basic Component"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Category" "Circuit Protection,TVS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "ProTek Devices"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Part" "PSM712-LF-T7"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Reverse Stand-Off Voltage (Vrwm)" "12V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Maximum Clamping Voltage" "19V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Breakdown Voltage" "13.3V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "C32677"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TVS-Bi,_PSM712-LF-T7_0_1"
+				(polyline
+					(pts
+						(xy -5.588 3.302) (xy -5.08 3.302) (xy -5.08 7.112) (xy -4.318 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.588 -6.858) (xy -5.08 -6.858) (xy -5.08 -3.048) (xy -4.318 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 6.604) (xy -5.08 5.08) (xy -2.54 3.302) (xy -2.54 6.604)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 5.08) (xy -1.016 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -3.556) (xy -5.08 -5.08) (xy -2.54 -6.858) (xy -2.54 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -5.08) (xy -1.016 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 3.556) (xy 1.524 5.08) (xy -1.016 6.858) (xy -1.016 3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -6.604) (xy 1.524 -5.08) (xy -1.016 -3.302) (xy -1.016 -6.604)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 5.08) (xy 6.35 5.08) (xy 6.35 -5.08) (xy 1.524 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 6.858) (xy 1.524 6.858) (xy 1.524 3.048) (xy 0.762 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 -3.302) (xy 1.524 -3.302) (xy 1.524 -7.112) (xy 0.762 -7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -7.62 5.08 0)
+					(length 3.81)
+					(name "A1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -5.08 0)
+					(length 3.81)
+					(name "A1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TVS-Bi,_PSM712-LF-T7_1_1"
+				(pin passive line
+					(at 7.62 0 180)
+					(length 1.28)
+					(name "K"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "EasyEDA:Tactile_Button,_160gf,_12V,_50mA,_4.0mm"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "S"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Tactile Button, 160gf"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 0.8 0.8)
+					)
+				)
+			)
+			(property "Footprint" "PCM_JLCPCB:SW_TS-1088-AR02016"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XUNPU-TS-1088-AR02016_C720477.pdf"
+				(at -2.286 0.127 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "-30°C~+80°C 1.6N 100,000 cycles 12V 2mm 3mm 4mm 50mA Black Round Button SMD(SMT) Tab SPST Surface Mount,Vertical Without Bracket SMD,4x3mm Tactile Switches ROHS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C720477"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Stock" "619530"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.053USD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Process" "SMT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum Qty" "5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Attrition Qty" "4"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Class" "Basic Component"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Category" "Switches,Tactile Switches"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "XUNPU"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Part" "TS-1088-AR02016"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Switch Length" "4mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Voltage Rating (Dc)" "12V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "With Lamp" "No"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Operating Force" "160gf@±50gf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Actuator/Cap Color" "Black"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Mechanical Life" "100000 Times"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Strike Gundam" "NO"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Circuit" "SPST"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Switch Height" "2mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Actuator Style" "Round Button"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Switch Width" "3mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Contact Current" "50mA"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Operating Temperature" "-30°C~+80°C"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Mounting Style" "Brick nogging"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Insulation Resistance" "100MΩ"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Pin Style" "SMDSplicing"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "C720477"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Tactile_Button,_160gf,_12V,_50mA,_4.0mm_0_1"
+				(polyline
+					(pts
+						(xy -2.54 2.54) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -5.08) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0.762) (xy -1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0.508)
+					(radius 0.3175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 -2.794)
+					(radius 0.3175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.302) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(symbol "Tactile_Button,_160gf,_12V,_50mA,_4.0mm_1_1"
+				(rectangle
+					(start -2.54 5.08)
+					(end 2.54 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "PCM_JLCPCB-Capacitors:0603,100nF"
 			(pin_numbers
 				(hide yes)
@@ -695,7 +1598,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "100nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -717,7 +1620,7 @@
 					)
 				)
 			)
-			(property "Stock" "70324515"
+			(property "Stock" "37493696"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -993,7 +1896,7 @@
 					)
 				)
 			)
-			(property "Description" "25V 10uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "10uF 25V X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1015,7 +1918,7 @@
 					)
 				)
 			)
-			(property "Stock" "3388297"
+			(property "Stock" "3475471"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1026,7 +1929,7 @@
 					)
 				)
 			)
-			(property "Price" "0.021USD"
+			(property "Price" "0.020USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1291,7 +2194,7 @@
 					)
 				)
 			)
-			(property "Description" "50V 1uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(property "Description" "1uF 50V X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1313,7 +2216,7 @@
 					)
 				)
 			)
-			(property "Stock" "11535980"
+			(property "Stock" "7169422"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1324,7 +2227,7 @@
 					)
 				)
 			)
-			(property "Price" "0.008USD"
+			(property "Price" "0.011USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1533,915 +2436,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_JLCPCB-Connectors_Buttons:Tactile Button, 160gf, 12V, 50mA, 4.0mm"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "S"
-				(at 0 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Tactile Button, 160gf"
-				(at 0 -8.89 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 0.8 0.8)
-					)
-				)
-			)
-			(property "Footprint" "PCM_JLCPCB:SW_TS-1088-AR02016"
-				(at 0 -10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XUNPU-TS-1088-AR02016_C720477.pdf"
-				(at -2.286 0.127 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "Without 50mA 4mm 100MΩ 100000 Times 12V 160gf 3mm 2mm Round Button Standing paste SPST SMD Tactile Switches ROHS"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "LCSC" "C720477"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Stock" "346801"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Price" "0.044USD"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Process" "SMT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Minimum Qty" "5"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Attrition Qty" "4"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Class" "Basic Component"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Category" "Switches,Tactile Switches"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer" "XUNPU"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Part" "TS-1088-AR02016"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Switch Length" "4mm"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Voltage Rating (Dc)" "12V"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "With Lamp" "No"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Operating Force" "160gf@±50gf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Actuator/Cap Color" "Black"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Mechanical Life" "100000 Times"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Strike Gundam" "NO"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Circuit" "SPST"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Switch Height" "2mm"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Actuator Style" "Round Button"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Switch Width" "3mm"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Contact Current" "50mA"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Operating Temperature" "-30°C~+80°C"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Mounting Style" "Brick nogging"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Insulation Resistance" "100MΩ"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Pin Style" "SMDSplicing"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "C720477"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Tactile Button, 160gf, 12V, 50mA, 4.0mm_0_1"
-				(polyline
-					(pts
-						(xy -2.54 2.54) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -5.08) (xy 0 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.508 0.762) (xy -1.27 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0.508)
-					(radius 0.3175)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center 0 -2.794)
-					(radius 0.3175)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -3.302) (xy 0 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(symbol "Tactile Button, 160gf, 12V, 50mA, 4.0mm_1_1"
-				(rectangle
-					(start -2.54 5.08)
-					(end 2.54 -7.62)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "PCM_JLCPCB-Diode-Packages:TVS-Bi, PSM712-LF-T7"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 0 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "PSM712-LF-T7"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "PCM_JLCPCB:SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR"
-				(at 0 -10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811061632_ProTek-Devices-PSM712-LF-T7_C32677.pdf"
-				(at -2.286 0.127 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "19V 13.3V 12V SOT-23 ESD and Surge Protection (TVS/ESD) ROHS"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "LCSC" "C32677"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Stock" "189896"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Price" "0.304USD"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Process" "SMT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Minimum Qty" "5"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Attrition Qty" "0"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Class" "Basic Component"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Category" "Circuit Protection,TVS"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer" "ProTek Devices"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Part" "PSM712-LF-T7"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Reverse Stand-Off Voltage (Vrwm)" "12V"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Maximum Clamping Voltage" "19V"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Breakdown Voltage" "13.3V"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "C32677"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TVS-Bi, PSM712-LF-T7_0_1"
-				(polyline
-					(pts
-						(xy -5.588 3.302) (xy -5.08 3.302) (xy -5.08 7.112) (xy -4.318 7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.588 -6.858) (xy -5.08 -6.858) (xy -5.08 -3.048) (xy -4.318 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 6.604) (xy -5.08 5.08) (xy -2.54 3.302) (xy -2.54 6.604)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 5.08) (xy -1.016 5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -3.556) (xy -5.08 -5.08) (xy -2.54 -6.858) (xy -2.54 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -5.08) (xy -1.016 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 3.556) (xy 1.524 5.08) (xy -1.016 6.858) (xy -1.016 3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 -6.604) (xy 1.524 -5.08) (xy -1.016 -3.302) (xy -1.016 -6.604)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.524 5.08) (xy 6.35 5.08) (xy 6.35 -5.08) (xy 1.524 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.032 6.858) (xy 1.524 6.858) (xy 1.524 3.048) (xy 0.762 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.032 -3.302) (xy 1.524 -3.302) (xy 1.524 -7.112) (xy 0.762 -7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -7.62 5.08 0)
-					(length 3.81)
-					(name "A1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -7.62 -5.08 0)
-					(length 3.81)
-					(name "A1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(symbol "TVS-Bi, PSM712-LF-T7_1_1"
-				(pin passive line
-					(at 7.62 0 180)
-					(length 1.28)
-					(name "K"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "PCM_JLCPCB-Diodes:LED,0805,White"
 			(pin_numbers
 				(hide yes)
@@ -2498,7 +2492,7 @@
 					)
 				)
 			)
-			(property "Description" "0805 LED Indication - Discrete ROHS"
+			(property "Description" "-30°C~+85°C 120° 13172K~100000K 2.6V~3.2V 25mA 350mcd 80mW Discrete Diode Top-mount White Yellow Lens 0805 LED Indication - Discrete ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2520,7 +2514,7 @@
 					)
 				)
 			)
-			(property "Stock" "505726"
+			(property "Stock" "450581"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2531,7 +2525,7 @@
 					)
 				)
 			)
-			(property "Price" "0.020USD"
+			(property "Price" "0.022USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3412,7 +3406,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±1% ±200ppm/°C 100Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 100Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3434,7 +3428,7 @@
 					)
 				)
 			)
-			(property "Stock" "8202320"
+			(property "Stock" "9270288"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3445,7 +3439,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3729,7 +3723,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 10kΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 10kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3751,7 +3745,7 @@
 					)
 				)
 			)
-			(property "Stock" "51181774"
+			(property "Stock" "22319909"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3762,7 +3756,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4046,7 +4040,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 220Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 220Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4068,7 +4062,7 @@
 					)
 				)
 			)
-			(property "Stock" "3019407"
+			(property "Stock" "2762858"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4079,7 +4073,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4363,7 +4357,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 33Ω 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 33Ω 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4385,7 +4379,7 @@
 					)
 				)
 			)
-			(property "Stock" "2319032"
+			(property "Stock" "2873644"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4396,7 +4390,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4680,7 +4674,7 @@
 					)
 				)
 			)
-			(property "Description" "100mW Thick Film Resistors 75V ±100ppm/°C ±1% 5.1kΩ 0603 Chip Resistor - Surface Mount ROHS"
+			(property "Description" "-55°C~+155°C 100mW 5.1kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4702,7 +4696,7 @@
 					)
 				)
 			)
-			(property "Stock" "9223405"
+			(property "Stock" "2076828"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4713,7 +4707,7 @@
 					)
 				)
 			)
-			(property "Price" "0.004USD"
+			(property "Price" "0.005USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -8750,7 +8744,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 53.34 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -8761,7 +8755,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 53.34 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -9050,7 +9044,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 231.14 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -9061,7 +9055,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 231.14 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -9640,7 +9634,7 @@
 				)
 			)
 		)
-		(property "Stock" "9223405"
+		(property "Stock" "2076828"
 			(at 63.5 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -9651,7 +9645,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 63.5 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -10179,7 +10173,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 35.56 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -10190,7 +10184,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 35.56 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -10642,7 +10636,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_JLCPCB-Connectors_Buttons:Tactile Button, 160gf, 12V, 50mA, 4.0mm")
+		(lib_id "EasyEDA:Tactile_Button,_160gf,_12V,_50mA,_4.0mm")
 		(at 160.02 69.85 0)
 		(mirror y)
 		(unit 1)
@@ -10720,7 +10714,7 @@
 				)
 			)
 		)
-		(property "Stock" "346801"
+		(property "Stock" "619530"
 			(at 160.02 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -10731,7 +10725,7 @@
 				)
 			)
 		)
-		(property "Price" "0.044USD"
+		(property "Price" "0.053USD"
 			(at 160.02 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -11243,7 +11237,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 231.14 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -11254,7 +11248,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 231.14 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -11468,7 +11462,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_JLCPCB-Connectors_Buttons:Tactile Button, 160gf, 12V, 50mA, 4.0mm")
+		(lib_id "EasyEDA:Tactile_Button,_160gf,_12V,_50mA,_4.0mm")
 		(at 46.99 181.61 0)
 		(mirror y)
 		(unit 1)
@@ -11480,8 +11474,7 @@
 		(dnp no)
 		(uuid "542a6794-9690-408c-a4d1-8bdda9e7bd61")
 		(property "Reference" "S2"
-			(at 46.99 194.31 0)
-			(hide yes)
+			(at 47.244 175.006 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11526,7 +11519,7 @@
 			)
 		)
 		(property "Description" "RST_SW"
-			(at 53.848 183.134 0)
+			(at 53.594 182.626 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11546,7 +11539,7 @@
 				)
 			)
 		)
-		(property "Stock" "346801"
+		(property "Stock" "619530"
 			(at 46.99 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -11557,7 +11550,7 @@
 				)
 			)
 		)
-		(property "Price" "0.044USD"
+		(property "Price" "0.053USD"
 			(at 46.99 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -12070,7 +12063,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 231.14 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -12081,7 +12074,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 231.14 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -12371,7 +12364,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 260.35 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -12382,7 +12375,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 260.35 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -12671,7 +12664,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 231.14 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -12682,7 +12675,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 231.14 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -12896,7 +12889,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_JLCPCB-Diode-Packages:TVS-Bi, PSM712-LF-T7")
+		(lib_id "EasyEDA:TVS-Bi,_PSM712-LF-T7")
 		(at 96.52 43.18 180)
 		(unit 1)
 		(body_style 1)
@@ -12951,7 +12944,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "19V 13.3V 12V SOT-23 ESD and Surge Protection (TVS/ESD) ROHS"
+		(property "Description" "-55°C~+150°C 12V 13.3V 19V 1uA、20uA 30A@8/20us、34A@8/20us 600W@8/20us 75pF IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4 TVS Unidirectional SOT-23 ESD and Surge Protection (TVS/ESD) ROHS"
 			(at 96.52 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -12973,7 +12966,7 @@
 				)
 			)
 		)
-		(property "Stock" "189896"
+		(property "Stock" "223826"
 			(at 96.52 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -12984,7 +12977,7 @@
 				)
 			)
 		)
-		(property "Price" "0.304USD"
+		(property "Price" "0.314USD"
 			(at 96.52 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -13199,7 +13192,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 34.29 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -13466,7 +13459,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 252.73 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -13477,7 +13470,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 252.73 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -14049,7 +14042,7 @@
 				)
 			)
 		)
-		(property "Stock" "11535980"
+		(property "Stock" "7169422"
 			(at 64.77 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -14060,7 +14053,7 @@
 				)
 			)
 		)
-		(property "Price" "0.008USD"
+		(property "Price" "0.011USD"
 			(at 64.77 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -14284,7 +14277,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 267.97 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -14295,7 +14288,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 267.97 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -14585,7 +14578,7 @@
 				)
 			)
 		)
-		(property "Stock" "8202320"
+		(property "Stock" "9270288"
 			(at 53.34 173.99 0)
 			(hide yes)
 			(show_name no)
@@ -14596,7 +14589,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 53.34 173.99 0)
 			(hide yes)
 			(show_name no)
@@ -15008,7 +15001,7 @@
 				)
 			)
 		)
-		(property "Stock" "2319032"
+		(property "Stock" "2873644"
 			(at 231.14 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -15019,7 +15012,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 231.14 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -15446,7 +15439,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_JLCPCB-Connectors_Buttons:Tactile Button, 160gf, 12V, 50mA, 4.0mm")
+		(lib_id "EasyEDA:Tactile_Button,_160gf,_12V,_50mA,_4.0mm")
 		(at 153.67 186.69 0)
 		(mirror x)
 		(unit 1)
@@ -15505,14 +15498,13 @@
 			)
 		)
 		(property "Description" "BOOT_SW"
-			(at 157.48 185.4199 0)
+			(at 153.67 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "LCSC" "C720477"
@@ -15526,7 +15518,7 @@
 				)
 			)
 		)
-		(property "Stock" "346801"
+		(property "Stock" "619530"
 			(at 153.67 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -15537,7 +15529,7 @@
 				)
 			)
 		)
-		(property "Price" "0.044USD"
+		(property "Price" "0.053USD"
 			(at 153.67 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -15971,7 +15963,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 26.67 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -15982,7 +15974,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 26.67 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -16272,7 +16264,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 158.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -16283,7 +16275,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 158.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -16875,7 +16867,7 @@
 				)
 			)
 		)
-		(property "Stock" "9223405"
+		(property "Stock" "2076828"
 			(at 63.5 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -16886,7 +16878,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 63.5 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -17175,7 +17167,7 @@
 				)
 			)
 		)
-		(property "Stock" "70324515"
+		(property "Stock" "37493696"
 			(at 190.5 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -17759,7 +17751,7 @@
 				)
 			)
 		)
-		(property "Stock" "51181774"
+		(property "Stock" "22319909"
 			(at 142.24 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -17770,7 +17762,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 142.24 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -18059,7 +18051,7 @@
 				)
 			)
 		)
-		(property "Stock" "3388297"
+		(property "Stock" "3475471"
 			(at 190.5 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -18070,7 +18062,7 @@
 				)
 			)
 		)
-		(property "Price" "0.021USD"
+		(property "Price" "0.020USD"
 			(at 190.5 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -18562,7 +18554,7 @@
 				)
 			)
 		)
-		(property "Stock" "505726"
+		(property "Stock" "450581"
 			(at 153.67 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -18573,7 +18565,7 @@
 				)
 			)
 		)
-		(property "Price" "0.020USD"
+		(property "Price" "0.022USD"
 			(at 153.67 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -18863,7 +18855,7 @@
 				)
 			)
 		)
-		(property "Stock" "3019407"
+		(property "Stock" "2762858"
 			(at 162.56 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -18874,7 +18866,7 @@
 				)
 			)
 		)
-		(property "Price" "0.004USD"
+		(property "Price" "0.005USD"
 			(at 162.56 60.96 0)
 			(hide yes)
 			(show_name no)
