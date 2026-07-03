@@ -1,11 +1,14 @@
-# EveningStar slot-fit case
+# EveningStar slot-fit cases
 
-This directory contains a generated two-piece enclosure for
+This directory contains generated two-piece enclosures for
 `pcb/EveningStar.kicad_pcb`.
 
 The PCB is not screwed into the case. It sits in a close-fitting internal tray
-with long edge rails, and the lid screws land in external ears outside the case
-body.
+with long edge rails. There are two lid-retention variants:
+
+- `slotfit`: lid screws land in external ears outside the case body.
+- `snapfit`: no lid screws; four tapered nubs on the long case walls snap into
+  matching recesses in a lid shoulder.
 
 Generated files:
 
@@ -15,8 +18,20 @@ Generated files:
   flat lid with matching external screw ears
 - `eveningstar_case_slotfit.FCStd`: FreeCAD document with base, lid, and PCB
   reference
-- `eveningstar_case_slotfit_pcb_reference.step`: PCB outline reference
+- `eveningstar_case_slotfit_pcb_reference.step`: PCB outline reference with
+  raised connector markers on the component side
 - `eveningstar_case_slotfit_report.json`: extracted dimensions and hole
+  positions
+- `eveningstar_case_snapfit_base.step` / `eveningstar_case_snapfit_base.stl`:
+  screwless body with the same PCB tray, DIN rail holes, connector openings,
+  and snap nubs
+- `eveningstar_case_snapfit_lid.step` / `eveningstar_case_snapfit_lid.stl`:
+  lid with an internal shoulder and matching snap recesses
+- `eveningstar_case_snapfit.FCStd`: FreeCAD document with snapfit base, lid,
+  and PCB reference
+- `eveningstar_case_snapfit_pcb_reference.step`: PCB outline reference with
+  raised connector markers on the component side
+- `eveningstar_case_snapfit_report.json`: extracted dimensions and snap
   positions
 
 Regenerate with:
@@ -33,6 +48,10 @@ Hardware assumptions:
 - Two M3 clearance holes through the case bottom for the DIN rail bracket
   model in this directory. The holes are centered on the case body and use the
   bracket's 52.5 mm insert pitch.
+- Snapfit lid shoulder clearance is 0.25 mm per side.
+- Snapfit nubs are 20.0 mm wide x 2.0 mm high with a 1.0 mm triangular
+  protrusion. They are placed in pairs on the front and back walls to avoid the
+  side connector openings.
 
 Fit assumptions:
 
@@ -44,11 +63,17 @@ Fit assumptions:
   for the deepest bottom-side geometry found in the current KiCad 3D export.
 - The USB-C side opening is a raised slot above the rail height, not a full
   side-wall hole down to the floor.
+- PCB-derived features use the KiCad 3D export orientation, so component-side
+  connector markers in the PCB reference line up with the case side openings.
 
 The lid includes tool-access holes for `S1`/`CFG_SW`, `S2`/`RST_SW`, and
 `S3`/`BOOT_SW`, plus viewing holes for `D4`/`TX`, `D6`/`RX`, and `D12`/`White`.
 Side openings are generated for the RJ11 MeterBus jack, RJ45 Ethernet jack,
 barrel jack, and USB-C connector.
+
+The snapfit variant follows the tapered triangular nub plus lid-shoulder
+recess pattern used by the BoxMaker Fusion snap-fit enclosure generator, with
+clearance values in the same range as the downloaded snap-fit case references.
 
 The dimensions and clearances are configured near the top of
 `scripts/generate_eveningstar_case.py` in `CaseConfig`.
