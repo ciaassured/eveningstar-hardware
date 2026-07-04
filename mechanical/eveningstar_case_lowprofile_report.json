@@ -190,6 +190,28 @@
     ],
     "pattern": "tapered triangular wall nubs engaging matching lid-shoulder recesses",
     "shoulder_depth_mm": 3.2,
+    "shoulder_reliefs": [
+      {
+        "installed_side": "min_y",
+        "installed_y_range_mm": {
+          "max": 4.45,
+          "min": 2.65
+        },
+        "label": "USB-C connector",
+        "printed_lid_side": "max_y",
+        "printed_y_range_mm": {
+          "max": 46.851839999999996,
+          "min": 45.05183999999999
+        },
+        "ref": "J2",
+        "removed_shoulder_wall_depth_mm": 1.8,
+        "removed_shoulder_z_height_mm": 3.2,
+        "x_range_mm": {
+          "max": 74.93,
+          "min": 60.97
+        }
+      }
+    ],
     "shoulder_wall_mm": 1.8
   },
   "source_board": "pcb/EveningStar.kicad_pcb",

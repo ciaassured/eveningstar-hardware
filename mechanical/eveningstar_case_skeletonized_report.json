@@ -124,14 +124,14 @@
   },
   "modeled_solid_volume": {
     "lowprofile_base_mm3": 22797.72932153705,
-    "lowprofile_lid_mm3": 16045.921202799718,
-    "lowprofile_total_mm3": 38843.650524336765,
-    "reduction_mm3": 8218.60199999998,
-    "reduction_percent": 21.15816070080944,
+    "lowprofile_lid_mm3": 15965.511602799723,
+    "lowprofile_total_mm3": 38763.24092433677,
+    "reduction_mm3": 8218.601999999984,
+    "reduction_percent": 21.20205071614662,
     "reference_variant": "eveningstar_case_lowprofile",
     "skeletonized_base_mm3": 17866.929321537064,
-    "skeletonized_lid_mm3": 12758.11920279972,
-    "skeletonized_total_mm3": 30625.048524336784
+    "skeletonized_lid_mm3": 12677.709602799723,
+    "skeletonized_total_mm3": 30544.63892433679
   },
   "online_design_influences": [
     "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",
@@ -152,6 +152,28 @@
       "y": 7.0
     },
     "lid_plate_lattice_cells": 12,
+    "lid_shoulder_reliefs": [
+      {
+        "installed_side": "min_y",
+        "installed_y_range_mm": {
+          "max": 4.45,
+          "min": 2.65
+        },
+        "label": "USB-C connector",
+        "printed_lid_side": "max_y",
+        "printed_y_range_mm": {
+          "max": 46.851839999999996,
+          "min": 45.05183999999999
+        },
+        "ref": "J2",
+        "removed_shoulder_wall_depth_mm": 1.8,
+        "removed_shoulder_z_height_mm": 3.2,
+        "x_range_mm": {
+          "max": 74.93,
+          "min": 60.97
+        }
+      }
+    ],
     "minimum_remaining_rib_width_mm": 2.8,
     "perimeter_keepout_mm": 6.2,
     "printability": "all added lattice cells are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",

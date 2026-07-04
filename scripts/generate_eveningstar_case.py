@@ -553,6 +553,26 @@ def side_cutout_boxes(
     return cutters
 
 
+def usb_c_lid_shoulder_relief(board: BoardData, cfg: CaseConfig, outer_width: float) -> Part.Shape:
+    usb = box_to_case(board.footprints["J2"], board, cfg)
+    relief_width = usb.width + 4.0
+    relief_margin = 0.2
+    shoulder_outer_y = cfg.wall + cfg.snap_lid_gap
+
+    # The snapfit lid is printed shoulder-up; installing it mirrors Y.
+    # USB-C is on the installed min-Y side, so cut the printed max-Y shoulder bar.
+    return Part.makeBox(
+        relief_width,
+        cfg.snap_shoulder_wall + 2 * relief_margin,
+        cfg.snap_shoulder_depth + 1.0,
+        App.Vector(
+            usb.center_x - relief_width / 2,
+            outer_width - shoulder_outer_y - cfg.snap_shoulder_wall - relief_margin,
+            cfg.lid_thickness - 0.5,
+        ),
+    )
+
+
 def board_top_z(cfg: CaseConfig) -> float:
     return cfg.bottom + cfg.board_floor_clearance + cfg.pcb_thickness
 
@@ -852,6 +872,34 @@ def connector_opening_report(board: BoardData, cfg: CaseConfig) -> dict[str, dic
     return data
 
 
+def lid_shoulder_relief_report(board: BoardData, cfg: CaseConfig) -> list[dict[str, object]]:
+    body_width = case_body_width(board, cfg)
+    usb = box_to_case(board.footprints["J2"], board, cfg)
+    relief_width = usb.width + 4.0
+    shoulder_outer_y = cfg.wall + cfg.snap_lid_gap
+    installed_y_min = shoulder_outer_y
+    installed_y_max = shoulder_outer_y + cfg.snap_shoulder_wall
+    printed_y_min = body_width - installed_y_max
+    printed_y_max = body_width - installed_y_min
+
+    return [
+        {
+            "ref": "J2",
+            "label": "USB-C connector",
+            "installed_side": "min_y",
+            "printed_lid_side": "max_y",
+            "x_range_mm": {
+                "min": usb.center_x - relief_width / 2,
+                "max": usb.center_x + relief_width / 2,
+            },
+            "installed_y_range_mm": {"min": installed_y_min, "max": installed_y_max},
+            "printed_y_range_mm": {"min": printed_y_min, "max": printed_y_max},
+            "removed_shoulder_wall_depth_mm": cfg.snap_shoulder_wall,
+            "removed_shoulder_z_height_mm": cfg.snap_shoulder_depth,
+        }
+    ]
+
+
 def make_slotfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
     outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
@@ -1096,6 +1144,7 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
         ),
     )
     shoulder = shoulder_outer.cut(shoulder_inner)
+    shoulder = cut_all(shoulder, [usb_c_lid_shoulder_relief(board, cfg, outer_width)])
     lid = fuse_all(lid, [shoulder])
 
     cuts: list[Part.Shape] = []
@@ -1329,6 +1378,7 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
                 "top": cfg.base_height - cfg.snap_shoulder_depth + cfg.snap_nub_height,
             },
             "nubs": [asdict(nub) for nub in snap_nubs(board, cfg)],
+            "shoulder_reliefs": lid_shoulder_relief_report(board, cfg),
         },
         "din_rail_mount": {
             "source_model": "mechanical/din-rail-bracket-heat-insert-version.step",
@@ -1442,6 +1492,7 @@ def write_lowprofile_report(
                 "top": cfg.base_height - cfg.snap_shoulder_depth + cfg.snap_nub_height,
             },
             "nubs": [asdict(nub) for nub in snap_nubs(board, cfg)],
+            "shoulder_reliefs": lid_shoulder_relief_report(board, cfg),
         },
         "din_rail_mount": {
             "source_model": "mechanical/din-rail-bracket-heat-insert-version.step",
@@ -1502,6 +1553,7 @@ def write_skeletonized_report(
             "perimeter_keepout_mm": cfg.skeleton_perimeter_keepout,
             "din_screw_pad_radius_mm": cfg.skeleton_din_pad_radius,
             "functional_feature_keepout_mm": cfg.skeleton_feature_keepout,
+            "lid_shoulder_reliefs": lid_shoulder_relief_report(board, cfg),
         },
         "modeled_solid_volume": {
             "reference_variant": "eveningstar_case_lowprofile",

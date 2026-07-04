@@ -82,6 +82,8 @@ Hardware assumptions:
   model in this directory. The holes are centered on the case body and use the
   bracket's 52.5 mm insert pitch.
 - Snapfit lid shoulder clearance is 0.25 mm per side.
+- Snapfit-derived lid shoulders are locally relieved over the USB-C side
+  opening so the alignment bar does not cross the port mouth.
 - Snapfit nubs are 20.0 mm wide x 2.0 mm high with a 1.0 mm triangular
   protrusion. They are placed in pairs on the front and back walls to avoid the
   side connector openings.
