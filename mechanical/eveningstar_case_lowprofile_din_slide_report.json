@@ -53,6 +53,7 @@
     "round_led_view_diameter": 2.8,
     "screw_clearance_diameter": 3.0,
     "sensor_air_hole_diameter": 8.0,
+    "sensor_lid_edge_cutout_inner_reach": 2.5,
     "sensor_side_window_height": 4.5,
     "sensor_side_window_inner_reach": 5.5,
     "sensor_side_window_width": 10.0,

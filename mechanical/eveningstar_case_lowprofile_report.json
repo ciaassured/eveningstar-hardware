@@ -35,6 +35,7 @@
     "round_led_view_diameter": 2.8,
     "screw_clearance_diameter": 3.0,
     "sensor_air_hole_diameter": 8.0,
+    "sensor_lid_edge_cutout_inner_reach": 2.5,
     "sensor_side_window_height": 4.5,
     "sensor_side_window_inner_reach": 5.5,
     "sensor_side_window_width": 10.0,
@@ -353,6 +354,61 @@
       "bottom_z_mm": 6.2,
       "height_mm": 4.5,
       "inner_reach_past_sensor_center_mm": 5.5,
+      "side": "min_y",
+      "width_mm": 10.0
+    },
+    "lid_alignment_detour": {
+      "body_width_mm": 49.501839999999994,
+      "detour_depth_mm": 3.2,
+      "detour_installed_x_range_mm": {
+        "max": 95.6125,
+        "min": 82.0125
+      },
+      "detour_installed_y_range_mm": {
+        "max": 10.951840000000004,
+        "min": 2.65
+      },
+      "detour_wall_mm": 1.8,
+      "installed_side": "min_y",
+      "label": "AHT20 lid-edge opening alignment-rib detour",
+      "nearest_resistor_clearance": {
+        "case_position_mm": {
+          "x": 96.07000000000001,
+          "y": 16.921838999999995
+        },
+        "edge_clearance_mm": 4.644998999999995,
+        "ref": "R31",
+        "value": "1M\u03a9"
+      },
+      "opening_envelope_installed_y_range_mm": {
+        "max": 9.151840000000004,
+        "min": -1.0
+      },
+      "opening_envelope_printed_y_range_mm": {
+        "max": 50.501839999999994,
+        "min": 40.349999999999994
+      },
+      "printed_lid_side": "max_y",
+      "ref": "U6",
+      "slot_installed_y_range_mm": {
+        "max": 7.651840000000004,
+        "min": -1.0
+      },
+      "slot_x_range_mm": {
+        "max": 93.8125,
+        "min": 83.8125
+      }
+    },
+    "lid_edge_cutout": {
+      "inner_reach_past_sensor_center_mm": 2.5,
+      "installed_y_range_mm": {
+        "max": 7.651840000000004,
+        "min": -1.0
+      },
+      "opening_envelope_y_range_mm": {
+        "max": 9.151840000000004,
+        "min": -1.0
+      },
       "side": "min_y",
       "width_mm": 10.0
     },

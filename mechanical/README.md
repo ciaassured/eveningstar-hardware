@@ -138,7 +138,10 @@ Fit assumptions:
   dimensions, the PCB top is at 6.4 mm, leaving 4.2 mm over the board for
   smaller components while taller connectors protrude through the lid.
 - The low-profile AHT20 opening combines an 8.0 mm top aperture with a front
-  side window because `U6` sits near the front PCB edge.
+  side window because `U6` sits near the front PCB edge. The lid-side notch is
+  shallower than the base side window, and the internal lid alignment shoulder
+  detours around the sensor opening envelope while keeping clearance from the
+  nearby resistor.
 - The side DIN rail interface uses one external rounded dovetail-like rail on
   the max-Y wall from x=18.0 mm to x=133.4 mm. The rail protrudes 2.0 mm,
   starts at the print-bed plane on the case side and ramps outward to the lower
@@ -159,8 +162,8 @@ Fit assumptions:
   previous tall fill bosses.
 - The skeletonized variant keeps the same low-profile snap-fit envelope and
   uses faceted hex-ended through-cells only in surfaces that face the print bed:
-  22 floor lattice cells and 12 lid lattice cells in the current generated
-  files. The report estimates a 21.1% modeled solid-volume reduction versus
+  22 floor lattice cells and 11 lid lattice cells in the current generated
+  files. The report estimates a 20.4% modeled solid-volume reduction versus
   `lowprofile`.
 
 The lid includes a shallow edge cutout for `J2`, a separate shared rounded

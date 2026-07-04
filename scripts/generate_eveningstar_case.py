@@ -92,6 +92,7 @@ class CaseConfig:
     sensor_side_window_width: float = 10.0
     sensor_side_window_height: float = 4.5
     sensor_side_window_inner_reach: float = 5.5
+    sensor_lid_edge_cutout_inner_reach: float = 2.5
     skeleton_perimeter_keepout: float = 6.2
     skeleton_min_rib_width: float = 2.8
     skeleton_base_cell_length: float = 24.0
@@ -182,6 +183,7 @@ LOW_PROFILE_CONFIG_KEYS = {
     "sensor_side_window_width",
     "sensor_side_window_height",
     "sensor_side_window_inner_reach",
+    "sensor_lid_edge_cutout_inner_reach",
 }
 
 
@@ -468,6 +470,12 @@ Rect = tuple[float, float, float, float]
 
 def rect_intersects(a: Rect, b: Rect) -> bool:
     return not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1])
+
+
+def rect_clearance(a: Rect, b: Rect) -> float:
+    dx = max(a[0] - b[2], b[0] - a[2], 0)
+    dy = max(a[1] - b[3], b[1] - a[3], 0)
+    return math.hypot(dx, dy)
 
 
 def padded_rect(
@@ -860,6 +868,50 @@ def led_pair_lid_cutout_rect(
     return lid_cutout_rect(led_pair_lid_installed_cutout_rect(board, cfg), board, cfg, printed_snapfit_lid)
 
 
+def sensor_lid_slot_width(board: BoardData, cfg: CaseConfig) -> float:
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    return max(cfg.sensor_side_window_width, sensor.width + 2.0)
+
+
+def sensor_lid_edge_cutout_installed_rect(board: BoardData, cfg: CaseConfig) -> Rect:
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    slot_width = sensor_lid_slot_width(board, cfg)
+    return (
+        sensor.center_x - slot_width / 2,
+        -1.0,
+        sensor.center_x + slot_width / 2,
+        sensor.center_y + cfg.sensor_lid_edge_cutout_inner_reach,
+    )
+
+
+def sensor_lid_opening_installed_rect(board: BoardData, cfg: CaseConfig) -> Rect:
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    slot = sensor_lid_edge_cutout_installed_rect(board, cfg)
+    air_radius = cfg.sensor_air_hole_diameter / 2
+    return (
+        min(slot[0], sensor.center_x - air_radius),
+        min(slot[1], sensor.center_y - air_radius),
+        max(slot[2], sensor.center_x + air_radius),
+        max(slot[3], sensor.center_y + air_radius),
+    )
+
+
+def sensor_lid_edge_cutout_rect(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> Rect:
+    return lid_cutout_rect(sensor_lid_edge_cutout_installed_rect(board, cfg), board, cfg, printed_snapfit_lid)
+
+
+def sensor_lid_opening_rect(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> Rect:
+    return lid_cutout_rect(sensor_lid_opening_installed_rect(board, cfg), board, cfg, printed_snapfit_lid)
+
+
 def usb_c_lid_shoulder_relief(board: BoardData, cfg: CaseConfig, outer_width: float) -> Part.Shape:
     rect = usb_c_lid_installed_cutout_rect(board, cfg)
     relief_width = rect[2] - rect[0]
@@ -878,6 +930,38 @@ def usb_c_lid_shoulder_relief(board: BoardData, cfg: CaseConfig, outer_width: fl
             cfg.lid_thickness - 0.5,
         ),
     )
+
+
+def sensor_lid_shoulder_detour(board: BoardData, cfg: CaseConfig, outer_width: float) -> Part.Shape:
+    opening = sensor_lid_opening_rect(board, cfg, printed_snapfit_lid=True)
+    wall = cfg.snap_shoulder_wall
+    shoulder_outer_y = cfg.wall + cfg.snap_lid_gap
+    shoulder_bar_y_max = outer_width - shoulder_outer_y
+    back_bar_y_min = opening[1] - wall
+    z = cfg.lid_thickness
+    height = cfg.snap_shoulder_depth
+
+    bars = [
+        Part.makeBox(
+            wall,
+            shoulder_bar_y_max - back_bar_y_min,
+            height,
+            App.Vector(opening[0] - wall, back_bar_y_min, z),
+        ),
+        Part.makeBox(
+            wall,
+            shoulder_bar_y_max - back_bar_y_min,
+            height,
+            App.Vector(opening[2], back_bar_y_min, z),
+        ),
+        Part.makeBox(
+            opening[2] - opening[0] + 2 * wall,
+            wall,
+            height,
+            App.Vector(opening[0] - wall, back_bar_y_min, z),
+        ),
+    ]
+    return fuse_all(bars[0], bars[1:])
 
 
 def usb_c_lid_edge_cutout(
@@ -974,21 +1058,10 @@ def low_profile_lid_cutouts(
         )
     )
 
-    sensor_installed = box_to_case(board.footprints["U6"], board, cfg)
-    sensor_slot_width = max(cfg.sensor_side_window_width, sensor_installed.width + 2.0)
-    slot = rect_to_printed_lid(
-        (
-            sensor_installed.center_x - sensor_slot_width / 2,
-            -1.0,
-            sensor_installed.center_x + sensor_slot_width / 2,
-            sensor_installed.center_y + cfg.sensor_side_window_inner_reach + 1.0,
-        ),
-        board,
-        cfg,
-    )
+    slot = sensor_lid_edge_cutout_rect(board, cfg, printed_snapfit_lid=True)
     cuts.append(
         Part.makeBox(
-            sensor_slot_width,
+            slot[2] - slot[0],
             slot[3] - slot[1],
             z_height,
             App.Vector(
@@ -1161,28 +1234,13 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
             )
         )
 
-    sensor = footprint_to_printed_lid(board.footprints["U6"], board, cfg)
-    sensor_installed = box_to_case(board.footprints["U6"], board, cfg)
-    sensor_slot_width = max(cfg.sensor_side_window_width, sensor_installed.width + 2.0)
+    sensor_opening = sensor_lid_opening_rect(board, cfg, printed_snapfit_lid=True)
     keepouts.append(
-        padded_rect(
-            sensor.center_x,
-            sensor.center_y,
-            cfg.sensor_air_hole_diameter,
-            cfg.sensor_air_hole_diameter,
-            pad,
-        )
-    )
-    keepouts.append(
-        rect_to_printed_lid(
-            (
-                sensor_installed.center_x - sensor_slot_width / 2 - pad,
-                -pad,
-                sensor_installed.center_x + sensor_slot_width / 2 + pad,
-                sensor_installed.center_y + cfg.sensor_side_window_inner_reach + pad,
-            ),
-            board,
-            cfg,
+        (
+            sensor_opening[0] - cfg.snap_shoulder_wall - pad,
+            sensor_opening[1] - cfg.snap_shoulder_wall - pad,
+            sensor_opening[2] + cfg.snap_shoulder_wall + pad,
+            sensor_opening[3] + pad,
         )
     )
     return keepouts
@@ -1249,6 +1307,52 @@ def lid_shoulder_relief_report(board: BoardData, cfg: CaseConfig) -> list[dict[s
             "removed_shoulder_z_height_mm": cfg.snap_shoulder_depth,
         }
     ]
+
+
+def sensor_lid_alignment_detour_report(board: BoardData, cfg: CaseConfig) -> dict[str, object]:
+    body_width = case_body_width(board, cfg)
+    opening = sensor_lid_opening_installed_rect(board, cfg)
+    slot = sensor_lid_edge_cutout_installed_rect(board, cfg)
+    printed_opening = sensor_lid_opening_rect(board, cfg, printed_snapfit_lid=True)
+    shoulder_outer_y = cfg.wall + cfg.snap_lid_gap
+    detour_rect = (
+        opening[0] - cfg.snap_shoulder_wall,
+        shoulder_outer_y,
+        opening[2] + cfg.snap_shoulder_wall,
+        opening[3] + cfg.snap_shoulder_wall,
+    )
+
+    nearest_resistor: dict[str, object] | None = None
+    for ref, fp in board.footprints.items():
+        if not ref.startswith("R"):
+            continue
+        box = box_to_case(fp, board, cfg)
+        resistor_rect = (box.x, box.y, box.x + box.width, box.y + box.height)
+        clearance = rect_clearance(detour_rect, resistor_rect)
+        if nearest_resistor is None or clearance < nearest_resistor["edge_clearance_mm"]:
+            nearest_resistor = {
+                "ref": ref,
+                "value": fp.value,
+                "case_position_mm": {"x": box.center_x, "y": box.center_y},
+                "edge_clearance_mm": clearance,
+            }
+
+    return {
+        "ref": "U6",
+        "label": "AHT20 lid-edge opening alignment-rib detour",
+        "installed_side": "min_y",
+        "printed_lid_side": "max_y",
+        "slot_x_range_mm": {"min": slot[0], "max": slot[2]},
+        "slot_installed_y_range_mm": {"min": slot[1], "max": slot[3]},
+        "opening_envelope_installed_y_range_mm": {"min": opening[1], "max": opening[3]},
+        "opening_envelope_printed_y_range_mm": {"min": printed_opening[1], "max": printed_opening[3]},
+        "detour_installed_x_range_mm": {"min": detour_rect[0], "max": detour_rect[2]},
+        "detour_installed_y_range_mm": {"min": detour_rect[1], "max": detour_rect[3]},
+        "detour_wall_mm": cfg.snap_shoulder_wall,
+        "detour_depth_mm": cfg.snap_shoulder_depth,
+        "nearest_resistor_clearance": nearest_resistor,
+        "body_width_mm": body_width,
+    }
 
 
 def usb_c_lid_edge_cutout_report(
@@ -2012,10 +2116,12 @@ def make_lowprofile_din_slide_base(
 
 
 def make_lowprofile_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+    outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
     lid = make_snapfit_lid(board, cfg)
     z_min = -0.5
     z_height = cfg.lid_thickness + cfg.snap_shoulder_depth + 1.0
-    return cut_all(lid, low_profile_lid_cutouts(board, cfg, z_min, z_height))
+    lid = cut_all(lid, low_profile_lid_cutouts(board, cfg, z_min, z_height))
+    return fuse_all(lid, [sensor_lid_shoulder_detour(board, cfg, outer_width)])
 
 
 def make_skeletonized_lowprofile_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
@@ -2247,6 +2353,8 @@ def write_lowprofile_report(
 
     sensor = box_to_case(board.footprints["U6"], board, cfg)
     sensor_window_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    sensor_lid_slot = sensor_lid_edge_cutout_installed_rect(board, cfg)
+    sensor_lid_opening = sensor_lid_opening_installed_rect(board, cfg)
     data = {
         "source_board": str(BOARD_PATH.relative_to(ROOT)),
         "variant": "low-profile snap-fit PCB tray with top pass-through cutouts",
@@ -2281,6 +2389,17 @@ def write_lowprofile_report(
             "sensor": board.footprints["U6"].value,
             "case_position_mm": {"x": sensor.center_x, "y": sensor.center_y},
             "top_air_hole_diameter_mm": cfg.sensor_air_hole_diameter,
+            "lid_edge_cutout": {
+                "side": "min_y",
+                "width_mm": sensor_lid_slot[2] - sensor_lid_slot[0],
+                "inner_reach_past_sensor_center_mm": cfg.sensor_lid_edge_cutout_inner_reach,
+                "installed_y_range_mm": {"min": sensor_lid_slot[1], "max": sensor_lid_slot[3]},
+                "opening_envelope_y_range_mm": {
+                    "min": sensor_lid_opening[1],
+                    "max": sensor_lid_opening[3],
+                },
+            },
+            "lid_alignment_detour": sensor_lid_alignment_detour_report(board, cfg),
             "front_side_window": {
                 "side": "min_y",
                 "width_mm": sensor_window_width,
