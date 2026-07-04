@@ -31,6 +31,8 @@ except ImportError as exc:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[1]
 BOARD_PATH = ROOT / "pcb" / "EveningStar.kicad_pcb"
 OUTPUT_DIR = ROOT / "mechanical"
+DIN_RAIL_BRACKET_PATH = OUTPUT_DIR / "din-rail-bracket-heat-insert-version.step"
+DIN_SIDE_CLIP_ORIGINAL_BASENAME = "din-rail-side-clip-original-lowprofile"
 SCALE = 1_000_000
 
 
@@ -56,6 +58,20 @@ class CaseConfig:
     external_ear_overlap: float = 2.4
     din_mount_hole_diameter: float = 3.4
     din_mount_hole_spacing: float = 52.5
+    din_side_rail_x_margin: float = 18.0
+    din_side_rail_protrusion: float = 2.0
+    din_side_rail_neck_height: float = 4.4
+    din_side_rail_head_height: float = 8.4
+    din_side_rail_bed_thickness: float = 0.9
+    din_side_rail_fillet: float = 0.25
+    din_side_rail_root_blend_height: float = 1.4
+    din_side_receiver_wall: float = 1.1
+    din_side_receiver_back_wall: float = 2.0
+    din_side_receiver_end_margin: float = 3.0
+    din_side_receiver_peak_depth: float = 1.4
+    din_side_clearance: float = 0.3
+    din_side_clip_hole_plug_radius_extra: float = 0.85
+    din_side_clip_hole_plug_face_cover: float = 0.02
     snap_lid_gap: float = 0.25
     snap_shoulder_wall: float = 1.8
     snap_shoulder_depth: float = 3.2
@@ -119,6 +135,29 @@ class SnapNub:
     width: float
 
 
+@dataclass(frozen=True)
+class SideSlideInterface:
+    body_length: float
+    body_width: float
+    rail_x_min: float
+    rail_length: float
+    wall_y: float
+    rail_outer_y: float
+    rail_center_z: float
+    rail_neck_height: float
+    rail_head_height: float
+
+
+@dataclass(frozen=True)
+class DinSideClip:
+    label: str
+    basename: str
+    source_model: str
+    installed_shape: Part.Shape
+    print_shape: Part.Shape
+    source_bbox: dict[str, dict[str, float]]
+
+
 TALL_COMPONENT_CUTOUT_REFS = {
     "J3": "programming header",
     "J1": "3V3 power jumper",
@@ -148,6 +187,24 @@ SKELETON_CONFIG_KEYS = {
     "skeleton_cell_chamfer_ratio",
     "skeleton_feature_keepout",
     "skeleton_din_pad_radius",
+}
+
+
+DIN_SIDE_SLIDE_CONFIG_KEYS = {
+    "din_side_rail_x_margin",
+    "din_side_rail_protrusion",
+    "din_side_rail_neck_height",
+    "din_side_rail_head_height",
+    "din_side_rail_bed_thickness",
+    "din_side_rail_fillet",
+    "din_side_rail_root_blend_height",
+    "din_side_receiver_wall",
+    "din_side_receiver_back_wall",
+    "din_side_receiver_end_margin",
+    "din_side_receiver_peak_depth",
+    "din_side_clearance",
+    "din_side_clip_hole_plug_radius_extra",
+    "din_side_clip_hole_plug_face_cover",
 }
 
 
@@ -273,6 +330,63 @@ def vertical_cylinder(
     z: float,
 ) -> Part.Shape:
     return Part.makeCylinder(radius, height, App.Vector(x, y, z), App.Vector(0, 0, 1))
+
+
+def trapezoid_prism_y(
+    center_x: float,
+    y_min: float,
+    length: float,
+    z_min: float,
+    height: float,
+    bottom_width: float,
+    top_width: float,
+) -> Part.Shape:
+    half_bottom = bottom_width / 2
+    half_top = top_width / 2
+    points = [
+        App.Vector(center_x - half_bottom, y_min, z_min),
+        App.Vector(center_x + half_bottom, y_min, z_min),
+        App.Vector(center_x + half_top, y_min, z_min + height),
+        App.Vector(center_x - half_top, y_min, z_min + height),
+    ]
+    points.append(points[0])
+    return Part.Face(Part.makePolygon(points)).extrude(App.Vector(0, length, 0))
+
+
+def side_dovetail_prism_x(
+    x_min: float,
+    length: float,
+    y_inner: float,
+    y_outer: float,
+    z_center: float,
+    inner_height: float,
+    outer_height: float,
+) -> Part.Shape:
+    points = [
+        App.Vector(x_min, y_inner, z_center - inner_height / 2),
+        App.Vector(x_min, y_outer, z_center - outer_height / 2),
+        App.Vector(x_min, y_outer, z_center + outer_height / 2),
+        App.Vector(x_min, y_inner, z_center + inner_height / 2),
+    ]
+    points.append(points[0])
+    return Part.Face(Part.makePolygon(points)).extrude(App.Vector(length, 0, 0))
+
+
+def bbox_dict(shape: Part.Shape) -> dict[str, dict[str, float]]:
+    bb = shape.BoundBox
+    return {
+        "x": {"min": bb.XMin, "max": bb.XMax, "length": bb.XLength},
+        "y": {"min": bb.YMin, "max": bb.YMax, "length": bb.YLength},
+        "z": {"min": bb.ZMin, "max": bb.ZMax, "length": bb.ZLength},
+    }
+
+
+def read_din_rail_bracket() -> Part.Shape:
+    shape = Part.Shape()
+    shape.read(str(DIN_RAIL_BRACKET_PATH))
+    if not shape.isValid():
+        raise RuntimeError(f"Could not read a valid DIN rail bracket from {DIN_RAIL_BRACKET_PATH}")
+    return shape
 
 
 Rect = tuple[float, float, float, float]
@@ -445,6 +559,26 @@ def din_mount_positions(board: BoardData, cfg: CaseConfig) -> list[Point]:
         Point(x_center - half_spacing, y_center),
         Point(x_center + half_spacing, y_center),
     ]
+
+
+def side_slide_interface(board: BoardData, cfg: CaseConfig) -> SideSlideInterface:
+    outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    rail_x_min = cfg.din_side_rail_x_margin
+    rail_length = outer_length - 2 * cfg.din_side_rail_x_margin
+    if rail_length <= 0:
+        raise RuntimeError("DIN side rail x margins are wider than the case body")
+    return SideSlideInterface(
+        body_length=outer_length,
+        body_width=outer_width,
+        rail_x_min=rail_x_min,
+        rail_length=rail_length,
+        wall_y=outer_width,
+        rail_outer_y=outer_width + cfg.din_side_rail_protrusion,
+        rail_center_z=cfg.base_height / 2,
+        rail_neck_height=cfg.din_side_rail_neck_height,
+        rail_head_height=cfg.din_side_rail_head_height,
+    )
 
 
 def snap_nubs(board: BoardData, cfg: CaseConfig) -> list[SnapNub]:
@@ -980,7 +1114,11 @@ def make_slotfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     return cut_all(base, cuts)
 
 
-def make_snapfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+def make_snapfit_base(
+    board: BoardData,
+    cfg: CaseConfig,
+    include_din_screw_holes: bool = True,
+) -> Part.Shape:
     outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
     outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
 
@@ -1046,16 +1184,17 @@ def make_snapfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     base = fuse_all(base, additions)
 
     cuts: list[Part.Shape] = []
-    for pos in din_mount_positions(board, cfg):
-        cuts.append(
-            vertical_cylinder(
-                pos.x,
-                pos.y,
-                cfg.din_mount_hole_diameter / 2,
-                cfg.bottom + 1.0,
-                -0.5,
+    if include_din_screw_holes:
+        for pos in din_mount_positions(board, cfg):
+            cuts.append(
+                vertical_cylinder(
+                    pos.x,
+                    pos.y,
+                    cfg.din_mount_hole_diameter / 2,
+                    cfg.bottom + 1.0,
+                    -0.5,
+                )
             )
-        )
 
     cuts.extend(side_cutout_boxes(board, cfg, outer_length, outer_width))
     return cut_all(base, cuts)
@@ -1197,9 +1336,335 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     return cut_all(lid, cuts)
 
 
+def profile_prism_x(x_min: float, length: float, yz_points: list[tuple[float, float]]) -> Part.Shape:
+    points = [App.Vector(x_min, y, z) for y, z in yz_points]
+    points.append(points[0])
+    return Part.Face(Part.makePolygon(points)).extrude(App.Vector(length, 0, 0))
+
+
+def profile_prism_y(y_min: float, depth: float, xz_points: list[tuple[float, float]]) -> Part.Shape:
+    points = [App.Vector(x, y_min, z) for x, z in xz_points]
+    points.append(points[0])
+    return Part.Face(Part.makePolygon(points)).extrude(App.Vector(0, depth, 0))
+
+
+def fillet_non_bed_edges(shape: Part.Shape, radius: float) -> Part.Shape:
+    if radius <= 0:
+        return tidy(shape)
+    edges = []
+    for edge in shape.Edges:
+        if all(vertex.Point.z > 0.05 for vertex in edge.Vertexes):
+            edges.append(edge)
+    if not edges:
+        return tidy(shape)
+    try:
+        return tidy(shape.makeFillet(radius, edges))
+    except Exception:
+        return tidy(shape)
+
+
+def fillet_side_slide_rail_edges(
+    shape: Part.Shape,
+    interface: SideSlideInterface,
+    cfg: CaseConfig,
+) -> Part.Shape:
+    radius = cfg.din_side_rail_fillet
+    if radius <= 0:
+        return tidy(shape)
+    edges = []
+    contact_y_limit = interface.wall_y + 0.05
+    for edge in shape.Edges:
+        vertices = edge.Vertexes
+        if all(vertex.Point.z > 0.05 for vertex in vertices) and all(
+            vertex.Point.y > contact_y_limit for vertex in vertices
+        ):
+            edges.append(edge)
+    if not edges:
+        return tidy(shape)
+    try:
+        return tidy(shape.makeFillet(radius, edges))
+    except Exception:
+        return tidy(shape)
+
+
+def side_slide_rail_profile_points(
+    interface: SideSlideInterface,
+    cfg: CaseConfig,
+    clearance: float = 0.0,
+    wall_open_extra: float = 0.0,
+    include_root_blend: bool = False,
+) -> list[tuple[float, float]]:
+    wall_y = interface.wall_y - wall_open_extra
+    outer_y = interface.rail_outer_y + clearance
+    bottom_z = -clearance
+    lower_wall_z = max(
+        cfg.din_side_rail_bed_thickness,
+        interface.rail_center_z - interface.rail_neck_height / 2 - clearance,
+    )
+    upper_wall_z = interface.rail_center_z + interface.rail_neck_height / 2 + clearance
+    upper_outer_z = interface.rail_center_z + interface.rail_head_height / 2 + clearance
+    if include_root_blend:
+        root_y = interface.wall_y - cfg.outer_fillet - 0.05
+        root_z = max(cfg.din_side_rail_root_blend_height, cfg.outer_fillet)
+        return [
+            (root_y, bottom_z),
+            (wall_y, bottom_z),
+            (outer_y, lower_wall_z),
+            (outer_y, upper_outer_z),
+            (wall_y, upper_wall_z),
+            (wall_y, lower_wall_z),
+            (root_y, root_z),
+        ]
+    return [
+        (wall_y, bottom_z),
+        (outer_y, lower_wall_z),
+        (outer_y, upper_outer_z),
+        (wall_y, upper_wall_z),
+        (wall_y, lower_wall_z),
+    ]
+
+
+def side_slide_receiver_groove_profile_points(
+    interface: SideSlideInterface,
+    cfg: CaseConfig,
+    front_open_extra: float = 0.8,
+) -> list[tuple[float, float]]:
+    opening_y = interface.wall_y + cfg.din_side_clearance
+    front_open_y = interface.wall_y - front_open_extra
+    outer_y = interface.rail_outer_y + cfg.din_side_clearance
+    bottom_z = -cfg.din_side_clearance
+    lower_wall_z = max(
+        cfg.din_side_rail_bed_thickness,
+        interface.rail_center_z - interface.rail_neck_height / 2 - cfg.din_side_clearance,
+    )
+    upper_wall_z = interface.rail_center_z + interface.rail_neck_height / 2 + cfg.din_side_clearance
+    upper_outer_z = interface.rail_center_z + interface.rail_head_height / 2 + cfg.din_side_clearance
+    peak_depth = min(
+        cfg.din_side_receiver_peak_depth,
+        max(0.2, cfg.din_side_receiver_back_wall - 0.35),
+    )
+    peak_y = outer_y + peak_depth
+    peak_z = (lower_wall_z + upper_outer_z) / 2
+    return [
+        (front_open_y, bottom_z),
+        (opening_y, bottom_z),
+        (outer_y, lower_wall_z),
+        (peak_y, peak_z),
+        (outer_y, upper_outer_z),
+        (opening_y, upper_wall_z),
+        (front_open_y, upper_wall_z),
+    ]
+
+
+def wavy_strip_prism_y(
+    x_start: float,
+    x_end: float,
+    y_min: float,
+    depth: float,
+    z_center: float,
+    amplitude: float,
+    cycles: float,
+    thickness: float,
+    samples: int = 36,
+) -> Part.Shape:
+    centerline: list[tuple[float, float]] = []
+    for index in range(samples):
+        t = index / (samples - 1)
+        x = x_start + (x_end - x_start) * t
+        z = z_center + amplitude * math.sin(2 * math.pi * cycles * t - math.pi / 2)
+        centerline.append((x, z))
+
+    upper: list[tuple[float, float]] = []
+    lower: list[tuple[float, float]] = []
+    half = thickness / 2
+    for index, (x, z) in enumerate(centerline):
+        if index == 0:
+            x_prev, z_prev = centerline[index]
+            x_next, z_next = centerline[index + 1]
+        elif index == len(centerline) - 1:
+            x_prev, z_prev = centerline[index - 1]
+            x_next, z_next = centerline[index]
+        else:
+            x_prev, z_prev = centerline[index - 1]
+            x_next, z_next = centerline[index + 1]
+        dx = x_next - x_prev
+        dz = z_next - z_prev
+        length = math.hypot(dx, dz)
+        if length == 0:
+            normal_x, normal_z = 0.0, 1.0
+        else:
+            normal_x = -dz / length
+            normal_z = dx / length
+        upper.append((x + normal_x * half, z + normal_z * half))
+        lower.append((x - normal_x * half, z - normal_z * half))
+    return profile_prism_y(y_min, depth, upper + list(reversed(lower)))
+
+
+def make_side_slide_rail(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+    interface = side_slide_interface(board, cfg)
+    rail = profile_prism_x(
+        interface.rail_x_min,
+        interface.rail_length,
+        side_slide_rail_profile_points(interface, cfg, include_root_blend=True),
+    )
+    return fillet_side_slide_rail_edges(rail, interface, cfg)
+
+
+def side_clip_length(source_x_length: float, cfg: CaseConfig) -> float:
+    return max(64.0, source_x_length + 2 * cfg.din_side_receiver_end_margin)
+
+
+def make_side_slide_receiver(
+    board: BoardData,
+    cfg: CaseConfig,
+    clip_length: float,
+    installed_z_length: float | None = None,
+) -> Part.Shape:
+    interface = side_slide_interface(board, cfg)
+    x_min = interface.body_length / 2 - clip_length / 2
+    y_min = interface.wall_y + cfg.din_side_clearance
+    rail_clear_y = interface.rail_outer_y + cfg.din_side_clearance
+    y_max = rail_clear_y + cfg.din_side_receiver_back_wall
+    default_z_length = (
+        interface.rail_head_height
+        + 2 * cfg.din_side_clearance
+        + 2 * cfg.din_side_receiver_wall
+    )
+    z_length = max(default_z_length, installed_z_length or 0.0)
+    z_min = interface.rail_center_z - z_length / 2
+    z_max = interface.rail_center_z + z_length / 2
+
+    receiver = Part.makeBox(
+        clip_length,
+        y_max - y_min,
+        z_max - z_min,
+        App.Vector(x_min, y_min, z_min),
+    )
+    groove = profile_prism_x(
+        x_min - 0.5,
+        clip_length + 1.0,
+        side_slide_receiver_groove_profile_points(interface, cfg),
+    )
+    return cut_all(receiver, [groove])
+
+
+def install_source_clip_on_side(
+    source_shape: Part.Shape,
+    board: BoardData,
+    cfg: CaseConfig,
+    receiver: Part.Shape,
+) -> Part.Shape:
+    interface = side_slide_interface(board, cfg)
+    source = source_shape.copy()
+    source.rotate(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 90)
+    source_bb = source.BoundBox
+    receiver_bb = receiver.BoundBox
+    source.translate(
+        App.Vector(
+            interface.body_length / 2 - (source_bb.XMin + source_bb.XMax) / 2,
+            receiver_bb.YMax - 0.1 - source_bb.YMin,
+            interface.rail_center_z - (source_bb.ZMin + source_bb.ZMax) / 2,
+        )
+    )
+    return source
+
+
+def original_clip_hole_plugs(
+    board: BoardData,
+    cfg: CaseConfig,
+    installed_source: Part.Shape,
+) -> list[Part.Shape]:
+    interface = side_slide_interface(board, cfg)
+    bb = installed_source.BoundBox
+    y_min = bb.YMin - cfg.din_side_clip_hole_plug_face_cover
+    y_length = bb.YLength + 2 * cfg.din_side_clip_hole_plug_face_cover
+    radius = cfg.din_mount_hole_diameter / 2 + cfg.din_side_clip_hole_plug_radius_extra
+    x_center = interface.body_length / 2
+    half_pitch = cfg.din_mount_hole_spacing / 2
+    return [
+        Part.makeCylinder(
+            radius,
+            y_length,
+            App.Vector(x_center - half_pitch, y_min, interface.rail_center_z),
+            App.Vector(0, 1, 0),
+        ),
+        Part.makeCylinder(
+            radius,
+            y_length,
+            App.Vector(x_center + half_pitch, y_min, interface.rail_center_z),
+            App.Vector(0, 1, 0),
+        ),
+    ]
+
+
+def orient_side_clip_for_print(shape: Part.Shape) -> Part.Shape:
+    bb = shape.BoundBox
+    matrix = App.Matrix(
+        1,
+        0,
+        0,
+        -bb.XMin,
+        0,
+        0,
+        -1,
+        bb.ZMax,
+        0,
+        1,
+        0,
+        -bb.YMin,
+        0,
+        0,
+        0,
+        1,
+    )
+    printed = shape.transformGeometry(matrix)
+    return tidy(printed)
+
+
+def make_original_side_clip(
+    board: BoardData,
+    cfg: CaseConfig,
+    bracket_shape: Part.Shape,
+) -> DinSideClip:
+    clip_length = side_clip_length(bracket_shape.BoundBox.XLength, cfg)
+    receiver = make_side_slide_receiver(
+        board,
+        cfg,
+        clip_length,
+        installed_z_length=bracket_shape.BoundBox.YLength + 0.8,
+    )
+    installed_source = install_source_clip_on_side(bracket_shape, board, cfg, receiver)
+    installed = tidy(
+        Part.makeCompound(
+            [
+                receiver,
+                installed_source,
+                *original_clip_hole_plugs(board, cfg, installed_source),
+            ]
+        )
+    )
+    return DinSideClip(
+        label="original_heat_insert_clip",
+        basename=DIN_SIDE_CLIP_ORIGINAL_BASENAME,
+        source_model=str(DIN_RAIL_BRACKET_PATH.relative_to(ROOT)),
+        installed_shape=installed,
+        print_shape=orient_side_clip_for_print(installed),
+        source_bbox=bbox_dict(bracket_shape),
+    )
+
+
 def make_lowprofile_snapfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     base = make_snapfit_base(board, cfg)
     return cut_all(base, sensor_side_window_cutouts(board, cfg))
+
+
+def make_lowprofile_din_slide_base(
+    board: BoardData,
+    cfg: CaseConfig,
+) -> Part.Shape:
+    base = make_snapfit_base(board, cfg, include_din_screw_holes=False)
+    base = cut_all(base, sensor_side_window_cutouts(board, cfg))
+    return fuse_all(base, [make_side_slide_rail(board, cfg)])
 
 
 def make_lowprofile_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
@@ -1231,6 +1696,7 @@ def write_exports(
     board_proxy: Part.Shape,
     prefix: str,
     pcb_reference_name: str,
+    extra_doc_objects: list[tuple[str, Part.Shape, App.Vector]] | None = None,
 ) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     doc = App.newDocument(prefix)
@@ -1239,6 +1705,9 @@ def write_exports(
     lid_obj.Placement.Base = App.Vector(0, 76, 0)
     board_obj = add_object(doc, "pcb_reference", board_proxy)
     board_obj.Placement.Base = App.Vector(0, 0, 0)
+    for name, shape, placement in extra_doc_objects or []:
+        obj = add_object(doc, name, shape)
+        obj.Placement.Base = placement
     doc.recompute()
     fcstd_path = OUTPUT_DIR / f"{prefix}.FCStd"
     if fcstd_path.exists():
@@ -1251,6 +1720,12 @@ def write_exports(
 
     base.exportStl(str(OUTPUT_DIR / f"{prefix}_base.stl"))
     lid.exportStl(str(OUTPUT_DIR / f"{prefix}_lid.stl"))
+
+
+def write_din_side_clip_exports(clips: list[DinSideClip]) -> None:
+    for clip in clips:
+        clip.print_shape.exportStep(str(OUTPUT_DIR / f"{clip.basename}.step"))
+        clip.print_shape.exportStl(str(OUTPUT_DIR / f"{clip.basename}.stl"))
 
 
 def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
@@ -1313,7 +1788,7 @@ def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
         "config": config_report(
             cfg,
             exclude_prefixes=("snap_",),
-            exclude_keys=LOW_PROFILE_CONFIG_KEYS | SKELETON_CONFIG_KEYS,
+            exclude_keys=LOW_PROFILE_CONFIG_KEYS | SKELETON_CONFIG_KEYS | DIN_SIDE_SLIDE_CONFIG_KEYS,
         ),
     }
     (OUTPUT_DIR / "eveningstar_case_slotfit_report.json").write_text(
@@ -1391,7 +1866,7 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
         "led_view_holes": led_refs,
         "config": config_report(
             cfg,
-            exclude_keys=LOW_PROFILE_CONFIG_KEYS | SKELETON_CONFIG_KEYS,
+            exclude_keys=LOW_PROFILE_CONFIG_KEYS | SKELETON_CONFIG_KEYS | DIN_SIDE_SLIDE_CONFIG_KEYS,
         ),
     }
     (OUTPUT_DIR / "eveningstar_case_snapfit_report.json").write_text(
@@ -1503,9 +1978,137 @@ def write_lowprofile_report(
         },
         "switch_access_holes": switch_refs,
         "led_view_holes": led_refs,
-        "config": config_report(cfg, exclude_keys=SKELETON_CONFIG_KEYS),
+        "config": config_report(cfg, exclude_keys=SKELETON_CONFIG_KEYS | DIN_SIDE_SLIDE_CONFIG_KEYS),
     }
     (OUTPUT_DIR / "eveningstar_case_lowprofile_report.json").write_text(
+        json.dumps(data, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def write_lowprofile_din_slide_report(
+    board: BoardData,
+    cfg: CaseConfig,
+    standard_cfg: CaseConfig,
+    clips: list[DinSideClip],
+) -> None:
+    body_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    body_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    interface = side_slide_interface(board, cfg)
+    rail_slope_degrees_from_horizontal = math.degrees(
+        math.atan(
+            ((interface.rail_head_height - interface.rail_neck_height) / 2)
+            / cfg.din_side_rail_protrusion
+        )
+    )
+    lower_ramp_top_z = max(
+        cfg.din_side_rail_bed_thickness,
+        interface.rail_center_z - interface.rail_neck_height / 2,
+    )
+    lower_ramp_slope_degrees_from_horizontal = math.degrees(
+        math.atan(lower_ramp_top_z / cfg.din_side_rail_protrusion)
+    )
+    receiver_peak_depth = min(
+        cfg.din_side_receiver_peak_depth,
+        max(0.2, cfg.din_side_receiver_back_wall - 0.35),
+    )
+    installed_z_min = min(clip.installed_shape.BoundBox.ZMin for clip in clips)
+    installed_z_max = max(clip.installed_shape.BoundBox.ZMax for clip in clips)
+
+    clip_options = []
+    for clip in clips:
+        clip_options.append(
+            {
+                "label": clip.label,
+                "source_model": clip.source_model,
+                "source_bbox_mm": clip.source_bbox,
+                "exported_step": f"mechanical/{clip.basename}.step",
+                "exported_stl": f"mechanical/{clip.basename}.stl",
+                "installed_bbox_mm": bbox_dict(clip.installed_shape),
+                "print_oriented_bbox_mm": bbox_dict(clip.print_shape),
+            }
+        )
+
+    data = {
+        "source_board": str(BOARD_PATH.relative_to(ROOT)),
+        "variant": "low-profile snap-fit PCB tray with side-mounted slide-on DIN rail clip",
+        "board_size_mm": {"x": board.width, "y": board.height},
+        "case_body_size_mm": {"x": body_length, "y": body_width, "z_base": cfg.base_height},
+        "case_overall_size_mm": {
+            "x": body_length,
+            "y": interface.rail_outer_y,
+            "z_base": cfg.base_height,
+            "z_with_installed_din_clip_options": {
+                "min": installed_z_min,
+                "max": installed_z_max,
+            },
+        },
+        "height_reduction": {
+            "standard_base_height_mm": standard_cfg.base_height,
+            "low_profile_base_height_mm": cfg.base_height,
+            "reduction_mm": standard_cfg.base_height - cfg.base_height,
+            "reduction_percent": (standard_cfg.base_height - cfg.base_height) / standard_cfg.base_height * 100,
+            "pcb_top_z_mm": board_top_z(cfg),
+            "clearance_above_pcb_top_mm": cfg.base_height - board_top_z(cfg),
+        },
+        "side_slide_din_rail_mount": {
+            "old_m3_case_holes": "omitted in this variant",
+            "case_mount_side": "max_y side, opposite the USB-C connector",
+            "insertion_axis": "x axis from either long-edge end of the side rail",
+            "case_feature": "external rounded dovetail-like rail fused to the case side wall with an outward lower ramp",
+            "clip_feature": "matching female receiver with matched-angle capture faces and a pointed internal print-relief peak",
+            "axial_retention": "the rounded rail captures pull-off in y/z; final axial hold is an interference/friction slide fit with no screws between case and clip",
+            "printability": "the box has no bottom receiver cuts; the side rail grows from the print-bed plane into an outward lower ramp, and the DIN clip receiver chamfers into a point instead of ending in a flat bridge surface",
+            "obsolete_clip_hole_plugs": {
+                "radius_extra": cfg.din_side_clip_hole_plug_radius_extra,
+                "face_cover": cfg.din_side_clip_hole_plug_face_cover,
+            },
+            "case_rail_mm": {
+                "x_range": {
+                    "min": interface.rail_x_min,
+                    "max": interface.rail_x_min + interface.rail_length,
+                    "length": interface.rail_length,
+                },
+                "y_range": {"min": interface.wall_y, "max": interface.rail_outer_y},
+                "z_range": {
+                    "min": 0.0,
+                    "max": interface.rail_center_z + interface.rail_head_height / 2,
+                },
+                "nominal_z_center": interface.rail_center_z,
+                "neck_height": interface.rail_neck_height,
+                "head_height": interface.rail_head_height,
+                "lower_ramp_top_z": lower_ramp_top_z,
+                "lower_ramp_slope_degrees_from_horizontal": lower_ramp_slope_degrees_from_horizontal,
+                "root_blend_height": cfg.din_side_rail_root_blend_height,
+                "root_blend_overlap_into_box_fillet": cfg.outer_fillet + 0.05,
+                "root_blend_y_min": interface.wall_y - cfg.outer_fillet - 0.05,
+                "protrusion_from_side_wall": cfg.din_side_rail_protrusion,
+                "upper_face_slope_degrees_from_horizontal": rail_slope_degrees_from_horizontal,
+                "exposed_non_bed_edge_fillet_radius": cfg.din_side_rail_fillet,
+                "case_contact_edge_fillet_radius": 0.0,
+            },
+            "receiver_clearance_mm": cfg.din_side_clearance,
+            "receiver_wall_mm": cfg.din_side_receiver_wall,
+            "receiver_back_wall_mm": cfg.din_side_receiver_back_wall,
+            "receiver_peak_depth_mm": receiver_peak_depth,
+            "receiver_lower_face_slope_degrees_from_horizontal": lower_ramp_slope_degrees_from_horizontal,
+            "receiver_upper_face_slope_degrees_from_horizontal": rail_slope_degrees_from_horizontal,
+            "clip_options": clip_options,
+        },
+        "slot_fit": {
+            "bottom_protrusion_allowance_mm": cfg.board_floor_clearance,
+            "board_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
+            "pcb_edge_clearance_mm": cfg.pcb_edge_clearance,
+            "rail_width_mm": cfg.slot_rail_width,
+            "rail_height_mm": cfg.board_floor_clearance,
+            "rail_bottom_z_mm": cfg.bottom,
+            "rail_top_z_mm": cfg.bottom + cfg.board_floor_clearance,
+            "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
+        },
+        "connector_openings": connector_opening_report(board, cfg),
+        "config": config_report(cfg, exclude_keys=SKELETON_CONFIG_KEYS),
+    }
+    (OUTPUT_DIR / "eveningstar_case_lowprofile_din_slide_report.json").write_text(
         json.dumps(data, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
@@ -1584,7 +2187,7 @@ def write_skeletonized_report(
             "case_hole_diameter_mm": cfg.din_mount_hole_diameter,
             "case_hole_positions_mm": [asdict(pos) for pos in din_mount_positions(board, cfg)],
         },
-        "config": asdict(cfg),
+        "config": config_report(cfg, exclude_keys=DIN_SIDE_SLIDE_CONFIG_KEYS),
     }
     (OUTPUT_DIR / "eveningstar_case_skeletonized_report.json").write_text(
         json.dumps(data, indent=2, sort_keys=True) + "\n",
@@ -1595,6 +2198,7 @@ def write_skeletonized_report(
 def main() -> None:
     board = load_board()
     cfg = CaseConfig()
+    din_bracket = read_din_rail_bracket()
     slot_base = make_slotfit_base(board, cfg)
     slot_lid = make_slotfit_lid(board, cfg)
     slot_board_proxy = make_board_proxy(board, cfg)
@@ -1631,6 +2235,31 @@ def main() -> None:
         "eveningstar_case_lowprofile_pcb_reference.step",
     )
     write_lowprofile_report(board, lowprofile_cfg, cfg)
+
+    din_side_clip = make_original_side_clip(board, lowprofile_cfg, din_bracket)
+    lowprofile_din_slide_base = make_lowprofile_din_slide_base(board, lowprofile_cfg)
+    lowprofile_din_slide_board_proxy = make_board_proxy(board, lowprofile_cfg)
+    write_exports(
+        lowprofile_din_slide_base,
+        lowprofile_lid,
+        lowprofile_din_slide_board_proxy,
+        "eveningstar_case_lowprofile_din_slide",
+        "eveningstar_case_lowprofile_din_slide_pcb_reference.step",
+        extra_doc_objects=[
+            (
+                "din_side_clip_original_installed",
+                din_side_clip.installed_shape,
+                App.Vector(0, 0, 0),
+            )
+        ],
+    )
+    write_din_side_clip_exports([din_side_clip])
+    write_lowprofile_din_slide_report(
+        board,
+        lowprofile_cfg,
+        cfg,
+        [din_side_clip],
+    )
 
     skeletonized_base = make_skeletonized_lowprofile_base(board, lowprofile_cfg)
     skeletonized_lid = make_skeletonized_lowprofile_lid(board, lowprofile_cfg)

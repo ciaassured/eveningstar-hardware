@@ -4,13 +4,15 @@ This directory contains generated two-piece enclosures for
 `pcb/EveningStar.kicad_pcb`.
 
 The PCB is not screwed into the case. It sits in a close-fitting internal tray
-with long edge rails. There are four generated variants:
+with long edge rails. There are five generated variants:
 
 - `slotfit`: lid screws land in external ears outside the case body.
 - `snapfit`: no lid screws; four tapered nubs on the long case walls snap into
   matching recesses in a lid shoulder.
 - `lowprofile`: screwless snap-fit body with shorter walls and top lid
   pass-throughs for tall components.
+- `lowprofile_din_slide`: low-profile body with a side-mounted dovetail rail
+  on the no-I/O side and a screwless slide-on original-style DIN rail clip.
 - `skeletonized`: low-profile snap-fit body with faceted hex-ended lattice
   cells in the bottom floor and lid plate to reduce filament while keeping the
   functional snap, rail, DIN mount, connector, switch, LED, and sensor
@@ -52,6 +54,25 @@ Generated files:
   raised connector markers on the component side
 - `eveningstar_case_lowprofile_report.json`: extracted low-profile dimensions,
   pass-through openings, and AHT20 vent details
+- `eveningstar_case_lowprofile_din_slide_base.step` /
+  `eveningstar_case_lowprofile_din_slide_base.stl`: low-profile body variant
+  with the old M3 DIN screw holes omitted and a side dovetail rail on the
+  max-Y wall opposite the USB-C connector
+- `eveningstar_case_lowprofile_din_slide_lid.step` /
+  `eveningstar_case_lowprofile_din_slide_lid.stl`: the matching low-profile
+  lid export for the side-slide variant
+- `eveningstar_case_lowprofile_din_slide.FCStd`: FreeCAD document with the
+  side-rail base, lid, PCB reference, and original-style side DIN clip placed
+  in its installed position
+- `eveningstar_case_lowprofile_din_slide_pcb_reference.step`: PCB outline
+  reference with raised connector markers on the component side
+- `eveningstar_case_lowprofile_din_slide_report.json`: extracted dimensions
+  for the side rail, receiver clearance, insertion direction, and installed
+  clip envelope
+- `din-rail-side-clip-original-lowprofile.step` /
+  `din-rail-side-clip-original-lowprofile.stl`: print-oriented side-slide
+  clip using the original `din-rail-bracket-heat-insert-version.step` DIN mount
+  with an integrated side-slide receiver
 - `eveningstar_case_skeletonized_base.step` /
   `eveningstar_case_skeletonized_base.stl`: low-profile snap-fit body with an
   open faceted lattice floor and solid DIN screw pads
@@ -78,9 +99,13 @@ Hardware assumptions:
 - Four M2.5 heat-set threaded inserts in the external ears
 - Insert pilot holes: 3.6 mm diameter x 6.0 mm deep
 - Lid screw clearance holes: 3.0 mm diameter
-- Two M3 clearance holes through the case bottom for the DIN rail bracket
-  model in this directory. The holes are centered on the case body and use the
-  bracket's 52.5 mm insert pitch.
+- The original slotfit, snapfit, lowprofile, and skeletonized variants use two
+  M3 clearance holes through the case bottom for the DIN rail bracket model in
+  this directory. The holes are centered on the case body and use the bracket's
+  52.5 mm insert pitch.
+- The `lowprofile_din_slide` variant omits those M3 holes and instead uses a
+  side-mounted dovetail rail on the max-Y wall. The side DIN clip slides on
+  along the case X axis and is captured in Y/Z by the dovetail.
 - Snapfit lid shoulder clearance is 0.25 mm per side.
 - Snapfit-derived lid shoulders are locally relieved over the USB-C side
   opening so the alignment bar does not cross the port mouth.
@@ -108,6 +133,24 @@ Fit assumptions:
   smaller components while taller connectors protrude through the lid.
 - The low-profile AHT20 opening combines an 8.0 mm top aperture with a front
   side window because `U6` sits near the front PCB edge.
+- The side DIN rail interface uses one external rounded dovetail-like rail on
+  the max-Y wall from x=18.0 mm to x=133.4 mm. The rail protrudes 2.0 mm,
+  starts at the print-bed plane on the case side and ramps outward to the lower
+  capture at z=3.1 mm, making the attachment read more like an outward
+  skateboard-ramp fairing than an inward fillet. The rail rises to 9.5 mm above
+  the box bottom and has a 45 degree sloped upper face. The rail profile
+  includes a 1.4 mm high root that overlaps the original bottom-side box fillet
+  so the rail grows out of the case corner more uniformly. Exposed non-bed rail
+  edges use a 0.25 mm fillet, while rail/root edges that contact the main box
+  are left unfilleted. The clip receiver uses 0.3 mm nominal clearance and is
+  exported with the receiver opening on the print bed. Its
+  visible upper and lower capture faces match the box rail angles, then the
+  receiver back chamfers into a 1.4 mm deep internal point instead of a flat
+  bridge surface. The box has no bottom slot or hidden bridge. The obsolete
+  screw-hole plugs in the original DIN clip use sharp-edged flat caps that
+  cover the old hole bevel by 0.02 mm per face and add 0.85 mm radial cover
+  over the former hole diameter, hiding the original filleted rim without the
+  previous tall fill bosses.
 - The skeletonized variant keeps the same low-profile snap-fit envelope and
   uses faceted hex-ended through-cells only in surfaces that face the print bed:
   22 floor lattice cells and 12 lid lattice cells in the current generated
