@@ -51,6 +51,7 @@ class CaseConfig:
     screw_clearance_diameter: float = 3.0
     switch_access_diameter: float = 5.0
     led_view_diameter: float = 2.4
+    round_led_view_diameter: float = 2.8
     lid_rect_cutout_corner_radius: float = 0.8
     usb_c_lid_cutout_width_extra: float = 4.0
     usb_c_lid_front_edge_clearance: float = 1.2
@@ -1141,8 +1142,8 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
             padded_rect(
                 pos.x,
                 pos.y,
-                cfg.led_view_diameter,
-                cfg.led_view_diameter,
+                cfg.round_led_view_diameter,
+                cfg.round_led_view_diameter,
                 pad,
             )
         )
@@ -1389,7 +1390,7 @@ def led_view_refs_report(board: BoardData, cfg: CaseConfig) -> dict[str, dict[st
         led_refs[ref] = {
             "label": fp.value,
             "case_position_mm": asdict(pos),
-            "hole_diameter_mm": cfg.led_view_diameter,
+            "hole_diameter_mm": cfg.round_led_view_diameter,
         }
 
     return led_refs
@@ -1593,7 +1594,7 @@ def make_slotfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
             vertical_cylinder(
                 pos.x,
                 pos.y,
-                cfg.led_view_diameter / 2,
+                cfg.round_led_view_diameter / 2,
                 z_height,
                 z_min,
             )
@@ -1646,7 +1647,7 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
             vertical_cylinder(
                 pos.x,
                 pos.y,
-                cfg.led_view_diameter / 2,
+                cfg.round_led_view_diameter / 2,
                 z_height,
                 z_min,
             )

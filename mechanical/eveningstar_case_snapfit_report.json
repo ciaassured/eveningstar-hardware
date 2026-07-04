@@ -31,6 +31,7 @@
     "pcb_edge_clearance": 0.55,
     "pcb_reference_marker_height": 1.2,
     "pcb_thickness": 1.6,
+    "round_led_view_diameter": 2.8,
     "screw_clearance_diameter": 3.0,
     "slot_rail_end_clearance": 14.0,
     "slot_rail_width": 1.4,
@@ -159,7 +160,7 @@
         "x": 62.42,
         "y": 24.751839999999998
       },
-      "hole_diameter_mm": 2.4,
+      "hole_diameter_mm": 2.8,
       "label": "White"
     },
     "D4": {

@@ -32,6 +32,7 @@
     "pcb_edge_clearance": 0.55,
     "pcb_reference_marker_height": 1.2,
     "pcb_thickness": 1.6,
+    "round_led_view_diameter": 2.8,
     "screw_clearance_diameter": 3.0,
     "sensor_air_hole_diameter": 8.0,
     "sensor_side_window_height": 4.5,
@@ -170,14 +171,14 @@
   },
   "modeled_solid_volume": {
     "lowprofile_base_mm3": 23058.89478692088,
-    "lowprofile_lid_mm3": 15792.136864800314,
-    "lowprofile_total_mm3": 38851.03165172119,
-    "reduction_mm3": 7974.371999999978,
-    "reduction_percent": 20.525509004460876,
+    "lowprofile_lid_mm3": 15788.216157168641,
+    "lowprofile_total_mm3": 38847.11094408952,
+    "reduction_mm3": 7971.011999999981,
+    "reduction_percent": 20.518931282875098,
     "reference_variant": "eveningstar_case_lowprofile",
     "skeletonized_base_mm3": 18128.094786920898,
-    "skeletonized_lid_mm3": 12748.564864800315,
-    "skeletonized_total_mm3": 30876.659651721213
+    "skeletonized_lid_mm3": 12748.004157168643,
+    "skeletonized_total_mm3": 30876.098944089543
   },
   "online_design_influences": [
     "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",
