@@ -124,14 +124,14 @@
   },
   "modeled_solid_volume": {
     "lowprofile_base_mm3": 22797.72932153705,
-    "lowprofile_lid_mm3": 16069.921202799724,
-    "lowprofile_total_mm3": 38867.65052433677,
-    "reduction_mm3": 8218.601999999984,
-    "reduction_percent": 21.145095958022857,
+    "lowprofile_lid_mm3": 16045.921202799718,
+    "lowprofile_total_mm3": 38843.650524336765,
+    "reduction_mm3": 8218.60199999998,
+    "reduction_percent": 21.15816070080944,
     "reference_variant": "eveningstar_case_lowprofile",
     "skeletonized_base_mm3": 17866.929321537064,
-    "skeletonized_lid_mm3": 12782.119202799726,
-    "skeletonized_total_mm3": 30649.048524336788
+    "skeletonized_lid_mm3": 12758.11920279972,
+    "skeletonized_total_mm3": 30625.048524336784
   },
   "online_design_influences": [
     "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",

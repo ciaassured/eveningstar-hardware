@@ -358,6 +358,44 @@ def box_to_case(fp: FootprintBox, board: BoardData, cfg: CaseConfig) -> Footprin
     )
 
 
+def case_body_width(board: BoardData, cfg: CaseConfig) -> float:
+    return board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+
+
+# Snapfit-derived lids are exported shoulder-up for printing. Turning them over
+# for installation mirrors Y, so PCB-derived lid geometry is pre-mirrored here.
+def point_to_printed_lid(point: Point, board: BoardData, cfg: CaseConfig) -> Point:
+    return Point(point.x, case_body_width(board, cfg) - point.y)
+
+
+def box_to_printed_lid(box: FootprintBox, board: BoardData, cfg: CaseConfig) -> FootprintBox:
+    body_width = case_body_width(board, cfg)
+    return FootprintBox(
+        ref=box.ref,
+        value=box.value,
+        description=box.description,
+        x=box.x,
+        y=body_width - (box.y + box.height),
+        width=box.width,
+        height=box.height,
+        center_x=box.center_x,
+        center_y=body_width - box.center_y,
+    )
+
+
+def board_to_printed_lid(point: Point, board: BoardData, cfg: CaseConfig) -> Point:
+    return point_to_printed_lid(board_to_case(point, board, cfg), board, cfg)
+
+
+def footprint_to_printed_lid(fp: FootprintBox, board: BoardData, cfg: CaseConfig) -> FootprintBox:
+    return box_to_printed_lid(box_to_case(fp, board, cfg), board, cfg)
+
+
+def rect_to_printed_lid(rect: Rect, board: BoardData, cfg: CaseConfig) -> Rect:
+    body_width = case_body_width(board, cfg)
+    return (rect[0], body_width - rect[3], rect[2], body_width - rect[1])
+
+
 def make_board_proxy(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     board_bottom_z = cfg.bottom + cfg.board_floor_clearance
     points: list[App.Vector] = []
@@ -527,7 +565,7 @@ def footprint_lid_cutout(
     z_min: float,
     z_height: float,
 ) -> Part.Shape:
-    fp = box_to_case(board.footprints[ref], board, cfg)
+    fp = footprint_to_printed_lid(board.footprints[ref], board, cfg)
     return Part.makeBox(
         fp.width + 2 * clearance,
         fp.height + 2 * clearance,
@@ -554,7 +592,7 @@ def low_profile_lid_cutouts(
         for ref in TALL_COMPONENT_CUTOUT_REFS
     ]
 
-    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    sensor = footprint_to_printed_lid(board.footprints["U6"], board, cfg)
     cuts.append(
         vertical_cylinder(
             sensor.center_x,
@@ -565,15 +603,26 @@ def low_profile_lid_cutouts(
         )
     )
 
-    sensor_slot_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    sensor_installed = box_to_case(board.footprints["U6"], board, cfg)
+    sensor_slot_width = max(cfg.sensor_side_window_width, sensor_installed.width + 2.0)
+    slot = rect_to_printed_lid(
+        (
+            sensor_installed.center_x - sensor_slot_width / 2,
+            -1.0,
+            sensor_installed.center_x + sensor_slot_width / 2,
+            sensor_installed.center_y + cfg.sensor_side_window_inner_reach + 1.0,
+        ),
+        board,
+        cfg,
+    )
     cuts.append(
         Part.makeBox(
             sensor_slot_width,
-            sensor.center_y + cfg.sensor_side_window_inner_reach + 1.0,
+            slot[3] - slot[1],
             z_height,
             App.Vector(
-                sensor.center_x - sensor_slot_width / 2,
-                -1.0,
+                slot[0],
+                slot[1],
                 z_min,
             ),
         )
@@ -703,7 +752,7 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
 
     for ref in ("S1", "S2", "S3"):
         fp = board.footprints[ref]
-        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
         keepouts.append(
             padded_rect(
                 pos.x,
@@ -716,7 +765,7 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
 
     for ref in ("D4", "D6", "D12"):
         fp = board.footprints[ref]
-        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
         keepouts.append(
             padded_rect(
                 pos.x,
@@ -728,7 +777,7 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
         )
 
     for ref in TALL_COMPONENT_CUTOUT_REFS:
-        fp = box_to_case(board.footprints[ref], board, cfg)
+        fp = footprint_to_printed_lid(board.footprints[ref], board, cfg)
         clearance = cfg.tall_component_cutout_clearance
         keepouts.append(
             padded_rect(
@@ -740,8 +789,9 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
             )
         )
 
-    sensor = box_to_case(board.footprints["U6"], board, cfg)
-    sensor_slot_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    sensor = footprint_to_printed_lid(board.footprints["U6"], board, cfg)
+    sensor_installed = box_to_case(board.footprints["U6"], board, cfg)
+    sensor_slot_width = max(cfg.sensor_side_window_width, sensor_installed.width + 2.0)
     keepouts.append(
         padded_rect(
             sensor.center_x,
@@ -752,11 +802,15 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
         )
     )
     keepouts.append(
-        (
-            sensor.center_x - sensor_slot_width / 2 - pad,
-            -pad,
-            sensor.center_x + sensor_slot_width / 2 + pad,
-            sensor.center_y + cfg.sensor_side_window_inner_reach + pad,
+        rect_to_printed_lid(
+            (
+                sensor_installed.center_x - sensor_slot_width / 2 - pad,
+                -pad,
+                sensor_installed.center_x + sensor_slot_width / 2 + pad,
+                sensor_installed.center_y + cfg.sensor_side_window_inner_reach + pad,
+            ),
+            board,
+            cfg,
         )
     )
     return keepouts
@@ -1047,7 +1101,7 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     cuts: list[Part.Shape] = []
     for ref in ("S1", "S2", "S3"):
         fp = board.footprints[ref]
-        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
         cuts.append(
             vertical_cylinder(
                 pos.x,
@@ -1060,7 +1114,7 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
 
     for ref in ("D4", "D6", "D12"):
         fp = board.footprints[ref]
-        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
         cuts.append(
             vertical_cylinder(
                 pos.x,

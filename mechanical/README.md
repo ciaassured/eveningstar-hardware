@@ -98,6 +98,9 @@ Fit assumptions:
   side-wall hole down to the floor.
 - PCB-derived features use the KiCad 3D export orientation, so component-side
   connector markers in the PCB reference line up with the case side openings.
+- Snapfit-derived lid exports keep the internal shoulder facing up for
+  support-free printing. PCB-derived lid openings are pre-mirrored in Y so they
+  line up after the lid is turned over onto the base.
 - The low-profile variant uses a 10.6 mm base height. With the current tray
   dimensions, the PCB top is at 6.4 mm, leaving 4.2 mm over the board for
   smaller components while taller connectors protrude through the lid.
