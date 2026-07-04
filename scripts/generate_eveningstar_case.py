@@ -45,7 +45,7 @@ class CaseConfig:
     board_floor_clearance: float = 2.8
     lid_thickness: float = 2.4
     outer_fillet: float = 1.3
-    lid_fillet: float = 0.9
+    lid_fillet: float = 1.3
     insert_hole_diameter: float = 3.6
     insert_hole_depth: float = 6.0
     screw_clearance_diameter: float = 3.0
@@ -273,36 +273,60 @@ def load_board() -> BoardData:
     )
 
 
-def edge_vertices_at_z(edge: Part.Edge, z_value: float, tolerance: float = 1e-6) -> bool:
-    return all(abs(vertex.Point.z - z_value) <= tolerance for vertex in edge.Vertexes)
-
-
-def box_with_z_edge_fillets(
+def rounded_rectangle_prism(
     length: float,
     width: float,
     height: float,
     z: float,
     radius: float,
-    z_levels: tuple[float, ...],
 ) -> Part.Shape:
-    shape = Part.makeBox(length, width, height, App.Vector(0, 0, z))
     if radius <= 0:
-        return shape
+        return Part.makeBox(length, width, height, App.Vector(0, 0, z))
+
+    radius = min(radius, length / 2 - 1e-6, width / 2 - 1e-6)
+    diagonal = radius / math.sqrt(2)
+
+    def vector(x: float, y: float) -> App.Vector:
+        return App.Vector(x, y, z)
+
+    def arc(
+        start: tuple[float, float],
+        mid: tuple[float, float],
+        end: tuple[float, float],
+    ) -> Part.Edge:
+        return Part.Arc(vector(*start), vector(*mid), vector(*end)).toShape()
+
     edges = [
-        edge
-        for edge in shape.Edges
-        if any(edge_vertices_at_z(edge, z_level) for z_level in z_levels)
+        Part.makeLine(vector(radius, 0), vector(length - radius, 0)),
+        arc(
+            (length - radius, 0),
+            (length - radius + diagonal, radius - diagonal),
+            (length, radius),
+        ),
+        Part.makeLine(vector(length, radius), vector(length, width - radius)),
+        arc(
+            (length, width - radius),
+            (length - radius + diagonal, width - radius + diagonal),
+            (length - radius, width),
+        ),
+        Part.makeLine(vector(length - radius, width), vector(radius, width)),
+        arc(
+            (radius, width),
+            (radius - diagonal, width - radius + diagonal),
+            (0, width - radius),
+        ),
+        Part.makeLine(vector(0, width - radius), vector(0, radius)),
+        arc(
+            (0, radius),
+            (radius - diagonal, radius - diagonal),
+            (radius, 0),
+        ),
     ]
-    if not edges:
-        return shape
-    try:
-        return shape.makeFillet(radius, edges)
-    except Exception:
-        return shape
+    return Part.Face(Part.Wire(edges)).extrude(App.Vector(0, 0, height))
 
 
 def base_body_box(length: float, width: float, height: float, z: float, radius: float) -> Part.Shape:
-    return box_with_z_edge_fillets(length, width, height, z, radius, (z,))
+    return rounded_rectangle_prism(length, width, height, z, radius)
 
 
 def slotfit_lid_plate_box(
@@ -312,7 +336,7 @@ def slotfit_lid_plate_box(
     z: float,
     radius: float,
 ) -> Part.Shape:
-    return box_with_z_edge_fillets(length, width, height, z, radius, (z + height,))
+    return rounded_rectangle_prism(length, width, height, z, radius)
 
 
 def snapfit_lid_plate_box(
@@ -322,8 +346,7 @@ def snapfit_lid_plate_box(
     z: float,
     radius: float,
 ) -> Part.Shape:
-    # Snapfit lids are exported shoulder-up, so model z=height is the installed mating edge.
-    return box_with_z_edge_fillets(length, width, height, z, radius, (z,))
+    return rounded_rectangle_prism(length, width, height, z, radius)
 
 
 def tidy(shape: Part.Shape) -> Part.Shape:

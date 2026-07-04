@@ -24,7 +24,7 @@
     "insert_hole_depth": 6.0,
     "insert_hole_diameter": 3.6,
     "led_view_diameter": 2.4,
-    "lid_fillet": 0.9,
+    "lid_fillet": 1.3,
     "lid_thickness": 2.4,
     "outer_fillet": 1.3,
     "pcb_edge_clearance": 0.55,
