@@ -25,6 +25,7 @@
     "insert_hole_diameter": 3.6,
     "led_view_diameter": 2.4,
     "lid_fillet": 1.3,
+    "lid_rect_cutout_corner_radius": 0.8,
     "lid_thickness": 2.4,
     "low_profile_base_height": 10.6,
     "outer_fillet": 1.3,
@@ -49,6 +50,8 @@
     "snap_shoulder_wall": 1.8,
     "switch_access_diameter": 5.0,
     "tall_component_cutout_clearance": 1.2,
+    "usb_c_lid_cutout_width_extra": 4.0,
+    "usb_c_lid_front_edge_clearance": 1.2,
     "wall": 2.4
   },
   "connector_openings": {
@@ -121,6 +124,49 @@
     "reduction_percent": 53.91304347826087,
     "standard_base_height_mm": 23.0
   },
+  "led_pair_view_cutout": {
+    "corner_radius_mm": 0.8,
+    "installed_side": "top lid",
+    "installed_y_range_mm": {
+      "max": 18.451839999999997,
+      "min": 13.551839999999999
+    },
+    "label": "shared rectangular LED viewing slot",
+    "led_center_positions_mm": {
+      "D4": {
+        "case_position_mm": {
+          "x": 33.480000000000004,
+          "y": 14.751839999999998
+        },
+        "label": "TX"
+      },
+      "D6": {
+        "case_position_mm": {
+          "x": 33.480000000000004,
+          "y": 17.251839999999998
+        },
+        "label": "RX"
+      }
+    },
+    "nominal_led_clearance_width_mm": 2.4,
+    "opening_size_mm": {
+      "x": 2.4000000000000057,
+      "y": 4.899999999999999
+    },
+    "printed_lid_side": "mirrored_y",
+    "printed_y_range_mm": {
+      "max": 35.949999999999996,
+      "min": 31.049999999999997
+    },
+    "refs": [
+      "D4",
+      "D6"
+    ],
+    "x_range_mm": {
+      "max": 34.68000000000001,
+      "min": 32.28
+    }
+  },
   "led_view_holes": {
     "D12": {
       "case_position_mm": {
@@ -135,16 +181,18 @@
         "x": 33.480000000000004,
         "y": 14.751839999999998
       },
-      "hole_diameter_mm": 2.4,
-      "label": "TX"
+      "label": "TX",
+      "nominal_led_clearance_width_mm": 2.4,
+      "shared_cutout": "led_pair_view_cutout"
     },
     "D6": {
       "case_position_mm": {
         "x": 33.480000000000004,
         "y": 17.251839999999998
       },
-      "hole_diameter_mm": 2.4,
-      "label": "RX"
+      "label": "RX",
+      "nominal_led_clearance_width_mm": 2.4,
+      "shared_cutout": "led_pair_view_cutout"
     }
   },
   "slot_fit": {
@@ -215,30 +263,84 @@
     "shoulder_wall_mm": 1.8
   },
   "source_board": "pcb/EveningStar.kicad_pcb",
-  "switch_access_holes": {
+  "switch_access_buttons": {
     "S1": {
       "case_position_mm": {
         "x": 56.875,
         "y": 7.551839999999996
       },
-      "hole_diameter_mm": 5.0,
-      "label": "CFG_SW"
+      "label": "CFG_SW",
+      "nominal_button_clearance_width_mm": 5.0,
+      "shared_cutout": "switch_access_cutout"
     },
     "S2": {
       "case_position_mm": {
         "x": 56.75,
         "y": 13.35184
       },
-      "hole_diameter_mm": 5.0,
-      "label": "RST_SW"
+      "label": "RST_SW",
+      "nominal_button_clearance_width_mm": 5.0,
+      "shared_cutout": "switch_access_cutout"
     },
     "S3": {
       "case_position_mm": {
         "x": 56.75,
         "y": 19.151839999999996
       },
-      "hole_diameter_mm": 5.0,
-      "label": "BOOT_SW"
+      "label": "BOOT_SW",
+      "nominal_button_clearance_width_mm": 5.0,
+      "shared_cutout": "switch_access_cutout"
+    }
+  },
+  "switch_access_cutout": {
+    "corner_radius_mm": 0.8,
+    "installed_side": "top lid",
+    "installed_y_range_mm": {
+      "max": 21.651839999999996,
+      "min": 5.051839999999996
+    },
+    "label": "shared rectangular switch access",
+    "nominal_button_clearance_width_mm": 5.0,
+    "opening_size_mm": {
+      "x": 5.125,
+      "y": 16.6
+    },
+    "printed_lid_side": "mirrored_y",
+    "printed_y_range_mm": {
+      "max": 44.449999999999996,
+      "min": 27.849999999999998
+    },
+    "refs": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "switch_center_positions_mm": {
+      "S1": {
+        "case_position_mm": {
+          "x": 56.875,
+          "y": 7.551839999999996
+        },
+        "label": "CFG_SW"
+      },
+      "S2": {
+        "case_position_mm": {
+          "x": 56.75,
+          "y": 13.35184
+        },
+        "label": "RST_SW"
+      },
+      "S3": {
+        "case_position_mm": {
+          "x": 56.75,
+          "y": 19.151839999999996
+        },
+        "label": "BOOT_SW"
+      }
+    },
+    "x_range_mm": {
+      "max": 59.375,
+      "min": 54.25
     }
   },
   "temperature_humidity_sensor_opening": {
@@ -317,6 +419,30 @@
         "x": 17.14,
         "y": 12.575000000000001
       }
+    }
+  },
+  "usb_c_lid_clearance_cutout": {
+    "front_edge_clearance_mm": 1.2,
+    "installed_side": "min_y",
+    "installed_y_range_mm": {
+      "max": 6.651840000000002,
+      "min": 0.0
+    },
+    "label": "USB-C connector",
+    "opening_size_mm": {
+      "x": 13.960000000000008,
+      "y": 6.651840000000002
+    },
+    "printed_lid_side": "max_y",
+    "printed_y_range_mm": {
+      "max": 49.501839999999994,
+      "min": 42.849999999999994
+    },
+    "ref": "J2",
+    "width_extra_over_footprint_mm": 4.0,
+    "x_range_mm": {
+      "max": 74.93,
+      "min": 60.97
     }
   },
   "variant": "low-profile snap-fit PCB tray with top pass-through cutouts"

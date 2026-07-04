@@ -51,6 +51,9 @@ class CaseConfig:
     screw_clearance_diameter: float = 3.0
     switch_access_diameter: float = 5.0
     led_view_diameter: float = 2.4
+    lid_rect_cutout_corner_radius: float = 0.8
+    usb_c_lid_cutout_width_extra: float = 4.0
+    usb_c_lid_front_edge_clearance: float = 1.2
     pcb_thickness: float = 1.6
     slot_rail_width: float = 1.4
     slot_rail_end_clearance: float = 14.0
@@ -165,6 +168,10 @@ TALL_COMPONENT_CUTOUT_REFS = {
     "J4": "Ethernet jack",
     "U4": "barrel jack",
 }
+
+SWITCH_REFS = ("S1", "S2", "S3")
+RECTANGULAR_LED_REFS = ("D4", "D6")
+ROUND_LED_REFS = ("D12",)
 
 
 LOW_PROFILE_CONFIG_KEYS = {
@@ -477,6 +484,23 @@ def padded_rect(
     )
 
 
+def rounded_rect_prism_at(
+    rect: Rect,
+    z_min: float,
+    z_height: float,
+    radius: float,
+) -> Part.Shape:
+    shape = rounded_rectangle_prism(
+        rect[2] - rect[0],
+        rect[3] - rect[1],
+        z_height,
+        z_min,
+        radius,
+    )
+    shape.translate(App.Vector(rect[0], rect[1], 0))
+    return shape
+
+
 def grid_centers(
     min_value: float,
     max_value: float,
@@ -753,9 +777,91 @@ def side_cutout_boxes(
     return cutters
 
 
-def usb_c_lid_shoulder_relief(board: BoardData, cfg: CaseConfig, outer_width: float) -> Part.Shape:
+def usb_c_lid_installed_cutout_rect(board: BoardData, cfg: CaseConfig) -> Rect:
     usb = box_to_case(board.footprints["J2"], board, cfg)
-    relief_width = usb.width + 4.0
+    usb_width = usb.width + cfg.usb_c_lid_cutout_width_extra
+    return (
+        usb.center_x - usb_width / 2,
+        0.0,
+        usb.center_x + usb_width / 2,
+        usb.y + cfg.usb_c_lid_front_edge_clearance,
+    )
+
+
+def switch_lid_installed_cutout_rect(board: BoardData, cfg: CaseConfig) -> Rect:
+    switch_positions = [
+        board_to_case(
+            Point(board.footprints[ref].center_x, board.footprints[ref].center_y),
+            board,
+            cfg,
+        )
+        for ref in SWITCH_REFS
+    ]
+    switch_radius = cfg.switch_access_diameter / 2
+    return (
+        min(pos.x - switch_radius for pos in switch_positions),
+        min(pos.y - switch_radius for pos in switch_positions),
+        max(pos.x + switch_radius for pos in switch_positions),
+        max(pos.y + switch_radius for pos in switch_positions),
+    )
+
+
+def led_pair_lid_installed_cutout_rect(board: BoardData, cfg: CaseConfig) -> Rect:
+    led_positions = [
+        board_to_case(
+            Point(board.footprints[ref].center_x, board.footprints[ref].center_y),
+            board,
+            cfg,
+        )
+        for ref in RECTANGULAR_LED_REFS
+    ]
+    led_radius = cfg.led_view_diameter / 2
+    return (
+        min(pos.x - led_radius for pos in led_positions),
+        min(pos.y - led_radius for pos in led_positions),
+        max(pos.x + led_radius for pos in led_positions),
+        max(pos.y + led_radius for pos in led_positions),
+    )
+
+
+def lid_cutout_rect(
+    rect: Rect,
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> Rect:
+    if printed_snapfit_lid:
+        return rect_to_printed_lid(rect, board, cfg)
+    return rect
+
+
+def usb_c_lid_cutout_rect(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> Rect:
+    return lid_cutout_rect(usb_c_lid_installed_cutout_rect(board, cfg), board, cfg, printed_snapfit_lid)
+
+
+def switch_lid_cutout_rect(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> Rect:
+    return lid_cutout_rect(switch_lid_installed_cutout_rect(board, cfg), board, cfg, printed_snapfit_lid)
+
+
+def led_pair_lid_cutout_rect(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> Rect:
+    return lid_cutout_rect(led_pair_lid_installed_cutout_rect(board, cfg), board, cfg, printed_snapfit_lid)
+
+
+def usb_c_lid_shoulder_relief(board: BoardData, cfg: CaseConfig, outer_width: float) -> Part.Shape:
+    rect = usb_c_lid_installed_cutout_rect(board, cfg)
+    relief_width = rect[2] - rect[0]
     relief_margin = 0.2
     shoulder_outer_y = cfg.wall + cfg.snap_lid_gap
 
@@ -766,11 +872,55 @@ def usb_c_lid_shoulder_relief(board: BoardData, cfg: CaseConfig, outer_width: fl
         cfg.snap_shoulder_wall + 2 * relief_margin,
         cfg.snap_shoulder_depth + 1.0,
         App.Vector(
-            usb.center_x - relief_width / 2,
+            rect[0],
             outer_width - shoulder_outer_y - cfg.snap_shoulder_wall - relief_margin,
             cfg.lid_thickness - 0.5,
         ),
     )
+
+
+def usb_c_lid_edge_cutout(
+    board: BoardData,
+    cfg: CaseConfig,
+    outer_width: float,
+    printed_snapfit_lid: bool,
+    z_min: float,
+    z_height: float,
+) -> Part.Shape:
+    rect = usb_c_lid_cutout_rect(board, cfg, printed_snapfit_lid)
+    y = rect[1] if printed_snapfit_lid else rect[1] - 1.0
+    return Part.makeBox(
+        rect[2] - rect[0],
+        rect[3] - rect[1] + 1.0,
+        z_height,
+        App.Vector(
+            rect[0],
+            y,
+            z_min,
+        ),
+    )
+
+
+def switch_lid_cutout(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+    z_min: float,
+    z_height: float,
+) -> Part.Shape:
+    rect = switch_lid_cutout_rect(board, cfg, printed_snapfit_lid)
+    return rounded_rect_prism_at(rect, z_min, z_height, cfg.lid_rect_cutout_corner_radius)
+
+
+def led_pair_lid_cutout(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+    z_min: float,
+    z_height: float,
+) -> Part.Shape:
+    rect = led_pair_lid_cutout_rect(board, cfg, printed_snapfit_lid)
+    return rounded_rect_prism_at(rect, z_min, z_height, cfg.lid_rect_cutout_corner_radius)
 
 
 def board_top_z(cfg: CaseConfig) -> float:
@@ -970,20 +1120,21 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
     keepouts: list[Rect] = []
     pad = cfg.skeleton_feature_keepout
 
-    for ref in ("S1", "S2", "S3"):
-        fp = board.footprints[ref]
-        pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
+    for cutout in (
+        usb_c_lid_cutout_rect(board, cfg, True),
+        switch_lid_cutout_rect(board, cfg, True),
+        led_pair_lid_cutout_rect(board, cfg, True),
+    ):
         keepouts.append(
-            padded_rect(
-                pos.x,
-                pos.y,
-                cfg.switch_access_diameter,
-                cfg.switch_access_diameter,
-                pad,
+            (
+                cutout[0] - pad,
+                cutout[1] - pad,
+                cutout[2] + pad,
+                cutout[3] + pad,
             )
         )
 
-    for ref in ("D4", "D6", "D12"):
+    for ref in ROUND_LED_REFS:
         fp = board.footprints[ref]
         pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
         keepouts.append(
@@ -1074,8 +1225,7 @@ def connector_opening_report(board: BoardData, cfg: CaseConfig) -> dict[str, dic
 
 def lid_shoulder_relief_report(board: BoardData, cfg: CaseConfig) -> list[dict[str, object]]:
     body_width = case_body_width(board, cfg)
-    usb = box_to_case(board.footprints["J2"], board, cfg)
-    relief_width = usb.width + 4.0
+    rect = usb_c_lid_installed_cutout_rect(board, cfg)
     shoulder_outer_y = cfg.wall + cfg.snap_lid_gap
     installed_y_min = shoulder_outer_y
     installed_y_max = shoulder_outer_y + cfg.snap_shoulder_wall
@@ -1089,8 +1239,8 @@ def lid_shoulder_relief_report(board: BoardData, cfg: CaseConfig) -> list[dict[s
             "installed_side": "min_y",
             "printed_lid_side": "max_y",
             "x_range_mm": {
-                "min": usb.center_x - relief_width / 2,
-                "max": usb.center_x + relief_width / 2,
+                "min": rect[0],
+                "max": rect[2],
             },
             "installed_y_range_mm": {"min": installed_y_min, "max": installed_y_max},
             "printed_y_range_mm": {"min": printed_y_min, "max": printed_y_max},
@@ -1098,6 +1248,151 @@ def lid_shoulder_relief_report(board: BoardData, cfg: CaseConfig) -> list[dict[s
             "removed_shoulder_z_height_mm": cfg.snap_shoulder_depth,
         }
     ]
+
+
+def usb_c_lid_edge_cutout_report(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> dict[str, object]:
+    installed_rect = usb_c_lid_installed_cutout_rect(board, cfg)
+    printed_rect = usb_c_lid_cutout_rect(board, cfg, printed_snapfit_lid)
+    printed_lid_side = "max_y" if printed_snapfit_lid else "min_y"
+
+    return {
+        "ref": "J2",
+        "label": "USB-C connector",
+        "installed_side": "min_y",
+        "printed_lid_side": printed_lid_side,
+        "x_range_mm": {
+            "min": installed_rect[0],
+            "max": installed_rect[2],
+        },
+        "installed_y_range_mm": {
+            "min": installed_rect[1],
+            "max": installed_rect[3],
+        },
+        "printed_y_range_mm": {
+            "min": printed_rect[1],
+            "max": printed_rect[3],
+        },
+        "opening_size_mm": {
+            "x": installed_rect[2] - installed_rect[0],
+            "y": installed_rect[3] - installed_rect[1],
+        },
+        "front_edge_clearance_mm": cfg.usb_c_lid_front_edge_clearance,
+        "width_extra_over_footprint_mm": cfg.usb_c_lid_cutout_width_extra,
+    }
+
+
+def switch_lid_cutout_report(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> dict[str, object]:
+    installed_rect = switch_lid_installed_cutout_rect(board, cfg)
+    printed_rect = switch_lid_cutout_rect(board, cfg, printed_snapfit_lid)
+    switch_centers = {}
+    for ref in SWITCH_REFS:
+        fp = board.footprints[ref]
+        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        switch_centers[ref] = {
+            "label": fp.description,
+            "case_position_mm": asdict(pos),
+        }
+
+    return {
+        "refs": list(SWITCH_REFS),
+        "label": "shared rectangular switch access",
+        "installed_side": "top lid",
+        "printed_lid_side": "mirrored_y" if printed_snapfit_lid else "same_as_installed",
+        "x_range_mm": {
+            "min": installed_rect[0],
+            "max": installed_rect[2],
+        },
+        "installed_y_range_mm": {
+            "min": installed_rect[1],
+            "max": installed_rect[3],
+        },
+        "printed_y_range_mm": {
+            "min": printed_rect[1],
+            "max": printed_rect[3],
+        },
+        "opening_size_mm": {
+            "x": installed_rect[2] - installed_rect[0],
+            "y": installed_rect[3] - installed_rect[1],
+        },
+        "switch_center_positions_mm": switch_centers,
+        "nominal_button_clearance_width_mm": cfg.switch_access_diameter,
+        "corner_radius_mm": cfg.lid_rect_cutout_corner_radius,
+    }
+
+
+def led_pair_lid_cutout_report(
+    board: BoardData,
+    cfg: CaseConfig,
+    printed_snapfit_lid: bool,
+) -> dict[str, object]:
+    installed_rect = led_pair_lid_installed_cutout_rect(board, cfg)
+    printed_rect = led_pair_lid_cutout_rect(board, cfg, printed_snapfit_lid)
+    led_centers = {}
+    for ref in RECTANGULAR_LED_REFS:
+        fp = board.footprints[ref]
+        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        led_centers[ref] = {
+            "label": fp.value,
+            "case_position_mm": asdict(pos),
+        }
+
+    return {
+        "refs": list(RECTANGULAR_LED_REFS),
+        "label": "shared rectangular LED viewing slot",
+        "installed_side": "top lid",
+        "printed_lid_side": "mirrored_y" if printed_snapfit_lid else "same_as_installed",
+        "x_range_mm": {
+            "min": installed_rect[0],
+            "max": installed_rect[2],
+        },
+        "installed_y_range_mm": {
+            "min": installed_rect[1],
+            "max": installed_rect[3],
+        },
+        "printed_y_range_mm": {
+            "min": printed_rect[1],
+            "max": printed_rect[3],
+        },
+        "opening_size_mm": {
+            "x": installed_rect[2] - installed_rect[0],
+            "y": installed_rect[3] - installed_rect[1],
+        },
+        "led_center_positions_mm": led_centers,
+        "nominal_led_clearance_width_mm": cfg.led_view_diameter,
+        "corner_radius_mm": cfg.lid_rect_cutout_corner_radius,
+    }
+
+
+def led_view_refs_report(board: BoardData, cfg: CaseConfig) -> dict[str, dict[str, object]]:
+    led_refs = {}
+    for ref in RECTANGULAR_LED_REFS:
+        fp = board.footprints[ref]
+        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        led_refs[ref] = {
+            "label": fp.value,
+            "case_position_mm": asdict(pos),
+            "shared_cutout": "led_pair_view_cutout",
+            "nominal_led_clearance_width_mm": cfg.led_view_diameter,
+        }
+
+    for ref in ROUND_LED_REFS:
+        fp = board.footprints[ref]
+        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        led_refs[ref] = {
+            "label": fp.value,
+            "case_position_mm": asdict(pos),
+            "hole_diameter_mm": cfg.led_view_diameter,
+        }
+
+    return led_refs
 
 
 def make_slotfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
@@ -1291,20 +1586,7 @@ def make_slotfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
             )
         )
 
-    for ref in ("S1", "S2", "S3"):
-        fp = board.footprints[ref]
-        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
-        cuts.append(
-            vertical_cylinder(
-                pos.x,
-                pos.y,
-                cfg.switch_access_diameter / 2,
-                z_height,
-                z_min,
-            )
-        )
-
-    for ref in ("D4", "D6", "D12"):
+    for ref in ROUND_LED_REFS:
         fp = board.footprints[ref]
         pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
         cuts.append(
@@ -1316,6 +1598,10 @@ def make_slotfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
                 z_min,
             )
         )
+
+    cuts.append(led_pair_lid_cutout(board, cfg, False, z_min, z_height))
+    cuts.append(usb_c_lid_edge_cutout(board, cfg, outer_width, False, z_min, z_height))
+    cuts.append(switch_lid_cutout(board, cfg, False, z_min, z_height))
 
     return cut_all(lid, cuts)
 
@@ -1353,20 +1639,7 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     lid = fuse_all(lid, [shoulder])
 
     cuts: list[Part.Shape] = []
-    for ref in ("S1", "S2", "S3"):
-        fp = board.footprints[ref]
-        pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
-        cuts.append(
-            vertical_cylinder(
-                pos.x,
-                pos.y,
-                cfg.switch_access_diameter / 2,
-                z_height,
-                z_min,
-            )
-        )
-
-    for ref in ("D4", "D6", "D12"):
+    for ref in ROUND_LED_REFS:
         fp = board.footprints[ref]
         pos = board_to_printed_lid(Point(fp.center_x, fp.center_y), board, cfg)
         cuts.append(
@@ -1378,6 +1651,10 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
                 z_min,
             )
         )
+
+    cuts.append(led_pair_lid_cutout(board, cfg, True, z_min, z_height))
+    cuts.append(usb_c_lid_edge_cutout(board, cfg, outer_width, True, z_min, z_height))
+    cuts.append(switch_lid_cutout(board, cfg, True, z_min, z_height))
 
     cavity_height = cfg.snap_nub_height + 2 * cfg.snap_cavity_z_clearance
     cavity_z = cfg.lid_thickness + cfg.snap_shoulder_depth - cavity_height
@@ -1802,18 +2079,12 @@ def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
         ref: {
             "label": board.footprints[ref].description,
             "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
-            "hole_diameter_mm": cfg.switch_access_diameter,
+            "shared_cutout": "switch_access_cutout",
+            "nominal_button_clearance_width_mm": cfg.switch_access_diameter,
         }
-        for ref in ("S1", "S2", "S3")
+        for ref in SWITCH_REFS
     }
-    led_refs = {
-        ref: {
-            "label": board.footprints[ref].value,
-            "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
-            "hole_diameter_mm": cfg.led_view_diameter,
-        }
-        for ref in ("D4", "D6", "D12")
-    }
+    led_refs = led_view_refs_report(board, cfg)
     data = {
         "source_board": str(BOARD_PATH.relative_to(ROOT)),
         "variant": "slot-fit PCB tray with external lid screws",
@@ -1835,6 +2106,9 @@ def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
             "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
         },
         "connector_openings": connector_opening_report(board, cfg),
+        "usb_c_lid_clearance_cutout": usb_c_lid_edge_cutout_report(board, cfg, False),
+        "switch_access_cutout": switch_lid_cutout_report(board, cfg, False),
+        "led_pair_view_cutout": led_pair_lid_cutout_report(board, cfg, False),
         "threaded_insert": {
             "intended_size": "M2.5 heat-set insert in external ears",
             "base_pilot_hole_diameter_mm": cfg.insert_hole_diameter,
@@ -1849,7 +2123,7 @@ def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
             "case_hole_diameter_mm": cfg.din_mount_hole_diameter,
             "case_hole_positions_mm": [asdict(pos) for pos in din_mount_positions(board, cfg)],
         },
-        "switch_access_holes": switch_refs,
+        "switch_access_buttons": switch_refs,
         "led_view_holes": led_refs,
         "config": config_report(
             cfg,
@@ -1871,18 +2145,12 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
         ref: {
             "label": board.footprints[ref].description,
             "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
-            "hole_diameter_mm": cfg.switch_access_diameter,
+            "shared_cutout": "switch_access_cutout",
+            "nominal_button_clearance_width_mm": cfg.switch_access_diameter,
         }
-        for ref in ("S1", "S2", "S3")
+        for ref in SWITCH_REFS
     }
-    led_refs = {
-        ref: {
-            "label": board.footprints[ref].value,
-            "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
-            "hole_diameter_mm": cfg.led_view_diameter,
-        }
-        for ref in ("D4", "D6", "D12")
-    }
+    led_refs = led_view_refs_report(board, cfg)
     data = {
         "source_board": str(BOARD_PATH.relative_to(ROOT)),
         "variant": "slot-fit PCB tray with screwless snap-on lid",
@@ -1900,6 +2168,9 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
             "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
         },
         "connector_openings": connector_opening_report(board, cfg),
+        "usb_c_lid_clearance_cutout": usb_c_lid_edge_cutout_report(board, cfg, True),
+        "switch_access_cutout": switch_lid_cutout_report(board, cfg, True),
+        "led_pair_view_cutout": led_pair_lid_cutout_report(board, cfg, True),
         "snap_fit_lid": {
             "pattern": "tapered triangular wall nubs engaging matching lid-shoulder recesses",
             "source_references": [
@@ -1928,7 +2199,7 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
             "case_hole_diameter_mm": cfg.din_mount_hole_diameter,
             "case_hole_positions_mm": [asdict(pos) for pos in din_mount_positions(board, cfg)],
         },
-        "switch_access_holes": switch_refs,
+        "switch_access_buttons": switch_refs,
         "led_view_holes": led_refs,
         "config": config_report(
             cfg,
@@ -1953,18 +2224,12 @@ def write_lowprofile_report(
         ref: {
             "label": board.footprints[ref].description,
             "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
-            "hole_diameter_mm": cfg.switch_access_diameter,
+            "shared_cutout": "switch_access_cutout",
+            "nominal_button_clearance_width_mm": cfg.switch_access_diameter,
         }
-        for ref in ("S1", "S2", "S3")
+        for ref in SWITCH_REFS
     }
-    led_refs = {
-        ref: {
-            "label": board.footprints[ref].value,
-            "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
-            "hole_diameter_mm": cfg.led_view_diameter,
-        }
-        for ref in ("D4", "D6", "D12")
-    }
+    led_refs = led_view_refs_report(board, cfg)
     top_pass_throughs = {}
     for ref, label in TALL_COMPONENT_CUTOUT_REFS.items():
         fp = box_to_case(board.footprints[ref], board, cfg)
@@ -2006,6 +2271,9 @@ def write_lowprofile_report(
             "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
         },
         "connector_openings": connector_opening_report(board, cfg),
+        "usb_c_lid_clearance_cutout": usb_c_lid_edge_cutout_report(board, cfg, True),
+        "switch_access_cutout": switch_lid_cutout_report(board, cfg, True),
+        "led_pair_view_cutout": led_pair_lid_cutout_report(board, cfg, True),
         "top_pass_through_cutouts": top_pass_throughs,
         "temperature_humidity_sensor_opening": {
             "ref": "U6",
@@ -2042,7 +2310,7 @@ def write_lowprofile_report(
             "case_hole_diameter_mm": cfg.din_mount_hole_diameter,
             "case_hole_positions_mm": [asdict(pos) for pos in din_mount_positions(board, cfg)],
         },
-        "switch_access_holes": switch_refs,
+        "switch_access_buttons": switch_refs,
         "led_view_holes": led_refs,
         "config": config_report(cfg, exclude_keys=SKELETON_CONFIG_KEYS | DIN_SIDE_SLIDE_CONFIG_KEYS),
     }
@@ -2172,6 +2440,9 @@ def write_lowprofile_din_slide_report(
             "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
         },
         "connector_openings": connector_opening_report(board, cfg),
+        "usb_c_lid_clearance_cutout": usb_c_lid_edge_cutout_report(board, cfg, True),
+        "switch_access_cutout": switch_lid_cutout_report(board, cfg, True),
+        "led_pair_view_cutout": led_pair_lid_cutout_report(board, cfg, True),
         "config": config_report(cfg, exclude_keys=SKELETON_CONFIG_KEYS),
     }
     (OUTPUT_DIR / "eveningstar_case_lowprofile_din_slide_report.json").write_text(
@@ -2246,6 +2517,9 @@ def write_skeletonized_report(
             "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
         },
         "connector_openings": connector_opening_report(board, cfg),
+        "usb_c_lid_clearance_cutout": usb_c_lid_edge_cutout_report(board, cfg, True),
+        "switch_access_cutout": switch_lid_cutout_report(board, cfg, True),
+        "led_pair_view_cutout": led_pair_lid_cutout_report(board, cfg, True),
         "din_rail_mount": {
             "source_model": "mechanical/din-rail-bracket-heat-insert-version.step",
             "intended_screw": "M3 clearance through case bottom into bracket heat-set inserts",

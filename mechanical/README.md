@@ -109,6 +109,10 @@ Hardware assumptions:
 - Snapfit lid shoulder clearance is 0.25 mm per side.
 - Snapfit-derived lid shoulders are locally relieved over the USB-C side
   opening so the alignment bar does not cross the port mouth.
+- Lids also include a shallow USB-C edge clearance notch, centered on `J2`, so
+  thicker Type-C plug overmolds have extra room at the plug face. The three
+  front switches use one separate rounded rectangular access cutout to avoid
+  thin bridges between adjacent button holes.
 - Snapfit nubs are 20.0 mm wide x 2.0 mm high with a 1.0 mm triangular
   protrusion. They are placed in pairs on the front and back walls to avoid the
   side connector openings.
@@ -159,10 +163,11 @@ Fit assumptions:
   files. The report estimates a 21.1% modeled solid-volume reduction versus
   `lowprofile`.
 
-The lid includes tool-access holes for `S1`/`CFG_SW`, `S2`/`RST_SW`, and
-`S3`/`BOOT_SW`, plus viewing holes for `D4`/`TX`, `D6`/`RX`, and `D12`/`White`.
-Side openings are generated for the RJ11 MeterBus jack, RJ45 Ethernet jack,
-barrel jack, and USB-C connector.
+The lid includes a shallow edge cutout for `J2`, a separate shared rounded
+rectangular cutout for `S1`/`CFG_SW`, `S2`/`RST_SW`, and `S3`/`BOOT_SW`, a
+shared rounded rectangular viewing slot for `D4`/`TX` and `D6`/`RX`, plus a
+round viewing hole for `D12`/`White`. Side openings are generated for the RJ11
+MeterBus jack, RJ45 Ethernet jack, barrel jack, and USB-C connector.
 
 The snapfit variant follows the tapered triangular nub plus lid-shoulder
 recess pattern used by the BoxMaker Fusion snap-fit enclosure generator, with
