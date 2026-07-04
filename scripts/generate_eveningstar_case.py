@@ -12,7 +12,7 @@ STEP/STL/FCStd output into mechanical/.
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
 try:
@@ -65,6 +65,12 @@ class CaseConfig:
     snap_cavity_depth_clearance: float = 0.35
     snap_cavity_z_clearance: float = 0.25
     pcb_reference_marker_height: float = 1.2
+    low_profile_base_height: float = 10.6
+    tall_component_cutout_clearance: float = 1.2
+    sensor_air_hole_diameter: float = 8.0
+    sensor_side_window_width: float = 10.0
+    sensor_side_window_height: float = 4.5
+    sensor_side_window_inner_reach: float = 5.5
 
 
 @dataclass(frozen=True)
@@ -101,6 +107,25 @@ class SnapNub:
     side: str
     center_x: float
     width: float
+
+
+TALL_COMPONENT_CUTOUT_REFS = {
+    "J3": "programming header",
+    "J1": "3V3 power jumper",
+    "RJ1": "RJ12 MeterBus jack",
+    "J4": "Ethernet jack",
+    "U4": "barrel jack",
+}
+
+
+LOW_PROFILE_CONFIG_KEYS = {
+    "low_profile_base_height",
+    "tall_component_cutout_clearance",
+    "sensor_air_hole_diameter",
+    "sensor_side_window_width",
+    "sensor_side_window_height",
+    "sensor_side_window_inner_reach",
+}
 
 
 def mm(value: int | float) -> float:
@@ -202,6 +227,19 @@ def cut_all(shape: Part.Shape, cutters: list[Part.Shape]) -> Part.Shape:
     for cutter in cutters:
         result = result.cut(cutter)
     return tidy(result)
+
+
+def config_report(
+    cfg: CaseConfig,
+    exclude_prefixes: tuple[str, ...] = (),
+    exclude_keys: set[str] | None = None,
+) -> dict[str, float]:
+    excluded = exclude_keys or set()
+    return {
+        key: value
+        for key, value in asdict(cfg).items()
+        if key not in excluded and not key.startswith(exclude_prefixes)
+    }
 
 
 def vertical_cylinder(
@@ -392,6 +430,93 @@ def side_cutout_boxes(
     )
 
     return cutters
+
+
+def board_top_z(cfg: CaseConfig) -> float:
+    return cfg.bottom + cfg.board_floor_clearance + cfg.pcb_thickness
+
+
+def footprint_lid_cutout(
+    board: BoardData,
+    cfg: CaseConfig,
+    ref: str,
+    clearance: float,
+    z_min: float,
+    z_height: float,
+) -> Part.Shape:
+    fp = box_to_case(board.footprints[ref], board, cfg)
+    return Part.makeBox(
+        fp.width + 2 * clearance,
+        fp.height + 2 * clearance,
+        z_height,
+        App.Vector(fp.x - clearance, fp.y - clearance, z_min),
+    )
+
+
+def low_profile_lid_cutouts(
+    board: BoardData,
+    cfg: CaseConfig,
+    z_min: float,
+    z_height: float,
+) -> list[Part.Shape]:
+    cuts = [
+        footprint_lid_cutout(
+            board,
+            cfg,
+            ref,
+            cfg.tall_component_cutout_clearance,
+            z_min,
+            z_height,
+        )
+        for ref in TALL_COMPONENT_CUTOUT_REFS
+    ]
+
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    cuts.append(
+        vertical_cylinder(
+            sensor.center_x,
+            sensor.center_y,
+            cfg.sensor_air_hole_diameter / 2,
+            z_height,
+            z_min,
+        )
+    )
+
+    sensor_slot_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    cuts.append(
+        Part.makeBox(
+            sensor_slot_width,
+            sensor.center_y + cfg.sensor_side_window_inner_reach + 1.0,
+            z_height,
+            App.Vector(
+                sensor.center_x - sensor_slot_width / 2,
+                -1.0,
+                z_min,
+            ),
+        )
+    )
+    return cuts
+
+
+def sensor_side_window_cutouts(
+    board: BoardData,
+    cfg: CaseConfig,
+) -> list[Part.Shape]:
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    window_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    z_min = board_top_z(cfg) - 0.2
+    return [
+        Part.makeBox(
+            window_width,
+            sensor.center_y + cfg.sensor_side_window_inner_reach + 1.0,
+            cfg.sensor_side_window_height,
+            App.Vector(
+                sensor.center_x - window_width / 2,
+                -1.0,
+                z_min,
+            ),
+        )
+    ]
 
 
 def connector_opening_report(board: BoardData, cfg: CaseConfig) -> dict[str, dict[str, object]]:
@@ -708,6 +833,18 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     return cut_all(lid, cuts)
 
 
+def make_lowprofile_snapfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+    base = make_snapfit_base(board, cfg)
+    return cut_all(base, sensor_side_window_cutouts(board, cfg))
+
+
+def make_lowprofile_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+    lid = make_snapfit_lid(board, cfg)
+    z_min = -0.5
+    z_height = cfg.lid_thickness + cfg.snap_shoulder_depth + 1.0
+    return cut_all(lid, low_profile_lid_cutouts(board, cfg, z_min, z_height))
+
+
 def add_object(doc: App.Document, name: str, shape: Part.Shape) -> object:
     obj = doc.addObject("Part::Feature", name)
     obj.Shape = shape
@@ -799,7 +936,11 @@ def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
         },
         "switch_access_holes": switch_refs,
         "led_view_holes": led_refs,
-        "config": {key: value for key, value in asdict(cfg).items() if not key.startswith("snap_")},
+        "config": config_report(
+            cfg,
+            exclude_prefixes=("snap_",),
+            exclude_keys=LOW_PROFILE_CONFIG_KEYS,
+        ),
     }
     (OUTPUT_DIR / "eveningstar_case_slotfit_report.json").write_text(
         json.dumps(data, indent=2, sort_keys=True) + "\n",
@@ -873,9 +1014,119 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
         },
         "switch_access_holes": switch_refs,
         "led_view_holes": led_refs,
-        "config": asdict(cfg),
+        "config": config_report(cfg, exclude_keys=LOW_PROFILE_CONFIG_KEYS),
     }
     (OUTPUT_DIR / "eveningstar_case_snapfit_report.json").write_text(
+        json.dumps(data, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def write_lowprofile_report(
+    board: BoardData,
+    cfg: CaseConfig,
+    standard_cfg: CaseConfig,
+) -> None:
+    body_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    body_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    nub_height = cfg.snap_nub_height
+    switch_refs = {
+        ref: {
+            "label": board.footprints[ref].description,
+            "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
+            "hole_diameter_mm": cfg.switch_access_diameter,
+        }
+        for ref in ("S1", "S2", "S3")
+    }
+    led_refs = {
+        ref: {
+            "label": board.footprints[ref].value,
+            "case_position_mm": asdict(board_to_case(Point(board.footprints[ref].center_x, board.footprints[ref].center_y), board, cfg)),
+            "hole_diameter_mm": cfg.led_view_diameter,
+        }
+        for ref in ("D4", "D6", "D12")
+    }
+    top_pass_throughs = {}
+    for ref, label in TALL_COMPONENT_CUTOUT_REFS.items():
+        fp = box_to_case(board.footprints[ref], board, cfg)
+        clearance = cfg.tall_component_cutout_clearance
+        top_pass_throughs[ref] = {
+            "label": label,
+            "case_position_mm": {"x": fp.center_x, "y": fp.center_y},
+            "opening_size_mm": {
+                "x": fp.width + 2 * clearance,
+                "y": fp.height + 2 * clearance,
+            },
+            "clearance_per_side_mm": clearance,
+        }
+
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    sensor_window_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    data = {
+        "source_board": str(BOARD_PATH.relative_to(ROOT)),
+        "variant": "low-profile snap-fit PCB tray with top pass-through cutouts",
+        "board_size_mm": {"x": board.width, "y": board.height},
+        "case_body_size_mm": {"x": body_length, "y": body_width, "z_base": cfg.base_height},
+        "case_overall_size_mm": {"x": body_length, "y": body_width, "z_base": cfg.base_height},
+        "height_reduction": {
+            "standard_base_height_mm": standard_cfg.base_height,
+            "low_profile_base_height_mm": cfg.base_height,
+            "reduction_mm": standard_cfg.base_height - cfg.base_height,
+            "reduction_percent": (standard_cfg.base_height - cfg.base_height) / standard_cfg.base_height * 100,
+            "pcb_top_z_mm": board_top_z(cfg),
+            "clearance_above_pcb_top_mm": cfg.base_height - board_top_z(cfg),
+        },
+        "slot_fit": {
+            "bottom_protrusion_allowance_mm": cfg.board_floor_clearance,
+            "board_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
+            "pcb_edge_clearance_mm": cfg.pcb_edge_clearance,
+            "rail_width_mm": cfg.slot_rail_width,
+            "rail_height_mm": cfg.board_floor_clearance,
+            "rail_bottom_z_mm": cfg.bottom,
+            "rail_top_z_mm": cfg.bottom + cfg.board_floor_clearance,
+            "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
+        },
+        "connector_openings": connector_opening_report(board, cfg),
+        "top_pass_through_cutouts": top_pass_throughs,
+        "temperature_humidity_sensor_opening": {
+            "ref": "U6",
+            "sensor": board.footprints["U6"].value,
+            "case_position_mm": {"x": sensor.center_x, "y": sensor.center_y},
+            "top_air_hole_diameter_mm": cfg.sensor_air_hole_diameter,
+            "front_side_window": {
+                "side": "min_y",
+                "width_mm": sensor_window_width,
+                "height_mm": cfg.sensor_side_window_height,
+                "bottom_z_mm": board_top_z(cfg) - 0.2,
+                "inner_reach_past_sensor_center_mm": cfg.sensor_side_window_inner_reach,
+            },
+        },
+        "snap_fit_lid": {
+            "pattern": "tapered triangular wall nubs engaging matching lid-shoulder recesses",
+            "lid_gap_mm": cfg.snap_lid_gap,
+            "shoulder_wall_mm": cfg.snap_shoulder_wall,
+            "shoulder_depth_mm": cfg.snap_shoulder_depth,
+            "nub_height_mm": cfg.snap_nub_height,
+            "nub_depth_mm": nub_height / 2,
+            "nub_width_mm": cfg.snap_nub_width,
+            "nub_z_range_mm": {
+                "bottom": cfg.base_height - cfg.snap_shoulder_depth,
+                "top": cfg.base_height - cfg.snap_shoulder_depth + cfg.snap_nub_height,
+            },
+            "nubs": [asdict(nub) for nub in snap_nubs(board, cfg)],
+        },
+        "din_rail_mount": {
+            "source_model": "mechanical/din-rail-bracket-heat-insert-version.step",
+            "intended_screw": "M3 clearance through case bottom into bracket heat-set inserts",
+            "bracket_insert_pitch_mm": cfg.din_mount_hole_spacing,
+            "case_hole_diameter_mm": cfg.din_mount_hole_diameter,
+            "case_hole_positions_mm": [asdict(pos) for pos in din_mount_positions(board, cfg)],
+        },
+        "switch_access_holes": switch_refs,
+        "led_view_holes": led_refs,
+        "config": asdict(cfg),
+    }
+    (OUTPUT_DIR / "eveningstar_case_lowprofile_report.json").write_text(
         json.dumps(data, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
@@ -907,6 +1158,19 @@ def main() -> None:
         "eveningstar_case_snapfit_pcb_reference.step",
     )
     write_snapfit_report(board, cfg)
+
+    lowprofile_cfg = replace(cfg, base_height=cfg.low_profile_base_height)
+    lowprofile_base = make_lowprofile_snapfit_base(board, lowprofile_cfg)
+    lowprofile_lid = make_lowprofile_snapfit_lid(board, lowprofile_cfg)
+    lowprofile_board_proxy = make_board_proxy(board, lowprofile_cfg)
+    write_exports(
+        lowprofile_base,
+        lowprofile_lid,
+        lowprofile_board_proxy,
+        "eveningstar_case_lowprofile",
+        "eveningstar_case_lowprofile_pcb_reference.step",
+    )
+    write_lowprofile_report(board, lowprofile_cfg, cfg)
     App.Console.PrintMessage(f"Wrote enclosure files to {OUTPUT_DIR}\n")
 
 

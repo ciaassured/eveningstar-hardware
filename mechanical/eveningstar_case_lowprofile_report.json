@@ -1,0 +1,301 @@
+{
+  "board_size_mm": {
+    "x": 145.5,
+    "y": 43.601839999999996
+  },
+  "case_body_size_mm": {
+    "x": 151.4,
+    "y": 49.501839999999994,
+    "z_base": 10.6
+  },
+  "case_overall_size_mm": {
+    "x": 151.4,
+    "y": 49.501839999999994,
+    "z_base": 10.6
+  },
+  "config": {
+    "base_height": 10.6,
+    "board_floor_clearance": 2.8,
+    "bottom": 2.0,
+    "din_mount_hole_diameter": 3.4,
+    "din_mount_hole_spacing": 52.5,
+    "external_ear_overlap": 2.4,
+    "external_ear_radius": 6.2,
+    "insert_hole_depth": 6.0,
+    "insert_hole_diameter": 3.6,
+    "led_view_diameter": 2.4,
+    "lid_fillet": 0.9,
+    "lid_thickness": 2.4,
+    "low_profile_base_height": 10.6,
+    "outer_fillet": 1.3,
+    "pcb_edge_clearance": 0.55,
+    "pcb_reference_marker_height": 1.2,
+    "pcb_thickness": 1.6,
+    "screw_clearance_diameter": 3.0,
+    "sensor_air_hole_diameter": 8.0,
+    "sensor_side_window_height": 4.5,
+    "sensor_side_window_inner_reach": 5.5,
+    "sensor_side_window_width": 10.0,
+    "slot_rail_end_clearance": 14.0,
+    "slot_rail_width": 1.4,
+    "snap_cavity_depth_clearance": 0.35,
+    "snap_cavity_width_extra": 1.0,
+    "snap_cavity_z_clearance": 0.25,
+    "snap_lid_gap": 0.25,
+    "snap_nub_height": 2.0,
+    "snap_nub_position_ratio": 0.3,
+    "snap_nub_width": 20.0,
+    "snap_shoulder_depth": 3.2,
+    "snap_shoulder_wall": 1.8,
+    "switch_access_diameter": 5.0,
+    "tall_component_cutout_clearance": 1.2,
+    "wall": 2.4
+  },
+  "connector_openings": {
+    "J2": {
+      "center_mm": {
+        "x": 67.95,
+        "y": 9.689339999999998
+      },
+      "side": "min_y",
+      "size_mm": {
+        "x": 9.96,
+        "y": 8.475
+      }
+    },
+    "J4": {
+      "center_mm": {
+        "x": 139.82999999999998,
+        "y": 14.781838999999994
+      },
+      "side": "max_x",
+      "size_mm": {
+        "x": 21.85,
+        "y": 17.98
+      }
+    },
+    "RJ1": {
+      "center_mm": {
+        "x": 9.95,
+        "y": 27.251839999999998
+      },
+      "side": "min_x",
+      "size_mm": {
+        "x": 18.305,
+        "y": 14.275
+      }
+    },
+    "U4": {
+      "center_mm": {
+        "x": 143.45,
+        "y": 38.31434
+      },
+      "side": "max_x",
+      "size_mm": {
+        "x": 14.74,
+        "y": 10.175
+      }
+    }
+  },
+  "din_rail_mount": {
+    "bracket_insert_pitch_mm": 52.5,
+    "case_hole_diameter_mm": 3.4,
+    "case_hole_positions_mm": [
+      {
+        "x": 49.45,
+        "y": 24.750919999999997
+      },
+      {
+        "x": 101.95,
+        "y": 24.750919999999997
+      }
+    ],
+    "intended_screw": "M3 clearance through case bottom into bracket heat-set inserts",
+    "source_model": "mechanical/din-rail-bracket-heat-insert-version.step"
+  },
+  "height_reduction": {
+    "clearance_above_pcb_top_mm": 4.199999999999999,
+    "low_profile_base_height_mm": 10.6,
+    "pcb_top_z_mm": 6.4,
+    "reduction_mm": 12.4,
+    "reduction_percent": 53.91304347826087,
+    "standard_base_height_mm": 23.0
+  },
+  "led_view_holes": {
+    "D12": {
+      "case_position_mm": {
+        "x": 62.42,
+        "y": 24.751839999999998
+      },
+      "hole_diameter_mm": 2.4,
+      "label": "White"
+    },
+    "D4": {
+      "case_position_mm": {
+        "x": 33.480000000000004,
+        "y": 14.751839999999998
+      },
+      "hole_diameter_mm": 2.4,
+      "label": "TX"
+    },
+    "D6": {
+      "case_position_mm": {
+        "x": 33.480000000000004,
+        "y": 17.251839999999998
+      },
+      "hole_diameter_mm": 2.4,
+      "label": "RX"
+    }
+  },
+  "slot_fit": {
+    "board_bottom_z_mm": 4.8,
+    "bottom_protrusion_allowance_mm": 2.8,
+    "pcb_edge_clearance_mm": 0.55,
+    "rail_bottom_z_mm": 2.0,
+    "rail_height_mm": 2.8,
+    "rail_top_z_mm": 4.8,
+    "rail_width_mm": 1.4,
+    "usb_c_slot_bottom_z_mm": 4.8
+  },
+  "snap_fit_lid": {
+    "lid_gap_mm": 0.25,
+    "nub_depth_mm": 1.0,
+    "nub_height_mm": 2.0,
+    "nub_width_mm": 20.0,
+    "nub_z_range_mm": {
+      "bottom": 7.3999999999999995,
+      "top": 9.399999999999999
+    },
+    "nubs": [
+      {
+        "center_x": 45.42,
+        "side": "front",
+        "width": 20.0
+      },
+      {
+        "center_x": 105.98,
+        "side": "front",
+        "width": 20.0
+      },
+      {
+        "center_x": 45.42,
+        "side": "back",
+        "width": 20.0
+      },
+      {
+        "center_x": 105.98,
+        "side": "back",
+        "width": 20.0
+      }
+    ],
+    "pattern": "tapered triangular wall nubs engaging matching lid-shoulder recesses",
+    "shoulder_depth_mm": 3.2,
+    "shoulder_wall_mm": 1.8
+  },
+  "source_board": "pcb/EveningStar.kicad_pcb",
+  "switch_access_holes": {
+    "S1": {
+      "case_position_mm": {
+        "x": 56.875,
+        "y": 7.551839999999996
+      },
+      "hole_diameter_mm": 5.0,
+      "label": "CFG_SW"
+    },
+    "S2": {
+      "case_position_mm": {
+        "x": 56.75,
+        "y": 13.35184
+      },
+      "hole_diameter_mm": 5.0,
+      "label": "RST_SW"
+    },
+    "S3": {
+      "case_position_mm": {
+        "x": 56.75,
+        "y": 19.151839999999996
+      },
+      "hole_diameter_mm": 5.0,
+      "label": "BOOT_SW"
+    }
+  },
+  "temperature_humidity_sensor_opening": {
+    "case_position_mm": {
+      "x": 88.8125,
+      "y": 5.151840000000004
+    },
+    "front_side_window": {
+      "bottom_z_mm": 6.2,
+      "height_mm": 4.5,
+      "inner_reach_past_sensor_center_mm": 5.5,
+      "side": "min_y",
+      "width_mm": 10.0
+    },
+    "ref": "U6",
+    "sensor": "AHT20-F",
+    "top_air_hole_diameter_mm": 8.0
+  },
+  "top_pass_through_cutouts": {
+    "J1": {
+      "case_position_mm": {
+        "x": 95.45,
+        "y": 31.751839999999998
+      },
+      "clearance_per_side_mm": 1.2,
+      "label": "3V3 power jumper",
+      "opening_size_mm": {
+        "x": 7.68,
+        "y": 5.140000000000001
+      }
+    },
+    "J3": {
+      "case_position_mm": {
+        "x": 83.16,
+        "y": 31.856839999999995
+      },
+      "clearance_per_side_mm": 1.2,
+      "label": "programming header",
+      "opening_size_mm": {
+        "x": 17.89,
+        "y": 11.540000000000001
+      }
+    },
+    "J4": {
+      "case_position_mm": {
+        "x": 139.82999999999998,
+        "y": 14.781838999999994
+      },
+      "clearance_per_side_mm": 1.2,
+      "label": "Ethernet jack",
+      "opening_size_mm": {
+        "x": 24.25,
+        "y": 20.38
+      }
+    },
+    "RJ1": {
+      "case_position_mm": {
+        "x": 9.95,
+        "y": 27.251839999999998
+      },
+      "clearance_per_side_mm": 1.2,
+      "label": "RJ12 MeterBus jack",
+      "opening_size_mm": {
+        "x": 20.705,
+        "y": 16.675
+      }
+    },
+    "U4": {
+      "case_position_mm": {
+        "x": 143.45,
+        "y": 38.31434
+      },
+      "clearance_per_side_mm": 1.2,
+      "label": "barrel jack",
+      "opening_size_mm": {
+        "x": 17.14,
+        "y": 12.575000000000001
+      }
+    }
+  },
+  "variant": "low-profile snap-fit PCB tray with top pass-through cutouts"
+}

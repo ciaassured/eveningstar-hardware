@@ -4,11 +4,13 @@ This directory contains generated two-piece enclosures for
 `pcb/EveningStar.kicad_pcb`.
 
 The PCB is not screwed into the case. It sits in a close-fitting internal tray
-with long edge rails. There are two lid-retention variants:
+with long edge rails. There are three generated variants:
 
 - `slotfit`: lid screws land in external ears outside the case body.
 - `snapfit`: no lid screws; four tapered nubs on the long case walls snap into
   matching recesses in a lid shoulder.
+- `lowprofile`: screwless snap-fit body with shorter walls and top lid
+  pass-throughs for tall components.
 
 Generated files:
 
@@ -33,6 +35,19 @@ Generated files:
   raised connector markers on the component side
 - `eveningstar_case_snapfit_report.json`: extracted dimensions and snap
   positions
+- `eveningstar_case_lowprofile_base.step` /
+  `eveningstar_case_lowprofile_base.stl`: shorter snap-fit body that stops
+  close to the PCB top instead of enclosing the tallest parts
+- `eveningstar_case_lowprofile_lid.step` /
+  `eveningstar_case_lowprofile_lid.stl`: lid with pass-through cutouts for the
+  programming header, 3V3 power jumper, MeterBus jack, Ethernet jack, barrel
+  jack, and AHT20 air opening
+- `eveningstar_case_lowprofile.FCStd`: FreeCAD document with low-profile base,
+  lid, and PCB reference
+- `eveningstar_case_lowprofile_pcb_reference.step`: PCB outline reference with
+  raised connector markers on the component side
+- `eveningstar_case_lowprofile_report.json`: extracted low-profile dimensions,
+  pass-through openings, and AHT20 vent details
 
 Regenerate with:
 
@@ -65,6 +80,11 @@ Fit assumptions:
   side-wall hole down to the floor.
 - PCB-derived features use the KiCad 3D export orientation, so component-side
   connector markers in the PCB reference line up with the case side openings.
+- The low-profile variant uses a 10.6 mm base height. With the current tray
+  dimensions, the PCB top is at 6.4 mm, leaving 4.2 mm over the board for
+  smaller components while taller connectors protrude through the lid.
+- The low-profile AHT20 opening combines an 8.0 mm top aperture with a front
+  side window because `U6` sits near the front PCB edge.
 
 The lid includes tool-access holes for `S1`/`CFG_SW`, `S2`/`RST_SW`, and
 `S3`/`BOOT_SW`, plus viewing holes for `D4`/`TX`, `D6`/`RX`, and `D12`/`White`.
