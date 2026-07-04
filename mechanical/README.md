@@ -11,9 +11,10 @@ with long edge rails. There are four generated variants:
   matching recesses in a lid shoulder.
 - `lowprofile`: screwless snap-fit body with shorter walls and top lid
   pass-throughs for tall components.
-- `skeletonized`: low-profile snap-fit body with through-cut rib slots in the
-  bottom floor and lid plate to reduce filament while keeping the functional
-  snap, rail, DIN mount, connector, switch, LED, and sensor clearances.
+- `skeletonized`: low-profile snap-fit body with faceted hex-ended lattice
+  cells in the bottom floor and lid plate to reduce filament while keeping the
+  functional snap, rail, DIN mount, connector, switch, LED, and sensor
+  clearances.
 
 Generated files:
 
@@ -53,17 +54,18 @@ Generated files:
   pass-through openings, and AHT20 vent details
 - `eveningstar_case_skeletonized_base.step` /
   `eveningstar_case_skeletonized_base.stl`: low-profile snap-fit body with an
-  open ribbed floor and solid DIN screw pads
+  open faceted lattice floor and solid DIN screw pads
 - `eveningstar_case_skeletonized_lid.step` /
   `eveningstar_case_skeletonized_lid.stl`: low-profile lid with support-free
-  through-cut rib slots around the existing control, LED, component, and sensor
-  openings
+  through-cut faceted lattice cells around the existing control, LED,
+  component, and sensor openings
 - `eveningstar_case_skeletonized.FCStd`: FreeCAD document with skeletonized
   base, lid, and PCB reference
 - `eveningstar_case_skeletonized_pcb_reference.step`: PCB outline reference
   with raised connector markers on the component side
-- `eveningstar_case_skeletonized_report.json`: extracted dimensions, slot
-  counts, preserved keepouts, and modeled volume reduction versus `lowprofile`
+- `eveningstar_case_skeletonized_report.json`: extracted dimensions, lattice
+  cell counts, preserved keepouts, and modeled volume reduction versus
+  `lowprofile`
 
 Regenerate with:
 
@@ -102,9 +104,10 @@ Fit assumptions:
 - The low-profile AHT20 opening combines an 8.0 mm top aperture with a front
   side window because `U6` sits near the front PCB edge.
 - The skeletonized variant keeps the same low-profile snap-fit envelope and
-  uses rounded through-slots only in surfaces that face the print bed: 22 floor
-  slots and 12 lid slots in the current generated files. The report estimates a
-  23.8% modeled solid-volume reduction versus `lowprofile`.
+  uses faceted hex-ended through-cells only in surfaces that face the print bed:
+  22 floor lattice cells and 12 lid lattice cells in the current generated
+  files. The report estimates a 21.1% modeled solid-volume reduction versus
+  `lowprofile`.
 
 The lid includes tool-access holes for `S1`/`CFG_SW`, `S2`/`RST_SW`, and
 `S3`/`BOOT_SW`, plus viewing holes for `D4`/`TX`, `D6`/`RX`, and `D12`/`White`.

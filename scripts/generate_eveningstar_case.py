@@ -74,10 +74,11 @@ class CaseConfig:
     sensor_side_window_inner_reach: float = 5.5
     skeleton_perimeter_keepout: float = 6.2
     skeleton_min_rib_width: float = 2.8
-    skeleton_base_slot_length: float = 24.0
-    skeleton_base_slot_width: float = 7.0
-    skeleton_lid_slot_length: float = 24.0
-    skeleton_lid_slot_width: float = 7.0
+    skeleton_base_cell_length: float = 24.0
+    skeleton_base_cell_width: float = 7.0
+    skeleton_lid_cell_length: float = 24.0
+    skeleton_lid_cell_width: float = 7.0
+    skeleton_cell_chamfer_ratio: float = 0.5
     skeleton_feature_keepout: float = 3.2
     skeleton_din_pad_radius: float = 9.0
 
@@ -140,10 +141,11 @@ LOW_PROFILE_CONFIG_KEYS = {
 SKELETON_CONFIG_KEYS = {
     "skeleton_perimeter_keepout",
     "skeleton_min_rib_width",
-    "skeleton_base_slot_length",
-    "skeleton_base_slot_width",
-    "skeleton_lid_slot_length",
-    "skeleton_lid_slot_width",
+    "skeleton_base_cell_length",
+    "skeleton_base_cell_width",
+    "skeleton_lid_cell_length",
+    "skeleton_lid_cell_width",
+    "skeleton_cell_chamfer_ratio",
     "skeleton_feature_keepout",
     "skeleton_din_pad_radius",
 }
@@ -309,34 +311,28 @@ def grid_centers(
     return [first + pitch * index for index in range(count)]
 
 
-def rounded_slot_x(
+def faceted_lattice_cell_x(
     center_x: float,
     center_y: float,
     length: float,
     width: float,
+    chamfer_ratio: float,
     height: float,
     z: float,
 ) -> Part.Shape:
-    radius = width / 2
-    straight = max(length - width, 0)
-    if straight <= 0:
-        return vertical_cylinder(center_x, center_y, radius, height, z)
-
-    left_x = center_x - straight / 2
-    right_x = center_x + straight / 2
-    body = Part.makeBox(
-        straight,
-        width,
-        height,
-        App.Vector(left_x, center_y - radius, z),
-    )
-    return fuse_all(
-        body,
-        [
-            vertical_cylinder(left_x, center_y, radius, height, z),
-            vertical_cylinder(right_x, center_y, radius, height, z),
-        ],
-    )
+    half_length = length / 2
+    half_width = width / 2
+    chamfer = min(width * chamfer_ratio, length / 3)
+    points = [
+        App.Vector(center_x - half_length + chamfer, center_y - half_width, z),
+        App.Vector(center_x + half_length - chamfer, center_y - half_width, z),
+        App.Vector(center_x + half_length, center_y, z),
+        App.Vector(center_x + half_length - chamfer, center_y + half_width, z),
+        App.Vector(center_x - half_length + chamfer, center_y + half_width, z),
+        App.Vector(center_x - half_length, center_y, z),
+    ]
+    points.append(points[0])
+    return Part.Face(Part.makePolygon(points)).extrude(App.Vector(0, 0, height))
 
 
 def board_to_case(point: Point, board: BoardData, cfg: CaseConfig) -> Point:
@@ -606,24 +602,25 @@ def sensor_side_window_cutouts(
     ]
 
 
-def skeleton_slot_grid_cutouts(
+def skeleton_lattice_cutouts(
     min_x: float,
     max_x: float,
     min_y: float,
     max_y: float,
-    slot_length: float,
-    slot_width: float,
+    cell_length: float,
+    cell_width: float,
     rib_width: float,
+    chamfer_ratio: float,
     keepouts: list[Rect],
     z_min: float,
     z_height: float,
 ) -> list[Part.Shape]:
     cutters: list[Part.Shape] = []
-    y_centers = grid_centers(min_y, max_y, slot_width, slot_width + rib_width)
-    min_slot_length = max(slot_width * 1.6, slot_width + rib_width)
+    y_centers = grid_centers(min_y, max_y, cell_width, cell_width + rib_width)
+    min_cell_length = max(cell_width * 1.6, cell_width + rib_width)
     for y in y_centers:
-        row_min_y = y - slot_width / 2
-        row_max_y = y + slot_width / 2
+        row_min_y = y - cell_width / 2
+        row_max_y = y + cell_width / 2
         blocked: list[tuple[float, float]] = []
         for keepout in keepouts:
             if keepout[3] <= row_min_y or keepout[1] >= row_max_y:
@@ -642,28 +639,29 @@ def skeleton_slot_grid_cutouts(
         free_ranges: list[tuple[float, float]] = []
         cursor = min_x
         for start, end in merged:
-            if start - cursor >= min_slot_length:
+            if start - cursor >= min_cell_length:
                 free_ranges.append((cursor, start))
             cursor = max(cursor, end)
-        if max_x - cursor >= min_slot_length:
+        if max_x - cursor >= min_cell_length:
             free_ranges.append((cursor, max_x))
 
         for start, end in free_ranges:
             available = end - start
-            target_span = slot_length * 1.4
+            target_span = cell_length * 1.4
             count = max(1, math.ceil(available / target_span))
-            while count > 1 and (available - rib_width * (count - 1)) / count < min_slot_length:
+            while count > 1 and (available - rib_width * (count - 1)) / count < min_cell_length:
                 count -= 1
-            length = min(slot_length, (available - rib_width * (count - 1)) / count)
+            length = min(cell_length, (available - rib_width * (count - 1)) / count)
             used = count * length + (count - 1) * rib_width
             center = start + (available - used) / 2 + length / 2
             for index in range(count):
                 cutters.append(
-                    rounded_slot_x(
+                    faceted_lattice_cell_x(
                         center + index * (length + rib_width),
                         y,
                         length,
-                        slot_width,
+                        cell_width,
+                        chamfer_ratio,
                         z_height,
                         z_min,
                     )
@@ -684,14 +682,15 @@ def skeleton_base_floor_cutouts(board: BoardData, cfg: CaseConfig) -> list[Part.
         )
         for pos in din_mount_positions(board, cfg)
     ]
-    return skeleton_slot_grid_cutouts(
+    return skeleton_lattice_cutouts(
         cfg.skeleton_perimeter_keepout,
         outer_length - cfg.skeleton_perimeter_keepout,
         cfg.skeleton_perimeter_keepout,
         outer_width - cfg.skeleton_perimeter_keepout,
-        cfg.skeleton_base_slot_length,
-        cfg.skeleton_base_slot_width,
+        cfg.skeleton_base_cell_length,
+        cfg.skeleton_base_cell_width,
         cfg.skeleton_min_rib_width,
+        cfg.skeleton_cell_chamfer_ratio,
         keepouts,
         -0.5,
         cfg.bottom + 1.0,
@@ -766,14 +765,15 @@ def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
 def skeleton_lid_cutouts(board: BoardData, cfg: CaseConfig) -> list[Part.Shape]:
     outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
     outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
-    return skeleton_slot_grid_cutouts(
+    return skeleton_lattice_cutouts(
         cfg.skeleton_perimeter_keepout,
         outer_length - cfg.skeleton_perimeter_keepout,
         cfg.skeleton_perimeter_keepout,
         outer_width - cfg.skeleton_perimeter_keepout,
-        cfg.skeleton_lid_slot_length,
-        cfg.skeleton_lid_slot_width,
+        cfg.skeleton_lid_cell_length,
+        cfg.skeleton_lid_cell_width,
         cfg.skeleton_min_rib_width,
+        cfg.skeleton_cell_chamfer_ratio,
         skeleton_lid_keepouts(board, cfg),
         -0.5,
         cfg.lid_thickness + 1.0,
@@ -1431,10 +1431,19 @@ def write_skeletonized_report(
             "lattice guidance: keep members open, accessible, and self-supporting rather than trapping support material inside",
         ],
         "skeletonization": {
-            "strategy": "through-cut rounded slots in the bottom floor and lid plate, leaving continuous perimeter walls, snap features, PCB rails, DIN screw pads, and control keepouts intact",
-            "printability": "all added cutouts are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",
-            "base_floor_slots": len(skeleton_base_floor_cutouts(board, cfg)),
-            "lid_plate_slots": len(skeleton_lid_cutouts(board, cfg)),
+            "strategy": "faceted hex-ended lightening cells through the bottom floor and lid plate, leaving continuous perimeter walls, snap features, PCB rails, DIN screw pads, and control keepouts intact",
+            "printability": "all added lattice cells are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",
+            "base_floor_lattice_cells": len(skeleton_base_floor_cutouts(board, cfg)),
+            "lid_plate_lattice_cells": len(skeleton_lid_cutouts(board, cfg)),
+            "base_cell_size_mm": {
+                "x": cfg.skeleton_base_cell_length,
+                "y": cfg.skeleton_base_cell_width,
+            },
+            "lid_cell_size_mm": {
+                "x": cfg.skeleton_lid_cell_length,
+                "y": cfg.skeleton_lid_cell_width,
+            },
+            "cell_chamfer_ratio": cfg.skeleton_cell_chamfer_ratio,
             "minimum_remaining_rib_width_mm": cfg.skeleton_min_rib_width,
             "perimeter_keepout_mm": cfg.skeleton_perimeter_keepout,
             "din_screw_pad_radius_mm": cfg.skeleton_din_pad_radius,

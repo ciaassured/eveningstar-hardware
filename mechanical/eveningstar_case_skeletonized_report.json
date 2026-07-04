@@ -36,12 +36,13 @@
     "sensor_side_window_height": 4.5,
     "sensor_side_window_inner_reach": 5.5,
     "sensor_side_window_width": 10.0,
-    "skeleton_base_slot_length": 24.0,
-    "skeleton_base_slot_width": 7.0,
+    "skeleton_base_cell_length": 24.0,
+    "skeleton_base_cell_width": 7.0,
+    "skeleton_cell_chamfer_ratio": 0.5,
     "skeleton_din_pad_radius": 9.0,
     "skeleton_feature_keepout": 3.2,
-    "skeleton_lid_slot_length": 24.0,
-    "skeleton_lid_slot_width": 7.0,
+    "skeleton_lid_cell_length": 24.0,
+    "skeleton_lid_cell_width": 7.0,
     "skeleton_min_rib_width": 2.8,
     "skeleton_perimeter_keepout": 6.2,
     "slot_rail_end_clearance": 14.0,
@@ -125,12 +126,12 @@
     "lowprofile_base_mm3": 22797.72932153705,
     "lowprofile_lid_mm3": 16069.921202799724,
     "lowprofile_total_mm3": 38867.65052433677,
-    "reduction_mm3": 9236.674328471381,
-    "reduction_percent": 23.764426724707445,
+    "reduction_mm3": 8218.601999999984,
+    "reduction_percent": 21.145095958022857,
     "reference_variant": "eveningstar_case_lowprofile",
-    "skeletonized_base_mm3": 17251.61088125215,
-    "skeletonized_lid_mm3": 12379.365314613244,
-    "skeletonized_total_mm3": 29630.97619586539
+    "skeletonized_base_mm3": 17866.929321537064,
+    "skeletonized_lid_mm3": 12782.119202799726,
+    "skeletonized_total_mm3": 30649.048524336788
   },
   "online_design_influences": [
     "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",
@@ -138,14 +139,23 @@
     "lattice guidance: keep members open, accessible, and self-supporting rather than trapping support material inside"
   ],
   "skeletonization": {
-    "base_floor_slots": 22,
+    "base_cell_size_mm": {
+      "x": 24.0,
+      "y": 7.0
+    },
+    "base_floor_lattice_cells": 22,
+    "cell_chamfer_ratio": 0.5,
     "din_screw_pad_radius_mm": 9.0,
     "functional_feature_keepout_mm": 3.2,
-    "lid_plate_slots": 12,
+    "lid_cell_size_mm": {
+      "x": 24.0,
+      "y": 7.0
+    },
+    "lid_plate_lattice_cells": 12,
     "minimum_remaining_rib_width_mm": 2.8,
     "perimeter_keepout_mm": 6.2,
-    "printability": "all added cutouts are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",
-    "strategy": "through-cut rounded slots in the bottom floor and lid plate, leaving continuous perimeter walls, snap features, PCB rails, DIN screw pads, and control keepouts intact"
+    "printability": "all added lattice cells are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",
+    "strategy": "faceted hex-ended lightening cells through the bottom floor and lid plate, leaving continuous perimeter walls, snap features, PCB rails, DIN screw pads, and control keepouts intact"
   },
   "slot_fit": {
     "board_bottom_z_mm": 4.8,
