@@ -1,0 +1,162 @@
+{
+  "board_size_mm": {
+    "x": 145.5,
+    "y": 43.601839999999996
+  },
+  "case_body_size_mm": {
+    "x": 151.4,
+    "y": 49.501839999999994,
+    "z_base": 10.6
+  },
+  "case_overall_size_mm": {
+    "x": 151.4,
+    "y": 49.501839999999994,
+    "z_base": 10.6
+  },
+  "config": {
+    "base_height": 10.6,
+    "board_floor_clearance": 2.8,
+    "bottom": 2.0,
+    "din_mount_hole_diameter": 3.4,
+    "din_mount_hole_spacing": 52.5,
+    "external_ear_overlap": 2.4,
+    "external_ear_radius": 6.2,
+    "insert_hole_depth": 6.0,
+    "insert_hole_diameter": 3.6,
+    "led_view_diameter": 2.4,
+    "lid_fillet": 0.9,
+    "lid_thickness": 2.4,
+    "low_profile_base_height": 10.6,
+    "outer_fillet": 1.3,
+    "pcb_edge_clearance": 0.55,
+    "pcb_reference_marker_height": 1.2,
+    "pcb_thickness": 1.6,
+    "screw_clearance_diameter": 3.0,
+    "sensor_air_hole_diameter": 8.0,
+    "sensor_side_window_height": 4.5,
+    "sensor_side_window_inner_reach": 5.5,
+    "sensor_side_window_width": 10.0,
+    "skeleton_base_slot_length": 24.0,
+    "skeleton_base_slot_width": 7.0,
+    "skeleton_din_pad_radius": 9.0,
+    "skeleton_feature_keepout": 3.2,
+    "skeleton_lid_slot_length": 24.0,
+    "skeleton_lid_slot_width": 7.0,
+    "skeleton_min_rib_width": 2.8,
+    "skeleton_perimeter_keepout": 6.2,
+    "slot_rail_end_clearance": 14.0,
+    "slot_rail_width": 1.4,
+    "snap_cavity_depth_clearance": 0.35,
+    "snap_cavity_width_extra": 1.0,
+    "snap_cavity_z_clearance": 0.25,
+    "snap_lid_gap": 0.25,
+    "snap_nub_height": 2.0,
+    "snap_nub_position_ratio": 0.3,
+    "snap_nub_width": 20.0,
+    "snap_shoulder_depth": 3.2,
+    "snap_shoulder_wall": 1.8,
+    "switch_access_diameter": 5.0,
+    "tall_component_cutout_clearance": 1.2,
+    "wall": 2.4
+  },
+  "connector_openings": {
+    "J2": {
+      "center_mm": {
+        "x": 67.95,
+        "y": 9.689339999999998
+      },
+      "side": "min_y",
+      "size_mm": {
+        "x": 9.96,
+        "y": 8.475
+      }
+    },
+    "J4": {
+      "center_mm": {
+        "x": 139.82999999999998,
+        "y": 14.781838999999994
+      },
+      "side": "max_x",
+      "size_mm": {
+        "x": 21.85,
+        "y": 17.98
+      }
+    },
+    "RJ1": {
+      "center_mm": {
+        "x": 9.95,
+        "y": 27.251839999999998
+      },
+      "side": "min_x",
+      "size_mm": {
+        "x": 18.305,
+        "y": 14.275
+      }
+    },
+    "U4": {
+      "center_mm": {
+        "x": 143.45,
+        "y": 38.31434
+      },
+      "side": "max_x",
+      "size_mm": {
+        "x": 14.74,
+        "y": 10.175
+      }
+    }
+  },
+  "din_rail_mount": {
+    "bracket_insert_pitch_mm": 52.5,
+    "case_hole_diameter_mm": 3.4,
+    "case_hole_positions_mm": [
+      {
+        "x": 49.45,
+        "y": 24.750919999999997
+      },
+      {
+        "x": 101.95,
+        "y": 24.750919999999997
+      }
+    ],
+    "intended_screw": "M3 clearance through case bottom into bracket heat-set inserts",
+    "source_model": "mechanical/din-rail-bracket-heat-insert-version.step"
+  },
+  "modeled_solid_volume": {
+    "lowprofile_base_mm3": 22797.72932153705,
+    "lowprofile_lid_mm3": 16069.921202799724,
+    "lowprofile_total_mm3": 38867.65052433677,
+    "reduction_mm3": 9236.674328471381,
+    "reduction_percent": 23.764426724707445,
+    "reference_variant": "eveningstar_case_lowprofile",
+    "skeletonized_base_mm3": 17251.61088125215,
+    "skeletonized_lid_mm3": 12379.365314613244,
+    "skeletonized_total_mm3": 29630.97619586539
+  },
+  "online_design_influences": [
+    "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",
+    "ribbed plastic-part guidance: keep ribs connected to walls and use ribs instead of globally thickening parts",
+    "lattice guidance: keep members open, accessible, and self-supporting rather than trapping support material inside"
+  ],
+  "skeletonization": {
+    "base_floor_slots": 22,
+    "din_screw_pad_radius_mm": 9.0,
+    "functional_feature_keepout_mm": 3.2,
+    "lid_plate_slots": 12,
+    "minimum_remaining_rib_width_mm": 2.8,
+    "perimeter_keepout_mm": 6.2,
+    "printability": "all added cutouts are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",
+    "strategy": "through-cut rounded slots in the bottom floor and lid plate, leaving continuous perimeter walls, snap features, PCB rails, DIN screw pads, and control keepouts intact"
+  },
+  "slot_fit": {
+    "board_bottom_z_mm": 4.8,
+    "bottom_protrusion_allowance_mm": 2.8,
+    "pcb_edge_clearance_mm": 0.55,
+    "rail_bottom_z_mm": 2.0,
+    "rail_height_mm": 2.8,
+    "rail_top_z_mm": 4.8,
+    "rail_width_mm": 1.4,
+    "usb_c_slot_bottom_z_mm": 4.8
+  },
+  "source_board": "pcb/EveningStar.kicad_pcb",
+  "variant": "skeletonized low-profile snap-fit PCB tray"
+}

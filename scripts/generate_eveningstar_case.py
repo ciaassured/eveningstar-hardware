@@ -12,6 +12,7 @@ STEP/STL/FCStd output into mechanical/.
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
@@ -71,6 +72,14 @@ class CaseConfig:
     sensor_side_window_width: float = 10.0
     sensor_side_window_height: float = 4.5
     sensor_side_window_inner_reach: float = 5.5
+    skeleton_perimeter_keepout: float = 6.2
+    skeleton_min_rib_width: float = 2.8
+    skeleton_base_slot_length: float = 24.0
+    skeleton_base_slot_width: float = 7.0
+    skeleton_lid_slot_length: float = 24.0
+    skeleton_lid_slot_width: float = 7.0
+    skeleton_feature_keepout: float = 3.2
+    skeleton_din_pad_radius: float = 9.0
 
 
 @dataclass(frozen=True)
@@ -125,6 +134,18 @@ LOW_PROFILE_CONFIG_KEYS = {
     "sensor_side_window_width",
     "sensor_side_window_height",
     "sensor_side_window_inner_reach",
+}
+
+
+SKELETON_CONFIG_KEYS = {
+    "skeleton_perimeter_keepout",
+    "skeleton_min_rib_width",
+    "skeleton_base_slot_length",
+    "skeleton_base_slot_width",
+    "skeleton_lid_slot_length",
+    "skeleton_lid_slot_width",
+    "skeleton_feature_keepout",
+    "skeleton_din_pad_radius",
 }
 
 
@@ -250,6 +271,72 @@ def vertical_cylinder(
     z: float,
 ) -> Part.Shape:
     return Part.makeCylinder(radius, height, App.Vector(x, y, z), App.Vector(0, 0, 1))
+
+
+Rect = tuple[float, float, float, float]
+
+
+def rect_intersects(a: Rect, b: Rect) -> bool:
+    return not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1])
+
+
+def padded_rect(
+    x: float,
+    y: float,
+    width: float,
+    height: float,
+    pad: float,
+) -> Rect:
+    return (
+        x - width / 2 - pad,
+        y - height / 2 - pad,
+        x + width / 2 + pad,
+        y + height / 2 + pad,
+    )
+
+
+def grid_centers(
+    min_value: float,
+    max_value: float,
+    item_size: float,
+    pitch: float,
+) -> list[float]:
+    usable = max_value - min_value
+    if usable < item_size:
+        return []
+    count = math.floor((usable - item_size) / pitch) + 1
+    first = (min_value + max_value) / 2 - pitch * (count - 1) / 2
+    return [first + pitch * index for index in range(count)]
+
+
+def rounded_slot_x(
+    center_x: float,
+    center_y: float,
+    length: float,
+    width: float,
+    height: float,
+    z: float,
+) -> Part.Shape:
+    radius = width / 2
+    straight = max(length - width, 0)
+    if straight <= 0:
+        return vertical_cylinder(center_x, center_y, radius, height, z)
+
+    left_x = center_x - straight / 2
+    right_x = center_x + straight / 2
+    body = Part.makeBox(
+        straight,
+        width,
+        height,
+        App.Vector(left_x, center_y - radius, z),
+    )
+    return fuse_all(
+        body,
+        [
+            vertical_cylinder(left_x, center_y, radius, height, z),
+            vertical_cylinder(right_x, center_y, radius, height, z),
+        ],
+    )
 
 
 def board_to_case(point: Point, board: BoardData, cfg: CaseConfig) -> Point:
@@ -517,6 +604,180 @@ def sensor_side_window_cutouts(
             ),
         )
     ]
+
+
+def skeleton_slot_grid_cutouts(
+    min_x: float,
+    max_x: float,
+    min_y: float,
+    max_y: float,
+    slot_length: float,
+    slot_width: float,
+    rib_width: float,
+    keepouts: list[Rect],
+    z_min: float,
+    z_height: float,
+) -> list[Part.Shape]:
+    cutters: list[Part.Shape] = []
+    y_centers = grid_centers(min_y, max_y, slot_width, slot_width + rib_width)
+    min_slot_length = max(slot_width * 1.6, slot_width + rib_width)
+    for y in y_centers:
+        row_min_y = y - slot_width / 2
+        row_max_y = y + slot_width / 2
+        blocked: list[tuple[float, float]] = []
+        for keepout in keepouts:
+            if keepout[3] <= row_min_y or keepout[1] >= row_max_y:
+                continue
+            blocked.append((max(min_x, keepout[0]), min(max_x, keepout[2])))
+
+        merged: list[tuple[float, float]] = []
+        for start, end in sorted(blocked):
+            if end <= start:
+                continue
+            if not merged or start > merged[-1][1]:
+                merged.append((start, end))
+            else:
+                merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+
+        free_ranges: list[tuple[float, float]] = []
+        cursor = min_x
+        for start, end in merged:
+            if start - cursor >= min_slot_length:
+                free_ranges.append((cursor, start))
+            cursor = max(cursor, end)
+        if max_x - cursor >= min_slot_length:
+            free_ranges.append((cursor, max_x))
+
+        for start, end in free_ranges:
+            available = end - start
+            target_span = slot_length * 1.4
+            count = max(1, math.ceil(available / target_span))
+            while count > 1 and (available - rib_width * (count - 1)) / count < min_slot_length:
+                count -= 1
+            length = min(slot_length, (available - rib_width * (count - 1)) / count)
+            used = count * length + (count - 1) * rib_width
+            center = start + (available - used) / 2 + length / 2
+            for index in range(count):
+                cutters.append(
+                    rounded_slot_x(
+                        center + index * (length + rib_width),
+                        y,
+                        length,
+                        slot_width,
+                        z_height,
+                        z_min,
+                    )
+                )
+    return cutters
+
+
+def skeleton_base_floor_cutouts(board: BoardData, cfg: CaseConfig) -> list[Part.Shape]:
+    outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    keepouts = [
+        padded_rect(
+            pos.x,
+            pos.y,
+            2 * cfg.skeleton_din_pad_radius,
+            2 * cfg.skeleton_din_pad_radius,
+            0,
+        )
+        for pos in din_mount_positions(board, cfg)
+    ]
+    return skeleton_slot_grid_cutouts(
+        cfg.skeleton_perimeter_keepout,
+        outer_length - cfg.skeleton_perimeter_keepout,
+        cfg.skeleton_perimeter_keepout,
+        outer_width - cfg.skeleton_perimeter_keepout,
+        cfg.skeleton_base_slot_length,
+        cfg.skeleton_base_slot_width,
+        cfg.skeleton_min_rib_width,
+        keepouts,
+        -0.5,
+        cfg.bottom + 1.0,
+    )
+
+
+def skeleton_lid_keepouts(board: BoardData, cfg: CaseConfig) -> list[Rect]:
+    keepouts: list[Rect] = []
+    pad = cfg.skeleton_feature_keepout
+
+    for ref in ("S1", "S2", "S3"):
+        fp = board.footprints[ref]
+        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        keepouts.append(
+            padded_rect(
+                pos.x,
+                pos.y,
+                cfg.switch_access_diameter,
+                cfg.switch_access_diameter,
+                pad,
+            )
+        )
+
+    for ref in ("D4", "D6", "D12"):
+        fp = board.footprints[ref]
+        pos = board_to_case(Point(fp.center_x, fp.center_y), board, cfg)
+        keepouts.append(
+            padded_rect(
+                pos.x,
+                pos.y,
+                cfg.led_view_diameter,
+                cfg.led_view_diameter,
+                pad,
+            )
+        )
+
+    for ref in TALL_COMPONENT_CUTOUT_REFS:
+        fp = box_to_case(board.footprints[ref], board, cfg)
+        clearance = cfg.tall_component_cutout_clearance
+        keepouts.append(
+            padded_rect(
+                fp.center_x,
+                fp.center_y,
+                fp.width + 2 * clearance,
+                fp.height + 2 * clearance,
+                pad,
+            )
+        )
+
+    sensor = box_to_case(board.footprints["U6"], board, cfg)
+    sensor_slot_width = max(cfg.sensor_side_window_width, sensor.width + 2.0)
+    keepouts.append(
+        padded_rect(
+            sensor.center_x,
+            sensor.center_y,
+            cfg.sensor_air_hole_diameter,
+            cfg.sensor_air_hole_diameter,
+            pad,
+        )
+    )
+    keepouts.append(
+        (
+            sensor.center_x - sensor_slot_width / 2 - pad,
+            -pad,
+            sensor.center_x + sensor_slot_width / 2 + pad,
+            sensor.center_y + cfg.sensor_side_window_inner_reach + pad,
+        )
+    )
+    return keepouts
+
+
+def skeleton_lid_cutouts(board: BoardData, cfg: CaseConfig) -> list[Part.Shape]:
+    outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    return skeleton_slot_grid_cutouts(
+        cfg.skeleton_perimeter_keepout,
+        outer_length - cfg.skeleton_perimeter_keepout,
+        cfg.skeleton_perimeter_keepout,
+        outer_width - cfg.skeleton_perimeter_keepout,
+        cfg.skeleton_lid_slot_length,
+        cfg.skeleton_lid_slot_width,
+        cfg.skeleton_min_rib_width,
+        skeleton_lid_keepouts(board, cfg),
+        -0.5,
+        cfg.lid_thickness + 1.0,
+    )
 
 
 def connector_opening_report(board: BoardData, cfg: CaseConfig) -> dict[str, dict[str, object]]:
@@ -845,6 +1106,16 @@ def make_lowprofile_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape
     return cut_all(lid, low_profile_lid_cutouts(board, cfg, z_min, z_height))
 
 
+def make_skeletonized_lowprofile_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+    base = make_lowprofile_snapfit_base(board, cfg)
+    return cut_all(base, skeleton_base_floor_cutouts(board, cfg))
+
+
+def make_skeletonized_lowprofile_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
+    lid = make_lowprofile_snapfit_lid(board, cfg)
+    return cut_all(lid, skeleton_lid_cutouts(board, cfg))
+
+
 def add_object(doc: App.Document, name: str, shape: Part.Shape) -> object:
     obj = doc.addObject("Part::Feature", name)
     obj.Shape = shape
@@ -939,7 +1210,7 @@ def write_slotfit_report(board: BoardData, cfg: CaseConfig) -> None:
         "config": config_report(
             cfg,
             exclude_prefixes=("snap_",),
-            exclude_keys=LOW_PROFILE_CONFIG_KEYS,
+            exclude_keys=LOW_PROFILE_CONFIG_KEYS | SKELETON_CONFIG_KEYS,
         ),
     }
     (OUTPUT_DIR / "eveningstar_case_slotfit_report.json").write_text(
@@ -1014,7 +1285,10 @@ def write_snapfit_report(board: BoardData, cfg: CaseConfig) -> None:
         },
         "switch_access_holes": switch_refs,
         "led_view_holes": led_refs,
-        "config": config_report(cfg, exclude_keys=LOW_PROFILE_CONFIG_KEYS),
+        "config": config_report(
+            cfg,
+            exclude_keys=LOW_PROFILE_CONFIG_KEYS | SKELETON_CONFIG_KEYS,
+        ),
     }
     (OUTPUT_DIR / "eveningstar_case_snapfit_report.json").write_text(
         json.dumps(data, indent=2, sort_keys=True) + "\n",
@@ -1124,9 +1398,80 @@ def write_lowprofile_report(
         },
         "switch_access_holes": switch_refs,
         "led_view_holes": led_refs,
-        "config": asdict(cfg),
+        "config": config_report(cfg, exclude_keys=SKELETON_CONFIG_KEYS),
     }
     (OUTPUT_DIR / "eveningstar_case_lowprofile_report.json").write_text(
+        json.dumps(data, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def write_skeletonized_report(
+    board: BoardData,
+    cfg: CaseConfig,
+    lowprofile_base: Part.Shape,
+    lowprofile_lid: Part.Shape,
+    skeletonized_base: Part.Shape,
+    skeletonized_lid: Part.Shape,
+) -> None:
+    body_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    body_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
+    lowprofile_volume = lowprofile_base.Volume + lowprofile_lid.Volume
+    skeletonized_volume = skeletonized_base.Volume + skeletonized_lid.Volume
+    reduction = lowprofile_volume - skeletonized_volume
+    data = {
+        "source_board": str(BOARD_PATH.relative_to(ROOT)),
+        "variant": "skeletonized low-profile snap-fit PCB tray",
+        "board_size_mm": {"x": board.width, "y": board.height},
+        "case_body_size_mm": {"x": body_length, "y": body_width, "z_base": cfg.base_height},
+        "case_overall_size_mm": {"x": body_length, "y": body_width, "z_base": cfg.base_height},
+        "online_design_influences": [
+            "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",
+            "ribbed plastic-part guidance: keep ribs connected to walls and use ribs instead of globally thickening parts",
+            "lattice guidance: keep members open, accessible, and self-supporting rather than trapping support material inside",
+        ],
+        "skeletonization": {
+            "strategy": "through-cut rounded slots in the bottom floor and lid plate, leaving continuous perimeter walls, snap features, PCB rails, DIN screw pads, and control keepouts intact",
+            "printability": "all added cutouts are open through the print-bed-facing plate surfaces, so they print as normal perimeter holes without slicer supports",
+            "base_floor_slots": len(skeleton_base_floor_cutouts(board, cfg)),
+            "lid_plate_slots": len(skeleton_lid_cutouts(board, cfg)),
+            "minimum_remaining_rib_width_mm": cfg.skeleton_min_rib_width,
+            "perimeter_keepout_mm": cfg.skeleton_perimeter_keepout,
+            "din_screw_pad_radius_mm": cfg.skeleton_din_pad_radius,
+            "functional_feature_keepout_mm": cfg.skeleton_feature_keepout,
+        },
+        "modeled_solid_volume": {
+            "reference_variant": "eveningstar_case_lowprofile",
+            "lowprofile_total_mm3": lowprofile_volume,
+            "skeletonized_total_mm3": skeletonized_volume,
+            "reduction_mm3": reduction,
+            "reduction_percent": reduction / lowprofile_volume * 100,
+            "lowprofile_base_mm3": lowprofile_base.Volume,
+            "lowprofile_lid_mm3": lowprofile_lid.Volume,
+            "skeletonized_base_mm3": skeletonized_base.Volume,
+            "skeletonized_lid_mm3": skeletonized_lid.Volume,
+        },
+        "slot_fit": {
+            "bottom_protrusion_allowance_mm": cfg.board_floor_clearance,
+            "board_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
+            "pcb_edge_clearance_mm": cfg.pcb_edge_clearance,
+            "rail_width_mm": cfg.slot_rail_width,
+            "rail_height_mm": cfg.board_floor_clearance,
+            "rail_bottom_z_mm": cfg.bottom,
+            "rail_top_z_mm": cfg.bottom + cfg.board_floor_clearance,
+            "usb_c_slot_bottom_z_mm": cfg.bottom + cfg.board_floor_clearance,
+        },
+        "connector_openings": connector_opening_report(board, cfg),
+        "din_rail_mount": {
+            "source_model": "mechanical/din-rail-bracket-heat-insert-version.step",
+            "intended_screw": "M3 clearance through case bottom into bracket heat-set inserts",
+            "bracket_insert_pitch_mm": cfg.din_mount_hole_spacing,
+            "case_hole_diameter_mm": cfg.din_mount_hole_diameter,
+            "case_hole_positions_mm": [asdict(pos) for pos in din_mount_positions(board, cfg)],
+        },
+        "config": asdict(cfg),
+    }
+    (OUTPUT_DIR / "eveningstar_case_skeletonized_report.json").write_text(
         json.dumps(data, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
@@ -1171,6 +1516,25 @@ def main() -> None:
         "eveningstar_case_lowprofile_pcb_reference.step",
     )
     write_lowprofile_report(board, lowprofile_cfg, cfg)
+
+    skeletonized_base = make_skeletonized_lowprofile_base(board, lowprofile_cfg)
+    skeletonized_lid = make_skeletonized_lowprofile_lid(board, lowprofile_cfg)
+    skeletonized_board_proxy = make_board_proxy(board, lowprofile_cfg)
+    write_exports(
+        skeletonized_base,
+        skeletonized_lid,
+        skeletonized_board_proxy,
+        "eveningstar_case_skeletonized",
+        "eveningstar_case_skeletonized_pcb_reference.step",
+    )
+    write_skeletonized_report(
+        board,
+        lowprofile_cfg,
+        lowprofile_base,
+        lowprofile_lid,
+        skeletonized_base,
+        skeletonized_lid,
+    )
     App.Console.PrintMessage(f"Wrote enclosure files to {OUTPUT_DIR}\n")
 
 
