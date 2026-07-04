@@ -112,6 +112,8 @@ Hardware assumptions:
 - Snapfit nubs are 20.0 mm wide x 2.0 mm high with a 1.0 mm triangular
   protrusion. They are placed in pairs on the front and back walls to avoid the
   side connector openings.
+- Base and lid mating perimeters are kept square so the lid sits flush on the
+  top rim of the box. Fillets are limited to non-mating comfort edges.
 
 Fit assumptions:
 

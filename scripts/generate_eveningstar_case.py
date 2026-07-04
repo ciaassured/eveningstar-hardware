@@ -273,14 +273,57 @@ def load_board() -> BoardData:
     )
 
 
-def rounded_box(length: float, width: float, height: float, z: float, radius: float) -> Part.Shape:
+def edge_vertices_at_z(edge: Part.Edge, z_value: float, tolerance: float = 1e-6) -> bool:
+    return all(abs(vertex.Point.z - z_value) <= tolerance for vertex in edge.Vertexes)
+
+
+def box_with_z_edge_fillets(
+    length: float,
+    width: float,
+    height: float,
+    z: float,
+    radius: float,
+    z_levels: tuple[float, ...],
+) -> Part.Shape:
     shape = Part.makeBox(length, width, height, App.Vector(0, 0, z))
     if radius <= 0:
         return shape
+    edges = [
+        edge
+        for edge in shape.Edges
+        if any(edge_vertices_at_z(edge, z_level) for z_level in z_levels)
+    ]
+    if not edges:
+        return shape
     try:
-        return shape.makeFillet(radius, shape.Edges)
+        return shape.makeFillet(radius, edges)
     except Exception:
         return shape
+
+
+def base_body_box(length: float, width: float, height: float, z: float, radius: float) -> Part.Shape:
+    return box_with_z_edge_fillets(length, width, height, z, radius, (z,))
+
+
+def slotfit_lid_plate_box(
+    length: float,
+    width: float,
+    height: float,
+    z: float,
+    radius: float,
+) -> Part.Shape:
+    return box_with_z_edge_fillets(length, width, height, z, radius, (z + height,))
+
+
+def snapfit_lid_plate_box(
+    length: float,
+    width: float,
+    height: float,
+    z: float,
+    radius: float,
+) -> Part.Shape:
+    # Snapfit lids are exported shoulder-up, so model z=height is the installed mating edge.
+    return box_with_z_edge_fillets(length, width, height, z, radius, (z,))
 
 
 def tidy(shape: Part.Shape) -> Part.Shape:
@@ -1038,7 +1081,7 @@ def make_slotfit_base(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
     outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
 
-    body = rounded_box(outer_length, outer_width, cfg.base_height, 0, cfg.outer_fillet)
+    body = base_body_box(outer_length, outer_width, cfg.base_height, 0, cfg.outer_fillet)
     ears = [
         vertical_cylinder(pos.x, pos.y, cfg.external_ear_radius, cfg.base_height, 0)
         for pos in external_insert_positions(board, cfg)
@@ -1122,7 +1165,7 @@ def make_snapfit_base(
     outer_length = board.width + 2 * (cfg.wall + cfg.pcb_edge_clearance)
     outer_width = board.height + 2 * (cfg.wall + cfg.pcb_edge_clearance)
 
-    base = rounded_box(outer_length, outer_width, cfg.base_height, 0, cfg.outer_fillet)
+    base = base_body_box(outer_length, outer_width, cfg.base_height, 0, cfg.outer_fillet)
 
     inner = Part.makeBox(
         outer_length - 2 * cfg.wall,
@@ -1206,7 +1249,7 @@ def make_slotfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     z_min = -0.5
     z_height = cfg.lid_thickness + 1.0
 
-    body = rounded_box(outer_length, outer_width, cfg.lid_thickness, 0, cfg.lid_fillet)
+    body = slotfit_lid_plate_box(outer_length, outer_width, cfg.lid_thickness, 0, cfg.lid_fillet)
     ears = [
         vertical_cylinder(pos.x, pos.y, cfg.external_ear_radius, cfg.lid_thickness, 0)
         for pos in external_insert_positions(board, cfg)
@@ -1260,7 +1303,7 @@ def make_snapfit_lid(board: BoardData, cfg: CaseConfig) -> Part.Shape:
     z_min = -0.5
     z_height = cfg.lid_thickness + 1.0
 
-    lid = rounded_box(outer_length, outer_width, cfg.lid_thickness, 0, cfg.lid_fillet)
+    lid = snapfit_lid_plate_box(outer_length, outer_width, cfg.lid_thickness, 0, cfg.lid_fillet)
 
     shoulder_outer_x = cfg.wall + cfg.snap_lid_gap
     shoulder_outer_y = cfg.wall + cfg.snap_lid_gap

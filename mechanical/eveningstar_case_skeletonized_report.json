@@ -123,15 +123,15 @@
     "source_model": "mechanical/din-rail-bracket-heat-insert-version.step"
   },
   "modeled_solid_volume": {
-    "lowprofile_base_mm3": 22797.72932153705,
-    "lowprofile_lid_mm3": 15965.511602799723,
-    "lowprofile_total_mm3": 38763.24092433677,
-    "reduction_mm3": 8218.601999999984,
-    "reduction_percent": 21.20205071614662,
+    "lowprofile_base_mm3": 22929.389809555094,
+    "lowprofile_lid_mm3": 16025.962793873003,
+    "lowprofile_total_mm3": 38955.352603428095,
+    "reduction_mm3": 8218.60199999089,
+    "reduction_percent": 21.097490975521673,
     "reference_variant": "eveningstar_case_lowprofile",
-    "skeletonized_base_mm3": 17866.929321537064,
-    "skeletonized_lid_mm3": 12677.709602799723,
-    "skeletonized_total_mm3": 30544.63892433679
+    "skeletonized_base_mm3": 17998.58980956344,
+    "skeletonized_lid_mm3": 12738.160793873765,
+    "skeletonized_total_mm3": 30736.750603437205
   },
   "online_design_influences": [
     "successful skeletonized organizer/baseplate prints that keep only walls/ribs and avoid support-heavy roofs",
