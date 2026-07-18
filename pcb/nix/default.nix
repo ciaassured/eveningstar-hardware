@@ -12,6 +12,16 @@
     in
     {
       packages = {
+        checks = pkgs.writeShellApplication {
+          name = "eveningstar-checks";
+          runtimeInputs = [
+            self'.packages.drc
+            self'.packages.kicad-locality
+            self'.packages.subtree-drift
+          ];
+          text = builtins.readFile ./scripts/checks.sh;
+        };
+
         pcb-review = pkgs.writeShellApplication {
           name = "eveningstar-pcb-review";
           runtimeInputs = [
@@ -64,10 +74,15 @@
           text = builtins.readFile ./scripts/subtree-drift.sh;
         };
 
-        default = self'.packages.drc;
+        default = self'.packages.checks;
       };
 
       apps = {
+        checks = {
+          type = "app";
+          program = "${self'.packages.checks}/bin/eveningstar-checks";
+        };
+
         pcb-review = {
           type = "app";
           program = "${self'.packages.pcb-review}/bin/eveningstar-pcb-review";
@@ -98,12 +113,14 @@
           program = "${self'.packages.subtree-drift}/bin/eveningstar-subtree-drift";
         };
 
-        default = self'.apps.drc;
+        default = self'.apps.checks;
       };
 
       devShells.default = pkgs.mkShell {
         packages = [
           pkgs.kicad
+          pkgs.lefthook
+          self'.packages.checks
           self'.packages.drc
           self'.packages.kicad-locality
           self'.packages.pcb-models
@@ -113,6 +130,15 @@
         ];
 
         KICAD_SYMBOL_DIR = kicadSymbolDir;
+
+        shellHook = ''
+          if ${pkgs.git}/bin/git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+            if ! ${pkgs.lefthook}/bin/lefthook install >/dev/null; then
+              echo "warning: could not install the EveningStar Git hooks" >&2
+              echo "run 'lefthook install' for details" >&2
+            fi
+          fi
+        '';
       };
     };
 }
