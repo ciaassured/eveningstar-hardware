@@ -105,45 +105,77 @@ eveningstar-subtree-drift
 This verifies `pcb/lib/JLCPCB-Kicad-Library` still matches the recorded subtree
 squash commit and rejects uncommitted changes under that subtree.
 
+## Publish Tools
+
+Publish tools generate the complete artifact set for one hardware revision. They
+are available through Nix, but are intentionally not run by Lefthook or CI.
+
+Generate publish artifacts for the current checkout:
+
+```sh
+nix build --max-jobs auto .#publish
+# or, to also link the result at reports/publish:
+nix run .#publish
+# inside nix develop:
+eveningstar-publish
+```
+
+The command currently produces schematic and PCB PDFs/SVGs, deterministic 3D
+PNG renders, a browser-optimized GLB, and a STEP model. `nix build` exposes the
+Nix store output through `result`; the command form also links that immutable
+output at `reports/publish`. Because this is a derivation of the filtered PCB
+source and pinned publishing tools, unchanged outputs are reused from the local
+Nix store and can be shared through the configured Cachix cache. Gerbers, BOM
+output, release metadata, and changelog generation can be added to this same
+artifact contract without changing the review workflow.
+
+The aggregate is assembled from independent schematic-document, PCB-document,
+plan-render, side-render, isometric-render, GLB, and STEP derivations. Nix can
+schedule those components in parallel and reuse them individually. They are
+also directly inspectable with commands such as `nix build .#render-plan` or
+`nix build .#model-step`, without exposing additional imperative applications.
+
 ## Review Tools
 
 Review tools generate artifacts for a human to inspect or compare. They are
 available through Nix, but are intentionally not run by Lefthook or CI.
 
-Generate review artifacts:
+Generate a comparison from a pull request number or URL:
 
 ```sh
-nix run .#pcb-review
+nix run .#review -- 31
+# or:
+nix run .#review -- https://github.com/ciaassured/EveningStar/pull/31
 # or, inside nix develop:
-eveningstar-pcb-review
+eveningstar-review 31
 ```
 
-This generates schematic PDF/SVG and 2D board PDF/SVG outputs under
-`reports/review`.
+The command asks Nix to realize the same publish derivation for the exact source
+and destination commits recorded by GitHub, without changing or depending on
+the current checkout. Cached artifact sets are reused, then linked under
+`reports/review` and compared through their browser-viewable SVG, PNG, and GLB
+outputs. It serves the comparison on an ephemeral `127.0.0.1` port and prints
+the URL; press Ctrl+C when the review is finished.
+It also opens the URL in the default browser when a desktop opener is available;
+the foreground server exits when interrupted and does not remain orphaned.
+The view picker covers native vector schematic and board views, deterministic
+KiCad 3D renders, and the interactive Three.js board model. Every view supports
+overlay/reveal, side-by-side, pixel-difference, and highlighted-change modes.
+Documents can be panned and zoomed without rasterizing SVGs; side-by-side
+navigation can optionally be synchronized. Use <kbd>↑</kbd> and <kbd>↓</kbd> to
+change view and <kbd>←</kbd> and <kbd>→</kbd> to change comparison mode. The
+command uses `gh` for pull request metadata and Git to
+fetch missing commit objects; both are provided by Nix.
 
-Generate local 3D model exports:
+Generate the report without starting the local server:
 
 ```sh
-nix run .#pcb-models
-# or, inside nix develop:
-eveningstar-pcb-models
+nix run .#review -- --no-serve 31
 ```
 
-This generates STEP and GLB outputs under `reports/review/3d-models`. It is
-intended for local use because KiCad 3D model exports are slow in CI, but the
-outputs are useful for mechanical CAD, enclosure checks, and richer PR review.
-
-Generate local PNG 3D renders:
-
-```sh
-nix run .#pcb-renders
-# or, inside nix develop:
-eveningstar-pcb-renders
-```
-
-This generates top, bottom, front, back, and isometric PNG renders under
-`reports/review/renders`. It is intended for local use because KiCad 3D renders
-are slow in CI.
+Because the review tool comes from the current checkout while the hardware
+inputs come from the requested pull request, a feature branch can test changes
+to the review tooling against an existing PR.
 
 Artifacts are written under `reports/`.
 
