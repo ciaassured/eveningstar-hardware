@@ -3,12 +3,50 @@
     { pkgs, self', ... }:
     let
       kicadSymbolDir = "${pkgs.kicad.libraries.symbols}/share/kicad/symbols";
+      threeSource = pkgs.fetchurl {
+        name = "three-0.184.0.tgz";
+        url = "https://registry.npmjs.org/three/-/three-0.184.0.tgz";
+        hash = "sha256-XIx1J4UE/zHO3Nc24EOwbBjyy/IgrX+F+/qhoI07NiY=";
+      };
+      reviewViewer = pkgs.runCommand "eveningstar-review-viewer.js" {
+        nativeBuildInputs = [ pkgs.esbuild ];
+      } ''
+        mkdir -p source node_modules
+        tar -xzf ${threeSource} -C source
+        ln -s "$PWD/source/package" node_modules/three
+        cp ${./scripts/review-viewer.js} review-viewer.js
+        esbuild review-viewer.js \
+          --bundle \
+          --format=iife \
+          --global-name=EveningStarViewer \
+          --legal-comments=eof \
+          --outfile="$out"
+      '';
       withKicadSymbolDir =
         script:
         ''
           export KICAD_SYMBOL_DIR="${kicadSymbolDir}"
         ''
         + builtins.readFile script;
+      publishTools = import ./publish.nix {
+        inherit pkgs;
+        source = ../..;
+      };
+      publishExpression = pkgs.writeText "eveningstar-publish-expression.nix" ''
+        { source }:
+        (import ${./publish.nix} {
+          pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
+          inherit source;
+        }).artifacts
+      '';
+      reviewInputsExpression = pkgs.writeText "eveningstar-review-inputs-expression.nix" ''
+        { destinationSource, sourceSource }:
+        import ${./review-inputs.nix} {
+          pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
+          publishNix = ${./publish.nix};
+          inherit destinationSource sourceSource;
+        }
+      '';
     in
     {
       packages = {
@@ -22,32 +60,66 @@
           text = builtins.readFile ./scripts/checks.sh;
         };
 
-        pcb-review = pkgs.writeShellApplication {
-          name = "eveningstar-pcb-review";
+        review = pkgs.writeShellApplication {
+          name = "eveningstar-review";
           runtimeInputs = [
             pkgs.coreutils
-            pkgs.kicad
+            pkgs.gh
+            pkgs.git
+            pkgs.gnutar
+            pkgs.nix
+            pkgs.nodejs-slim
+          ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+            pkgs.xdg-utils
           ];
-          text = withKicadSymbolDir ./scripts/pcb-review.sh;
+          text = ''
+            export EVENINGSTAR_REVIEW_INPUTS_EXPRESSION="${reviewInputsExpression}"
+            export EVENINGSTAR_REVIEW_VIEWER="${reviewViewer}"
+            export EVENINGSTAR_REVIEW_UI="${./scripts/review-ui.js}"
+            export EVENINGSTAR_REVIEW_SERVER="${./scripts/review-server.js}"
+          '' + builtins.readFile ./scripts/review.sh;
         };
 
-        pcb-renders = pkgs.writeShellApplication {
-          name = "eveningstar-pcb-renders";
+        publish = publishTools.artifacts;
+
+        publish-command = pkgs.writeShellApplication {
+          name = "eveningstar-publish";
           runtimeInputs = [
             pkgs.coreutils
-            pkgs.kicad
+            pkgs.nix
           ];
-          text = withKicadSymbolDir ./scripts/pcb-renders.sh;
+          text = ''
+            publish_output="$(${pkgs.nix}/bin/nix build \
+              --extra-experimental-features nix-command \
+              --max-jobs auto \
+              --file "${publishExpression}" \
+              --arg source "${../..}" \
+              --no-link \
+              --print-out-paths)"
+            destination="$PWD/reports/publish"
+            rm -rf "$destination"
+            mkdir -p "$(dirname "$destination")"
+            ln -s "$publish_output" "$destination"
+            echo "Publish artifacts:"
+            echo "  $publish_output"
+            echo "Linked from:"
+            echo "  $destination"
+          '';
         };
 
-        pcb-models = pkgs.writeShellApplication {
-          name = "eveningstar-pcb-models";
-          runtimeInputs = [
-            pkgs.coreutils
-            pkgs.kicad
-          ];
-          text = withKicadSymbolDir ./scripts/pcb-models.sh;
-        };
+        schematic-documents = publishTools.schematicDocuments;
+
+        pcb-documents = publishTools.pcbDocuments;
+
+        render-plan = publishTools.renderPlan;
+
+        render-sides = publishTools.renderSides;
+
+        render-isometric = publishTools.renderIsometric;
+
+        model-step = publishTools.stepModel;
+
+        model-glb = publishTools.glbModel;
 
         drc = pkgs.writeShellApplication {
           name = "eveningstar-drc";
@@ -83,19 +155,14 @@
           program = "${self'.packages.checks}/bin/eveningstar-checks";
         };
 
-        pcb-review = {
+        review = {
           type = "app";
-          program = "${self'.packages.pcb-review}/bin/eveningstar-pcb-review";
+          program = "${self'.packages.review}/bin/eveningstar-review";
         };
 
-        pcb-renders = {
+        publish = {
           type = "app";
-          program = "${self'.packages.pcb-renders}/bin/eveningstar-pcb-renders";
-        };
-
-        pcb-models = {
-          type = "app";
-          program = "${self'.packages.pcb-models}/bin/eveningstar-pcb-models";
+          program = "${self'.packages.publish-command}/bin/eveningstar-publish";
         };
 
         drc = {
@@ -118,14 +185,14 @@
 
       devShells.default = pkgs.mkShell {
         packages = [
+          pkgs.gh
           pkgs.kicad
           pkgs.lefthook
           self'.packages.checks
           self'.packages.drc
           self'.packages.kicad-locality
-          self'.packages.pcb-models
-          self'.packages.pcb-renders
-          self'.packages.pcb-review
+          self'.packages.publish-command
+          self'.packages.review
           self'.packages.subtree-drift
         ];
 
