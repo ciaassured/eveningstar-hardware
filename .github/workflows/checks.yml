@@ -1,19 +1,13 @@
-name: KiCad DRC
+name: Checks
 
 on:
   pull_request:
     branches:
       - main
-    paths:
-      - "pcb/**"
-      - "flake.nix"
-      - "flake.lock"
-      - "pcb/nix/**"
-      - ".github/workflows/kicad-drc.yml"
 
 jobs:
-  electrical-and-design-rules:
-    name: ERC and DRC
+  checks:
+    name: Nix checks
     runs-on: ubuntu-24.04
     env:
       CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
@@ -37,22 +31,8 @@ jobs:
           authToken: ${{ env.CACHIX_AUTH_TOKEN }}
           skipPush: ${{ env.CACHIX_AUTH_TOKEN == '' }}
 
-      - name: Check vendored subtree drift
-        run: nix run .#subtree-drift
-
-      - name: Check KiCad dev shell
-        run: nix develop --command kicad-cli version
-
-      - name: Check KiCad repo-local references
-        run: nix run .#kicad-locality
-
-      - name: Run ERC and DRC
-        if: always()
-        run: nix run .#drc
-
-      - name: Generate PCB review artifacts
-        if: always()
-        run: nix run .#pcb-review
+      - name: Run checks
+        run: nix run .#checks
 
       - name: Upload KiCad reports
         if: ${{ always() && hashFiles('reports/*.rpt') != '' }}
@@ -60,12 +40,4 @@ jobs:
         with:
           name: kicad-rule-check-reports
           path: reports/*.rpt
-          if-no-files-found: error
-
-      - name: Upload PCB review artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pcb-review-artifacts
-          path: reports/review/**
           if-no-files-found: error

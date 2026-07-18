@@ -37,7 +37,35 @@ nix develop
 The dev shell includes KiCad plus the project helper scripts. Inside the shell,
 the scripts are available as `eveningstar-*` commands.
 
-## Tool Reference
+Entering the development shell installs or updates the repo's pre-commit hook
+for the current clone. It can also be installed explicitly from the shell:
+
+```sh
+lefthook install
+```
+
+Git does not automatically trust and execute hooks from cloned repositories.
+Entering `nix develop` is the developer's explicit trust step: the shell uses
+the Nix-provided Lefthook to sync `.git/hooks`, so Nix remains the only tooling
+dependency. Lefthook then runs the same Nix-backed check suite used by CI.
+
+## Checks
+
+Run every automated check:
+
+```sh
+nix run .#checks
+# or, inside nix develop:
+eveningstar-checks
+```
+
+The aggregate command runs all checks even if an earlier one fails, then exits
+non-zero if any failed. It is the entry point used by Lefthook and GitHub
+Actions.
+
+The individual checks remain available for diagnosing a failure.
+
+### ERC and DRC
 
 Run KiCad ERC and DRC, including warnings:
 
@@ -49,6 +77,8 @@ eveningstar-drc
 
 This writes `reports/erc.rpt` and `reports/drc.rpt`, prints both reports, and
 exits non-zero if ERC or DRC reports violations.
+
+### Repo-local KiCad references
 
 Check for references to local, non-repo KiCad libraries or model paths:
 
@@ -62,6 +92,8 @@ This fails on absolute paths, KiCad third-party plugin variables, missing
 repo-local 3D models, footprint library table entries outside `${KIPRJMOD}`, and
 symbol library table entries outside `${KIPRJMOD}` or pinned `KICAD_SYMBOL_DIR`.
 
+### Vendored subtree drift
+
 Check that the vendored JLCPCB subtree has not been edited directly:
 
 ```sh
@@ -73,6 +105,11 @@ eveningstar-subtree-drift
 This verifies `pcb/lib/JLCPCB-Kicad-Library` still matches the recorded subtree
 squash commit and rejects uncommitted changes under that subtree.
 
+## Review Tools
+
+Review tools generate artifacts for a human to inspect or compare. They are
+available through Nix, but are intentionally not run by Lefthook or CI.
+
 Generate review artifacts:
 
 ```sh
@@ -82,7 +119,7 @@ eveningstar-pcb-review
 ```
 
 This generates schematic PDF/SVG and 2D board PDF/SVG outputs under
-`reports/review`. It is intended to be fast enough for CI.
+`reports/review`.
 
 Generate local 3D model exports:
 
@@ -112,20 +149,17 @@ Artifacts are written under `reports/`.
 
 ## CI Checks
 
-Pull requests to `main` run `.github/workflows/kicad-drc.yml`.
+Pull requests to `main` run `.github/workflows/checks.yml`.
 
 The workflow:
 
 - Installs Nix.
 - Optionally configures Cachix.
-- Runs the subtree drift check.
-- Verifies the KiCad dev shell.
-- Runs the repo-local reference check.
-- Runs ERC and DRC.
-- Generates and uploads the fast schematic and 2D board review artifacts.
+- Runs `nix run .#checks`, the same aggregate command used by Lefthook.
+- Uploads ERC and DRC reports when they are generated.
 
-ERC/DRC and artifact generation run with `always()` so a failing locality check
-still leaves useful reports on the PR.
+The aggregate command attempts every check, so a failure in an earlier check
+does not prevent ERC/DRC reports from being generated and uploaded.
 
 ## Library Layout
 
@@ -176,8 +210,7 @@ When adding a part from a plugin or external source:
 1. Add or copy the required symbol, footprint, and 3D model into `pcb/lib`.
 2. Reference files through `${KIPRJMOD}/lib/...`, not through
    `${KICAD*_3RD_PARTY}`, absolute paths, or plugin cache paths.
-3. Run `nix run .#kicad-locality`.
-4. Run `nix run .#drc`.
+3. Run `nix run .#checks`.
 
 For the vendored JLCPCB subtree, do not edit files in
 `pcb/lib/JLCPCB-Kicad-Library` directly. Update the subtree as a subtree, or
