@@ -556,7 +556,7 @@ export function mountReview(review) {
     main img, main canvas { -webkit-user-drag: none; }
     .toolbar {
       position: absolute; z-index: 10; top: 12px; left: 50%; translate: -50% 0;
-      display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+      display: flex; gap: 6px; align-items: center; flex-wrap: nowrap; white-space: nowrap;
       max-width: calc(100% - 24px); padding: 6px;
       border: 1px solid #ffffff24; border-radius: 11px;
       background: #111318b8; box-shadow: 0 4px 20px #0006;
@@ -566,33 +566,35 @@ export function mountReview(review) {
     select, button { border: 1px solid var(--line); border-radius: 7px; background: #1b1f27e6; color: var(--text); padding: 8px 10px; font: inherit; }
     button { cursor: pointer; }
     button:hover { border-color: var(--source); }
+    button:disabled, select:disabled { border-color: var(--line); opacity: .36; cursor: default; }
     button, .camera-control, .checkbox { display: inline-flex; align-items: center; gap: 7px; }
     kbd { min-width: 1.45em; padding: 2px 5px; border: 1px solid #ffffff2c; border-radius: 4px; background: #ffffff12; color: var(--muted); font: 600 .7rem ui-monospace, monospace; text-align: center; }
     .checkbox { display: flex; align-items: center; gap: 6px; padding: 7px 3px; color: var(--muted); font-size: .82rem; font-weight: 650; white-space: nowrap; }
     .checkbox input { accent-color: var(--source); }
-    .mode-panel { position: relative; min-width: 155px; height: 34px; border: 1px solid #ffffff24; border-radius: 7px; background: #1b1f27e6; }
-    .mode-heading { display: flex; height: 100%; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 8px 5px 10px; font-size: .82rem; font-weight: 650; }
-    .mode-list { position: absolute; top: calc(100% + 5px); left: -1px; width: calc(100% + 2px); padding: 5px; border: 1px solid #ffffff24; border-radius: 8px; background: #111318f2; box-shadow: 0 4px 20px #0006; opacity: 0; pointer-events: none; translate: 0 -4px; transition: opacity .12s, translate .12s; }
-    .mode-list::before { content: ""; position: absolute; left: -1px; right: -1px; top: -7px; height: 7px; }
-    .mode-panel:hover .mode-list, .mode-panel:focus-within .mode-list { opacity: 1; pointer-events: auto; translate: 0 0; }
-    .mode-list button { display: block; width: 100%; margin: 2px 0; border-color: transparent; background: transparent; padding: 7px 8px; color: var(--muted); font-size: .8rem; text-align: left; }
-    .mode-list button:hover { background: #ffffff10; color: var(--text); }
-    .mode-list button[aria-selected="true"] { border-color: var(--source); background: #5de4c71b; color: var(--source); }
-    .view-panel {
-      position: absolute; z-index: 9; top: 12px; left: 12px;
-      width: min(290px, calc(100% - 24px)); height: 42px; overflow: hidden;
-      border: 1px solid #ffffff24; border-radius: 11px;
-      background: #111318b8; box-shadow: 0 4px 20px #0006;
-      backdrop-filter: blur(12px); opacity: .62; transition: height .18s, opacity .15s, background .15s;
-    }
-    .view-panel:hover, .view-panel:focus-within { height: calc(100% - 60px); opacity: 1; background: #111318f2; }
-    .view-heading { display: flex; align-items: center; justify-content: space-between; padding: 9px 10px 7px; color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .checkbox:has(input:disabled) { opacity: .36; }
+    .picker-panel { position: relative; height: 34px; border: 1px solid #ffffff24; border-radius: 7px; background: #1b1f27e6; }
+    .view-picker { min-width: 142px; }
+    .mode-picker { min-width: 155px; }
+    .picker-heading { display: flex; height: 100%; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 8px 5px 10px; font-size: .82rem; font-weight: 650; }
     .current-view { min-width: 0; overflow: hidden; color: var(--text); text-overflow: ellipsis; white-space: nowrap; }
-    .view-list { height: calc(100% - 38px); overflow-y: auto; padding: 0 6px 7px; opacity: 0; pointer-events: none; scrollbar-width: thin; transition: opacity .12s; }
-    .view-panel:hover .view-list, .view-panel:focus-within .view-list { opacity: 1; pointer-events: auto; }
-    .view-list button { display: block; width: 100%; margin: 2px 0; overflow: hidden; border-color: transparent; background: transparent; color: var(--muted); padding: 7px 8px; font-size: .8rem; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
-    .view-list button:hover { background: #ffffff10; color: var(--text); }
-    .view-list button[aria-selected="true"] { border-color: var(--source); background: #5de4c71b; color: var(--source); }
+    .picker-list { position: absolute; top: calc(100% + 5px); left: -1px; width: calc(100% + 2px); padding: 5px; border: 1px solid #ffffff24; border-radius: 8px; background: #111318f2; box-shadow: 0 4px 20px #0006; opacity: 0; pointer-events: none; translate: 0 -4px; transition: opacity .12s, translate .12s; }
+    .picker-list::before { content: ""; position: absolute; left: -1px; right: -1px; top: -7px; height: 7px; }
+    .picker-panel:hover .picker-list, .picker-panel:focus-within .picker-list { opacity: 1; pointer-events: auto; translate: 0 0; }
+    .picker-list button { display: block; width: 100%; margin: 2px 0; overflow: hidden; border-color: transparent; background: transparent; padding: 7px 8px; color: var(--muted); font-size: .8rem; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
+    .picker-list button:hover { background: #ffffff10; color: var(--text); }
+    .picker-list button[aria-selected="true"] { border-color: var(--source); background: #5de4c71b; color: var(--source); }
+    .context-toolbar {
+      position: absolute; z-index: 9; bottom: 10px; left: 50%; translate: -50% 0;
+      display: flex; align-items: center; gap: 6px; max-width: calc(100% - 24px); padding: 6px;
+      border: 1px solid #ffffff24; border-radius: 10px; background: #111318b8;
+      box-shadow: 0 4px 20px #0005; backdrop-filter: blur(12px); opacity: .66;
+      transition: opacity .15s, background .15s;
+    }
+    .context-toolbar:hover, .context-toolbar:focus-within { opacity: 1; background: #111318f2; }
+    .context-label { padding: 0 3px 0 5px; color: var(--muted); font-size: .72rem; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+    .context-assets { display: inline-flex; align-items: center; gap: 6px; }
+    .context-assets select { min-width: 180px; max-width: min(360px, 55vw); }
+    .context-assets button { padding: 7px 8px; }
     .labels { position: absolute; z-index: 7; left: 14px; right: 14px; bottom: 38px; display: flex; justify-content: space-between; gap: 16px; font-size: .8rem; font-weight: 700; pointer-events: none; }
     .labels span { max-width: 46%; overflow: hidden; padding: 5px 8px; border-radius: 6px; background: #111318b8; backdrop-filter: blur(8px); text-overflow: ellipsis; white-space: nowrap; }
     .destination-label { color: var(--destination); }
@@ -614,16 +616,15 @@ export function mountReview(review) {
     .stage.diff .source-layer, .stage.highlight .source-layer { visibility: hidden; }
     .stage.diff .comparison-overlay { display: block; background: #000; }
     .stage.highlight .comparison-overlay { display: block; filter: drop-shadow(0 0 2px #ff2bd6) drop-shadow(0 0 7px #ff2bd6); }
-    .slider { position: absolute; z-index: 8; left: 14px; bottom: 10px; width: calc(100% - 28px); height: 18px; margin: 0; appearance: none; background: transparent; opacity: .7; transition: opacity .15s; }
+    .slider { position: absolute; z-index: 8; left: 14px; bottom: 70px; width: calc(100% - 28px); height: 18px; margin: 0; appearance: none; background: transparent; opacity: .7; transition: opacity .15s; }
     .slider::-webkit-slider-runnable-track { height: 3px; border-radius: 2px; background: #718096; }
     .slider::-webkit-slider-thumb { width: 16px; height: 16px; margin-top: -6.5px; appearance: none; border: 2px solid #111318; border-radius: 50%; background: var(--source); box-shadow: 0 0 0 1px #ffffff40; }
     .slider::-moz-range-track { height: 3px; border-radius: 2px; background: #718096; }
     .slider::-moz-range-thumb { width: 16px; height: 16px; border: 2px solid #111318; border-radius: 50%; background: var(--source); box-shadow: 0 0 0 1px #ffffff40; }
     .slider:hover, .slider:focus { opacity: 1; }
     @media (max-width: 800px) {
-      .toolbar { left: 8px; right: 8px; translate: 0 0; max-width: none; }
-      .view-panel { top: 68px; width: min(250px, calc(100% - 24px)); }
-      .view-panel:hover, .view-panel:focus-within { height: calc(100% - 116px); }
+      .toolbar { left: 8px; right: 8px; translate: 0 0; max-width: none; flex-wrap: wrap; white-space: normal; }
+      .context-toolbar { left: 8px; right: 8px; translate: 0 0; max-width: none; width: fit-content; }
       .stage.side-by-side { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
     }
   `;
@@ -631,19 +632,27 @@ export function mountReview(review) {
   document.body.innerHTML = `
     <main>
       <div class="toolbar">
-        <div class="mode-panel" aria-label="Comparison mode">
-          <div class="mode-heading"><span id="current-mode"></span><span><kbd>←</kbd> <kbd>→</kbd></span></div>
-          <div class="mode-list" id="mode-list" role="listbox"></div>
+        <div class="picker-panel view-picker" aria-label="Review view">
+          <div class="picker-heading"><span class="current-view" id="current-view"></span><span><kbd>←</kbd> <kbd>→</kbd></span></div>
+          <div class="picker-list" id="view-list" role="listbox"></div>
         </div>
-        <span class="camera-control" id="camera-control" hidden><select id="orientation" aria-label="3D camera"><option value="isometric">Isometric</option><option value="top">Top</option><option value="bottom">Bottom</option><option value="front">Front</option><option value="back">Back</option></select><kbd>1–5</kbd></span>
+        <div class="picker-panel mode-picker" aria-label="Comparison mode">
+          <div class="picker-heading"><span id="current-mode"></span><span><kbd>↑</kbd> <kbd>↓</kbd></span></div>
+          <div class="picker-list" id="mode-list" role="listbox"></div>
+        </div>
         <label class="checkbox"><input id="sync" type="checkbox" checked disabled>Sync <kbd>S</kbd></label>
         <button id="reset" type="button">Fit <kbd>F</kbd></button>
         <button id="flip" type="button"><span id="flip-label">Source</span><kbd>Space</kbd></button>
       </div>
-      <aside class="view-panel" aria-label="Review views">
-        <div class="view-heading"><span class="current-view" id="current-view"></span><span><kbd>↑</kbd> <kbd>↓</kbd></span></div>
-        <div class="view-list" id="asset-list" role="listbox"></div>
-      </aside>
+      <div class="context-toolbar" id="context-toolbar">
+        <span class="context-label" id="context-label"></span>
+        <span class="context-assets" id="asset-context">
+          <button id="context-previous" type="button" aria-label="Previous item">‹ <kbd>[</kbd></button>
+          <select id="context-select" aria-label="View item"></select>
+          <button id="context-next" type="button" aria-label="Next item">› <kbd>]</kbd></button>
+        </span>
+        <span class="camera-control" id="camera-control" hidden><select id="orientation" aria-label="3D preset"><option value="isometric">Isometric</option><option value="top">Top</option><option value="bottom">Bottom</option><option value="front">Front</option><option value="back">Back</option></select><kbd>1–5</kbd></span>
+      </div>
       <div class="labels">
         <span class="destination-label" id="destination-label"></span>
         <span class="source-label" id="source-label"></span>
@@ -658,12 +667,17 @@ export function mountReview(review) {
     </main>
   `;
 
-  const assetList = document.querySelector("#asset-list");
+  const viewList = document.querySelector("#view-list");
   const currentView = document.querySelector("#current-view");
   const modeList = document.querySelector("#mode-list");
   const currentMode = document.querySelector("#current-mode");
   const orientationSelect = document.querySelector("#orientation");
   const cameraControl = document.querySelector("#camera-control");
+  const contextLabel = document.querySelector("#context-label");
+  const assetContext = document.querySelector("#asset-context");
+  const contextSelect = document.querySelector("#context-select");
+  const contextPrevious = document.querySelector("#context-previous");
+  const contextNext = document.querySelector("#context-next");
   const syncCheckbox = document.querySelector("#sync");
   const sourceLayer = document.querySelector("#source-layer");
   const comparisonOverlay = document.querySelector("#comparison-overlay");
@@ -682,25 +696,66 @@ export function mountReview(review) {
   let synchronizing = false;
   let assetSequence = 0;
   let activeAssetIndex = 0;
+  let activeViewIndex = 0;
   let activeModeIndex = 0;
   let comparisonFrame = null;
 
   document.querySelector("#destination-label").textContent = review.destinationLabel;
   document.querySelector("#source-label").textContent = review.sourceLabel;
 
-  const viewButtons = review.assets.map((asset, index) => {
+  const viewDefinitions = [
+    {
+      id: "schematics",
+      name: "Schematics",
+      contextName: "Page",
+      matches: (asset) => asset.path.startsWith("schematic/svg/"),
+    },
+    {
+      id: "layers",
+      name: "PCB layers",
+      contextName: "Layer",
+      matches: (asset) => asset.path.startsWith("board/svg/"),
+    },
+    {
+      id: "renders",
+      name: "PCB renders",
+      contextName: "Image",
+      matches: (asset) => asset.path.startsWith("renders/"),
+    },
+    {
+      id: "3d",
+      name: "Interactive 3D",
+      contextName: "Preset",
+      matches: (asset) => asset.kind === "model",
+    },
+  ];
+  const reviewViews = viewDefinitions.map((definition) => ({
+    ...definition,
+    assetIndexes: review.assets
+      .map((asset, index) => definition.matches(asset) ? index : -1)
+      .filter((index) => index >= 0),
+  })).filter((view) => view.assetIndexes.length > 0);
+  const viewSelections = reviewViews.map((view) => view.assetIndexes[0]);
+  const viewIndexByAsset = new Map();
+  reviewViews.forEach((view, viewIndex) => {
+    view.assetIndexes.forEach((assetIndex) => viewIndexByAsset.set(assetIndex, viewIndex));
+  });
+  const contextAssetName = (asset) => asset.name.includes(":")
+    ? asset.name.slice(asset.name.indexOf(":") + 1).trim()
+    : asset.name;
+
+  const viewButtons = reviewViews.map((view, index) => {
     const button = document.createElement("button");
     button.type = "button";
     button.id = `review-view-${index}`;
     button.setAttribute("role", "option");
     button.setAttribute("aria-selected", "false");
-    button.textContent = asset.name;
-    button.title = asset.name;
+    button.textContent = view.name;
     button.addEventListener("click", () => {
-      setActiveAsset(index);
+      setActiveView(index);
       button.blur();
     });
-    assetList.append(button);
+    viewList.append(button);
     return button;
   });
   const modes = [
@@ -802,7 +857,6 @@ export function mountReview(review) {
   async function chooseAsset() {
     const sequence = ++assetSequence;
     const asset = review.assets[activeAssetIndex];
-    cameraControl.hidden = asset.kind !== "model";
     document.title = `${asset.name} · EveningStar review`;
     try {
       await Promise.all([
@@ -867,7 +921,7 @@ export function mountReview(review) {
     if (mode !== "overlay") sourceLayer.style.clipPath = "none";
     divider.hidden = mode !== "overlay";
     slider.hidden = mode !== "overlay";
-    flip.hidden = mode !== "overlay";
+    flip.disabled = mode !== "overlay";
     syncCheckbox.disabled = !sideBySide;
     if (!sideBySide) syncCheckbox.checked = true;
     if (!sideBySide) sourceViewer.applyViewState(destinationViewer.getViewState());
@@ -881,22 +935,65 @@ export function mountReview(review) {
   }
 
   function moveView(delta) {
-    const count = review.assets.length;
-    setActiveAsset((activeAssetIndex + delta + count) % count);
+    setActiveView(activeViewIndex + delta);
   }
 
   function moveMode(delta) {
     setMode(activeModeIndex + delta);
   }
 
-  function setActiveAsset(index, load = true) {
-    activeAssetIndex = index;
-    currentView.textContent = review.assets[index].name;
-    currentView.title = review.assets[index].name;
-    viewButtons.forEach((button, buttonIndex) => button.setAttribute("aria-selected", String(buttonIndex === index)));
-    assetList.setAttribute("aria-activedescendant", viewButtons[index].id);
-    viewButtons[index].scrollIntoView({ block: "nearest" });
+  function updateViewControls() {
+    const view = reviewViews[activeViewIndex];
+    const isModel = view.id === "3d";
+    currentView.textContent = view.name;
+    currentView.title = view.name;
+    viewButtons.forEach((button, buttonIndex) => button.setAttribute("aria-selected", String(buttonIndex === activeViewIndex)));
+    viewList.setAttribute("aria-activedescendant", viewButtons[activeViewIndex].id);
+    contextLabel.textContent = view.contextName;
+    assetContext.hidden = isModel;
+    cameraControl.hidden = !isModel;
+    if (isModel) return;
+    contextSelect.replaceChildren(...view.assetIndexes.map((assetIndex) => {
+      const option = document.createElement("option");
+      option.value = String(assetIndex);
+      option.textContent = contextAssetName(review.assets[assetIndex]);
+      return option;
+    }));
+    contextSelect.value = String(activeAssetIndex);
+    const onlyOneItem = view.assetIndexes.length <= 1;
+    contextPrevious.disabled = onlyOneItem;
+    contextNext.disabled = onlyOneItem;
+  }
+
+  function setActiveView(index, load = true) {
+    activeViewIndex = (index + reviewViews.length) % reviewViews.length;
+    activeAssetIndex = viewSelections[activeViewIndex];
+    updateViewControls();
     if (load) chooseAsset();
+  }
+
+  function setActiveAsset(index, load = true) {
+    const viewIndex = viewIndexByAsset.get(index);
+    if (viewIndex === undefined) return;
+    activeViewIndex = viewIndex;
+    activeAssetIndex = index;
+    viewSelections[viewIndex] = index;
+    updateViewControls();
+    if (load) chooseAsset();
+  }
+
+  function moveContext(delta) {
+    const view = reviewViews[activeViewIndex];
+    if (view.id === "3d") {
+      orientationSelect.selectedIndex = (
+        orientationSelect.selectedIndex + delta + orientationSelect.options.length
+      ) % orientationSelect.options.length;
+      orientationSelect.dispatchEvent(new Event("change"));
+      return;
+    }
+    const currentIndex = view.assetIndexes.indexOf(activeAssetIndex);
+    const nextIndex = (currentIndex + delta + view.assetIndexes.length) % view.assetIndexes.length;
+    setActiveAsset(view.assetIndexes[nextIndex]);
   }
 
   function fitViews() {
@@ -913,6 +1010,15 @@ export function mountReview(review) {
     sourceViewer.setPreset(orientationSelect.value);
     if (navigationIsSynchronized()) sourceViewer.applyViewState(destinationViewer.getViewState());
   });
+  contextSelect.addEventListener("change", () => setActiveAsset(Number(contextSelect.value)));
+  contextPrevious.addEventListener("click", () => {
+    moveContext(-1);
+    contextPrevious.blur();
+  });
+  contextNext.addEventListener("click", () => {
+    moveContext(1);
+    contextNext.blur();
+  });
   slider.addEventListener("input", (event) => {
     showingSource = Number(event.target.value) > 50;
     setSplit(event.target.value);
@@ -927,14 +1033,14 @@ export function mountReview(review) {
     scheduleComparison();
   }));
   window.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
       event.stopPropagation();
-      moveView(event.key === "ArrowUp" ? -1 : 1);
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      moveView(event.key === "ArrowLeft" ? -1 : 1);
+    } else if (event.key === "ArrowUp" || event.key === "ArrowDown") {
       event.preventDefault();
       event.stopPropagation();
-      moveMode(event.key === "ArrowLeft" ? -1 : 1);
+      moveMode(event.key === "ArrowUp" ? -1 : 1);
     } else if (event.key.toLowerCase() === "s" && activeMode() === "side-by-side") {
       event.preventDefault();
       syncCheckbox.checked = !syncCheckbox.checked;
@@ -942,6 +1048,9 @@ export function mountReview(review) {
     } else if (event.key.toLowerCase() === "f") {
       event.preventDefault();
       fitViews();
+    } else if (event.key === "[" || event.key === "]") {
+      event.preventDefault();
+      moveContext(event.key === "[" ? -1 : 1);
     } else if (/^[1-5]$/.test(event.key) && !cameraControl.hidden) {
       event.preventDefault();
       orientationSelect.selectedIndex = Number(event.key) - 1;
@@ -969,7 +1078,9 @@ export function mountReview(review) {
   const requestedIndex = review.assets.findIndex((asset) =>
     asset.path === requestedView || (requestedView === "3d" && asset.kind === "model"),
   );
-  setActiveAsset(requestedIndex >= 0 ? requestedIndex : 0, false);
+  const requestedViewIndex = reviewViews.findIndex((view) => view.id === requestedView);
+  if (requestedIndex >= 0) setActiveAsset(requestedIndex, false);
+  else setActiveView(requestedViewIndex >= 0 ? requestedViewIndex : 0, false);
   const requestedOrientation = parameters.get("orientation") || parameters.get("camera");
   if ([...orientationSelect.options].some((option) => option.value === requestedOrientation)) {
     orientationSelect.value = requestedOrientation;
@@ -980,7 +1091,7 @@ export function mountReview(review) {
     ? 0
     : requestedSide === "source"
       ? 100
-      : Number.isFinite(requestedSplit)
+      : parameters.has("split") && Number.isFinite(requestedSplit)
         ? THREE.MathUtils.clamp(requestedSplit, 0, 100)
         : 50;
   setSplit(initialSplit);
