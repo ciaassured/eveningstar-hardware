@@ -4,6 +4,8 @@
     { pkgs, self', ... }:
     let
       kicadSymbolDir = "${pkgs.kicad.libraries.symbols}/share/kicad/symbols";
+      kicadPythonPath =
+        "${pkgs.kicad.base}/lib/python${pkgs.python3.pythonVersion}/site-packages";
       # Keep the pinned fontconfig used by KiCad from parsing a potentially
       # incompatible host configuration under /etc/fonts.
       kicadFontconfigFile = pkgs.makeFontsConf {
@@ -79,6 +81,7 @@
             self'.packages.drc
             self'.packages.kicad-locality
             self'.packages.subtree-drift
+            self'.packages.zones-filled
           ];
           text = builtins.readFile ./scripts/checks.sh;
         };
@@ -196,6 +199,18 @@
           text = builtins.readFile ./scripts/subtree-drift.sh;
         };
 
+        zones-filled = pkgs.writeShellApplication {
+          name = "eveningstar-zones-filled";
+          runtimeInputs = [
+            pkgs.kicad
+            pkgs.python3
+          ];
+          text = ''
+            export PYTHONPATH="${kicadPythonPath}:${pkgs.lib.makeSearchPath pkgs.python3.sitePackages pkgs.kicad.pythonPath}"
+            python3 ${./scripts/zones-filled.py} "$@"
+          '';
+        };
+
         default = self'.packages.checks;
       };
 
@@ -235,6 +250,11 @@
           program = "${self'.packages.subtree-drift}/bin/eveningstar-subtree-drift";
         };
 
+        zones-filled = {
+          type = "app";
+          program = "${self'.packages.zones-filled}/bin/eveningstar-zones-filled";
+        };
+
         default = self'.apps.checks;
       };
 
@@ -250,6 +270,7 @@
           self'.packages.production-command
           self'.packages.review
           self'.packages.subtree-drift
+          self'.packages.zones-filled
         ];
 
         KICAD_SYMBOL_DIR = kicadSymbolDir;

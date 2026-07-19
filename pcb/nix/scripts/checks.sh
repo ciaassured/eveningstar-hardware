@@ -24,6 +24,7 @@ run_check() {
 
 run_check "Vendored subtree drift" eveningstar-subtree-drift
 run_check "KiCad repo-local references" eveningstar-kicad-locality
+run_check "KiCad saved copper-zone fills" eveningstar-zones-filled
 run_check "KiCad ERC and DRC" eveningstar-drc
 
 echo

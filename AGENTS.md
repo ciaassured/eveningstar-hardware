@@ -39,6 +39,7 @@ nix develop                 # Interactive KiCad/tooling shell
 nix run .#checks            # Complete required validation suite
 nix run .#drc               # KiCad ERC and DRC only
 nix run .#kicad-locality    # Repository-local asset/reference checks
+nix run .#zones-filled      # Saved copper-zone fill check
 nix run .#subtree-drift     # Vendored JLCPCB subtree integrity
 nix run .#publish           # Generate and link release artifacts
 nix run .#review -- --worktree
@@ -67,6 +68,11 @@ the affected individual package and inspect the generated output.
 - Avoid broad textual rewrites of `.kicad_sch`, `.kicad_pcb`, and `.kicad_pro`
   files. Review structural diffs carefully and use the pinned KiCad version for
   edits whenever practical.
+- After any board edit that can affect copper geometry, open the board in the
+  pinned KiCad PCB Editor, press `B` to refill all zones, and save the board
+  before committing. `nix run .#zones-filled` verifies that saved fill data is
+  present, but cannot prove that an existing fill is current for the latest
+  board edits.
 - Do not suppress new ERC or DRC findings merely to make validation pass.
 
 ## Change and Review Expectations
