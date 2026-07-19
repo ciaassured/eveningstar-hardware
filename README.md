@@ -85,3 +85,12 @@ Resistance measurements taken while the unit was powered off
 This project is experimental and not affiliated with or endorsed by Morningstar Corporation.
 
 Use at your own risk when interfacing with battery and solar equipment.
+
+### AI Assistance
+
+Portions of this project have been created or modified with AI-assisted tools.
+AI-generated suggestions can be incomplete or incorrect and must not be treated
+as engineering certification. Independently review the schematics, PCB layout,
+component ratings, isolation boundaries, and fabrication outputs, and perform
+appropriate electrical, thermal, safety, and regulatory validation before
+manufacturing or using the hardware.

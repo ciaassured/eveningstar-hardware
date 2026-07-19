@@ -147,7 +147,7 @@ nix run .#review -- 31
 # equivalent explicit form:
 nix run .#review -- --pr 31
 # URLs also work:
-nix run .#review -- https://github.com/ciaassured/EveningStar/pull/31
+nix run .#review -- https://github.com/ciaassured/eveningstar-hardware/pull/31
 # or, inside nix develop:
 eveningstar-review 31
 ```
