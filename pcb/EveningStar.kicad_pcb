@@ -1122,7 +1122,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C6187"
+		(property "LCSC Part" "C6186"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -1147,7 +1147,7 @@
 				)
 			)
 		)
-		(property "MPN" "AMS1117-5.0"
+		(property "MPN" "AMS1117-3.3"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
