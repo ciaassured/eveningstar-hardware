@@ -90,12 +90,14 @@ let
       kicad-cli pcb export svg \
         --mode-single \
         --fit-page-to-board \
+        --exclude-drawing-sheet \
         --layers F.Cu,F.Mask,F.Silkscreen,F.Fab,Edge.Cuts \
         --output "$out/svg/EveningStar-front.svg" \
         "$src/pcb/EveningStar.kicad_pcb"
       kicad-cli pcb export svg \
         --mode-single \
         --fit-page-to-board \
+        --exclude-drawing-sheet \
         --mirror \
         --layers B.Cu,B.Mask,B.Silkscreen,B.Fab,Edge.Cuts \
         --output "$out/svg/EveningStar-back.svg" \
@@ -103,6 +105,7 @@ let
       kicad-cli pcb export svg \
         --mode-multi \
         --fit-page-to-board \
+        --exclude-drawing-sheet \
         --layers F.Cu,In1.Cu,In2.Cu,B.Cu,F.Silkscreen,B.Silkscreen,F.Fab,B.Fab \
         --common-layers Edge.Cuts \
         --output "$out/svg/layers" \
