@@ -5,7 +5,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import os
 from pathlib import Path
 import re
@@ -39,30 +38,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--board", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--overrides", required=True, type=Path)
     parser.add_argument("--toolkit", required=True, type=Path)
     return parser.parse_args()
-
-
-def load_rotation_overrides(path: Path) -> dict[str, float]:
-    if not path.exists():
-        return {}
-
-    with path.open(newline="", encoding="utf-8") as source:
-        reader = csv.DictReader(source)
-        if reader.fieldnames != ["Designator", "Rotation"]:
-            raise RuntimeError(
-                f"{path} must have exactly the columns Designator,Rotation"
-            )
-        rows = list(reader)
-
-    overrides = {
-        row["Designator"].strip().upper(): float(row["Rotation"])
-        for row in rows
-    }
-    if len(overrides) != len(rows):
-        raise RuntimeError(f"{path} contains duplicate designators")
-    return overrides
 
 
 def normalize_timestamps(path: Path) -> None:
@@ -112,7 +89,6 @@ def main() -> None:
 
     board = pcbnew.LoadBoard(str(args.board.resolve()))
     manager = ProcessManager(board)
-    rotations = load_rotation_overrides(args.overrides)
 
     args.output.mkdir(parents=True, exist_ok=False)
     with tempfile.TemporaryDirectory(prefix="eveningstar-production-") as temporary:
@@ -122,7 +98,6 @@ def main() -> None:
         gerber_path.mkdir()
         tables_path.mkdir()
 
-        manager.update_zone_fills()
         manager.generate_gerber(
             str(gerber_path),
             extra_layers="",
@@ -136,20 +111,6 @@ def main() -> None:
         manager.generate_tables(
             str(tables_path), auto_translate=True, exclude_dnp=False
         )
-
-        generated_designators = {
-            component["Designator"] for component in manager.components
-        }
-        missing = sorted(set(rotations) - generated_designators)
-        if missing:
-            raise RuntimeError(
-                "placement overrides refer to missing designators: " + ", ".join(missing)
-            )
-
-        for component in manager.components:
-            designator = component["Designator"]
-            if designator in rotations:
-                component["Rotation"] = rotations[designator]
 
         manager.generate_positions(str(tables_path))
         manager.generate_bom(str(tables_path))

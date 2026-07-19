@@ -1160,6 +1160,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0ea69eb6-a015-4ea3-bc1b-1fef0f1cd756")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/2e538fbd-4766-4d3c-804f-b602af6e3385/5df1f175-cca5-440c-91b4-a81ce988770d")
 		(sheetname "/psu/")
 		(sheetfile "psu.kicad_sch")
@@ -4559,6 +4570,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "90"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "630951c8-daef-4b5e-b79c-f7ebf75beb61")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -25271,6 +25293,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "90"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "45203d30-05f3-4fad-a864-263c86f359cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property ki_fp_filters "LQFP*7x7mm*P0.5mm*")
 		(path "/561d5dbe-6020-48c7-be42-1a6149a1119b/ad1c0d31-032d-433f-a1c9-f562a9c3d193")
 		(sheetname "/ethernet/")
@@ -32224,6 +32257,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b294b885-ef75-4c9d-be66-0ab5dfba3a77")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -42882,6 +42926,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2dc3c750-0971-44c0-94a2-26110154c717")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/20698281-7733-498d-8537-9736b11e1ce7/7cae1976-1a9a-4fbf-8562-8785ce1dd713")
 		(sheetname "/meterbus_frontend/")
 		(sheetfile "meterbus_frontend.kicad_sch")
@@ -51608,6 +51663,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eec18118-6b23-40e8-85fe-5291851d0084")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/83e90eda-4c3c-4f86-9f5b-c472ac53896a/73091f29-40a5-4489-bdc7-06a9872c3ea7")
 		(sheetname "/mcu/")
 		(sheetfile "mcu.kicad_sch")
@@ -52076,6 +52142,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "90"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31703528-7d38-404c-8c78-ae0e5d4df6c3")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)

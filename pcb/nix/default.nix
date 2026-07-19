@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   perSystem =
     { pkgs, self', ... }:
@@ -39,12 +40,14 @@
       publishTools = import ./publish.nix {
         inherit pkgs;
         source = ../..;
+        fabricationToolkit = inputs.fabrication-toolkit;
       };
       publishExpression = pkgs.writeText "eveningstar-publish-expression.nix" ''
         { source }:
         (import ${./publish.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
           inherit source;
+          fabricationToolkit = ${inputs.fabrication-toolkit};
           productionScript = ${./scripts/production.py};
         }).artifacts
       '';
@@ -53,6 +56,7 @@
         (import ${./publish.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
           inherit source;
+          fabricationToolkit = ${inputs.fabrication-toolkit};
           productionScript = ${./scripts/production.py};
         }).productionArtifacts
       '';
@@ -60,6 +64,7 @@
         { destinationSource, sourceSource }:
         import ${./review-inputs.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
+          fabricationToolkit = ${inputs.fabrication-toolkit};
           publishNix = ${./publish.nix};
           productionScript = ${./scripts/production.py};
           inherit destinationSource sourceSource;

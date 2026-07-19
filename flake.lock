@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "fabrication-toolkit": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778812394,
+        "narHash": "sha256-/9dIssacR/g754K+JyeUg0y+zEKpd7Hpbd7BxzTBXNo=",
+        "owner": "bennymeg",
+        "repo": "Fabrication-Toolkit",
+        "rev": "642b069c28e1f12d357c625a8d16ab3d81230712",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bennymeg",
+        "repo": "Fabrication-Toolkit",
+        "rev": "642b069c28e1f12d357c625a8d16ab3d81230712",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -51,6 +68,7 @@
     },
     "root": {
       "inputs": {
+        "fabrication-toolkit": "fabrication-toolkit",
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs"
       }

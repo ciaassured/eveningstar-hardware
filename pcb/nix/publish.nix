@@ -1,6 +1,7 @@
 {
   pkgs,
   source,
+  fabricationToolkit,
   productionScript ? ./scripts/production.py,
 }:
 
@@ -22,6 +23,8 @@ let
           || pkgs.lib.hasPrefix "pcb/pcb/" relative
           || relative == "pcb/reports"
           || pkgs.lib.hasPrefix "pcb/reports/" relative
+          # Keep local plugin output and historical revisions that committed it
+          # from becoming inputs to a fresh production build.
           || relative == "pcb/production"
           || pkgs.lib.hasPrefix "pcb/production/" relative
           || pkgs.lib.hasSuffix ".bak" relative
@@ -33,13 +36,6 @@ let
   kicadSymbolDir = "${pkgs.kicad.libraries.symbols}/share/kicad/symbols";
   kicadPythonPath =
     "${pkgs.kicad.base}/lib/python${pkgs.python3.pythonVersion}/site-packages";
-  fabricationToolkit = pkgs.fetchFromGitHub {
-    owner = "bennymeg";
-    repo = "Fabrication-Toolkit";
-    rev = "642b069c28e1f12d357c625a8d16ab3d81230712";
-    hash = "sha256-/9dIssacR/g754K+JyeUg0y+zEKpd7Hpbd7BxzTBXNo=";
-  };
-
   mkKicadDerivation =
     {
       name,
@@ -209,10 +205,17 @@ let
       export LC_ALL=C.UTF-8
       export TZ=UTC
       export PYTHONPATH="${kicadPythonPath}:${pkgs.lib.makeSearchPath pkgs.python3.sitePackages pkgs.kicad.pythonPath}"
+      kicad-cli pcb drc \
+        --severity-error \
+        --severity-warning \
+        --schematic-parity \
+        --exit-code-violations \
+        --format report \
+        --output "$TMPDIR/production-drc.rpt" \
+        "$src/pcb/EveningStar.kicad_pcb"
       python3 ${productionScript} \
         --board "$src/pcb/EveningStar.kicad_pcb" \
         --output "$out" \
-        --overrides "$src/pcb/jlcpcb-placement-overrides.csv" \
         --toolkit "${fabricationToolkit}"
     '';
   };
