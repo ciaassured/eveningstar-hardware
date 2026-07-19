@@ -36,7 +36,9 @@ let
       src = hardwareSource;
       nativeBuildInputs = [ pkgs.kicad ] ++ nativeBuildInputs;
     } ''
-      mkdir -p "$TMPDIR/config" "$TMPDIR/cache"
+      build_home="$TMPDIR/home"
+      mkdir -p "$build_home" "$TMPDIR/config" "$TMPDIR/cache"
+      export HOME="$build_home"
       export XDG_CONFIG_HOME="$TMPDIR/config"
       export XDG_CACHE_HOME="$TMPDIR/cache"
       export KICAD_SYMBOL_DIR="${kicadSymbolDir}"
