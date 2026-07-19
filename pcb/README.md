@@ -144,15 +144,39 @@ Generate a comparison from a pull request number or URL:
 
 ```sh
 nix run .#review -- 31
-# or:
+# equivalent explicit form:
+nix run .#review -- --pr 31
+# URLs also work:
 nix run .#review -- https://github.com/ciaassured/EveningStar/pull/31
 # or, inside nix develop:
 eveningstar-review 31
 ```
 
-The command asks Nix to realize the same publish derivation for the exact source
-and destination commits recorded by GitHub, without changing or depending on
-the current checkout. Cached artifact sets are reused, then linked under
+Compare any two locally available commits, branches, or tags by listing the
+destination revision first and the source revision second:
+
+```sh
+nix run .#review -- v0.2.0 v0.3.0
+nix run .#review -- main feature/new-layout
+nix run .#review -- 2c5bf31 96e61e4
+```
+
+Compare a revision with the current working tree using `--worktree`. This
+includes staged, unstaged, untracked, and deleted files, but excludes files
+ignored by Git:
+
+```sh
+nix run .#review -- main --worktree
+# HEAD is the default destination revision:
+nix run .#review -- --worktree
+```
+
+For pull requests, the command resolves the exact source and destination
+commits recorded by GitHub without changing or depending on the checkout. Git
+revision comparisons archive the exact requested trees, while worktree
+comparisons create an isolated temporary snapshot without switching branches or
+modifying local files. Nix realizes the same publish derivation for either form.
+Cached artifact sets are reused, then linked under
 `reports/review` and compared through their browser-viewable SVG, PNG, and GLB
 outputs. It serves the comparison on an ephemeral `127.0.0.1` port and prints
 the URL; press Ctrl+C when the review is finished.
@@ -162,20 +186,22 @@ The view picker covers native vector schematic and board views, deterministic
 KiCad 3D renders, and the interactive Three.js board model. Every view supports
 overlay/reveal, side-by-side, pixel-difference, and highlighted-change modes.
 Documents can be panned and zoomed without rasterizing SVGs; side-by-side
-navigation can optionally be synchronized. Use <kbd>↑</kbd> and <kbd>↓</kbd> to
-change view and <kbd>←</kbd> and <kbd>→</kbd> to change comparison mode. The
-command uses `gh` for pull request metadata and Git to
+navigation can optionally be synchronized. Use <kbd>←</kbd> and <kbd>→</kbd> to
+change view, <kbd>↑</kbd> and <kbd>↓</kbd> to change comparison mode, and
+<kbd>[</kbd> and <kbd>]</kbd> to move through the current view's pages, layers,
+images, or presets. Pull-request comparisons use `gh` for metadata and Git to
 fetch missing commit objects; both are provided by Nix.
 
 Generate the report without starting the local server:
 
 ```sh
 nix run .#review -- --no-serve 31
+nix run .#review -- --no-serve main --worktree
 ```
 
 Because the review tool comes from the current checkout while the hardware
-inputs come from the requested pull request, a feature branch can test changes
-to the review tooling against an existing PR.
+inputs come from the requested snapshots, a feature branch can test changes to
+the review tooling against an existing PR or pair of revisions.
 
 Artifacts are written under `reports/`.
 
