@@ -22,10 +22,9 @@ review or physical validation.
   project-local libraries.
 - `pcb/lib/`: project-owned and vendored symbols, footprints, and 3D models.
 - `pcb/nix/`: Nix packages and scripts for checks, publishing, and visual review.
-- `pcb/production/`: committed manufacturing outputs for the current published
-  design; update them only when explicitly preparing or updating a release.
 - `docs/`: hardware references and ordering documentation.
-- `reports/` and `result`: generated local outputs; both are ignored by Git.
+- `reports/` and `result`: generated local outputs, including production and
+  publish artifacts; both are ignored by Git.
 - `flake.nix` and `flake.lock`: the authoritative pinned toolchain.
 
 See `pcb/README.md` for the detailed KiCad, publishing, and review workflows.
@@ -77,7 +76,8 @@ the affected individual package and inspect the generated output.
   Nix-backed commands.
 - For board or schematic changes, use the review workflow to inspect rendered
   source and destination artifacts in addition to reading the textual diff.
-- Treat `pcb/production` changes as release-significant and review them against
-  the source design that produced them.
+- Do not commit generated manufacturing files. Build them with
+  `nix run .#production`, review them against the source design, and attach the
+  publish artifacts to the corresponding GitHub release.
 - Use concise commit subjects in the existing `area: imperative summary` style,
   such as `pcb: ...`, `hardware: ...`, or `tooling: ...`.

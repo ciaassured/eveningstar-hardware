@@ -1,12 +1,13 @@
 {
   pkgs,
   publishNix,
+  productionScript,
   destinationSource,
   sourceSource,
 }:
 
 let
-  publishFor = source: (import publishNix { inherit pkgs source; }).artifacts;
+  publishFor = source: (import publishNix { inherit pkgs productionScript source; }).artifacts;
   destination = publishFor destinationSource;
   source = publishFor sourceSource;
 in

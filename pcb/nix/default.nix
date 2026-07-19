@@ -45,13 +45,23 @@
         (import ${./publish.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
           inherit source;
+          productionScript = ${./scripts/production.py};
         }).artifacts
+      '';
+      productionExpression = pkgs.writeText "eveningstar-production-expression.nix" ''
+        { source }:
+        (import ${./publish.nix} {
+          pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
+          inherit source;
+          productionScript = ${./scripts/production.py};
+        }).productionArtifacts
       '';
       reviewInputsExpression = pkgs.writeText "eveningstar-review-inputs-expression.nix" ''
         { destinationSource, sourceSource }:
         import ${./review-inputs.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
           publishNix = ${./publish.nix};
+          productionScript = ${./scripts/production.py};
           inherit destinationSource sourceSource;
         }
       '';
@@ -115,6 +125,33 @@
           '';
         };
 
+        production = publishTools.productionArtifacts;
+
+        production-command = pkgs.writeShellApplication {
+          name = "eveningstar-production";
+          runtimeInputs = [
+            pkgs.coreutils
+            pkgs.nix
+          ];
+          text = ''
+            production_output="$(${pkgs.nix}/bin/nix build \
+              --extra-experimental-features nix-command \
+              --max-jobs auto \
+              --file "${productionExpression}" \
+              --arg source "${../..}" \
+              --no-link \
+              --print-out-paths)"
+            destination="$PWD/reports/production"
+            rm -rf "$destination"
+            mkdir -p "$(dirname "$destination")"
+            ln -s "$production_output" "$destination"
+            echo "Production artifacts:"
+            echo "  $production_output"
+            echo "Linked from:"
+            echo "  $destination"
+          '';
+        };
+
         schematic-documents = publishTools.schematicDocuments;
 
         pcb-documents = publishTools.pcbDocuments;
@@ -173,6 +210,11 @@
           program = "${self'.packages.publish-command}/bin/eveningstar-publish";
         };
 
+        production = {
+          type = "app";
+          program = "${self'.packages.production-command}/bin/eveningstar-production";
+        };
+
         drc = {
           type = "app";
           program = "${self'.packages.drc}/bin/eveningstar-drc";
@@ -200,6 +242,7 @@
           self'.packages.drc
           self'.packages.kicad-locality
           self'.packages.publish-command
+          self'.packages.production-command
           self'.packages.review
           self'.packages.subtree-drift
         ];
