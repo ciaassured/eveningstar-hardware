@@ -16,31 +16,81 @@ function disposeObject(object) {
   });
 }
 
+function prepareModelMaterials(object) {
+  const adjusted = new Set();
+  object.traverse((child) => {
+    const materials = Array.isArray(child.material) ? child.material : [child.material];
+    materials.filter(Boolean).forEach((material) => {
+      if (adjusted.has(material) || !material.isMeshStandardMaterial) return;
+      adjusted.add(material);
+      if (material.transparent && material.opacity >= 0.95 && material.roughness >= 0.75) {
+        material.color.setRGB(0.008, 0.04, 0.015);
+        material.opacity = 1;
+        material.transparent = false;
+        material.depthWrite = true;
+        material.needsUpdate = true;
+      }
+      if (
+        material.transparent
+        && material.opacity >= 0.89
+        && material.opacity <= 0.91
+        && Math.min(material.color.r, material.color.g, material.color.b) > 0.9
+      ) {
+        material.userData.reviewLayer = "silkscreen";
+        material.side = THREE.FrontSide;
+        material.color.setRGB(0, 0, 0);
+        material.emissive.setRGB(1, 1, 1);
+        material.emissiveIntensity = 0.8;
+        material.depthWrite = false;
+        material.polygonOffset = true;
+        material.polygonOffsetFactor = -2;
+        material.polygonOffsetUnits = -2;
+        material.needsUpdate = true;
+      }
+      if (
+        material.transparent
+        && material.opacity >= 0.8
+        && material.opacity < 0.9
+        && material.color.g > material.color.r
+        && material.color.g > material.color.b
+      ) {
+        material.userData.reviewLayer = "soldermask";
+        material.color.multiplyScalar(0.4);
+        material.opacity = 0.74;
+        material.depthWrite = false;
+      }
+      const peak = Math.max(material.color.r, material.color.g, material.color.b);
+      const minimumPeak = 0.05;
+      if (peak >= minimumPeak) return;
+      if (peak > 0.0001) material.color.multiplyScalar(minimumPeak / peak);
+      else material.color.setRGB(minimumPeak, minimumPeak, minimumPeak);
+    });
+    const layers = materials.filter(Boolean).map((material) => material.userData.reviewLayer);
+    if (layers.includes("soldermask")) child.renderOrder = 1;
+    if (layers.includes("silkscreen")) child.renderOrder = 2;
+  });
+}
+
 export class HardwareViewer {
   constructor(container, onViewChange) {
     this.container = container;
     this.onViewChange = onViewChange;
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0xe9edf2);
+    this.scene.background = new THREE.Color(0xc4c7d6);
     this.renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.1;
+    this.renderer.toneMapping = THREE.AgXToneMapping;
+    this.renderer.toneMappingExposure = 0.9;
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.domElement.setAttribute("aria-label", "Interactive hardware comparison view");
+    this.renderer.domElement.draggable = false;
     container.append(this.renderer.domElement);
 
     this.status = document.createElement("div");
     this.status.className = "viewer-status";
     container.append(this.status);
-
-    this.scene.add(new THREE.HemisphereLight(0xffffff, 0x627084, 2.1));
-    const keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
-    keyLight.position.set(5, 8, 6);
-    this.scene.add(keyLight);
-    const fillLight = new THREE.DirectionalLight(0xc9ddff, 1.4);
-    fillLight.position.set(-5, 2, -4);
-    this.scene.add(fillLight);
 
     this.camera = null;
     this.controls = null;
@@ -61,11 +111,25 @@ export class HardwareViewer {
 
   replaceCamera(camera, allowRotation) {
     this.controls?.dispose();
+    if (this.camera) this.scene.remove(this.camera);
     this.camera = camera;
-    if (camera.isPerspectiveCamera) {
-      camera.aspect = Math.max(this.container.clientWidth, 1) / Math.max(this.container.clientHeight, 1);
-      camera.updateProjectionMatrix();
-    }
+    this.updateProjection(camera);
+    const lightTarget = new THREE.Object3D();
+    lightTarget.position.set(0, 0, -1);
+    const headlight = new THREE.DirectionalLight(0xffffff, 0.45);
+    headlight.position.set(0, 0.4, 0.8);
+    headlight.target = lightTarget;
+    const sideKey = new THREE.DirectionalLight(0xfff3e6, 8.0);
+    sideKey.position.set(2.2, 1.4, 0.75);
+    sideKey.target = lightTarget;
+    sideKey.castShadow = true;
+    sideKey.shadow.mapSize.set(2048, 2048);
+    this.shadowLight = sideKey;
+    const cameraFill = new THREE.DirectionalLight(0xdde8ff, 3.0);
+    cameraFill.position.set(-2, -1, 0.45);
+    cameraFill.target = lightTarget;
+    camera.add(headlight, sideKey, cameraFill, lightTarget);
+    this.scene.add(camera);
     this.controls = new OrbitControls(camera, this.renderer.domElement);
     this.controls.enableDamping = false;
     this.controls.screenSpacePanning = true;
@@ -112,13 +176,29 @@ export class HardwareViewer {
   async loadModel(url) {
     const gltf = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync(url);
     this.content = gltf.scene;
+    prepareModelMaterials(this.content);
+    this.content.traverse((child) => {
+      if (!child.isMesh) return;
+      child.castShadow = true;
+      child.receiveShadow = true;
+    });
     this.scene.add(this.content);
     this.bounds = new THREE.Box3().setFromObject(this.content);
 
     const size = this.bounds.getSize(new THREE.Vector3());
     const radius = Math.max(size.length() / 2, 0.001);
-    const camera = new THREE.PerspectiveCamera(36, 1, radius / 100, radius * 100);
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, radius / 100, radius * 20);
+    camera.userData.fitRadius = radius;
     this.replaceCamera(camera, true);
+    const shadowExtent = radius * 1.5;
+    this.shadowLight.shadow.camera.left = -shadowExtent;
+    this.shadowLight.shadow.camera.right = shadowExtent;
+    this.shadowLight.shadow.camera.top = shadowExtent;
+    this.shadowLight.shadow.camera.bottom = -shadowExtent;
+    this.shadowLight.shadow.camera.near = Math.max(radius / 100, 0.001);
+    this.shadowLight.shadow.camera.far = Math.max(radius * 12, 10);
+    this.shadowLight.shadow.normalBias = radius * 0.001;
+    this.shadowLight.shadow.camera.updateProjectionMatrix();
     this.controls.minDistance = radius * 0.08;
     this.controls.maxDistance = radius * 20;
     this.setPreset("isometric");
@@ -126,24 +206,43 @@ export class HardwareViewer {
 
   setPreset(preset) {
     if (!this.camera || !this.bounds) return;
-    const center = this.bounds.getCenter(new THREE.Vector3());
-    const size = this.bounds.getSize(new THREE.Vector3());
-    const radius = Math.max(size.length() / 2, 0.001);
-    const distance = radius / Math.sin(THREE.MathUtils.degToRad(this.camera.fov / 2)) * 1.05;
     const directions = {
-      isometric: new THREE.Vector3(1, 0.85, 1),
+      isometric: new THREE.Vector3(1, 1, 1),
       top: new THREE.Vector3(0, 1, 0.001),
       bottom: new THREE.Vector3(0, -1, 0.001),
       front: new THREE.Vector3(0, 0.12, 1),
       back: new THREE.Vector3(0, 0.12, -1),
     };
-    const direction = (directions[preset] || directions.isometric).normalize();
-    this.camera.position.copy(center).addScaledVector(direction, distance);
+    this.setDirection(directions[preset] || directions.isometric);
+  }
+
+  setOrbit(azimuth, elevation) {
+    const phi = THREE.MathUtils.degToRad(90 - elevation);
+    const theta = THREE.MathUtils.degToRad(azimuth);
+    this.setDirection(new THREE.Vector3().setFromSphericalCoords(1, phi, theta));
+  }
+
+  setDirection(direction) {
+    if (!this.camera || !this.bounds) return;
+    const center = this.bounds.getCenter(new THREE.Vector3());
+    const size = this.bounds.getSize(new THREE.Vector3());
+    const radius = Math.max(size.length() / 2, 0.001);
+    const distance = this.camera.isPerspectiveCamera
+      ? radius / Math.sin(THREE.MathUtils.degToRad(this.camera.fov / 2)) * 1.05
+      : radius * 4;
+    this.camera.position.copy(center).addScaledVector(direction.clone().normalize(), distance);
     this.camera.up.set(0, 1, 0);
     this.controls.target.copy(center);
     this.camera.lookAt(center);
     this.camera.updateProjectionMatrix();
     this.controls.update();
+    this.render();
+  }
+
+  setZoom(zoom) {
+    if (!this.camera) return;
+    this.camera.zoom = THREE.MathUtils.clamp(zoom, 0.1, 10);
+    this.camera.updateProjectionMatrix();
     this.render();
   }
 
@@ -178,13 +277,38 @@ export class HardwareViewer {
     const height = Math.max(this.container.clientHeight, 1);
     this.renderer.setSize(width, height, false);
     if (!this.camera) return;
-    this.camera.aspect = width / height;
-    this.camera.updateProjectionMatrix();
+    this.updateProjection(this.camera, width, height);
     this.render();
+  }
+
+  updateProjection(
+    camera,
+    width = Math.max(this.container.clientWidth, 1),
+    height = Math.max(this.container.clientHeight, 1),
+  ) {
+    const aspect = width / height;
+    if (camera.isPerspectiveCamera) {
+      camera.aspect = aspect;
+    } else if (camera.isOrthographicCamera) {
+      const radius = camera.userData.fitRadius || 1;
+      const halfHeight = radius * 1.05 * Math.max(1, 1 / aspect);
+      camera.left = -halfHeight * aspect;
+      camera.right = halfHeight * aspect;
+      camera.top = halfHeight;
+      camera.bottom = -halfHeight;
+    }
+    camera.updateProjectionMatrix();
   }
 
   render() {
     if (this.camera) this.renderer.render(this.scene, this.camera);
+  }
+
+  drawTo(context, width, height) {
+    if (!this.camera) return false;
+    this.render();
+    context.drawImage(this.renderer.domElement, 0, 0, width, height);
+    return true;
   }
 }
 
@@ -311,6 +435,10 @@ class DocumentViewer {
 
   setPreset() {}
 
+  setOrbit() {}
+
+  setZoom() {}
+
   fitScale() {
     const width = Math.max(this.container.clientWidth, 1);
     const height = Math.max(this.container.clientHeight, 1);
@@ -323,6 +451,27 @@ class DocumentViewer {
     this.image.style.width = `${this.naturalWidth * fit * this.zoom}px`;
     this.image.style.height = `${this.naturalHeight * fit * this.zoom}px`;
     this.image.style.transform = `translate(-50%, -50%) translate(${this.panX}px, ${this.panY}px)`;
+  }
+
+  drawTo(context, width, height) {
+    if (!this.image.complete) return false;
+    const hostWidth = Math.max(this.container.clientWidth, 1);
+    const hostHeight = Math.max(this.container.clientHeight, 1);
+    const fit = this.fitScale();
+    const renderedWidth = this.naturalWidth * fit * this.zoom;
+    const renderedHeight = this.naturalHeight * fit * this.zoom;
+    const scaleX = width / hostWidth;
+    const scaleY = height / hostHeight;
+    const left = hostWidth / 2 + this.panX - renderedWidth / 2;
+    const top = hostHeight / 2 + this.panY - renderedHeight / 2;
+    context.drawImage(
+      this.image,
+      left * scaleX,
+      top * scaleY,
+      renderedWidth * scaleX,
+      renderedHeight * scaleY,
+    );
+    return true;
   }
 }
 
@@ -374,6 +523,18 @@ class ReviewViewer {
   setPreset(preset) {
     this.active?.setPreset(preset);
   }
+
+  setOrbit(azimuth, elevation) {
+    this.active?.setOrbit(azimuth, elevation);
+  }
+
+  setZoom(zoom) {
+    this.active?.setZoom(zoom);
+  }
+
+  drawTo(context, width, height) {
+    return this.active?.drawTo(context, width, height) || false;
+  }
 }
 
 export function mountReview(review) {
@@ -391,6 +552,8 @@ export function mountReview(review) {
     html, body { width: 100%; height: 100%; overflow: hidden; }
     body { margin: 0; background: var(--bg); color: var(--text); }
     main { position: relative; width: 100%; height: 100%; }
+    main, main * { user-select: none; -webkit-user-select: none; }
+    main img, main canvas { -webkit-user-drag: none; }
     .toolbar {
       position: absolute; z-index: 10; top: 12px; left: 50%; translate: -50% 0;
       display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
@@ -410,6 +573,7 @@ export function mountReview(review) {
     .mode-panel { position: relative; min-width: 155px; height: 34px; border: 1px solid #ffffff24; border-radius: 7px; background: #1b1f27e6; }
     .mode-heading { display: flex; height: 100%; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 8px 5px 10px; font-size: .82rem; font-weight: 650; }
     .mode-list { position: absolute; top: calc(100% + 5px); left: -1px; width: calc(100% + 2px); padding: 5px; border: 1px solid #ffffff24; border-radius: 8px; background: #111318f2; box-shadow: 0 4px 20px #0006; opacity: 0; pointer-events: none; translate: 0 -4px; transition: opacity .12s, translate .12s; }
+    .mode-list::before { content: ""; position: absolute; left: -1px; right: -1px; top: -7px; height: 7px; }
     .mode-panel:hover .mode-list, .mode-panel:focus-within .mode-list { opacity: 1; pointer-events: auto; translate: 0 0; }
     .mode-list button { display: block; width: 100%; margin: 2px 0; border-color: transparent; background: transparent; padding: 7px 8px; color: var(--muted); font-size: .8rem; text-align: left; }
     .mode-list button:hover { background: #ffffff10; color: var(--text); }
@@ -446,10 +610,15 @@ export function mountReview(review) {
     .stage.side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
     .stage.side-by-side > .viewer-pane, .stage.side-by-side > .source-layer { position: relative; inset: auto; clip-path: none !important; }
     .stage.side-by-side .divider { display: none; }
-    .stage.diff .source-layer { mix-blend-mode: difference; }
-    .stage.highlight { filter: contrast(2.4) saturate(3); }
-    .stage.highlight .source-layer { mix-blend-mode: difference; opacity: .72; }
-    .slider { position: absolute; z-index: 8; left: 14px; bottom: 12px; width: calc(100% - 28px); margin: 0; accent-color: var(--source); opacity: .7; transition: opacity .15s; }
+    .comparison-overlay { position: absolute; z-index: 3; inset: 0; display: none; width: 100%; height: 100%; pointer-events: none; }
+    .stage.diff .source-layer, .stage.highlight .source-layer { visibility: hidden; }
+    .stage.diff .comparison-overlay { display: block; background: #000; }
+    .stage.highlight .comparison-overlay { display: block; filter: drop-shadow(0 0 2px #ff2bd6) drop-shadow(0 0 7px #ff2bd6); }
+    .slider { position: absolute; z-index: 8; left: 14px; bottom: 10px; width: calc(100% - 28px); height: 18px; margin: 0; appearance: none; background: transparent; opacity: .7; transition: opacity .15s; }
+    .slider::-webkit-slider-runnable-track { height: 3px; border-radius: 2px; background: #718096; }
+    .slider::-webkit-slider-thumb { width: 16px; height: 16px; margin-top: -6.5px; appearance: none; border: 2px solid #111318; border-radius: 50%; background: var(--source); box-shadow: 0 0 0 1px #ffffff40; }
+    .slider::-moz-range-track { height: 3px; border-radius: 2px; background: #718096; }
+    .slider::-moz-range-thumb { width: 16px; height: 16px; border: 2px solid #111318; border-radius: 50%; background: var(--source); box-shadow: 0 0 0 1px #ffffff40; }
     .slider:hover, .slider:focus { opacity: 1; }
     @media (max-width: 800px) {
       .toolbar { left: 8px; right: 8px; translate: 0 0; max-width: none; }
@@ -482,6 +651,7 @@ export function mountReview(review) {
       <div class="stage" id="stage">
         <div class="viewer-pane" id="destination-viewer"></div>
         <div class="source-layer" id="source-layer"><div class="viewer-pane" id="source-viewer"></div></div>
+        <canvas class="comparison-overlay" id="comparison-overlay" aria-hidden="true"></canvas>
         <div class="divider" id="divider"></div>
       </div>
       <input class="slider" id="slider" type="range" min="0" max="100" value="50" aria-label="Comparison split">
@@ -496,6 +666,12 @@ export function mountReview(review) {
   const cameraControl = document.querySelector("#camera-control");
   const syncCheckbox = document.querySelector("#sync");
   const sourceLayer = document.querySelector("#source-layer");
+  const comparisonOverlay = document.querySelector("#comparison-overlay");
+  const comparisonContext = comparisonOverlay.getContext("2d");
+  const destinationBuffer = document.createElement("canvas");
+  const sourceBuffer = document.createElement("canvas");
+  const destinationBufferContext = destinationBuffer.getContext("2d", { willReadFrequently: true });
+  const sourceBufferContext = sourceBuffer.getContext("2d", { willReadFrequently: true });
   const divider = document.querySelector("#divider");
   const stage = document.querySelector("#stage");
   const slider = document.querySelector("#slider");
@@ -507,9 +683,11 @@ export function mountReview(review) {
   let assetSequence = 0;
   let activeAssetIndex = 0;
   let activeModeIndex = 0;
+  let comparisonFrame = null;
 
   document.querySelector("#destination-label").textContent = review.destinationLabel;
   document.querySelector("#source-label").textContent = review.sourceLabel;
+
   const viewButtons = review.assets.map((asset, index) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -518,7 +696,10 @@ export function mountReview(review) {
     button.setAttribute("aria-selected", "false");
     button.textContent = asset.name;
     button.title = asset.name;
-    button.addEventListener("click", () => setActiveAsset(index));
+    button.addEventListener("click", () => {
+      setActiveAsset(index);
+      button.blur();
+    });
     assetList.append(button);
     return button;
   });
@@ -535,7 +716,10 @@ export function mountReview(review) {
     button.setAttribute("role", "option");
     button.setAttribute("aria-selected", "false");
     button.textContent = mode.name;
-    button.addEventListener("click", () => setMode(index));
+    button.addEventListener("click", () => {
+      setMode(index);
+      button.blur();
+    });
     modeList.append(button);
     return button;
   });
@@ -545,11 +729,17 @@ export function mountReview(review) {
   let sourceViewer;
   destinationViewer = new ReviewViewer(
     document.querySelector("#destination-viewer"),
-    (state) => synchronize(sourceViewer, state),
+    (state) => {
+      synchronize(sourceViewer, state);
+      scheduleComparison();
+    },
   );
   sourceViewer = new ReviewViewer(
     document.querySelector("#source-viewer"),
-    (state) => synchronize(destinationViewer, state),
+    (state) => {
+      synchronize(destinationViewer, state);
+      scheduleComparison();
+    },
   );
 
   function synchronize(target, state) {
@@ -557,6 +747,56 @@ export function mountReview(review) {
     synchronizing = true;
     target.applyViewState(state);
     synchronizing = false;
+  }
+
+  function scheduleComparison() {
+    if (!["diff", "highlight"].includes(activeMode()) || comparisonFrame !== null) return;
+    comparisonFrame = requestAnimationFrame(() => {
+      comparisonFrame = null;
+      renderComparison();
+    });
+  }
+
+  function renderComparison() {
+    const mode = activeMode();
+    if (!["diff", "highlight"].includes(mode)) return;
+    const stageWidth = Math.max(stage.clientWidth, 1);
+    const stageHeight = Math.max(stage.clientHeight, 1);
+    const resolutionScale = Math.min(1, Math.sqrt(1600000 / (stageWidth * stageHeight)));
+    const width = Math.max(Math.round(stageWidth * resolutionScale), 1);
+    const height = Math.max(Math.round(stageHeight * resolutionScale), 1);
+    [comparisonOverlay, destinationBuffer, sourceBuffer].forEach((canvas) => {
+      if (canvas.width !== width) canvas.width = width;
+      if (canvas.height !== height) canvas.height = height;
+    });
+    destinationBufferContext.clearRect(0, 0, width, height);
+    sourceBufferContext.clearRect(0, 0, width, height);
+    if (!destinationViewer.drawTo(destinationBufferContext, width, height)) return;
+    if (!sourceViewer.drawTo(sourceBufferContext, width, height)) return;
+
+    const destinationPixels = destinationBufferContext.getImageData(0, 0, width, height).data;
+    const sourcePixels = sourceBufferContext.getImageData(0, 0, width, height).data;
+    const compared = comparisonContext.createImageData(width, height);
+    for (let index = 0; index < compared.data.length; index += 4) {
+      const red = Math.abs(destinationPixels[index] - sourcePixels[index]);
+      const green = Math.abs(destinationPixels[index + 1] - sourcePixels[index + 1]);
+      const blue = Math.abs(destinationPixels[index + 2] - sourcePixels[index + 2]);
+      const alpha = Math.abs(destinationPixels[index + 3] - sourcePixels[index + 3]);
+      if (mode === "diff") {
+        compared.data[index] = red;
+        compared.data[index + 1] = green;
+        compared.data[index + 2] = blue;
+        compared.data[index + 3] = 255;
+        continue;
+      }
+      const difference = Math.max(red, green, blue, alpha);
+      const strength = Math.min(255, Math.max(0, difference - 6) * 5);
+      compared.data[index] = 255;
+      compared.data[index + 1] = 24;
+      compared.data[index + 2] = 210;
+      compared.data[index + 3] = strength;
+    }
+    comparisonContext.putImageData(compared, 0, 0);
   }
 
   async function chooseAsset() {
@@ -569,9 +809,22 @@ export function mountReview(review) {
         destinationViewer.load({ kind: asset.kind, url: asset.destination }),
         sourceViewer.load({ kind: asset.kind, url: asset.source }),
       ]);
-      if (sequence === assetSequence && navigationIsSynchronized()) {
-        sourceViewer.applyViewState(destinationViewer.getViewState());
+      if (sequence !== assetSequence) return;
+      if (asset.kind === "model") {
+        destinationViewer.setPreset(orientationSelect.value);
+        sourceViewer.setPreset(orientationSelect.value);
+        if (requestedOrbit) {
+          destinationViewer.setOrbit(requestedOrbit.azimuth, requestedOrbit.elevation);
+          sourceViewer.setOrbit(requestedOrbit.azimuth, requestedOrbit.elevation);
+        }
+        if (requestedZoom) {
+          destinationViewer.setZoom(requestedZoom);
+          sourceViewer.setZoom(requestedZoom);
+        }
       }
+      if (navigationIsSynchronized()) sourceViewer.applyViewState(destinationViewer.getViewState());
+      document.documentElement.dataset.reviewReady = "true";
+      scheduleComparison();
     } catch (error) {
       console.error(error);
     }
@@ -579,9 +832,19 @@ export function mountReview(review) {
 
   function setSplit(value) {
     const split = Number(value);
-    if (activeMode() === "overlay") sourceLayer.style.clipPath = `inset(0 ${100 - split}% 0 0)`;
-    divider.style.left = `${split}%`;
     slider.value = split;
+    const stageBounds = stage.getBoundingClientRect();
+    const sliderBounds = slider.getBoundingClientRect();
+    const thumbRadius = 8;
+    const trackWidth = Math.max(sliderBounds.width - thumbRadius * 2, 0);
+    const splitPosition = sliderBounds.left - stageBounds.left
+      + thumbRadius
+      + trackWidth * split / 100;
+    if (activeMode() === "overlay") {
+      const hiddenWidth = Math.max(stageBounds.width - splitPosition, 0);
+      sourceLayer.style.clipPath = `inset(0 ${hiddenWidth}px 0 0)`;
+    }
+    divider.style.left = `${splitPosition}px`;
   }
 
   function flipSide() {
@@ -601,7 +864,7 @@ export function mountReview(review) {
     currentMode.textContent = modes[activeModeIndex].name;
     modeButtons.forEach((button, buttonIndex) => button.setAttribute("aria-selected", String(buttonIndex === activeModeIndex)));
     modeList.setAttribute("aria-activedescendant", modeButtons[activeModeIndex].id);
-    sourceLayer.style.clipPath = mode === "overlay" ? `inset(0 ${100 - Number(slider.value)}% 0 0)` : "none";
+    if (mode !== "overlay") sourceLayer.style.clipPath = "none";
     divider.hidden = mode !== "overlay";
     slider.hidden = mode !== "overlay";
     flip.hidden = mode !== "overlay";
@@ -612,6 +875,8 @@ export function mountReview(review) {
       destinationViewer.resize();
       sourceViewer.resize();
       if (navigationIsSynchronized()) sourceViewer.applyViewState(destinationViewer.getViewState());
+      if (mode === "overlay") setSplit(slider.value);
+      if (["diff", "highlight"].includes(mode)) scheduleComparison();
     });
   }
 
@@ -654,36 +919,71 @@ export function mountReview(review) {
   });
   flip.addEventListener("click", flipSide);
   reset.addEventListener("click", fitViews);
+  document.addEventListener("dragstart", (event) => event.preventDefault(), true);
+  document.addEventListener("selectstart", (event) => event.preventDefault(), true);
+  document.addEventListener("pointerdown", () => window.getSelection()?.removeAllRanges(), true);
+  window.addEventListener("resize", () => requestAnimationFrame(() => {
+    setSplit(slider.value);
+    scheduleComparison();
+  }));
   window.addEventListener("keydown", (event) => {
-    const editing = ["INPUT", "SELECT"].includes(event.target.tagName);
-    if (editing || (event.target.tagName === "BUTTON" && [" ", "Enter"].includes(event.key))) return;
     if (event.key === "ArrowUp" || event.key === "ArrowDown") {
       event.preventDefault();
+      event.stopPropagation();
       moveView(event.key === "ArrowUp" ? -1 : 1);
     } else if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
+      event.stopPropagation();
       moveMode(event.key === "ArrowLeft" ? -1 : 1);
     } else if (event.key.toLowerCase() === "s" && activeMode() === "side-by-side") {
+      event.preventDefault();
       syncCheckbox.checked = !syncCheckbox.checked;
       if (syncCheckbox.checked) sourceViewer.applyViewState(destinationViewer.getViewState());
     } else if (event.key.toLowerCase() === "f") {
+      event.preventDefault();
       fitViews();
     } else if (/^[1-5]$/.test(event.key) && !cameraControl.hidden) {
+      event.preventDefault();
       orientationSelect.selectedIndex = Number(event.key) - 1;
       orientationSelect.dispatchEvent(new Event("change"));
     } else if (event.key === " " && activeMode() === "overlay") {
       event.preventDefault();
       flipSide();
     }
-  });
+  }, true);
 
   const parameters = new URLSearchParams(window.location.search);
+  const requestedAzimuth = Number(parameters.get("azimuth"));
+  const requestedElevation = Number(parameters.get("elevation"));
+  const requestedOrbit = parameters.has("azimuth")
+    && parameters.has("elevation")
+    && Number.isFinite(requestedAzimuth)
+    && Number.isFinite(requestedElevation)
+    ? { azimuth: requestedAzimuth, elevation: requestedElevation }
+    : null;
+  const requestedZoomValue = Number(parameters.get("zoom"));
+  const requestedZoom = parameters.has("zoom") && Number.isFinite(requestedZoomValue)
+    ? requestedZoomValue
+    : null;
   const requestedView = parameters.get("view");
   const requestedIndex = review.assets.findIndex((asset) =>
     asset.path === requestedView || (requestedView === "3d" && asset.kind === "model"),
   );
   setActiveAsset(requestedIndex >= 0 ? requestedIndex : 0, false);
-  setSplit(50);
+  const requestedOrientation = parameters.get("orientation") || parameters.get("camera");
+  if ([...orientationSelect.options].some((option) => option.value === requestedOrientation)) {
+    orientationSelect.value = requestedOrientation;
+  }
+  const requestedSide = parameters.get("side");
+  const requestedSplit = Number(parameters.get("split"));
+  const initialSplit = requestedSide === "destination"
+    ? 0
+    : requestedSide === "source"
+      ? 100
+      : Number.isFinite(requestedSplit)
+        ? THREE.MathUtils.clamp(requestedSplit, 0, 100)
+        : 50;
+  setSplit(initialSplit);
   const requestedMode = parameters.get("mode") || (parameters.get("layout") === "side-by-side" ? "side-by-side" : "overlay");
   setMode(Math.max(0, modes.findIndex((mode) => mode.id === requestedMode)));
   chooseAsset();
