@@ -92,6 +92,22 @@ This fails on absolute paths, KiCad third-party plugin variables, missing
 repo-local 3D models, footprint library table entries outside `${KIPRJMOD}`, and
 symbol library table entries outside `${KIPRJMOD}` or pinned `KICAD_SYMBOL_DIR`.
 
+### Saved copper-zone fills
+
+Check that every copper zone contains saved fill data on each of its layers:
+
+```sh
+nix run .#zones-filled
+# or, inside nix develop:
+eveningstar-zones-filled
+```
+
+After any board edit that can affect copper geometry, open the board in the
+pinned KiCad PCB Editor, press <kbd>B</kbd> to refill all zones, and save before
+committing. Production plotting uses the fills stored in the board, so this is
+required even if DRC passes. The automated check detects absent saved fills; it
+cannot prove that existing fills are current for the latest board edits.
+
 ### Vendored subtree drift
 
 Check that the vendored JLCPCB subtree has not been edited directly:
