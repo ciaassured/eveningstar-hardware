@@ -3,6 +3,13 @@
     { pkgs, self', ... }:
     let
       kicadSymbolDir = "${pkgs.kicad.libraries.symbols}/share/kicad/symbols";
+      # Keep the pinned fontconfig used by KiCad from parsing a potentially
+      # incompatible host configuration under /etc/fonts.
+      kicadFontconfigFile = pkgs.makeFontsConf {
+        fontDirectories = [ ];
+        impureFontDirectories = [ ];
+        includes = [ ];
+      };
       threeSource = pkgs.fetchurl {
         name = "three-0.184.0.tgz";
         url = "https://registry.npmjs.org/three/-/three-0.184.0.tgz";
@@ -22,10 +29,11 @@
           --legal-comments=eof \
           --outfile="$out"
       '';
-      withKicadSymbolDir =
+      withKicadEnvironment =
         script:
         ''
           export KICAD_SYMBOL_DIR="${kicadSymbolDir}"
+          export FONTCONFIG_FILE="${kicadFontconfigFile}"
         ''
         + builtins.readFile script;
       publishTools = import ./publish.nix {
@@ -124,7 +132,7 @@
         drc = pkgs.writeShellApplication {
           name = "eveningstar-drc";
           runtimeInputs = [ pkgs.kicad ];
-          text = withKicadSymbolDir ./scripts/drc.sh;
+          text = withKicadEnvironment ./scripts/drc.sh;
         };
 
         kicad-locality = pkgs.writeShellApplication {
