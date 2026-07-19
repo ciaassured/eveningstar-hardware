@@ -10272,7 +10272,7 @@
 				)
 			)
 		)
-		(property "MPN" "AMS1117-5.0"
+		(property "MPN" "AMS1117-3.3"
 			(at 162.56 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -10283,7 +10283,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C6187"
+		(property "LCSC Part" "C6186"
 			(at 162.56 160.02 0)
 			(hide yes)
 			(show_name no)
