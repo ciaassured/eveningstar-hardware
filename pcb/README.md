@@ -141,12 +141,20 @@ eveningstar-production
 
 The production payload contains the Gerber/drill archive, BOM, placement list,
 designator counts, and IPC-D-356 netlist. Its settings pin the Fabrication
-Toolkit 5.3.1 behavior used for V1, including zone refill and automatic JLCPCB
-placement translations. Project-specific final rotations live in
-`jlcpcb-placement-overrides.csv`; update them only after checking component pin
-1 orientation against the datasheet and assembly preview. Generated timestamps,
+Toolkit 5.3.1 JLCPCB placement translations used for V1. The build runs DRC and
+schematic-parity validation, then plots the zone fills committed in the KiCad
+board without refilling them. Fill and save zones in the pinned KiCad editor
+after relevant design changes; plotting the reviewed stored fills avoids
+nondeterministic polygon decomposition between independent KiCad processes.
+Project-specific corrections live as hidden `FT Rotation Offset` fields on the
+affected KiCad footprints; update them only after checking component pin 1
+orientation against the datasheet and assembly preview. Generated timestamps,
 ZIP entry metadata, permissions, and file order are normalized for reproducible
-builds.
+builds. The Toolkit source revision is pinned by the root `flake.lock` alongside
+KiCad and the rest of the toolchain.
+KiCad provides the underlying fabrication exporters; the pinned Toolkit is
+retained for its JLCPCB-specific component-origin and rotation translations and
+for compatibility with the production process used for the original board.
 
 Production files are build artifacts and are not committed. Local output is
 ignored under `pcb/production` and `reports`; published manufacturing files
