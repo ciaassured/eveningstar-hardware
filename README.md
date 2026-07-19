@@ -1,6 +1,6 @@
-# MorningStar MeterBus ESP32 Interface
+# EveningStar Hardware
 
-An isolated ESP32-based interface for communicating with Morningstar solar charge controllers over the Morningstar MeterBus RJ11 interface.
+The hardware design for an isolated ESP32-based interface that communicates with Morningstar solar charge controllers over the Morningstar MeterBus RJ11 interface.
 
 This project implements a protected half-duplex physical layer for interfacing an ESP32 UART with the Morningstar MeterBus used by devices such as the ProStar MPPT series.
 
