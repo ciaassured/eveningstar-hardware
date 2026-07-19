@@ -1,4 +1,8 @@
-{ pkgs, source }:
+{
+  pkgs,
+  source,
+  productionScript ? ./scripts/production.py,
+}:
 
 let
   sourceRoot = toString source;
@@ -18,6 +22,8 @@ let
           || pkgs.lib.hasPrefix "pcb/pcb/" relative
           || relative == "pcb/reports"
           || pkgs.lib.hasPrefix "pcb/reports/" relative
+          || relative == "pcb/production"
+          || pkgs.lib.hasPrefix "pcb/production/" relative
           || pkgs.lib.hasSuffix ".bak" relative
           || pkgs.lib.hasSuffix ".kicad_prl" relative
           || pkgs.lib.hasSuffix ".lck" relative;
@@ -25,6 +31,14 @@ let
       relative == "" || (isPcb && !isTooling && !isGenerated && relative != "pcb/README.md");
   };
   kicadSymbolDir = "${pkgs.kicad.libraries.symbols}/share/kicad/symbols";
+  kicadPythonPath =
+    "${pkgs.kicad.base}/lib/python${pkgs.python3.pythonVersion}/site-packages";
+  fabricationToolkit = pkgs.fetchFromGitHub {
+    owner = "bennymeg";
+    repo = "Fabrication-Toolkit";
+    rev = "642b069c28e1f12d357c625a8d16ab3d81230712";
+    hash = "sha256-/9dIssacR/g754K+JyeUg0y+zEKpd7Hpbd7BxzTBXNo=";
+  };
 
   mkKicadDerivation =
     {
@@ -188,8 +202,23 @@ let
     '';
   };
 
+  productionArtifacts = mkKicadDerivation {
+    name = "eveningstar-production-artifacts";
+    nativeBuildInputs = [ pkgs.python3 ];
+    build = ''
+      export LC_ALL=C.UTF-8
+      export TZ=UTC
+      export PYTHONPATH="${kicadPythonPath}:${pkgs.lib.makeSearchPath pkgs.python3.sitePackages pkgs.kicad.pythonPath}"
+      python3 ${productionScript} \
+        --board "$src/pcb/EveningStar.kicad_pcb" \
+        --output "$out" \
+        --overrides "$src/pcb/jlcpcb-placement-overrides.csv" \
+        --toolkit "${fabricationToolkit}"
+    '';
+  };
+
   artifacts = pkgs.runCommand "eveningstar-publish-artifacts" { } ''
-    mkdir -p "$out/schematic" "$out/board" "$out/renders" "$out/models"
+    mkdir -p "$out/schematic" "$out/board" "$out/renders" "$out/models" "$out/production"
     cp -R ${schematicDocuments}/. "$out/schematic/"
     cp -R ${pcbDocuments}/. "$out/board/"
     cp -R ${renderPlan}/. "$out/renders/"
@@ -197,6 +226,7 @@ let
     cp -R ${renderIsometric}/. "$out/renders/"
     cp -R ${stepModel}/. "$out/models/"
     cp -R ${glbModel}/. "$out/models/"
+    cp -R ${productionArtifacts}/. "$out/production/"
   '';
 in
 {
@@ -204,6 +234,7 @@ in
     artifacts
     glbModel
     pcbDocuments
+    productionArtifacts
     renderIsometric
     renderPlan
     renderSides

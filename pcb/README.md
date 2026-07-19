@@ -120,18 +120,49 @@ nix run .#publish
 eveningstar-publish
 ```
 
-The command currently produces schematic and PCB PDFs/SVGs, deterministic 3D
-PNG renders, a browser-optimized GLB, and a STEP model. `nix build` exposes the
-Nix store output through `result`; the command form also links that immutable
-output at `reports/publish`. Because this is a derivation of the filtered PCB
-source and pinned publishing tools, unchanged outputs are reused from the local
-Nix store and can be shared through the configured Cachix cache. Gerbers, BOM
-output, release metadata, and changelog generation can be added to this same
-artifact contract without changing the review workflow.
+The command produces schematic and PCB PDFs/SVGs, deterministic 3D PNG renders,
+a browser-optimized GLB, a STEP model, and JLCPCB production files. `nix build`
+exposes the Nix store output through `result`; the command form also links that
+immutable output at `reports/publish`. Because this is a derivation of the
+filtered PCB source and pinned publishing tools, unchanged outputs are reused
+from the local Nix store and can be shared through the configured Cachix cache.
+Release metadata and changelog generation can be added to this same artifact
+contract without changing the review workflow.
+
+Generate only the JLCPCB production payload:
+
+```sh
+nix build .#production
+# or, to also link the result at reports/production:
+nix run .#production
+# inside nix develop:
+eveningstar-production
+```
+
+The production payload contains the Gerber/drill archive, BOM, placement list,
+designator counts, and IPC-D-356 netlist. Its settings pin the Fabrication
+Toolkit 5.3.1 behavior used for V1, including zone refill and automatic JLCPCB
+placement translations. Project-specific final rotations live in
+`jlcpcb-placement-overrides.csv`; update them only after checking component pin
+1 orientation against the datasheet and assembly preview. Generated timestamps,
+ZIP entry metadata, permissions, and file order are normalized for reproducible
+builds.
+
+Production files are build artifacts and are not committed. Local output is
+ignored under `pcb/production` and `reports`; published manufacturing files
+belong in the GitHub release for the exact source tag that produced them. The
+original as-ordered files remain available from the historical `v1.0.0` tag.
+
+To force a fresh build and have Nix compare it with the existing store output:
+
+```sh
+nix build .#production --rebuild
+```
 
 The aggregate is assembled from independent schematic-document, PCB-document,
-plan-render, side-render, isometric-render, GLB, and STEP derivations. Nix can
-schedule those components in parallel and reuse them individually. They are
+plan-render, side-render, isometric-render, GLB, STEP, and production
+derivations. Nix can schedule those components in parallel and reuse them
+individually. They are
 also directly inspectable with commands such as `nix build .#render-plan` or
 `nix build .#model-step`, without exposing additional imperative applications.
 
