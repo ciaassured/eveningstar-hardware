@@ -10,7 +10,7 @@
 let
   publishFor =
     source:
-    (import publishNix { inherit fabricationToolkit pkgs productionScript source; }).artifacts;
+    (import publishNix { inherit fabricationToolkit pkgs productionScript source; }).reviewArtifacts;
   destination = publishFor destinationSource;
   source = publishFor sourceSource;
 in

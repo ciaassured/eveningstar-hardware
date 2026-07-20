@@ -190,6 +190,52 @@ individually. They are
 also directly inspectable with commands such as `nix build .#render-plan` or
 `nix build .#model-step`, without exposing additional imperative applications.
 
+### Releases and hardware versioning
+
+Release versions describe the hardware revision, not the volume or significance
+of changes to the surrounding checks, rendering, review, or publishing tools.
+Tooling-only changes do not normally require a hardware release.
+
+- Increment the major version for an incompatible electrical, mechanical, or
+  external-interface change.
+- Increment the minor version for a backwards-compatible hardware capability or
+  intentional circuit, component, or layout revision.
+- Increment the patch version for corrections that preserve the intended
+  circuit and interfaces, including fabrication-data, copper, keepout, and
+  silkscreen fixes.
+
+`v1.0.0` is a historical source tag and intentionally has no GitHub Release.
+`v1.0.1` is the first release produced with the pinned, reproducible production
+and publishing pipeline.
+
+To prepare a release, first merge all intended changes to `main`, refill and
+save copper zones after relevant board edits, and create a Markdown release
+notes file. Review the changes and choose the version based primarily on the
+schematics, board, and production outputs since the previous hardware tag:
+
+```sh
+nix run .#review -- v1.0.0 main
+nix run .#release -- --dry-run v1.0.1 /path/to/release-notes.md
+```
+
+Inspect the rendered comparison and the staged assets under
+`reports/release/v1.0.1/`. The dry run executes the complete checks and publish
+build but does not create a tag or GitHub Release. When the result is ready to
+publish, run:
+
+```sh
+nix run .#release -- v1.0.1 /path/to/release-notes.md
+```
+
+The release command requires a clean checkout of the latest `origin/main`,
+rejects conflicting tags or releases, runs `nix run .#checks`, and builds the
+full publish output locally. It stages a deterministic archive of every publish
+artifact, individual production and 3D model files, and `SHA256SUMS`; then it
+creates and pushes an annotated tag and creates the GitHub Release. If GitHub
+release creation fails after the tag is pushed, correct the problem and rerun
+the same command; an existing tag is accepted only when it identifies the same
+`main` commit.
+
 ## Review Tools
 
 Review tools generate artifacts for a human to inspect or compare. They are
