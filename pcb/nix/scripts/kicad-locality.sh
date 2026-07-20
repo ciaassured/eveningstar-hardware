@@ -30,7 +30,7 @@ forbidden_kicad_vars="$(
   rg -n '\$\{KICAD[0-9_]*_3RD_PARTY\}|\$\{KICAD[0-9]*_3DMODEL_DIR\}|\$\{KICAD[0-9]*_FOOTPRINT_DIR\}' \
     pcb/EveningStar.kicad_pcb \
     pcb/fp-lib-table \
-    pcb/lib/EasyEDA/footprints/EasyEDA.pretty \
+    pcb/lib/EasyEDA/EasyEDA.pretty \
     || true
 )"
 report_bad "KiCad files reference external KiCad library/model variables" "$forbidden_kicad_vars"
@@ -38,7 +38,7 @@ report_bad "KiCad files reference external KiCad library/model variables" "$forb
 absolute_model_paths="$(
   rg -n '^[[:space:]]*\(model "(/|[A-Za-z]:\\|~)' \
     pcb/EveningStar.kicad_pcb \
-    pcb/lib/EasyEDA/footprints/EasyEDA.pretty \
+    pcb/lib/EasyEDA/EasyEDA.pretty \
     || true
 )"
 report_bad "KiCad 3D model references use absolute or home-relative paths" "$absolute_model_paths"
@@ -46,7 +46,7 @@ report_bad "KiCad 3D model references use absolute or home-relative paths" "$abs
 all_model_refs="$(
   rg -n '^[[:space:]]*\(model "' \
     pcb/EveningStar.kicad_pcb \
-    pcb/lib/EasyEDA/footprints/EasyEDA.pretty \
+    pcb/lib/EasyEDA/EasyEDA.pretty \
     || true
 )"
 non_project_model_vars=""

@@ -1,0 +1,269 @@
+(footprint "SOD-323_L1.7-W1.3-LS2.5-RD"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "D5"
+		(at 0 -1.6 180)
+		(layer "F.SilkS")
+		(uuid "b78688c6-5085-4e3d-847d-2d086fb54c07")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "BZX384-B5V1,115"
+		(at 0 4 180)
+		(layer "F.Fab")
+		(uuid "c90c1994-fee7-4bdb-a016-7f0fa1ce7de6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://lcsc.com/product-detail/Zener-Diodes_Nexperia-BZX384-B5V1-115_C426823.html"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "55ff4e0a-d696-445c-83ea-3af71d0ba7f3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ff8b7eff-eb45-454b-863e-a3554db3b4c5")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "LCSC Part" "C426823"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "920491be-04ac-4a7d-ada0-30ee9b89e71a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Nexperia(安世)"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5c860aa3-d206-4d10-acc6-a2d841cb5b89")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "BZX384-B5V1,115"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e2bc4367-b762-4ccc-ad33-7900f531e148")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Pins" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f67e26b1-f9e8-496b-ab54-07f276e3c12b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "KLC_S3.3" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1ab4ff17-cfdd-4f5a-90c2-d42ab6893c32")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "KLC_S4.1" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "579179a2-f96b-42fa-82bd-f85c6bb758ca")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/meterbus_frontend/")
+	(sheetfile "meterbus_frontend.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.1 0.7)
+		(end 0.9 0.7)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2c7e1549-07b1-458b-ad65-2305aeded582")
+	)
+	(fp_line
+		(start 0.9 -0.7)
+		(end -1.1 -0.7)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7307070e-fb3f-4f3c-8132-88c42cdfbbbb")
+	)
+	(fp_line
+		(start 0.9 0.7)
+		(end 1 0.7)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "077a7ce1-c6c9-4862-bc94-18458e71a120")
+	)
+	(fp_line
+		(start 1 -0.7)
+		(end 0.9 -0.7)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "45ba055f-ca88-4788-9ca6-e15100ff1f34")
+	)
+	(fp_circle
+		(center -1.4 0.8)
+		(end -1.37 0.8)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "05724a8e-fe72-4fd6-969c-8c037f34bd19")
+	)
+	(fp_poly
+		(pts
+			(xy -0.449986 -0.000025) (xy 0.250012 -0.400025) (xy 0.250012 0.399974) (xy -0.449986 -0.000025)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "bf656e19-53db-4db4-9c88-400f72055bd9")
+	)
+	(fp_line
+		(start -0.85 -0.62)
+		(end 0.85 -0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1e731adc-97e5-4c42-b584-29547c8c90cd")
+	)
+	(fp_line
+		(start -0.85 0.62)
+		(end -0.85 -0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b5d31897-ec8b-420b-9416-90a244620ba0")
+	)
+	(fp_line
+		(start 0.85 -0.62)
+		(end 0.85 0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "39c35cc8-991d-4cc7-a64e-0e796e1528b5")
+	)
+	(fp_line
+		(start 0.85 0.62)
+		(end -0.85 0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a026fbe7-8508-4f7c-a2c8-52af0d779c5f")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(uuid "171d3452-151f-404c-bfa5-18347cd9fa67")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.2 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e1fa19cd-591d-4161-9dae-94dc37851c0e")
+	)
+	(pad "2" smd rect
+		(at 1.2 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3621c983-dfd1-4218-9613-677bf5b494ed")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/SOD-323_L1.7-W1.3-LS2.5-FD.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

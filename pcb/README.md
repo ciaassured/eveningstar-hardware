@@ -327,15 +327,11 @@ Vendored and project-owned libraries live under `pcb/lib`.
 ```text
 pcb/lib/
   custom/
-    symbols/
-      custom_symbols.kicad_sym
+    custom_symbols.kicad_sym
   EasyEDA/
-    symbols/
-      EasyEDA.kicad_sym
-    footprints/
-      EasyEDA.pretty/
-    3dmodels/
-      EasyEDA.3dshapes/
+    EasyEDA.kicad_sym
+    EasyEDA.pretty/
+    EasyEDA.3dshapes/
   JLCPCB-Kicad-Library/
     symbols/
     footprints/
