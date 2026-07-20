@@ -133,6 +133,23 @@
           '';
         };
 
+        release = pkgs.writeShellApplication {
+          name = "eveningstar-release";
+          runtimeInputs = [
+            pkgs.coreutils
+            pkgs.findutils
+            pkgs.gh
+            pkgs.git
+            pkgs.gnugrep
+            pkgs.gnutar
+            pkgs.gzip
+          ];
+          text = ''
+            export EVENINGSTAR_CHECKS="${self'.packages.checks}/bin/eveningstar-checks"
+            export EVENINGSTAR_PUBLISH="${self'.packages.publish-command}/bin/eveningstar-publish"
+          '' + builtins.readFile ./scripts/release.sh;
+        };
+
         production = publishTools.productionArtifacts;
 
         production-command = pkgs.writeShellApplication {
@@ -230,6 +247,11 @@
           program = "${self'.packages.publish-command}/bin/eveningstar-publish";
         };
 
+        release = {
+          type = "app";
+          program = "${self'.packages.release}/bin/eveningstar-release";
+        };
+
         production = {
           type = "app";
           program = "${self'.packages.production-command}/bin/eveningstar-production";
@@ -267,6 +289,7 @@
           self'.packages.drc
           self'.packages.kicad-locality
           self'.packages.publish-command
+          self'.packages.release
           self'.packages.production-command
           self'.packages.review
           self'.packages.subtree-drift

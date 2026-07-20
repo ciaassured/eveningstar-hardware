@@ -220,8 +220,8 @@ let
     '';
   };
 
-  artifacts = pkgs.runCommand "eveningstar-publish-artifacts" { } ''
-    mkdir -p "$out/schematic" "$out/board" "$out/renders" "$out/models" "$out/production"
+  reviewArtifacts = pkgs.runCommand "eveningstar-review-artifacts" { } ''
+    mkdir -p "$out/schematic" "$out/board" "$out/renders" "$out/models"
     cp -R ${schematicDocuments}/. "$out/schematic/"
     cp -R ${pcbDocuments}/. "$out/board/"
     cp -R ${renderPlan}/. "$out/renders/"
@@ -229,6 +229,12 @@ let
     cp -R ${renderIsometric}/. "$out/renders/"
     cp -R ${stepModel}/. "$out/models/"
     cp -R ${glbModel}/. "$out/models/"
+  '';
+
+  artifacts = pkgs.runCommand "eveningstar-publish-artifacts" { } ''
+    mkdir -p "$out"
+    cp -R ${reviewArtifacts}/. "$out/"
+    mkdir -p "$out/production"
     cp -R ${productionArtifacts}/. "$out/production/"
   '';
 in
@@ -238,6 +244,7 @@ in
     glbModel
     pcbDocuments
     productionArtifacts
+    reviewArtifacts
     renderIsometric
     renderPlan
     renderSides
