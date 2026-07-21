@@ -502,8 +502,8 @@
 		)
 	)
 	(sheet
-		(at 79.375 59.69)
-		(size 33.655 11.43)
+		(at 106.68 68.58)
+		(size 23.495 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -518,7 +518,7 @@
 		)
 		(uuid "561d5dbe-6020-48c7-be42-1a6149a1119b")
 		(property "Sheetname" "ethernet"
-			(at 79.375 58.9784 0)
+			(at 106.68 67.8684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -529,7 +529,7 @@
 			)
 		)
 		(property "Sheetfile" "ethernet.kicad_sch"
-			(at 79.375 71.7046 0)
+			(at 106.68 81.8646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -537,6 +537,46 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "RST" input
+			(at 106.68 76.2 180)
+			(uuid "43d7f9ff-bef4-4616-a058-a410022d05ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "INT" output
+			(at 106.68 78.74 180)
+			(uuid "83dda1f3-2aeb-415f-9621-eeec80d870cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{SPI}" input
+			(at 106.68 71.12 180)
+			(uuid "710f9cef-f8bf-4510-af97-a10c27224dc4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CS" input
+			(at 106.68 73.66 180)
+			(uuid "fcbe86a8-5db1-4d49-9cbe-afaaaa301396")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
