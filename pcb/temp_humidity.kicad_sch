@@ -784,6 +784,28 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 21.59 15.24)
+		(end 66.04 55.88)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "a06b9bac-4f21-4f33-842e-3dad4fdae5db")
+	)
+	(text "AHT20"
+		(exclude_from_sim no)
+		(at 42.672 18.288 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4c5ac237-6e9a-4c85-859b-119c30c0da0b")
+	)
 	(junction
 		(at 40.64 27.94)
 		(diameter 0)
