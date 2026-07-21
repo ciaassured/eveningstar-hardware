@@ -1083,6 +1083,10 @@
         "MISO",
         "MOSI",
         "SCL"
+      ],
+      "USB": [
+        "D+",
+        "D-"
       ]
     },
     "connection_grid_size": 50.0,
@@ -1125,7 +1129,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "J1,NT1-3,U6-7,#PWR32,#PWR37,#PWR70-72,Y2,S4,C8,C13,D1,D10-11,R48-49",
+    "used_designators": "J1-2,NT1-3,U6-7,#PWR32,#PWR35,#PWR37,#PWR41-42,#PWR70-72,Y2,S4,C8,C13,D1-2,D10-11,R18-19,R48-49",
     "variants": []
   },
   "sheets": [
@@ -1152,6 +1156,10 @@
     [
       "7967a565-3cbd-4ca7-9b04-97ff3bd68493",
       "temp_humidity"
+    ],
+    [
+      "22f40650-d8d4-44d2-a5ef-96e7dd8a6495",
+      "usb"
     ]
   ],
   "text_variables": {
