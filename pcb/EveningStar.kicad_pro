@@ -1075,6 +1075,10 @@
       "sort_field": "Reference"
     },
     "bus_aliases": {
+      "I2C": [
+        "SDA",
+        "SCL"
+      ],
       "SPI": [
         "MISO",
         "MOSI",
@@ -1121,7 +1125,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "NT1-3,U7,#PWR71,Y2,S4,C8,D1,D10-11,R48-49",
+    "used_designators": "J1,NT1-3,U6-7,#PWR32,#PWR37,#PWR70-72,Y2,S4,C8,C13,D1,D10-11,R48-49",
     "variants": []
   },
   "sheets": [
@@ -1144,6 +1148,10 @@
     [
       "561d5dbe-6020-48c7-be42-1a6149a1119b",
       "ethernet"
+    ],
+    [
+      "7967a565-3cbd-4ca7-9b04-97ff3bd68493",
+      "temp_humidity"
     ]
   ],
   "text_variables": {
