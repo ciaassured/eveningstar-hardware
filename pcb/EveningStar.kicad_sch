@@ -559,7 +559,7 @@
 				(justify left)
 			)
 		)
-		(pin "{SPI}" input
+		(pin "{SPI}" bidirectional
 			(at 106.68 71.12 180)
 			(uuid "710f9cef-f8bf-4510-af97-a10c27224dc4")
 			(effects
@@ -583,6 +583,62 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 99.06 101.6)
+		(size 29.21 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "7967a565-3cbd-4ca7-9b04-97ff3bd68493")
+		(property "Sheetname" "temp_humidity"
+			(at 99.06 100.8884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "temp_humidity.kicad_sch"
+			(at 99.06 107.2646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "{I2C}" bidirectional
+			(at 99.06 104.14 180)
+			(uuid "56225b05-9bb9-4631-999e-f13b9bafb091")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372"
+					(page "6")
 				)
 			)
 		)
