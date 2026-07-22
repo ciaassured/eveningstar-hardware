@@ -111,7 +111,7 @@
 			(symbol "AHT20-F_0_1"
 				(rectangle
 					(start -6.35 5.08)
-					(end 6.35 -5.08)
+					(end 6.35 -2.54)
 					(stroke
 						(width 0)
 						(type default)
@@ -121,8 +121,9 @@
 					)
 				)
 				(pin no_connect line
-					(at 8.89 2.54 180)
+					(at -1.27 7.62 270)
 					(length 2.54)
+					(hide yes)
 					(name "NC"
 						(effects
 							(font
@@ -139,7 +140,7 @@
 					)
 				)
 				(pin power_in line
-					(at -8.89 2.54 0)
+					(at 8.89 2.54 180)
 					(length 2.54)
 					(name "VDD"
 						(effects
@@ -157,7 +158,7 @@
 					)
 				)
 				(pin passive line
-					(at -8.89 -2.54 0)
+					(at -8.89 0 0)
 					(length 2.54)
 					(name "SCL"
 						(effects
@@ -175,7 +176,7 @@
 					)
 				)
 				(pin passive line
-					(at -8.89 0 0)
+					(at -8.89 2.54 0)
 					(length 2.54)
 					(name "SDA"
 						(effects
@@ -193,7 +194,7 @@
 					)
 				)
 				(pin power_in line
-					(at 8.89 -2.54 180)
+					(at 8.89 0 180)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -211,8 +212,9 @@
 					)
 				)
 				(pin no_connect line
-					(at 8.89 0 180)
+					(at 1.27 7.62 270)
 					(length 2.54)
+					(hide yes)
 					(name "NC"
 						(effects
 							(font
@@ -786,7 +788,7 @@
 	)
 	(rectangle
 		(start 21.59 15.24)
-		(end 66.04 55.88)
+		(end 66.04 45.72)
 		(stroke
 			(width 0)
 			(type default)
@@ -798,7 +800,7 @@
 	)
 	(text "AHT20"
 		(exclude_from_sim no)
-		(at 42.672 18.288 0)
+		(at 44.704 18.034 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -807,21 +809,19 @@
 		(uuid "4c5ac237-6e9a-4c85-859b-119c30c0da0b")
 	)
 	(junction
-		(at 40.64 27.94)
+		(at 54.61 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "82b7d8f2-4cd3-4aa6-b2a3-25d8bac7157a")
+		(uuid "28a30477-4a06-46b8-8d51-441a38e9006c")
 	)
-	(no_connect
-		(at 59.69 41.91)
-		(uuid "6b0b712c-e5aa-4195-a81a-2d782a133887")
-	)
-	(no_connect
-		(at 59.69 44.45)
-		(uuid "b06d49f2-e5a4-4de0-bd5c-1fd54994e079")
+	(junction
+		(at 54.61 36.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f866bdca-9ba1-40cc-9367-977616ec31ef")
 	)
 	(bus_entry
-		(at 29.21 41.91)
+		(at 29.21 31.75)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -830,7 +830,7 @@
 		(uuid "936f0ab2-dcae-47a6-acf4-94ba144f6236")
 	)
 	(bus_entry
-		(at 29.21 44.45)
+		(at 29.21 34.29)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -840,86 +840,106 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 46.99) (xy 41.91 46.99)
+			(xy 54.61 36.83) (xy 54.61 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4d6e605c-aea2-44b1-af53-5216289657c9")
+		(uuid "48918077-40b4-4ec8-9e0e-b8a062e93bd5")
 	)
 	(wire
 		(pts
-			(xy 40.64 27.94) (xy 40.64 41.91)
+			(xy 54.61 27.94) (xy 54.61 29.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "608f4452-e53c-4a72-87e4-9d228ace6b1b")
+		(uuid "72481237-9833-4617-8dd1-fda343a0c5c6")
 	)
 	(wire
 		(pts
-			(xy 35.56 27.94) (xy 40.64 27.94)
+			(xy 54.61 36.83) (xy 58.42 36.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "669884ab-d5b5-4f59-b4c9-24eb0f61bff2")
+		(uuid "72ced099-d1e4-43b9-9319-73bb12c7b664")
 	)
 	(wire
 		(pts
-			(xy 31.75 44.45) (xy 41.91 44.45)
+			(xy 31.75 36.83) (xy 35.56 36.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ae51e8f3-2f2e-4656-a89e-c1886807dfbf")
+		(uuid "78771ae2-80ff-4566-b6d0-01e1a8aa8b02")
 	)
 	(wire
 		(pts
-			(xy 60.96 46.99) (xy 60.96 48.26)
+			(xy 54.61 29.21) (xy 58.42 29.21)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c1a41aab-9f09-4777-bc11-500a41b72c17")
+		(uuid "8298be81-6a42-48ff-8265-bcf5ee9ab6f0")
 	)
 	(wire
 		(pts
-			(xy 59.69 46.99) (xy 60.96 46.99)
+			(xy 54.61 34.29) (xy 53.34 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d02b60b9-a93d-4b5d-b487-55aa6177c90d")
+		(uuid "959bb883-9a0e-4df3-9d48-0df2194f2c2f")
+	)
+	(wire
+		(pts
+			(xy 54.61 29.21) (xy 54.61 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af4406e2-2154-43df-a06d-5a5af56952f2")
+	)
+	(wire
+		(pts
+			(xy 53.34 36.83) (xy 54.61 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1781933-81a4-482f-ae58-b5fdf7d4cc1c")
 	)
 	(bus
 		(pts
-			(xy 29.21 40.64) (xy 29.21 44.45)
+			(xy 29.21 31.75) (xy 29.21 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e4d84900-2bf0-4f9c-8eff-61bd96df82ff")
+		(uuid "b7d47064-f327-4ec9-9825-ad0bf850f383")
 	)
 	(wire
 		(pts
-			(xy 40.64 41.91) (xy 41.91 41.91)
+			(xy 31.75 34.29) (xy 35.56 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e72d8b27-13da-4371-9a98-d3ecdcf84f89")
+		(uuid "ea3f8fdc-f3c3-4c99-bbdf-b475ec7c5c62")
 	)
 	(label "SCL"
-		(at 41.91 46.99 180)
+		(at 35.56 36.83 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -929,7 +949,7 @@
 		(uuid "bc40054b-106d-4297-9b78-476933f7b395")
 	)
 	(label "SDA"
-		(at 41.91 44.45 180)
+		(at 35.56 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -940,7 +960,7 @@
 	)
 	(hierarchical_label "{I2C}"
 		(shape bidirectional)
-		(at 29.21 40.64 180)
+		(at 29.21 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -951,7 +971,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 48.26 0)
+		(at 54.61 38.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -963,7 +983,7 @@
 		(fields_autoplaced yes)
 		(uuid "00adcaa3-6ad6-41d7-90d0-71e57d6bb4dd")
 		(property "Reference" "#PWR037"
-			(at 60.96 54.61 0)
+			(at 54.61 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -974,7 +994,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 53.34 0)
+			(at 54.61 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -984,7 +1004,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 48.26 0)
+			(at 54.61 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -995,7 +1015,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 48.26 0)
+			(at 54.61 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1006,7 +1026,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 48.26 0)
+			(at 54.61 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1029,87 +1049,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 35.56 35.56 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "30eb58c4-575d-4f8e-83bc-9b76bd896ee5")
-		(property "Reference" "#PWR070"
-			(at 35.56 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 40.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "69cbfec3-8432-4d44-85ca-82e096294960")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/7967a565-3cbd-4ca7-9b04-97ff3bd68493"
-					(reference "#PWR070")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
-		(at 40.64 27.94 0)
+		(at 54.61 27.94 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -1121,7 +1062,7 @@
 		(fields_autoplaced yes)
 		(uuid "5b04ec61-837a-4cbf-846a-65b9ca604329")
 		(property "Reference" "#PWR032"
-			(at 40.64 31.75 0)
+			(at 54.61 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1132,7 +1073,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 40.64 22.86 0)
+			(at 54.61 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1142,7 +1083,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 27.94 0)
+			(at 54.61 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1153,7 +1094,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 27.94 0)
+			(at 54.61 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1164,7 +1105,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 40.64 27.94 0)
+			(at 54.61 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1188,8 +1129,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0603,100nF")
-		(at 35.56 31.75 0)
-		(mirror x)
+		(at 58.42 33.02 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1199,7 +1139,7 @@
 		(dnp no)
 		(uuid "6f9a5b63-fb68-4131-888a-6c53fde488fe")
 		(property "Reference" "C13"
-			(at 33.02 29.2099 0)
+			(at 60.96 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1210,7 +1150,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 33.02 31.75 0)
+			(at 60.96 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1221,7 +1161,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_0603"
-			(at 33.782 31.75 90)
+			(at 60.198 33.02 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1232,7 +1172,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1243,7 +1183,7 @@
 			)
 		)
 		(property "Description" "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1254,7 +1194,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1265,7 +1205,7 @@
 			)
 		)
 		(property "Stock" "37493696"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1276,7 +1216,7 @@
 			)
 		)
 		(property "Price" "0.006USD"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1287,7 +1227,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1298,7 +1238,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1309,7 +1249,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1320,7 +1260,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1331,7 +1271,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1342,7 +1282,7 @@
 			)
 		)
 		(property "Manufacturer" "YAGEO"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1353,7 +1293,7 @@
 			)
 		)
 		(property "Part" "CC0603KRX7R9BB104"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1364,7 +1304,7 @@
 			)
 		)
 		(property "Voltage Rated" "50V"
-			(at 33.02 34.29 0)
+			(at 60.96 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1375,7 +1315,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1386,7 +1326,7 @@
 			)
 		)
 		(property "Capacitance" "100nF"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1397,7 +1337,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 35.56 31.75 0)
+			(at 58.42 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1408,7 +1348,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 35.56 31.75 90)
+			(at 58.42 33.02 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1419,7 +1359,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 35.56 31.75 90)
+			(at 58.42 33.02 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1430,7 +1370,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 35.56 31.75 90)
+			(at 58.42 33.02 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1457,7 +1397,7 @@
 	)
 	(symbol
 		(lib_id "EasyEDA:AHT20-F")
-		(at 50.8 44.45 0)
+		(at 44.45 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1468,7 +1408,7 @@
 		(fields_autoplaced yes)
 		(uuid "f2dddf22-6474-4819-bb1d-b091bae83b40")
 		(property "Reference" "U6"
-			(at 50.8 34.29 0)
+			(at 44.45 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1478,7 +1418,7 @@
 			)
 		)
 		(property "Value" "AHT20-F"
-			(at 50.8 36.83 0)
+			(at 44.45 29.21 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1488,7 +1428,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:SENSOR-SMD-6_AHT20"
-			(at 50.8 54.61 0)
+			(at 44.45 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1499,7 +1439,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/C3012622.pdf"
-			(at 50.8 57.15 0)
+			(at 44.45 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1510,7 +1450,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 50.8 44.45 0)
+			(at 44.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1521,7 +1461,7 @@
 			)
 		)
 		(property "Manufacturer" "广州奥松"
-			(at 50.8 59.69 0)
+			(at 44.45 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1532,7 +1472,7 @@
 			)
 		)
 		(property "MPN" "AHT20-F"
-			(at 50.8 62.23 0)
+			(at 44.45 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1543,7 +1483,7 @@
 			)
 		)
 		(property "LCSC Part" "C3012622"
-			(at 50.8 64.77 0)
+			(at 44.45 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

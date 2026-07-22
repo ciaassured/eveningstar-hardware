@@ -1869,7 +1869,7 @@
 		(uuid "ec84d976-cfbf-4a14-81d9-1bdde42750b1")
 	)
 	(hierarchical_label "{USB}"
-		(shape input)
+		(shape bidirectional)
 		(at 82.55 30.48 0)
 		(effects
 			(font
