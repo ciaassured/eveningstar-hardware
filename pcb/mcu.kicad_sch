@@ -2686,7 +2686,7 @@
 				)
 			)
 			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404180925_Seiko-Epson-Q13FC13500004_C32346.pdf"
-				(at -2.286 0.127 0)
+				(at -14.986 -7.874 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2698,7 +2698,7 @@
 				)
 			)
 			(property "Description" "-40°C~+85°C 12.5pF 32.768kHz 70kΩ Crystal Oscillator ±20ppm SMD3215-2P Crystals ROHS"
-				(at 0 0 0)
+				(at 0 -5.842 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2709,7 +2709,7 @@
 				)
 			)
 			(property "LCSC" "C32346"
-				(at 0 0 0)
+				(at -0.254 12.954 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2720,7 +2720,7 @@
 				)
 			)
 			(property "Stock" "614447"
-				(at 0 0 0)
+				(at 0 22.098 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2731,7 +2731,7 @@
 				)
 			)
 			(property "Price" "0.168USD"
-				(at 0 0 0)
+				(at 0 14.732 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2742,7 +2742,7 @@
 				)
 			)
 			(property "Process" "SMT"
-				(at 0 0 0)
+				(at 1.016 25.654 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2775,7 +2775,7 @@
 				)
 			)
 			(property "Class" "Basic Component"
-				(at 0 0 0)
+				(at 0.508 5.334 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2786,7 +2786,7 @@
 				)
 			)
 			(property "Category" "Crystals/Oscillators/Resonators,Crystals"
-				(at 0 0 0)
+				(at 0.508 -4.318 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2797,7 +2797,7 @@
 				)
 			)
 			(property "Manufacturer" "Seiko Epson"
-				(at 0 0 0)
+				(at 0.508 20.32 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2808,7 +2808,7 @@
 				)
 			)
 			(property "Part" "Q13FC13500004"
-				(at 0 0 0)
+				(at 0.762 18.288 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2819,7 +2819,7 @@
 				)
 			)
 			(property "Frequency" "32.768kHz"
-				(at 0 0 0)
+				(at 0 8.89 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2830,7 +2830,7 @@
 				)
 			)
 			(property "Equivalent Series Resistance (Esr)" "70kΩ"
-				(at 0 0 0)
+				(at 0 7.112 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2841,7 +2841,7 @@
 				)
 			)
 			(property "Operating Temperature" "-40°C~+85°C"
-				(at 0 0 0)
+				(at 0 16.764 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2852,7 +2852,7 @@
 				)
 			)
 			(property "Frequency Tolerance" "±20ppm"
-				(at 0 0 0)
+				(at 1.27 5.588 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2863,7 +2863,7 @@
 				)
 			)
 			(property "Crystal Type" "SMD Crystal Resonator"
-				(at 0 0 0)
+				(at 0 10.668 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2874,7 +2874,7 @@
 				)
 			)
 			(property "Load Capacitance" "12.5pF"
-				(at 0 0 0)
+				(at 1.27 5.588 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2885,7 +2885,7 @@
 				)
 			)
 			(property "Normal Temperature Frequency Tolerance" "±20ppm"
-				(at 0 0 0)
+				(at 0.254 5.588 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2896,7 +2896,7 @@
 				)
 			)
 			(property "Equivalent Series Resistance(Esr)" "70kΩ"
-				(at 0 0 0)
+				(at 0.254 23.876 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2907,7 +2907,7 @@
 				)
 			)
 			(property "Type" "Surface Mount Crystal"
-				(at 0 0 0)
+				(at 1.016 25.654 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2988,7 +2988,7 @@
 						(type none)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
 					(name "1"
@@ -3006,7 +3006,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 5.08 0 180)
 					(length 2.54)
 					(name "2"
