@@ -105,9 +105,101 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 17.78 173.99)
+		(end 60.96 193.04)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "4f9c49e7-3759-471e-814c-eb40fdaac2e0")
+	)
+	(text "JLC assembly mounts"
+		(exclude_from_sim no)
+		(at 39.116 176.784 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ac77f7cd-b5fc-4cca-b6d9-7e6ee730ce48")
+	)
+	(bus
+		(pts
+			(xy 95.25 48.26) (xy 100.33 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fa16915-6167-4cea-8a22-8ce1affaa1a3")
+	)
+	(wire
+		(pts
+			(xy 95.25 22.86) (xy 100.33 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "140c3786-3f7a-46ce-9fb2-5ec26dea30d9")
+	)
+	(bus
+		(pts
+			(xy 54.61 22.86) (xy 59.69 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1def9909-ca02-4cc2-874d-61bb2358f130")
+	)
+	(wire
+		(pts
+			(xy 95.25 25.4) (xy 100.33 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c569d68-7107-4188-8f98-bb8c6de9be34")
+	)
+	(wire
+		(pts
+			(xy 95.25 27.94) (xy 100.33 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bfc7333-d0e8-4d72-8835-4cdc472eba2a")
+	)
+	(bus
+		(pts
+			(xy 95.25 30.48) (xy 100.33 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be644891-8e47-4fc7-be47-ae268ef8497b")
+	)
+	(bus
+		(pts
+			(xy 54.61 35.56) (xy 59.69 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f04fdad6-97c5-4b85-baa6-e7525a870695")
+	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 62.23 95.25 0)
+		(at 43.18 189.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -118,7 +210,7 @@
 		(fields_autoplaced yes)
 		(uuid "12cfecec-bb44-4090-9b2a-a9d43f0d9f11")
 		(property "Reference" "H4"
-			(at 64.77 93.9799 0)
+			(at 45.72 187.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -129,7 +221,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 64.77 96.5199 0)
+			(at 45.72 190.4999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -140,7 +232,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:JLC_PCBA_Tooling_Mount"
-			(at 62.23 95.25 0)
+			(at 43.18 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -151,7 +243,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 95.25 0)
+			(at 43.18 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -162,7 +254,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 62.23 95.25 0)
+			(at 43.18 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -183,7 +275,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 62.23 88.9 0)
+		(at 43.18 182.88 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -194,7 +286,7 @@
 		(fields_autoplaced yes)
 		(uuid "380db0b0-f04f-46a2-a7cf-9c4595fc63f7")
 		(property "Reference" "H2"
-			(at 64.77 87.6299 0)
+			(at 45.72 181.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -205,7 +297,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 64.77 90.1699 0)
+			(at 45.72 184.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -216,7 +308,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:JLC_PCBA_Tooling_Mount"
-			(at 62.23 88.9 0)
+			(at 43.18 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -227,7 +319,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 88.9 0)
+			(at 43.18 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -238,7 +330,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 62.23 88.9 0)
+			(at 43.18 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -259,7 +351,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 40.64 95.25 0)
+		(at 21.59 189.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -270,7 +362,7 @@
 		(fields_autoplaced yes)
 		(uuid "41e91efc-0ef1-4afb-ad79-157be71038fd")
 		(property "Reference" "H3"
-			(at 43.18 93.9799 0)
+			(at 24.13 187.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -281,7 +373,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 43.18 96.5199 0)
+			(at 24.13 190.4999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -292,7 +384,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:JLC_PCBA_Tooling_Mount"
-			(at 40.64 95.25 0)
+			(at 21.59 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -303,7 +395,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 95.25 0)
+			(at 21.59 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -314,7 +406,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 40.64 95.25 0)
+			(at 21.59 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -335,7 +427,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 40.64 88.9 0)
+		(at 21.59 182.88 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -346,7 +438,7 @@
 		(fields_autoplaced yes)
 		(uuid "4abc12ab-1192-400e-a116-a807adf5dfe6")
 		(property "Reference" "H1"
-			(at 43.18 87.6299 0)
+			(at 24.13 181.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -357,7 +449,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 43.18 90.1699 0)
+			(at 24.13 184.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -368,7 +460,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:JLC_PCBA_Tooling_Mount"
-			(at 40.64 88.9 0)
+			(at 21.59 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -379,7 +471,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 88.9 0)
+			(at 21.59 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -390,7 +482,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 40.64 88.9 0)
+			(at 21.59 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -410,8 +502,8 @@
 		)
 	)
 	(sheet
-		(at 35.56 36.83)
-		(size 33.02 11.43)
+		(at 21.59 33.02)
+		(size 33.02 5.08)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -426,7 +518,7 @@
 		)
 		(uuid "20698281-7733-498d-8537-9736b11e1ce7")
 		(property "Sheetname" "meterbus_frontend"
-			(at 35.56 36.1184 0)
+			(at 21.59 32.3084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -437,7 +529,7 @@
 			)
 		)
 		(property "Sheetfile" "meterbus_frontend.kicad_sch"
-			(at 35.56 48.8446 0)
+			(at 21.59 38.6846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -445,6 +537,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "{METERBUS_IO}" bidirectional
+			(at 54.61 35.56 0)
+			(uuid "e6ea1e69-721e-4670-9694-e18cd40a67b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -456,8 +558,8 @@
 		)
 	)
 	(sheet
-		(at 99.06 113.03)
-		(size 29.21 5.08)
+		(at 21.59 20.32)
+		(size 33.02 5.08)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -472,7 +574,7 @@
 		)
 		(uuid "22f40650-d8d4-44d2-a5ef-96e7dd8a6495")
 		(property "Sheetname" "usb"
-			(at 99.06 112.3184 0)
+			(at 21.59 19.6084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -483,7 +585,7 @@
 			)
 		)
 		(property "Sheetfile" "usb.kicad_sch"
-			(at 99.06 118.6946 0)
+			(at 21.59 25.9846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -493,14 +595,14 @@
 				(justify left top)
 			)
 		)
-		(pin "{USB}" input
-			(at 99.06 115.57 180)
+		(pin "{USB}" bidirectional
+			(at 54.61 22.86 0)
 			(uuid "65421d5c-1733-4ab9-a6a9-62a2dfba2120")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(instances
@@ -512,8 +614,8 @@
 		)
 	)
 	(sheet
-		(at 35.56 59.69)
-		(size 33.02 11.43)
+		(at 21.59 45.72)
+		(size 33.02 5.08)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -528,7 +630,7 @@
 		)
 		(uuid "2e538fbd-4766-4d3c-804f-b602af6e3385")
 		(property "Sheetname" "psu"
-			(at 35.56 58.9784 0)
+			(at 21.59 45.0084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -539,7 +641,7 @@
 			)
 		)
 		(property "Sheetfile" "psu.kicad_sch"
-			(at 35.56 71.7046 0)
+			(at 21.59 51.3846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -558,7 +660,7 @@
 		)
 	)
 	(sheet
-		(at 106.68 68.58)
+		(at 100.33 20.32)
 		(size 23.495 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -574,7 +676,7 @@
 		)
 		(uuid "561d5dbe-6020-48c7-be42-1a6149a1119b")
 		(property "Sheetname" "ethernet"
-			(at 106.68 67.8684 0)
+			(at 100.33 19.6084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -585,7 +687,7 @@
 			)
 		)
 		(property "Sheetfile" "ethernet.kicad_sch"
-			(at 106.68 81.8646 0)
+			(at 100.33 33.6046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -596,7 +698,7 @@
 			)
 		)
 		(pin "RST" input
-			(at 106.68 76.2 180)
+			(at 100.33 25.4 180)
 			(uuid "43d7f9ff-bef4-4616-a058-a410022d05ca")
 			(effects
 				(font
@@ -606,7 +708,7 @@
 			)
 		)
 		(pin "INT" output
-			(at 106.68 78.74 180)
+			(at 100.33 27.94 180)
 			(uuid "83dda1f3-2aeb-415f-9621-eeec80d870cf")
 			(effects
 				(font
@@ -616,7 +718,7 @@
 			)
 		)
 		(pin "{SPI}" bidirectional
-			(at 106.68 71.12 180)
+			(at 100.33 30.48 180)
 			(uuid "710f9cef-f8bf-4510-af97-a10c27224dc4")
 			(effects
 				(font
@@ -626,7 +728,7 @@
 			)
 		)
 		(pin "CS" input
-			(at 106.68 73.66 180)
+			(at 100.33 22.86 180)
 			(uuid "fcbe86a8-5db1-4d49-9cbe-afaaaa301396")
 			(effects
 				(font
@@ -644,7 +746,7 @@
 		)
 	)
 	(sheet
-		(at 99.06 101.6)
+		(at 100.33 45.72)
 		(size 29.21 5.08)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -660,7 +762,7 @@
 		)
 		(uuid "7967a565-3cbd-4ca7-9b04-97ff3bd68493")
 		(property "Sheetname" "temp_humidity"
-			(at 99.06 100.8884 0)
+			(at 100.33 45.0084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -671,7 +773,7 @@
 			)
 		)
 		(property "Sheetfile" "temp_humidity.kicad_sch"
-			(at 99.06 107.2646 0)
+			(at 100.33 51.3846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -682,7 +784,7 @@
 			)
 		)
 		(pin "{I2C}" bidirectional
-			(at 99.06 104.14 180)
+			(at 100.33 48.26 180)
 			(uuid "56225b05-9bb9-4631-999e-f13b9bafb091")
 			(effects
 				(font
@@ -700,8 +802,8 @@
 		)
 	)
 	(sheet
-		(at 79.375 36.83)
-		(size 33.655 11.43)
+		(at 59.69 19.685)
+		(size 35.56 31.115)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -716,7 +818,7 @@
 		)
 		(uuid "83e90eda-4c3c-4f86-9f5b-c472ac53896a")
 		(property "Sheetname" "mcu"
-			(at 79.375 36.1184 0)
+			(at 59.69 18.9734 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -727,7 +829,7 @@
 			)
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
-			(at 79.375 48.8446 0)
+			(at 59.69 51.3846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -735,6 +837,76 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "{METERBUS_IO}" bidirectional
+			(at 59.69 35.56 180)
+			(uuid "a4179b06-c3b4-4d02-a4c7-c04f68442e03")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{USB}" bidirectional
+			(at 59.69 22.86 180)
+			(uuid "d13d6f65-7d6b-42e5-9f84-4ec86b8d3d3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{SPI}" bidirectional
+			(at 95.25 30.48 0)
+			(uuid "c3229516-605f-4f84-8483-d0b2587c140c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "{I2C}" bidirectional
+			(at 95.25 48.26 0)
+			(uuid "527f7899-f74c-4aa8-a30d-6ae2c2af386b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ETH_RST" output
+			(at 95.25 25.4 0)
+			(uuid "d5e5d50b-742c-4505-a5ad-35431f1526b0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ETH_INT" input
+			(at 95.25 27.94 0)
+			(uuid "d71496f5-0453-411d-8323-170a64310bd9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ETH_CS" output
+			(at 95.25 22.86 0)
+			(uuid "5867f98e-4836-4218-b2cd-3fce82bed45d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
