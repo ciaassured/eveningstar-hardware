@@ -1133,7 +1133,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "J1-2,NT1-3,U6-7,#PWR32,#PWR35,#PWR37,#PWR41-42,#PWR45,#PWR47,#PWR70-74,Y2,S1,S4,C8,C13,D1-2,D10-12,R18-19,R22,R37,R48-50,R55-59",
+    "used_designators": "J1-2,NT1-3,U6-8,#PWR12,#PWR27-29,#PWR32,#PWR35,#PWR37,#PWR41-42,#PWR45,#PWR47,#PWR70-74,Y2,S1,S4,C8,C13,C40-41,D1-2,D10-12,R18-19,R22,R37,R48-50,R55-61",
     "variants": []
   },
   "sheets": [
@@ -1164,6 +1164,10 @@
     [
       "22f40650-d8d4-44d2-a5ef-96e7dd8a6495",
       "usb"
+    ],
+    [
+      "461540ed-57ef-4b9a-99b0-62364a0e276f",
+      "flash"
     ]
   ],
   "text_variables": {
