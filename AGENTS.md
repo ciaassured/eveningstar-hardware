@@ -87,3 +87,5 @@ the affected individual package and inspect the generated output.
   publish artifacts to the corresponding GitHub release.
 - Use concise commit subjects in the existing `area: imperative summary` style,
   such as `pcb: ...`, `hardware: ...`, or `tooling: ...`.
+- When Codex materially contributes to a commit, append the commit trailer
+  `Co-authored-by: Codex <codex@openai.com>`.
