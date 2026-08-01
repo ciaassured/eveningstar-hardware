@@ -5,6 +5,178 @@
 	(uuid "0afe747a-e45b-4362-a65e-b3e69b03e09c")
 	(paper "A4")
 	(lib_symbols
+		(symbol "EasyEDA:0451001.MRL"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0451001.MRL"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "EasyEDA:FUSE-SMD_L6.1-W2.6"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Surface-Mount-Fuses_Littelfuse_0451001-MRL_1A-125V_C3099.html"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "1A 125V"
+				(at 0 -22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Littelfuse(美国力特)"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "0451001.MRL"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C3099"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Fuses"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "0451001.MRL_0_1"
+				(rectangle
+					(start -3.3 0.76)
+					(end 3.3 -0.76)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "EasyEDA:APH0630T150M"
 			(pin_numbers
 				(hide yes)
@@ -3178,6 +3350,12 @@
 		(uuid "5e734011-1e0f-4524-b403-21ee2b2a0f2c")
 	)
 	(junction
+		(at 58.42 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6403891a-7770-424a-a2dc-d420b3e454c2")
+	)
+	(junction
 		(at 95.25 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3206,12 +3384,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d669ef1c-8b27-46ae-8f01-ee5c3de0cca7")
-	)
-	(junction
-		(at 58.42 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e38cc214-4121-4add-8e25-77c09e6f3a41")
 	)
 	(junction
 		(at 143.51 38.1)
@@ -3245,7 +3417,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 40.64) (xy 48.26 40.64)
+			(xy 40.64 40.64) (xy 39.37 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3325,6 +3497,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 38.1) (xy 45.72 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66364540-871a-4b94-ac20-c6a2e6c655c3")
+	)
+	(wire
+		(pts
 			(xy 85.09 46.99) (xy 85.09 48.26)
 		)
 		(stroke
@@ -3385,13 +3567,13 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 38.1) (xy 58.42 38.1)
+			(xy 55.88 38.1) (xy 58.42 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e19f68e-fb92-4ea5-9903-b5de7fde6f29")
+		(uuid "9b3e0232-9487-4d49-89d3-2370efb7b55f")
 	)
 	(wire
 		(pts
@@ -3495,7 +3677,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 40.64) (xy 48.26 41.91)
+			(xy 40.64 40.64) (xy 40.64 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4240,6 +4422,119 @@
 		)
 	)
 	(symbol
+		(lib_id "EasyEDA:0451001.MRL")
+		(at 50.8 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48d853f2-d595-43bf-b6fc-8dde7e99fd74")
+		(property "Reference" "F1"
+			(at 50.8 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A"
+			(at 50.8 35.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "EasyEDA:FUSE-SMD_L6.1-W2.6"
+			(at 50.8 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Surface-Mount-Fuses_Littelfuse_0451001-MRL_1A-125V_C3099.html"
+			(at 50.8 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1A 125V"
+			(at 50.8 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Littelfuse(美国力特)"
+			(at 50.8 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0451001.MRL"
+			(at 50.8 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C3099"
+			(at 50.8 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2e70876d-95ba-49fa-af1c-e82912f5acf2")
+		)
+		(pin "2"
+			(uuid "0106dbdd-4986-4f17-9cd4-fa2fc0b3ab7b")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
 		(at 95.25 43.18 0)
 		(unit 1)
@@ -4670,7 +4965,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 48.26 41.91 0)
+		(at 40.64 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4681,7 +4976,7 @@
 		(fields_autoplaced yes)
 		(uuid "64e7b7a2-58ba-4971-88d7-f2699c7daf0a")
 		(property "Reference" "#PWR032"
-			(at 48.26 48.26 0)
+			(at 40.64 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4692,7 +4987,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 48.26 46.99 0)
+			(at 40.64 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4702,7 +4997,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 48.26 41.91 0)
+			(at 40.64 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4713,7 +5008,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 41.91 0)
+			(at 40.64 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4724,7 +5019,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 48.26 41.91 0)
+			(at 40.64 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5252,7 +5547,7 @@
 	)
 	(symbol
 		(lib_id "EasyEDA:WJ15EDGRC-3.81-2P")
-		(at 43.18 39.37 180)
+		(at 35.56 39.37 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5262,7 +5557,7 @@
 		(dnp no)
 		(uuid "96eda7a1-0b4c-4508-a2fa-55bc56061b3c")
 		(property "Reference" "P1"
-			(at 41.402 26.416 0)
+			(at 33.782 26.416 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5272,7 +5567,7 @@
 			)
 		)
 		(property "Value" "WJ15EDGRC-3.81-2P"
-			(at 41.53 33.02 0)
+			(at 33.91 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5282,7 +5577,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:CONN-TH_2P-P3.81_WJ15EDGRC-3.81-2P"
-			(at 43.18 30.48 0)
+			(at 35.56 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5293,7 +5588,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/15EDG-Connectors_WJ15EDGRC-3-81-2P_C8387.html"
-			(at 43.18 27.94 0)
+			(at 35.56 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5304,7 +5599,7 @@
 			)
 		)
 		(property "Description" "Screw terminal socket"
-			(at 41.402 30.734 0)
+			(at 33.782 30.734 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5314,7 +5609,7 @@
 			)
 		)
 		(property "Manufacturer" "KANGNEX(康奈克斯电气)"
-			(at 43.18 25.4 0)
+			(at 35.56 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5325,7 +5620,7 @@
 			)
 		)
 		(property "MPN" "WJ15EDGRC-3.81-02P-14-00A"
-			(at 43.18 22.86 0)
+			(at 35.56 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5336,7 +5631,7 @@
 			)
 		)
 		(property "LCSC Part" "C8387"
-			(at 43.18 20.32 0)
+			(at 35.56 20.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
