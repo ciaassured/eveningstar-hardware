@@ -6161,6 +6161,66 @@
 					(type background)
 				)
 			)
+			(rectangle
+				(start -19.05 3.81)
+				(end -12.065 1.27)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type color)
+					(color 255 226 0 0.4)
+				)
+			)
+			(rectangle
+				(start -19.05 1.27)
+				(end -12.065 -1.27)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type color)
+					(color 255 226 0 0.4)
+				)
+			)
+			(rectangle
+				(start -19.05 -3.81)
+				(end -12.065 -6.35)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type color)
+					(color 255 226 0 0.4)
+				)
+			)
+			(rectangle
+				(start -19.05 -6.35)
+				(end -12.065 -8.89)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type color)
+					(color 255 226 0 0.4)
+				)
+			)
+			(rectangle
+				(start 10.16 -6.35)
+				(end 3.175 -3.81)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type color)
+					(color 255 226 0 0.4)
+				)
+			)
 			(pin power_in line
 				(at -3.81 -25.4 90)
 				(length 2.54)
