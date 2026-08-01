@@ -215,6 +215,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 48.26) (xy 59.69 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e297ae21-4e7e-4273-b34a-a1845da4f10a")
+	)
+	(wire
+		(pts
 			(xy 95.25 44.45) (xy 100.33 44.45)
 		)
 		(stroke
@@ -687,6 +697,16 @@
 				(justify left top)
 			)
 		)
+		(pin "PGOOD" output
+			(at 54.61 48.26 0)
+			(uuid "b76e48bf-03ac-40fb-af7d-5741390658c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372"
@@ -953,6 +973,16 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "PGOOD" input
+			(at 59.69 48.26 180)
+			(uuid "948d1393-59d8-4644-9934-4fe891ed5b9a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
