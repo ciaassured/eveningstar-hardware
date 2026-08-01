@@ -1066,9 +1066,51 @@
           "label": "Maximum Clamping Voltage",
           "name": "Maximum Clamping Voltage",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Normal Temperature Frequency Tolerance",
+          "name": "Normal Temperature Frequency Tolerance",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Crystal Type",
+          "name": "Crystal Type",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Frequency",
+          "name": "Frequency",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Load Capacitance",
+          "name": "Load Capacitance",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Equivalent Series Resistance (Esr)",
+          "name": "Equivalent Series Resistance (Esr)",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Equivalent Series Resistance(Esr)",
+          "name": "Equivalent Series Resistance(Esr)",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Frequency Tolerance",
+          "name": "Frequency Tolerance",
+          "show": false
         }
       ],
-      "filter_string": "tp",
+      "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
