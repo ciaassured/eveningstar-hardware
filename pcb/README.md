@@ -199,10 +199,12 @@ nix build --max-jobs auto .#render-turntable
 ```
 
 That leaves the usual `result` symlink, which is a garbage-collection root, so
-the animation is at `result/EveningStar-turntable.webp`. Publish it by uploading
-that file to the project's object storage and linking it by URL; it is not
-committed. Print the store path with `nix build --print-out-paths` if something
-needs to consume the output without relying on `result`.
+the animation is at `result/EveningStar-turntable.webp`. It is not committed:
+publish it by attaching it to the GitHub release, which the top-level
+`README.md` embeds through the `releases/latest/download/` alias so the link
+survives future releases untouched. Print the store path with
+`nix build --print-out-paths` if something needs to consume the output without
+relying on `result`.
 
 `.#render-turntable` is an ordinary derivation of the filtered PCB source and
 the pinned toolchain, so unchanged boards reuse the store output and can share
