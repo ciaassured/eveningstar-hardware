@@ -190,6 +190,115 @@ individually. They are
 also directly inspectable with commands such as `nix build .#render-plan` or
 `nix build .#model-step`, without exposing additional imperative applications.
 
+### Turntable animation
+
+Build the looping turntable animation used to showcase the board:
+
+```sh
+nix build --max-jobs auto .#render-turntable
+```
+
+That leaves the usual `result` symlink, which is a garbage-collection root, so
+the animation is at `result/EveningStar-turntable.webp`. Publish it by uploading
+that file to the project's object storage and linking it by URL; it is not
+committed. Print the store path with `nix build --print-out-paths` if something
+needs to consume the output without relying on `result`.
+
+`.#render-turntable` is an ordinary derivation of the filtered PCB source and
+the pinned toolchain, so unchanged boards reuse the store output and can share
+it through Cachix.
+
+The output holds `EveningStar-turntable.webp`. The board stands on a narrow end
+edge, leans 20°, and rides an upright turntable with the camera level, sweeping
+front face to edge-on sliver to back face. The lean belongs to the board rather
+than to the viewer, so it swings round with the spin: the component side is seen
+from below, the bare copper side from above half a turn later, and the board
+rocks from side to side through the edge-on quarters. The animation is 180 frames of a full
+revolution at a 33 ms frame delay, so it runs at 30 fps and takes just under six
+seconds to come round. It is encoded as an animated WebP with an alpha channel,
+so it sits on light and dark README backgrounds alike.
+
+At a 560x970 canvas that lands around 3.6 MB. `--frames`, `--width`,
+`--height`, `--frame-delay`, and `--quality` are the knobs if that needs to come
+down; WebP quality is already low enough that the frames are visually
+indistinguishable from the source PNGs, so the frame count and canvas size are
+where the remaining bytes are.
+
+`kicad-cli pcb render --rotate` takes one set of Euler angles per image and
+applies them X outermost, which puts the X rotation in view space. Leaning the
+viewer is therefore the only lean it can express directly, and that reads as a
+camera above a board which stays upright on screen. To lean the board instead,
+each frame composes spin × lean × stand itself and decomposes the result back
+into the angles KiCad expects. A spin of zero decomposes to exactly
+`(tilt, 0, stand)`, which is a useful check that the composition is right.
+
+The solder mask renders in JLCPCB blue rather than the KiCad default green,
+selected with `--mask-colour`.
+
+The value passed is `#123A7A`, far below the `#4990E2` usually quoted for
+JLCPCB blue. KiCad renders the mask as a translucent layer over copper and
+substrate, which lightens it substantially, so the number that goes in is not
+the colour that comes out. Measured on the board face:
+
+| `--mask-colour` | renders as |
+| --------------- | ---------- |
+| `#4990E2`       | `#68B6F0`  |
+| `#2B6DCA`       | `#498FF0`  |
+| `#1B4FA0`       | `#4270BB`  |
+| `#123A7A`       | `#395D97`  |
+| `#0D2A5C`       | `#344E7B`  |
+
+Pick from the rendered column, not the input column. Go to `#0D2A5C` for a
+deeper navy.
+
+A colour reaches the 3D render only through the board stackup. `kicad-cli`
+ignores KiCad's colour themes: a theme carrying a `3d_viewer` section is loaded
+but never consulted by `pcb render`, at any schema version. This board has no
+stackup at all, which is why it renders green by default. Writing one into
+`EveningStar.kicad_pcb` would fix the colour, but a stackup is also fabrication
+metadata — mask colour is an ordering attribute and the block carries dielectric
+material and thicknesses — so the design file should only gain one when somebody
+decides what to actually order.
+
+The render therefore builds a throwaway copy of the board with a stackup
+attached and renders that with `--use-board-stackup-colors`. The copy lives in a
+directory of symlinks to the real project so `${KIPRJMOD}` still resolves the
+project's footprints and 3D models, and the injected dielectric is sized so the
+layers still total the 1.6 mm the board declares. Nothing is written back.
+
+The intermediate PNG frames are not kept; only the encoded animation is.
+
+The render is not bit-reproducible. KiCad resolves a few pixels differently
+between runs on roughly one frame in fifty, one to five pixels out of the 1.7
+million in a supersampled frame. That is invisible in the result but enough to
+change the encoded bytes, so `nix build .#render-turntable --rebuild` will
+sometimes report that the output differs. Forcing single-threaded software
+rasterisation with `LP_NUM_THREADS=0` roughly halves the rate without removing
+it, which points at KiCad's own draw order rather than the Mesa backend.
+
+Because the animation is hosted rather than committed, a rebuild does not
+disturb anything that is already published: re-upload only when the board has
+changed visibly enough to be worth a new asset.
+
+It is deliberately excluded from `.#publish`: the render is a showcase asset
+rather than a release artifact, and it would otherwise add several minutes to
+every publish.
+
+KiCad fits each projection to the canvas individually, which would make the
+board pulse in size and clip at the angles where its silhouette is widest. The
+build therefore runs a low-resolution probe pass over the same angles, derives
+one orthographic zoom that contains every silhouette, and holds it constant for
+the render pass, so the framing follows board changes without manual tuning.
+Probe silhouettes are measured against the requested canvas rather than the one
+KiCad returns: KiCad renders into a canvas smaller than asked for, by a border
+that shrinks as the request grows, while scaling the projection by the size it
+was asked for. Measuring the returned canvas reads a different aspect at probe
+scale than at render scale, which on this portrait canvas left the board at two
+thirds of the height it should have filled.
+Frames are rendered at twice the output size and downscaled with associated
+alpha, and `--quality basic` is used because the higher quality settings bake a
+floor shadow into the otherwise transparent background.
+
 ### Releases and hardware versioning
 
 Release versions describe the hardware revision, not the volume or significance

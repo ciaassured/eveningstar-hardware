@@ -42,6 +42,7 @@ nix run .#kicad-locality    # Repository-local asset/reference checks
 nix run .#zones-filled      # Saved copper-zone fill check
 nix run .#subtree-drift     # Vendored JLCPCB subtree integrity
 nix run .#publish           # Generate and link release artifacts
+nix build .#render-turntable # Render the showcase turntable animation
 nix run .#review -- --worktree
 ```
 
@@ -53,6 +54,23 @@ failure.
 Publishing is intentionally not part of the pre-commit suite. When changing
 publishing code or artifact-producing inputs, also run `nix run .#publish` or
 the affected individual package and inspect the generated output.
+
+## Nix Build Outputs
+
+Let `nix build` put its output where it belongs: the `result` symlink it
+creates is a registered garbage-collection root, which is what keeps the store
+path alive.
+
+- Do not copy build products out of the Nix store into the working tree, and do
+  not hand-roll symlinks to store paths. Such a link is not a GC root, so
+  `nix-collect-garbage` will delete the store path out from under it and leave
+  the link dangling.
+- Anything that consumes a build product must reference the full
+  `/nix/store/...` path, obtained from `nix build --print-out-paths` or
+  `nix eval`, rather than depending on `result` being present or current.
+- Build artifacts are not committed. Assets that a rendered page needs, such as
+  README imagery, are uploaded to external object storage and linked by URL, so
+  that a reproducible build product does not consume repository storage.
 
 ## KiCad and Library Invariants
 

@@ -3,6 +3,7 @@
   source,
   fabricationToolkit,
   productionScript ? ./scripts/production.py,
+  turntableScript ? ./scripts/turntable.py,
 }:
 
 let
@@ -170,6 +171,21 @@ let
     '';
   };
 
+  renderTurntable = mkKicadDerivation {
+    name = "eveningstar-renders-turntable";
+    nativeBuildInputs = [
+      pkgs.imagemagick
+      pkgs.libwebp
+      pkgs.python3
+    ];
+    build = modelEnvironment + ''
+      mkdir -p "$out"
+      python3 ${turntableScript} \
+        --board "$src/pcb/EveningStar.kicad_pcb" \
+        --output "$out"
+    '';
+  };
+
   stepModel = mkKicadDerivation {
     name = "eveningstar-step-model";
     build = modelEnvironment + ''
@@ -248,6 +264,7 @@ in
     renderIsometric
     renderPlan
     renderSides
+    renderTurntable
     schematicDocuments
     stepModel
     ;
