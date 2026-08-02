@@ -187,6 +187,8 @@
 
         render-isometric = publishTools.renderIsometric;
 
+        render-turntable = publishTools.renderTurntable;
+
         model-step = publishTools.stepModel;
 
         model-glb = publishTools.glbModel;
