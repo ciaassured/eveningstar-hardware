@@ -1,5 +1,9 @@
 # EveningStar Hardware
 
+<p align="center">
+  <img src="https://github.com/ciaassured/eveningstar-hardware/releases/latest/download/EveningStar-turntable.webp" alt="Rotating 3D render of the EveningStar PCB" width="320">
+</p>
+
 The hardware design for an isolated ESP32-based interface that communicates with Morningstar solar charge controllers over the Morningstar MeterBus RJ11 interface.
 
 This project implements a protected half-duplex physical layer for interfacing an ESP32 UART with the Morningstar MeterBus used by devices such as the ProStar MPPT series.
