@@ -4,6 +4,10 @@
 	(generator_version "10.0")
 	(uuid "0ab02df7-89a7-4a1f-8b74-85973c69a9f0")
 	(paper "A4")
+	(title_block
+		(title "Isolated Meterbus Frontend")
+		(company "CIA Assured")
+	)
 	(lib_symbols
 		(symbol "Connector:TestPoint_Square"
 			(pin_numbers

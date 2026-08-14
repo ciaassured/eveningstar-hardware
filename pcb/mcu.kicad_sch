@@ -4,6 +4,10 @@
 	(generator_version "10.0")
 	(uuid "f04e22d3-eb82-46ed-844e-77b545b3f893")
 	(paper "A4")
+	(title_block
+		(title "Processor")
+		(company "CIA Assured")
+	)
 	(lib_symbols
 		(symbol "Connector:TestPoint_Square"
 			(pin_numbers
