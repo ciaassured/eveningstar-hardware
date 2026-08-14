@@ -448,12 +448,6 @@
 			(embedded_fonts no)
 		)
 		(symbol "EasyEDA:SMBJ17CA_C3720411"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(hide yes)
-			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -582,7 +576,7 @@
 						(type background)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
 					(name "K"
@@ -600,7 +594,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 5.08 0 180)
 					(length 2.54)
 					(name "A"
@@ -1903,9 +1897,6 @@
 			(embedded_fonts no)
 		)
 		(symbol "PCM_JLCPCB-Diode-Packages:TVS-Bi, PSM712-LF-T7"
-			(pin_names
-				(hide yes)
-			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2253,7 +2244,7 @@
 						(type none)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -7.62 5.08 0)
 					(length 3.81)
 					(name "A1"
@@ -2271,7 +2262,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -7.62 -5.08 0)
 					(length 3.81)
 					(name "A1"
@@ -2291,7 +2282,7 @@
 				)
 			)
 			(symbol "TVS-Bi, PSM712-LF-T7_1_1"
-				(pin unspecified line
+				(pin passive line
 					(at 7.62 0 180)
 					(length 1.28)
 					(name "K"
@@ -3571,7 +3562,7 @@
 				)
 			)
 			(symbol "LDO, 5V, 0.1A_1_1"
-				(pin power_in line
+				(pin power_out line
 					(at 7.62 2.54 180)
 					(length 2.56)
 					(name "VOUT"
