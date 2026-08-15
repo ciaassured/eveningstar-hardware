@@ -5522,7 +5522,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_JLCPCB-Transistors:NMOS,AO3400A"
+		(symbol "PCM_JLCPCB-Transistors:NMOS,2N7002"
 			(pin_names
 				(offset 0)
 			)
@@ -5542,7 +5542,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "AO3400A"
+			(property "Value" "2N7002"
 				(at 4.8514 -1.2122 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5564,7 +5564,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811081213_Alpha---Omega-Semicon-AO3400A_C20917.pdf"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5575,7 +5575,7 @@
 					)
 				)
 			)
-			(property "Description" "-55°C~+150°C 1 N-channel 1.45V 1.4W 30V 48mΩ@2.5V 5.7A 50pF 630pF 75pF 7nC@10V N-Channel SOT-23 MOSFETs ROHS"
+			(property "Description" "1 N-channel 115mA 2.5V 225mW 50pF 5pF 5Ω@10V 60V SOT-23 MOSFETs ROHS"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5586,7 +5586,7 @@
 					)
 				)
 			)
-			(property "LCSC" "C20917"
+			(property "LCSC" "C8545"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5597,7 +5597,7 @@
 					)
 				)
 			)
-			(property "Stock" "1814497"
+			(property "Stock" "2716354"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5608,7 +5608,7 @@
 					)
 				)
 			)
-			(property "Price" "0.079USD"
+			(property "Price" "0.018USD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5630,7 +5630,7 @@
 					)
 				)
 			)
-			(property "Minimum Qty" "5"
+			(property "Minimum Qty" "10"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5641,7 +5641,7 @@
 					)
 				)
 			)
-			(property "Attrition Qty" "4"
+			(property "Attrition Qty" "5"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5674,7 +5674,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "Alpha & Omega Semicon"
+			(property "Manufacturer" "Changjiang Electronics Tech (CJ)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5685,7 +5685,7 @@
 					)
 				)
 			)
-			(property "Part" "AO3400A"
+			(property "Part" "2N7002"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5696,7 +5696,7 @@
 					)
 				)
 			)
-			(property "Continuous Drain Current (Id)" "5.7A"
+			(property "Continuous Drain Current (Id)" "115mA"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5707,7 +5707,7 @@
 					)
 				)
 			)
-			(property "Input Capacitance (Ciss@Vds)" "630pF@15V"
+			(property "Input Capacitance (Ciss@Vds)" "50pF"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5718,7 +5718,7 @@
 					)
 				)
 			)
-			(property "Operating Temperature" "-55°C~+150°C@(Tj)"
+			(property "Operating Temperature" "-55°C~+150°C"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5740,7 +5740,7 @@
 					)
 				)
 			)
-			(property "Drain Source Voltage (Vdss)" "30V"
+			(property "Drain Source Voltage (Vdss)" "60V"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5751,7 +5751,7 @@
 					)
 				)
 			)
-			(property "Power Dissipation (Pd)" "1.4W"
+			(property "Power Dissipation (Pd)" "225mW"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5762,7 +5762,7 @@
 					)
 				)
 			)
-			(property "Gate Threshold Voltage (Vgs(th)@Id)" "1.5V@250uA"
+			(property "Gate Threshold Voltage (Vgs(th)@Id)" "2.5V@250uA"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5773,7 +5773,7 @@
 					)
 				)
 			)
-			(property "Drain Source On Resistance (RDS(on)@Vgs,Id)" "26.5mΩ@10V,5.7A"
+			(property "Reverse Transfer Capacitance (Crss@Vds)" "5pF"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5784,7 +5784,7 @@
 					)
 				)
 			)
-			(property "Total Gate Charge (Qg@Vgs)" "7nC@4.5V"
+			(property "Drain Source On Resistance (RDS(on)@Vgs,Id)" "5Ω@10V"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5806,7 +5806,7 @@
 					)
 				)
 			)
-			(symbol "NMOS,AO3400A_0_1"
+			(symbol "NMOS,2N7002_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -5973,7 +5973,7 @@
 					)
 				)
 			)
-			(symbol "NMOS,AO3400A_1_1"
+			(symbol "NMOS,2N7002_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -10842,410 +10842,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_JLCPCB-Transistors:NMOS,AO3400A")
-		(at 129.54 93.98 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "31970c89-784e-4b1a-ab3f-1488e3f882da")
-		(property "Reference" "Q3"
-			(at 123.19 95.2501 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AO3400A"
-			(at 123.19 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PCM_JLCPCB:Q_SOT-23"
-			(at 131.318 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811081213_Alpha---Omega-Semicon-AO3400A_C20917.pdf"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "-55°C~+150°C 1 N-channel 1.45V 1.4W 30V 48mΩ@2.5V 5.7A 50pF 630pF 75pF 7nC@10V N-Channel SOT-23 MOSFETs ROHS"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C20917"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Stock" "1814497"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "0.079USD"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Process" "SMT"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum Qty" "5"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Attrition Qty" "4"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Class" "Basic Component"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Category" "Transistors,MOSFETs"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Alpha & Omega Semicon"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part" "AO3400A"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Continuous Drain Current (Id)" "5.7A"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Input Capacitance (Ciss@Vds)" "630pF@15V"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Operating Temperature" "-55°C~+150°C@(Tj)"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Type" "1 N-channel"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Drain Source Voltage (Vdss)" "30V"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Power Dissipation (Pd)" "1.4W"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Gate Threshold Voltage (Vgs(th)@Id)" "1.5V@250uA"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Drain Source On Resistance (RDS(on)@Vgs,Id)" "26.5mΩ@10V,5.7A"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Total Gate Charge (Qg@Vgs)" "7nC@4.5V"
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Average Rectified Current (Io)" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Clamping Voltage" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Number of Channels" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak Pulse Current (Ipp)" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak forward surge current" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Polarity" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage - Breakdown" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "level of protection" ""
-			(at 129.54 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "004893b6-2c0d-4660-b338-d71bab47889b")
-		)
-		(pin "3"
-			(uuid "66c8116b-8efe-4c0b-949b-5346ab999dd2")
-		)
-		(pin "1"
-			(uuid "fafcd572-cb6a-4012-9e26-c0e209965b34")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "Q3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 232.41 26.67 0)
 		(unit 1)
@@ -12151,6 +11747,300 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_JLCPCB-Transistors:NMOS,2N7002")
+		(at 129.54 93.98 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "40db7954-a437-48b7-92bd-707689984013")
+		(property "Reference" "Q1"
+			(at 123.19 92.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2N7002"
+			(at 123.19 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:Q_SOT-23"
+			(at 131.318 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1 N-channel 115mA 2.5V 225mW 50pF 5pF 5Ω@10V 60V SOT-23 MOSFETs ROHS"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8545"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock" "2716354"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.018USD"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum Qty" "10"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Attrition Qty" "5"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Class" "Basic Component"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Transistors,MOSFETs"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Changjiang Electronics Tech (CJ)"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "2N7002"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Continuous Drain Current (Id)" "115mA"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Input Capacitance (Ciss@Vds)" "50pF"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Operating Temperature" "-55°C~+150°C"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "1 N-channel"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Drain Source Voltage (Vdss)" "60V"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Power Dissipation (Pd)" "225mW"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Gate Threshold Voltage (Vgs(th)@Id)" "2.5V@250uA"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Reverse Transfer Capacitance (Crss@Vds)" "5pF"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Drain Source On Resistance (RDS(on)@Vgs,Id)" "5Ω@10V"
+			(at 129.54 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a56dd63a-aa41-427c-841b-38006c1a31ef")
+		)
+		(pin "2"
+			(uuid "416b3eeb-8d51-4f3f-b098-93915b69a3fe")
+		)
+		(pin "3"
+			(uuid "54bf4b43-709c-4f52-a4b5-984e88bf6ee7")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
