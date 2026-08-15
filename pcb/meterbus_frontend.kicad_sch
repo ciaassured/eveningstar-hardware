@@ -18093,7 +18093,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3V3_ISO"
+		(property "Value" "VCC_ISO"
 			(at 105.41 167.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
