@@ -7409,7 +7409,7 @@
 	)
 	(text "Test Points"
 		(exclude_from_sim no)
-		(at 119.38 158.496 0)
+		(at 129.794 158.496 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7799,7 +7799,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 165.1) (xy 96.52 166.37)
+			(xy 97.79 165.1) (xy 97.79 166.37)
 		)
 		(stroke
 			(width 0)
@@ -7899,7 +7899,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 166.37) (xy 132.08 166.37)
+			(xy 129.54 166.37) (xy 133.35 166.37)
 		)
 		(stroke
 			(width 0)
@@ -8029,7 +8029,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 176.53) (xy 96.52 175.26)
+			(xy 97.79 176.53) (xy 97.79 175.26)
 		)
 		(stroke
 			(width 0)
@@ -8179,7 +8179,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 176.53) (xy 132.08 176.53)
+			(xy 129.54 176.53) (xy 133.35 176.53)
 		)
 		(stroke
 			(width 0)
@@ -8319,7 +8319,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 166.37) (xy 102.87 166.37)
+			(xy 97.79 166.37) (xy 104.14 166.37)
 		)
 		(stroke
 			(width 0)
@@ -8389,7 +8389,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 186.69) (xy 96.52 185.42)
+			(xy 97.79 186.69) (xy 97.79 185.42)
 		)
 		(stroke
 			(width 0)
@@ -8639,7 +8639,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 185.42) (xy 102.87 185.42)
+			(xy 97.79 185.42) (xy 104.14 185.42)
 		)
 		(stroke
 			(width 0)
@@ -8689,7 +8689,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 185.42) (xy 132.08 185.42)
+			(xy 129.54 185.42) (xy 133.35 185.42)
 		)
 		(stroke
 			(width 0)
@@ -8769,7 +8769,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 176.53) (xy 96.52 176.53)
+			(xy 104.14 176.53) (xy 97.79 176.53)
 		)
 		(stroke
 			(width 0)
@@ -8868,7 +8868,7 @@
 		(uuid "fb43a7bb-9060-4527-830c-5dc6e97cf6db")
 	)
 	(label "BUS_ISO"
-		(at 128.27 166.37 180)
+		(at 129.54 166.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8888,7 +8888,7 @@
 		(uuid "1980fcf6-330b-41d8-a19a-454c2d5e54a1")
 	)
 	(label "READ_ISO"
-		(at 128.27 176.53 180)
+		(at 129.54 176.53 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8998,7 +8998,7 @@
 		(uuid "f8ccdcdd-767c-40cf-9eef-8250d17c8070")
 	)
 	(label "WRITE_ISO"
-		(at 128.27 185.42 180)
+		(at 129.54 185.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9017,6 +9017,84 @@
 			(justify left)
 		)
 		(uuid "75eb495f-8201-464f-b18b-18a86ae195f1")
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 24.13 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01c8c4e1-5032-4032-82cc-af01e4f86e9f")
+		(property "Reference" "#PWR08"
+			(at 24.13 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MB_PWR_ISO"
+			(at 24.13 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 24.13 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 24.13 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 24.13 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a71a9915-e251-463d-a8cd-428b828e8730")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -9098,7 +9176,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 102.87 176.53 0)
+		(at 104.14 176.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9109,7 +9187,7 @@
 		(fields_autoplaced yes)
 		(uuid "13e64ca2-322d-4258-9ff7-1920f210ed45")
 		(property "Reference" "TP26"
-			(at 105.41 175.2599 0)
+			(at 106.68 175.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9119,8 +9197,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BATT_ISO"
-			(at 105.41 177.7999 0)
+		(property "Value" "MB_PWR_ISO"
+			(at 106.68 177.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9131,7 +9209,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
-			(at 107.95 176.53 0)
+			(at 109.22 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9142,7 +9220,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 176.53 0)
+			(at 109.22 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9153,7 +9231,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9164,7 +9242,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9175,7 +9253,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9186,7 +9264,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9197,7 +9275,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9208,7 +9286,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9219,7 +9297,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9230,7 +9308,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9241,7 +9319,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9252,7 +9330,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9263,7 +9341,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 102.87 176.53 0)
+			(at 104.14 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9774,8 +9852,86 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+BATT")
+		(at 57.15 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "17c48a14-a9b8-4fd8-9294-b7c5adf3479d")
+		(property "Reference" "#PWR09"
+			(at 57.15 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MB_PWR_ISO"
+			(at 57.15 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 57.15 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f9bd0562-d861-4dc6-bdd1-91e4eb555946")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 132.08 176.53 0)
+		(at 133.35 176.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9786,7 +9942,7 @@
 		(fields_autoplaced yes)
 		(uuid "184e7059-3990-4e90-8044-b5c214492f2f")
 		(property "Reference" "TP24"
-			(at 134.62 175.2599 0)
+			(at 135.89 175.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9797,7 +9953,7 @@
 			)
 		)
 		(property "Value" "READ_ISO"
-			(at 134.62 177.7999 0)
+			(at 135.89 177.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9808,7 +9964,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 137.16 176.53 0)
+			(at 138.43 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9819,7 +9975,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 176.53 0)
+			(at 138.43 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9830,7 +9986,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9841,7 +9997,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9852,7 +10008,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9863,7 +10019,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9874,7 +10030,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9885,7 +10041,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9896,7 +10052,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9907,7 +10063,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9918,7 +10074,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9929,7 +10085,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9940,7 +10096,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 132.08 176.53 0)
+			(at 133.35 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10042,7 +10198,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 102.87 185.42 0)
+		(at 104.14 185.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10053,7 +10209,7 @@
 		(fields_autoplaced yes)
 		(uuid "25436ad7-60d8-43ec-8407-783b9624b1c1")
 		(property "Reference" "TP25"
-			(at 105.41 184.1499 0)
+			(at 106.68 184.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10064,7 +10220,7 @@
 			)
 		)
 		(property "Value" "GND_ISO"
-			(at 105.41 186.6899 0)
+			(at 106.68 186.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10075,7 +10231,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
-			(at 107.95 185.42 0)
+			(at 109.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10086,7 +10242,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 185.42 0)
+			(at 109.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10097,7 +10253,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10108,7 +10264,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10119,7 +10275,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10130,7 +10286,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10141,7 +10297,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10152,7 +10308,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10163,7 +10319,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10174,7 +10330,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10185,7 +10341,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10196,7 +10352,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10207,7 +10363,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 102.87 185.42 0)
+			(at 104.14 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12426,7 +12582,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 96.52 175.26 0)
+		(at 97.79 175.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12437,7 +12593,7 @@
 		(fields_autoplaced yes)
 		(uuid "4774b2c7-3d93-459c-ae37-e190eb51e062")
 		(property "Reference" "#PWR04"
-			(at 96.52 179.07 0)
+			(at 97.79 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12447,8 +12603,8 @@
 				)
 			)
 		)
-		(property "Value" "+BATT_ISO"
-			(at 96.52 170.18 0)
+		(property "Value" "MB_PWR_ISO"
+			(at 97.79 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12458,7 +12614,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 175.26 0)
+			(at 97.79 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12469,7 +12625,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 175.26 0)
+			(at 97.79 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12480,7 +12636,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 96.52 175.26 0)
+			(at 97.79 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13953,84 +14109,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+BATT")
-		(at 57.15 27.94 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5eb33056-084a-4216-bbc2-d95c52c713bb")
-		(property "Reference" "#PWR05"
-			(at 57.15 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+BATT_ISO"
-			(at 57.15 22.86 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 57.15 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3cce0720-086c-48cd-abea-cc458d542202")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0603,100nF")
 		(at 236.22 35.56 0)
 		(unit 1)
@@ -15344,7 +15422,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 132.08 185.42 0)
+		(at 133.35 185.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15355,7 +15433,7 @@
 		(fields_autoplaced yes)
 		(uuid "78f8b965-8120-42c4-a6d9-725b0a9490ac")
 		(property "Reference" "TP27"
-			(at 134.62 184.1499 0)
+			(at 135.89 184.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15366,7 +15444,7 @@
 			)
 		)
 		(property "Value" "WRITE_ISO"
-			(at 134.62 186.6899 0)
+			(at 135.89 186.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15377,7 +15455,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 137.16 185.42 0)
+			(at 138.43 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15388,7 +15466,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 185.42 0)
+			(at 138.43 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15399,7 +15477,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15410,7 +15488,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15421,7 +15499,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15432,7 +15510,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15443,7 +15521,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15454,7 +15532,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15465,7 +15543,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15476,7 +15554,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15487,7 +15565,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15498,7 +15576,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15509,7 +15587,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 132.08 185.42 0)
+			(at 133.35 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15611,7 +15689,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 132.08 166.37 0)
+		(at 133.35 166.37 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15622,7 +15700,7 @@
 		(fields_autoplaced yes)
 		(uuid "7dc5a78f-fb3d-4a59-bcb0-d33cc808ff86")
 		(property "Reference" "TP22"
-			(at 134.62 165.0999 0)
+			(at 135.89 165.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15633,7 +15711,7 @@
 			)
 		)
 		(property "Value" "BUS_ISO"
-			(at 134.62 167.6399 0)
+			(at 135.89 167.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15644,7 +15722,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 137.16 166.37 0)
+			(at 138.43 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15655,7 +15733,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 166.37 0)
+			(at 138.43 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15666,7 +15744,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15677,7 +15755,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15688,7 +15766,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15699,7 +15777,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15710,7 +15788,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15721,7 +15799,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15732,7 +15810,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15743,7 +15821,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15754,7 +15832,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15765,7 +15843,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15776,7 +15854,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 132.08 166.37 0)
+			(at 133.35 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16665,7 +16743,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 96.52 165.1 0)
+		(at 97.79 165.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16676,7 +16754,7 @@
 		(fields_autoplaced yes)
 		(uuid "9011ef08-c2df-4be5-8b33-c4d56dc68fa1")
 		(property "Reference" "#PWR025"
-			(at 96.52 168.91 0)
+			(at 97.79 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16687,7 +16765,7 @@
 			)
 		)
 		(property "Value" "VCC_ISO"
-			(at 96.52 160.02 0)
+			(at 97.79 160.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16697,7 +16775,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 165.1 0)
+			(at 97.79 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16708,7 +16786,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 165.1 0)
+			(at 97.79 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16719,7 +16797,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 96.52 165.1 0)
+			(at 97.79 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20077,84 +20155,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+BATT")
-		(at 24.13 93.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dcbc513a-b7d1-4979-9391-da7e4caa6061")
-		(property "Reference" "#PWR01"
-			(at 24.13 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+BATT_ISO"
-			(at 24.13 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 24.13 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 24.13 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "63ec58a7-97d0-4afc-ba60-f8003f91b347")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/20698281-7733-498d-8537-9736b11e1ce7"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 57.15 57.15 0)
 		(unit 1)
@@ -21922,7 +21922,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 102.87 166.37 0)
+		(at 104.14 166.37 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21933,7 +21933,7 @@
 		(fields_autoplaced yes)
 		(uuid "f25b48ab-ad30-46e6-b937-02109287212d")
 		(property "Reference" "TP21"
-			(at 105.41 165.0999 0)
+			(at 106.68 165.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21944,7 +21944,7 @@
 			)
 		)
 		(property "Value" "VCC_ISO"
-			(at 105.41 167.6399 0)
+			(at 106.68 167.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21955,7 +21955,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 107.95 166.37 0)
+			(at 109.22 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21966,7 +21966,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 166.37 0)
+			(at 109.22 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21977,7 +21977,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21988,7 +21988,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21999,7 +21999,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22010,7 +22010,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22021,7 +22021,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22032,7 +22032,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22043,7 +22043,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22054,7 +22054,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22065,7 +22065,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22076,7 +22076,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22087,7 +22087,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 102.87 166.37 0)
+			(at 104.14 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22111,7 +22111,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 96.52 186.69 0)
+		(at 97.79 186.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22122,7 +22122,7 @@
 		(fields_autoplaced yes)
 		(uuid "f399b630-c06f-49fc-a562-b40dfa218c09")
 		(property "Reference" "#PWR024"
-			(at 96.52 193.04 0)
+			(at 97.79 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22133,7 +22133,7 @@
 			)
 		)
 		(property "Value" "GND_ISO"
-			(at 96.52 191.77 0)
+			(at 97.79 191.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22143,7 +22143,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 186.69 0)
+			(at 97.79 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22154,7 +22154,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 186.69 0)
+			(at 97.79 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22165,7 +22165,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 96.52 186.69 0)
+			(at 97.79 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
