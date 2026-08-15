@@ -3940,7 +3940,7 @@
 	)
 	(rectangle
 		(start 15.24 15.24)
-		(end 214.63 87.63)
+		(end 220.98 87.63)
 		(stroke
 			(width 0)
 			(type default)
@@ -3952,7 +3952,7 @@
 	)
 	(text "The LMR38020S has a maximum input voltage of 80V. D2 TVS diode has a reverse stand off voltage of 40V,\nand a maximum clamping voltage of 64.5V. The clamping voltage is well within the limits of the LMR38020S,\nand 40V is well above the maximum normal voltage of a 24V lead-acid battery system.\n\nThe main thing that sets the maximum input voltage of this device is the TVS diode."
 		(exclude_from_sim no)
-		(at 88.138 80.518 0)
+		(at 109.728 80.772 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3962,7 +3962,7 @@
 	)
 	(text "3.3V Supply"
 		(exclude_from_sim no)
-		(at 94.996 17.526 0)
+		(at 116.586 17.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3971,25 +3971,25 @@
 		(uuid "e947a4d1-19fb-47bf-89c0-41686c29df4b")
 	)
 	(junction
-		(at 138.43 50.8)
+		(at 149.86 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0da9df23-ee80-45ef-ab38-97feb5aabf59")
 	)
 	(junction
-		(at 152.4 31.75)
+		(at 163.83 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2cffb8cc-2f7e-41a5-95a7-2a494e7a8132")
 	)
 	(junction
-		(at 168.91 41.91)
+		(at 180.34 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "46839939-2ecf-499c-b055-246d7844f414")
 	)
 	(junction
-		(at 80.01 31.75)
+		(at 91.44 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5e734011-1e0f-4524-b403-21ee2b2a0f2c")
@@ -4007,67 +4007,73 @@
 		(uuid "6e232266-5af6-473a-b7df-a2ecaf546510")
 	)
 	(junction
-		(at 177.8 31.75)
+		(at 189.23 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7174a205-0fc0-4cec-b1fc-48541b95986d")
 	)
 	(junction
-		(at 152.4 53.34)
+		(at 163.83 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7b5aaaf1-be70-42f5-9f97-f3b70983c933")
 	)
 	(junction
-		(at 90.17 31.75)
+		(at 101.6 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "829737f5-97ad-408f-b35f-5b526a74a617")
 	)
 	(junction
-		(at 168.91 31.75)
+		(at 180.34 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9ba8d48c-5101-4dd3-9df7-cd556583e209")
 	)
 	(junction
-		(at 195.58 31.75)
+		(at 207.01 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b6f4d507-a36c-4997-8833-e151a6059ba3")
 	)
 	(junction
-		(at 80.01 41.91)
+		(at 91.44 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b837addd-1f3e-4541-b51d-679f37a4f04c")
 	)
 	(junction
-		(at 100.33 31.75)
+		(at 81.28 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c71e5c42-d0d0-4e4f-8885-c7ca336cff44")
+	)
+	(junction
+		(at 111.76 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c79c1232-105a-4439-a40b-ad023e078b9b")
 	)
 	(junction
-		(at 125.73 31.75)
+		(at 137.16 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d669ef1c-8b27-46ae-8f01-ee5c3de0cca7")
 	)
 	(junction
-		(at 95.25 31.75)
+		(at 106.68 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d6faf97a-7d48-4594-b509-3afcb87e271c")
 	)
 	(junction
-		(at 160.02 31.75)
+		(at 171.45 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e07217f0-1b78-4b62-8e0e-98c4859991b4")
 	)
 	(junction
-		(at 138.43 31.75)
+		(at 149.86 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f8d54c4f-d374-4288-a586-b23b630208dc")
@@ -4078,7 +4084,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 31.75) (xy 160.02 31.75)
+			(xy 163.83 31.75) (xy 171.45 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4088,7 +4094,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 31.75) (xy 152.4 31.75)
+			(xy 149.86 31.75) (xy 163.83 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4098,23 +4104,13 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 31.75) (xy 168.91 33.02)
+			(xy 180.34 31.75) (xy 180.34 33.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "0800e272-175f-4f63-9202-11d53eae2897")
-	)
-	(wire
-		(pts
-			(xy 73.66 31.75) (xy 80.01 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b9989da-3c99-42d6-831e-8b239082bc06")
 	)
 	(wire
 		(pts
@@ -4128,7 +4124,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 49.53) (xy 138.43 50.8)
+			(xy 149.86 49.53) (xy 149.86 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4138,7 +4134,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 31.75) (xy 125.73 31.75)
+			(xy 135.89 31.75) (xy 137.16 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4148,7 +4144,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 41.91) (xy 90.17 40.64)
+			(xy 101.6 41.91) (xy 101.6 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4158,7 +4154,17 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 40.64) (xy 168.91 41.91)
+			(xy 81.28 31.75) (xy 91.44 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28399738-5a96-48ea-9a94-465a8fba2451")
+	)
+	(wire
+		(pts
+			(xy 180.34 40.64) (xy 180.34 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4168,7 +4174,17 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 41.91) (xy 177.8 40.64)
+			(xy 81.28 31.75) (xy 81.28 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30c540ba-437b-4a10-a26c-190b6853a2ab")
+	)
+	(wire
+		(pts
+			(xy 189.23 41.91) (xy 189.23 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4178,7 +4194,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 40.64) (xy 125.73 41.91)
+			(xy 137.16 40.64) (xy 137.16 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4188,7 +4204,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 40.64) (xy 160.02 41.91)
+			(xy 171.45 40.64) (xy 171.45 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4198,7 +4214,17 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 31.75) (xy 191.77 31.75)
+			(xy 73.66 31.75) (xy 81.28 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "546b0f1c-77d5-4e11-b7bd-a0e44300e3c9")
+	)
+	(wire
+		(pts
+			(xy 207.01 31.75) (xy 203.2 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4208,7 +4234,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 31.75) (xy 95.25 31.75)
+			(xy 101.6 31.75) (xy 106.68 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4228,7 +4254,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 41.91) (xy 125.73 41.91)
+			(xy 135.89 41.91) (xy 137.16 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4238,7 +4264,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 31.75) (xy 80.01 33.02)
+			(xy 91.44 31.75) (xy 91.44 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4258,7 +4284,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 31.75) (xy 177.8 31.75)
+			(xy 180.34 31.75) (xy 189.23 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4268,7 +4294,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 30.48) (xy 195.58 31.75)
+			(xy 207.01 30.48) (xy 207.01 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4278,7 +4304,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 40.64) (xy 80.01 41.91)
+			(xy 91.44 40.64) (xy 91.44 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4288,7 +4314,17 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 50.8) (xy 124.46 50.8)
+			(xy 91.44 41.91) (xy 81.28 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "732cd780-3b4d-4382-8ceb-2b3811e67108")
+	)
+	(wire
+		(pts
+			(xy 149.86 50.8) (xy 135.89 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4298,7 +4334,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 31.75) (xy 90.17 31.75)
+			(xy 91.44 31.75) (xy 101.6 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4308,7 +4344,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 43.18) (xy 168.91 41.91)
+			(xy 180.34 43.18) (xy 180.34 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4318,7 +4354,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 31.75) (xy 90.17 33.02)
+			(xy 101.6 31.75) (xy 101.6 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4328,7 +4364,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 50.8) (xy 139.7 50.8)
+			(xy 149.86 50.8) (xy 151.13 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4338,7 +4374,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 53.34) (xy 152.4 53.34)
+			(xy 135.89 53.34) (xy 163.83 53.34)
 		)
 		(stroke
 			(width 0)
@@ -4348,7 +4384,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 41.91) (xy 177.8 41.91)
+			(xy 180.34 41.91) (xy 189.23 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4358,13 +4394,23 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 31.75) (xy 100.33 31.75)
+			(xy 106.68 31.75) (xy 111.76 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "952d15f4-997b-4870-a163-3d3ecd2fad41")
+	)
+	(wire
+		(pts
+			(xy 81.28 41.91) (xy 81.28 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a3b6018-15b1-41bf-a297-09cd5ba185a5")
 	)
 	(wire
 		(pts
@@ -4378,7 +4424,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 41.91) (xy 90.17 41.91)
+			(xy 91.44 41.91) (xy 101.6 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4388,7 +4434,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 31.75) (xy 168.91 31.75)
+			(xy 171.45 31.75) (xy 180.34 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4398,7 +4444,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 31.75) (xy 204.47 30.48)
+			(xy 215.9 31.75) (xy 215.9 30.48)
 		)
 		(stroke
 			(width 0)
@@ -4418,7 +4464,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 31.75) (xy 177.8 33.02)
+			(xy 189.23 31.75) (xy 189.23 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4428,7 +4474,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 31.75) (xy 125.73 33.02)
+			(xy 137.16 31.75) (xy 137.16 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4438,7 +4484,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 31.75) (xy 184.15 31.75)
+			(xy 189.23 31.75) (xy 195.58 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4448,7 +4494,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 50.8) (xy 100.33 50.8)
+			(xy 113.03 50.8) (xy 111.76 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4458,7 +4504,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 31.75) (xy 101.6 31.75)
+			(xy 111.76 31.75) (xy 113.03 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4468,7 +4514,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 31.75) (xy 160.02 33.02)
+			(xy 171.45 31.75) (xy 171.45 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4478,7 +4524,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 31.75) (xy 137.16 31.75)
+			(xy 149.86 31.75) (xy 148.59 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4488,7 +4534,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 31.75) (xy 138.43 41.91)
+			(xy 149.86 31.75) (xy 149.86 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4498,7 +4544,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 50.8) (xy 100.33 52.07)
+			(xy 111.76 50.8) (xy 111.76 52.07)
 		)
 		(stroke
 			(width 0)
@@ -4508,13 +4554,23 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 34.29) (xy 100.33 34.29)
+			(xy 113.03 34.29) (xy 111.76 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ca2b9a4d-a691-4a40-9498-6dd5b671303a")
+	)
+	(wire
+		(pts
+			(xy 91.44 43.18) (xy 91.44 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbcac969-6d7e-4c96-a0db-b7b6e1cceeb1")
 	)
 	(wire
 		(pts
@@ -4528,7 +4584,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 31.75) (xy 204.47 31.75)
+			(xy 207.01 31.75) (xy 215.9 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4548,7 +4604,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 31.75) (xy 152.4 45.72)
+			(xy 163.83 31.75) (xy 163.83 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4558,7 +4614,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 41.91) (xy 168.91 41.91)
+			(xy 171.45 41.91) (xy 180.34 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4568,7 +4624,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 31.75) (xy 127 31.75)
+			(xy 137.16 31.75) (xy 138.43 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4578,7 +4634,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 34.29) (xy 100.33 31.75)
+			(xy 111.76 34.29) (xy 111.76 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4588,7 +4644,7 @@
 	)
 	(hierarchical_label "PGOOD"
 		(shape output)
-		(at 139.7 50.8 0)
+		(at 151.13 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4599,7 +4655,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,62kΩ")
-		(at 100.33 55.88 0)
+		(at 111.76 55.88 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -4610,7 +4666,7 @@
 		(dnp no)
 		(uuid "04df57c1-1022-4f4c-bbfb-55f7fbf63b86")
 		(property "Reference" "R26"
-			(at 97.79 55.8799 0)
+			(at 109.22 55.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4621,7 +4677,7 @@
 			)
 		)
 		(property "Value" "62kΩ"
-			(at 100.33 55.88 90)
+			(at 111.76 55.88 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -4631,7 +4687,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 102.108 55.88 90)
+			(at 113.538 55.88 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4642,7 +4698,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF6202T5E_C23221.pdf"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4653,7 +4709,7 @@
 			)
 		)
 		(property "Description" "-55°C~+155°C 100mW 62kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4664,7 +4720,7 @@
 			)
 		)
 		(property "LCSC" "C23221"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4675,7 +4731,7 @@
 			)
 		)
 		(property "Stock" "622867"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4686,7 +4742,7 @@
 			)
 		)
 		(property "Price" "0.005USD"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4697,7 +4753,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4708,7 +4764,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4719,7 +4775,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4730,7 +4786,7 @@
 			)
 		)
 		(property "Class" "Preferred Component"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4741,7 +4797,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4752,7 +4808,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4763,7 +4819,7 @@
 			)
 		)
 		(property "Part" "0603WAF6202T5E"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4774,7 +4830,7 @@
 			)
 		)
 		(property "Resistance" "62kΩ"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4785,7 +4841,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4796,7 +4852,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4807,7 +4863,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4818,7 +4874,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4829,7 +4885,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4840,7 +4896,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "±100ppm/°C"
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4851,7 +4907,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4862,7 +4918,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4873,7 +4929,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4884,7 +4940,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4895,7 +4951,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4906,7 +4962,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4917,7 +4973,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4928,7 +4984,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4939,7 +4995,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4950,7 +5006,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 100.33 55.88 0)
+			(at 111.76 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4977,7 +5033,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:1206,47uF")
-		(at 160.02 36.83 0)
+		(at 171.45 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4988,7 +5044,7 @@
 		(fields_autoplaced yes)
 		(uuid "0caad5f7-6daf-454e-82f0-1cf43a08fe64")
 		(property "Reference" "C9"
-			(at 162.56 34.2899 0)
+			(at 173.99 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4999,7 +5055,7 @@
 			)
 		)
 		(property "Value" "47uF"
-			(at 162.56 36.83 0)
+			(at 173.99 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5010,7 +5066,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_1206"
-			(at 158.242 36.83 90)
+			(at 169.672 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5021,7 +5077,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL31A476MPHNNNE_C96123.pdf"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5032,7 +5088,7 @@
 			)
 		)
 		(property "Description" "10V 47uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5043,7 +5099,7 @@
 			)
 		)
 		(property "LCSC" "C96123"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5054,7 +5110,7 @@
 			)
 		)
 		(property "Stock" "312192"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5065,7 +5121,7 @@
 			)
 		)
 		(property "Price" "0.081USD"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5076,7 +5132,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5087,7 +5143,7 @@
 			)
 		)
 		(property "Minimum Qty" "5"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5098,7 +5154,7 @@
 			)
 		)
 		(property "Attrition Qty" "4"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5109,7 +5165,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5120,7 +5176,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5131,7 +5187,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5142,7 +5198,7 @@
 			)
 		)
 		(property "Part" "CL31A476MPHNNNE"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5153,7 +5209,7 @@
 			)
 		)
 		(property "Voltage Rated" "10V"
-			(at 162.56 39.37 0)
+			(at 173.99 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5164,7 +5220,7 @@
 			)
 		)
 		(property "Tolerance" "±20%"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5175,7 +5231,7 @@
 			)
 		)
 		(property "Capacitance" "47uF"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5186,7 +5242,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 160.02 36.83 0)
+			(at 171.45 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5213,7 +5269,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 80.01 41.91 0)
+		(at 91.44 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5224,7 +5280,7 @@
 		(fields_autoplaced yes)
 		(uuid "13df5846-a619-4e43-ae9b-4bf59d5caf7b")
 		(property "Reference" "#PWR037"
-			(at 80.01 48.26 0)
+			(at 91.44 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5235,7 +5291,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 80.01 46.99 0)
+			(at 91.44 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5245,7 +5301,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 41.91 0)
+			(at 91.44 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5256,7 +5312,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 41.91 0)
+			(at 91.44 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5267,7 +5323,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 41.91 0)
+			(at 91.44 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5291,7 +5347,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
-		(at 80.01 36.83 0)
+		(at 81.28 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5300,9 +5356,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "2ff70ba7-3bfc-442f-b0a0-8d6fe1774bdb")
-		(property "Reference" "C42"
-			(at 82.55 34.2899 0)
+		(uuid "1dc4b680-f4ed-4ec4-b8b2-f8da0b8b56a1")
+		(property "Reference" "C43"
+			(at 83.82 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5313,7 +5369,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 82.55 36.83 0)
+			(at 83.82 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5324,7 +5380,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_1206"
-			(at 78.232 36.83 90)
+			(at 79.502 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5335,7 +5391,7 @@
 			)
 		)
 		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM31CZ72A475KE11-01A-EN_PDF_CERAMICCAPACITORSMD"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5346,7 +5402,7 @@
 			)
 		)
 		(property "Description" "100V 4.7uF X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5357,7 +5413,7 @@
 			)
 		)
 		(property "LCSC" "C3864744"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5368,7 +5424,7 @@
 			)
 		)
 		(property "a" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5379,7 +5435,7 @@
 			)
 		)
 		(property "b" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5390,7 +5446,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5401,7 +5457,7 @@
 			)
 		)
 		(property "c" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5412,7 +5468,7 @@
 			)
 		)
 		(property "d" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5423,7 +5479,7 @@
 			)
 		)
 		(property "e" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5434,7 +5490,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5445,7 +5501,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5456,7 +5512,7 @@
 			)
 		)
 		(property "Part" "GRJ31CZ72A475KE01L"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5467,7 +5523,7 @@
 			)
 		)
 		(property "Voltage Rated" "100V"
-			(at 82.55 39.37 0)
+			(at 83.82 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5478,7 +5534,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5489,7 +5545,7 @@
 			)
 		)
 		(property "Capacitance" "4.7uF"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5500,7 +5556,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5511,7 +5567,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5522,7 +5578,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5533,7 +5589,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5544,7 +5600,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5555,7 +5611,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5566,7 +5622,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5577,7 +5633,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5588,7 +5644,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5599,7 +5655,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5610,7 +5666,353 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 80.01 36.83 0)
+			(at 81.28 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "3d58912b-f993-4a6f-bdc2-6c8faea9f8b6")
+		)
+		(pin "1"
+			(uuid "2cdb9212-4cae-486f-b9e9-79d3449344ea")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "C43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
+		(at 91.44 36.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ff70ba7-3bfc-442f-b0a0-8d6fe1774bdb")
+		(property "Reference" "C42"
+			(at 93.98 34.2899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 93.98 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:C_1206"
+			(at 89.662 36.83 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM31CZ72A475KE11-01A-EN_PDF_CERAMICCAPACITORSMD"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "100V 4.7uF X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C3864744"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "a" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "b" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "c" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "d" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "e" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "GRJ31CZ72A475KE01L"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage Rated" "100V"
+			(at 93.98 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "±10%"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Capacitance" "4.7uF"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Average Rectified Current (Io)" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Clamping Voltage" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Number of Channels" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak Pulse Current (Ipp)" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak Pulse Power Dissipation (Ppp)" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak forward surge current" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Polarity" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage - Breakdown" ""
+			(at 91.44 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "level of protection" ""
+			(at 91.44 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5637,7 +6039,7 @@
 	)
 	(symbol
 		(lib_id "EasyEDA:APH0630T150M")
-		(at 132.08 31.75 0)
+		(at 143.51 31.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5648,7 +6050,7 @@
 		(fields_autoplaced yes)
 		(uuid "48274c9a-65f4-44c7-b97f-9e4545de37dc")
 		(property "Reference" "U11"
-			(at 132.08 25.4 0)
+			(at 143.51 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5658,7 +6060,7 @@
 			)
 		)
 		(property "Value" "15uH"
-			(at 132.08 27.94 0)
+			(at 143.51 27.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5668,7 +6070,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:IND-SMD_L7.1-W6.6"
-			(at 132.08 39.37 0)
+			(at 143.51 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5679,7 +6081,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/C5349699.pdf"
-			(at 132.08 41.91 0)
+			(at 143.51 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5690,7 +6092,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5701,7 +6103,7 @@
 			)
 		)
 		(property "Manufacturer" "APV(爱普微)"
-			(at 132.08 44.45 0)
+			(at 143.51 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5712,7 +6114,7 @@
 			)
 		)
 		(property "MPN" "APH0630T150M"
-			(at 132.08 46.99 0)
+			(at 143.51 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5723,7 +6125,7 @@
 			)
 		)
 		(property "LCSC Part" "C5349699"
-			(at 132.08 49.53 0)
+			(at 143.51 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5734,7 +6136,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5745,7 +6147,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5756,7 +6158,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5767,7 +6169,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5778,7 +6180,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5789,7 +6191,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5800,7 +6202,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5811,7 +6213,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5822,7 +6224,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5833,7 +6235,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 132.08 31.75 0)
+			(at 143.51 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6083,7 +6485,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:1206,47uF")
-		(at 168.91 36.83 0)
+		(at 180.34 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6094,7 +6496,7 @@
 		(fields_autoplaced yes)
 		(uuid "520b6bc7-8fc7-4389-9b1d-0443d4907101")
 		(property "Reference" "C10"
-			(at 171.45 34.2899 0)
+			(at 182.88 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6105,7 +6507,7 @@
 			)
 		)
 		(property "Value" "47uF"
-			(at 171.45 36.83 0)
+			(at 182.88 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6116,7 +6518,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_1206"
-			(at 167.132 36.83 90)
+			(at 178.562 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6127,7 +6529,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL31A476MPHNNNE_C96123.pdf"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6138,7 +6540,7 @@
 			)
 		)
 		(property "Description" "10V 47uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6149,7 +6551,7 @@
 			)
 		)
 		(property "LCSC" "C96123"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6160,7 +6562,7 @@
 			)
 		)
 		(property "Stock" "312192"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6171,7 +6573,7 @@
 			)
 		)
 		(property "Price" "0.081USD"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6182,7 +6584,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6193,7 +6595,7 @@
 			)
 		)
 		(property "Minimum Qty" "5"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6204,7 +6606,7 @@
 			)
 		)
 		(property "Attrition Qty" "4"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6215,7 +6617,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6226,7 +6628,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6237,7 +6639,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6248,7 +6650,7 @@
 			)
 		)
 		(property "Part" "CL31A476MPHNNNE"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6259,7 +6661,7 @@
 			)
 		)
 		(property "Voltage Rated" "10V"
-			(at 171.45 39.37 0)
+			(at 182.88 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6270,7 +6672,7 @@
 			)
 		)
 		(property "Tolerance" "±20%"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6281,7 +6683,7 @@
 			)
 		)
 		(property "Capacitance" "47uF"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6292,7 +6694,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 168.91 36.83 0)
+			(at 180.34 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6319,7 +6721,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
-		(at 90.17 36.83 0)
+		(at 101.6 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6330,7 +6732,7 @@
 		(fields_autoplaced yes)
 		(uuid "578af6be-82ae-42fc-abc2-43ad2c020c66")
 		(property "Reference" "C14"
-			(at 92.71 34.2899 0)
+			(at 104.14 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6341,7 +6743,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 92.71 36.83 0)
+			(at 104.14 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6352,7 +6754,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_0805"
-			(at 88.392 36.83 90)
+			(at 99.822 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6363,7 +6765,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21B104KCFNNNE_C28233.pdf"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6374,7 +6776,7 @@
 			)
 		)
 		(property "Description" "100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6385,7 +6787,7 @@
 			)
 		)
 		(property "LCSC" "C28233"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6396,7 +6798,7 @@
 			)
 		)
 		(property "Stock" "3222467"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6407,7 +6809,7 @@
 			)
 		)
 		(property "Price" "0.012USD"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6418,7 +6820,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6429,7 +6831,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6440,7 +6842,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6451,7 +6853,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6462,7 +6864,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6473,7 +6875,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6484,7 +6886,7 @@
 			)
 		)
 		(property "Part" "CL21B104KCFNNNE"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6495,7 +6897,7 @@
 			)
 		)
 		(property "Voltage Rated" "100V"
-			(at 92.71 39.37 0)
+			(at 104.14 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6506,7 +6908,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6517,7 +6919,7 @@
 			)
 		)
 		(property "Capacitance" "100nF"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6528,7 +6930,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6539,7 +6941,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6550,7 +6952,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6561,7 +6963,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6572,7 +6974,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6583,7 +6985,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6594,7 +6996,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6605,7 +7007,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6616,7 +7018,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6627,7 +7029,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6638,7 +7040,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 90.17 36.83 0)
+			(at 101.6 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6968,7 +7370,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 113.03 64.77 0)
+		(at 124.46 64.77 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6979,7 +7381,7 @@
 		(fields_autoplaced yes)
 		(uuid "5e3917a5-7852-478f-89f4-4c36b1147fc7")
 		(property "Reference" "#PWR050"
-			(at 113.03 71.12 0)
+			(at 124.46 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6990,7 +7392,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 113.03 69.85 0)
+			(at 124.46 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7000,7 +7402,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 113.03 64.77 0)
+			(at 124.46 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7011,7 +7413,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 64.77 0)
+			(at 124.46 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7022,7 +7424,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 113.03 64.77 0)
+			(at 124.46 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7124,7 +7526,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,100kΩ")
-		(at 138.43 45.72 0)
+		(at 149.86 45.72 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -7135,7 +7537,7 @@
 		(dnp no)
 		(uuid "6c57e21e-b17e-48e1-a720-2726091ae6f6")
 		(property "Reference" "R11"
-			(at 135.89 45.7199 0)
+			(at 147.32 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7146,7 +7548,7 @@
 			)
 		)
 		(property "Value" "100kΩ"
-			(at 138.43 45.72 90)
+			(at 149.86 45.72 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -7156,7 +7558,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 140.208 45.72 90)
+			(at 151.638 45.72 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7167,7 +7569,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.pdf"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7178,7 +7580,7 @@
 			)
 		)
 		(property "Description" "-55°C~+155°C 100kΩ 100mW 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7189,7 +7591,7 @@
 			)
 		)
 		(property "LCSC" "C25803"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7200,7 +7602,7 @@
 			)
 		)
 		(property "Stock" "10814547"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7211,7 +7613,7 @@
 			)
 		)
 		(property "Price" "0.005USD"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7222,7 +7624,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7233,7 +7635,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7244,7 +7646,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7255,7 +7657,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7266,7 +7668,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7277,7 +7679,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7288,7 +7690,7 @@
 			)
 		)
 		(property "Part" "0603WAF1003T5E"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7299,7 +7701,7 @@
 			)
 		)
 		(property "Resistance" "100kΩ"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7310,7 +7712,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7321,7 +7723,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7332,7 +7734,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7343,7 +7745,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7354,7 +7756,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7365,7 +7767,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "±100ppm/°C"
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7376,7 +7778,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7387,7 +7789,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7398,7 +7800,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7409,7 +7811,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7420,7 +7822,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7431,7 +7833,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7442,7 +7844,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7453,7 +7855,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7464,7 +7866,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7475,7 +7877,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 138.43 45.72 0)
+			(at 149.86 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7502,7 +7904,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0603,100nF")
-		(at 125.73 36.83 0)
+		(at 137.16 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7513,7 +7915,7 @@
 		(fields_autoplaced yes)
 		(uuid "87b38ce1-f2af-448a-a148-72fac6a16d3d")
 		(property "Reference" "C13"
-			(at 128.27 34.2899 0)
+			(at 139.7 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7524,7 +7926,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 128.27 36.83 0)
+			(at 139.7 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7535,7 +7937,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_0603"
-			(at 123.952 36.83 90)
+			(at 135.382 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7546,7 +7948,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7557,7 +7959,7 @@
 			)
 		)
 		(property "Description" "100nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7568,7 +7970,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7579,7 +7981,7 @@
 			)
 		)
 		(property "Stock" "37493696"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7590,7 +7992,7 @@
 			)
 		)
 		(property "Price" "0.006USD"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7601,7 +8003,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7612,7 +8014,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7623,7 +8025,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7634,7 +8036,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7645,7 +8047,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7656,7 +8058,7 @@
 			)
 		)
 		(property "Manufacturer" "YAGEO"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7667,7 +8069,7 @@
 			)
 		)
 		(property "Part" "CC0603KRX7R9BB104"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7678,7 +8080,7 @@
 			)
 		)
 		(property "Voltage Rated" "50V"
-			(at 128.27 39.37 0)
+			(at 139.7 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7689,7 +8091,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7700,7 +8102,7 @@
 			)
 		)
 		(property "Capacitance" "100nF"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7711,7 +8113,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7722,7 +8124,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7733,7 +8135,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7744,7 +8146,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7755,7 +8157,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7766,7 +8168,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7777,7 +8179,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7788,7 +8190,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7799,7 +8201,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7810,7 +8212,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7821,7 +8223,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 125.73 36.83 0)
+			(at 137.16 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8069,7 +8471,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 204.47 30.48 0)
+		(at 215.9 30.48 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8080,7 +8482,7 @@
 		(fields_autoplaced yes)
 		(uuid "97ca3ba0-871b-4d68-8a75-2a371e434daa")
 		(property "Reference" "#PWR031"
-			(at 204.47 34.29 0)
+			(at 215.9 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8091,7 +8493,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 204.47 25.4 0)
+			(at 215.9 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8101,7 +8503,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 204.47 30.48 0)
+			(at 215.9 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8112,7 +8514,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 204.47 30.48 0)
+			(at 215.9 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8123,7 +8525,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 204.47 30.48 0)
+			(at 215.9 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8491,7 +8893,7 @@
 	)
 	(symbol
 		(lib_id "EasyEDA:LMR38020SDDAR")
-		(at 113.03 34.29 0)
+		(at 124.46 34.29 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8501,7 +8903,7 @@
 		(dnp no)
 		(uuid "b8f9d73a-88e3-44ab-a7bc-7dcc77098821")
 		(property "Reference" "U6"
-			(at 113.03 24.892 0)
+			(at 124.46 24.892 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8511,7 +8913,7 @@
 			)
 		)
 		(property "Value" "LMR38020SDDAR"
-			(at 113.284 27.432 0)
+			(at 124.714 27.432 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8521,7 +8923,7 @@
 			)
 		)
 		(property "Footprint" "EasyEDA:ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP-1"
-			(at 113.03 64.516 0)
+			(at 124.46 64.516 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8532,7 +8934,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/C3192337.pdf"
-			(at 113.03 67.056 0)
+			(at 124.46 67.056 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8543,7 +8945,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8554,7 +8956,7 @@
 			)
 		)
 		(property "Manufacturer" "TI(德州仪器)"
-			(at 113.03 69.596 0)
+			(at 124.46 69.596 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8565,7 +8967,7 @@
 			)
 		)
 		(property "MPN" "LMR38020SDDAR"
-			(at 113.03 72.136 0)
+			(at 124.46 72.136 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8576,7 +8978,7 @@
 			)
 		)
 		(property "LCSC Part" "C3192337"
-			(at 113.03 74.676 0)
+			(at 124.46 74.676 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8587,7 +8989,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8598,7 +9000,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8609,7 +9011,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8620,7 +9022,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8631,7 +9033,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8642,7 +9044,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8653,7 +9055,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8664,7 +9066,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8675,7 +9077,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8686,7 +9088,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 113.03 34.29 0)
+			(at 124.46 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8731,7 +9133,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,0Ω")
-		(at 187.96 31.75 90)
+		(at 199.39 31.75 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8741,7 +9143,7 @@
 		(dnp no)
 		(uuid "c8a464f3-4e2f-4ee0-a7a1-a57591b1a1ee")
 		(property "Reference" "R25"
-			(at 187.706 29.21 90)
+			(at 199.136 29.21 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8751,7 +9153,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -8761,7 +9163,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 187.96 33.528 90)
+			(at 199.39 33.528 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8772,7 +9174,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411221126_UNI-ROYAL-Uniroyal-Elec-0603WAF0000T5E_C21189.pdf"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8783,7 +9185,7 @@
 			)
 		)
 		(property "Description" "-55°C~+155°C 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8794,7 +9196,7 @@
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8805,7 +9207,7 @@
 			)
 		)
 		(property "Stock" "13902554"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8816,7 +9218,7 @@
 			)
 		)
 		(property "Price" "0.005USD"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8827,7 +9229,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8838,7 +9240,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8849,7 +9251,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8860,7 +9262,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8871,7 +9273,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8882,7 +9284,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8893,7 +9295,7 @@
 			)
 		)
 		(property "Part" "0603WAF0000T5E"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8904,7 +9306,7 @@
 			)
 		)
 		(property "Resistance" "0Ω"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8915,7 +9317,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8926,7 +9328,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8937,7 +9339,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8948,7 +9350,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8959,7 +9361,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 187.96 31.75 0)
+			(at 199.39 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8970,7 +9372,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8981,7 +9383,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8992,7 +9394,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9003,7 +9405,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9014,7 +9416,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9025,7 +9427,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9036,7 +9438,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9047,7 +9449,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9058,7 +9460,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9069,7 +9471,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 187.96 31.75 90)
+			(at 199.39 31.75 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9096,7 +9498,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:1206,47uF")
-		(at 177.8 36.83 0)
+		(at 189.23 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9107,7 +9509,7 @@
 		(fields_autoplaced yes)
 		(uuid "c96d39e0-571a-4805-9028-020673d109d2")
 		(property "Reference" "C15"
-			(at 180.34 34.2899 0)
+			(at 191.77 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9118,7 +9520,7 @@
 			)
 		)
 		(property "Value" "47uF"
-			(at 180.34 36.83 0)
+			(at 191.77 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9129,7 +9531,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_1206"
-			(at 176.022 36.83 90)
+			(at 187.452 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9140,7 +9542,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL31A476MPHNNNE_C96123.pdf"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9151,7 +9553,7 @@
 			)
 		)
 		(property "Description" "10V 47uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9162,7 +9564,7 @@
 			)
 		)
 		(property "LCSC" "C96123"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9173,7 +9575,7 @@
 			)
 		)
 		(property "Stock" "312192"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9184,7 +9586,7 @@
 			)
 		)
 		(property "Price" "0.081USD"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9195,7 +9597,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9206,7 +9608,7 @@
 			)
 		)
 		(property "Minimum Qty" "5"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9217,7 +9619,7 @@
 			)
 		)
 		(property "Attrition Qty" "4"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9228,7 +9630,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9239,7 +9641,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9250,7 +9652,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9261,7 +9663,7 @@
 			)
 		)
 		(property "Part" "CL31A476MPHNNNE"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9272,7 +9674,7 @@
 			)
 		)
 		(property "Voltage Rated" "10V"
-			(at 180.34 39.37 0)
+			(at 191.77 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9283,7 +9685,7 @@
 			)
 		)
 		(property "Tolerance" "±20%"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9294,7 +9696,7 @@
 			)
 		)
 		(property "Capacitance" "47uF"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9305,7 +9707,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 177.8 36.83 0)
+			(at 189.23 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9332,7 +9734,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 95.25 31.75 0)
+		(at 106.68 31.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9343,7 +9745,7 @@
 		(fields_autoplaced yes)
 		(uuid "cbcde5cf-7e2e-409e-a0af-b6095c5534f5")
 		(property "Reference" "#FLG04"
-			(at 95.25 29.845 0)
+			(at 106.68 29.845 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9354,7 +9756,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 95.25 26.67 0)
+			(at 106.68 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9364,7 +9766,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 95.25 31.75 0)
+			(at 106.68 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9375,7 +9777,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 95.25 31.75 0)
+			(at 106.68 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9386,7 +9788,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 95.25 31.75 0)
+			(at 106.68 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9488,7 +9890,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,27kΩ")
-		(at 152.4 57.15 0)
+		(at 163.83 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9499,7 +9901,7 @@
 		(fields_autoplaced yes)
 		(uuid "d65b07f7-18d5-4d08-9942-0b70cce055fb")
 		(property "Reference" "R16"
-			(at 154.94 57.1499 0)
+			(at 166.37 57.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9510,7 +9912,7 @@
 			)
 		)
 		(property "Value" "27kΩ"
-			(at 152.4 57.15 90)
+			(at 163.83 57.15 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -9520,7 +9922,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 150.622 57.15 90)
+			(at 162.052 57.15 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9531,7 +9933,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF2702T5E_C22967.pdf"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9542,7 +9944,7 @@
 			)
 		)
 		(property "Description" "-55°C~+155°C 100mW 27kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9553,7 +9955,7 @@
 			)
 		)
 		(property "LCSC" "C22967"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9564,7 +9966,7 @@
 			)
 		)
 		(property "Stock" "3126851"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9575,7 +9977,7 @@
 			)
 		)
 		(property "Price" "0.005USD"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9586,7 +9988,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9597,7 +9999,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9608,7 +10010,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9619,7 +10021,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9630,7 +10032,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9641,7 +10043,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9652,7 +10054,7 @@
 			)
 		)
 		(property "Part" "0603WAF2702T5E"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9663,7 +10065,7 @@
 			)
 		)
 		(property "Resistance" "27kΩ"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9674,7 +10076,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9685,7 +10087,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9696,7 +10098,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9707,7 +10109,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9718,7 +10120,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9729,7 +10131,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "±100ppm/°C"
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9740,7 +10142,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9751,7 +10153,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9762,7 +10164,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9773,7 +10175,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9784,7 +10186,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9795,7 +10197,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9806,7 +10208,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9817,7 +10219,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9828,7 +10230,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9839,7 +10241,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 152.4 57.15 0)
+			(at 163.83 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9866,7 +10268,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 195.58 30.48 0)
+		(at 207.01 30.48 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9877,7 +10279,7 @@
 		(fields_autoplaced yes)
 		(uuid "df7372d9-6204-40f4-83bf-03be2a66e32c")
 		(property "Reference" "#FLG05"
-			(at 195.58 28.575 0)
+			(at 207.01 28.575 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9888,7 +10290,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 195.58 25.4 0)
+			(at 207.01 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9898,7 +10300,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 195.58 30.48 0)
+			(at 207.01 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9909,7 +10311,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 195.58 30.48 0)
+			(at 207.01 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9920,7 +10322,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 195.58 30.48 0)
+			(at 207.01 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9944,7 +10346,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 100.33 59.69 0)
+		(at 111.76 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9955,7 +10357,7 @@
 		(fields_autoplaced yes)
 		(uuid "e205c134-d93b-4246-9660-bed2d89c86fe")
 		(property "Reference" "#PWR074"
-			(at 100.33 66.04 0)
+			(at 111.76 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9966,7 +10368,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 100.33 64.77 0)
+			(at 111.76 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9976,7 +10378,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 59.69 0)
+			(at 111.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9987,7 +10389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 59.69 0)
+			(at 111.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9998,7 +10400,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 100.33 59.69 0)
+			(at 111.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10242,7 +10644,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 168.91 43.18 0)
+		(at 180.34 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10253,7 +10655,7 @@
 		(fields_autoplaced yes)
 		(uuid "eec24d01-57ae-4264-ae9c-3519961d37f8")
 		(property "Reference" "#PWR081"
-			(at 168.91 49.53 0)
+			(at 180.34 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10264,7 +10666,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 168.91 48.26 0)
+			(at 180.34 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10274,7 +10676,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 168.91 43.18 0)
+			(at 180.34 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10285,7 +10687,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 43.18 0)
+			(at 180.34 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10296,7 +10698,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 168.91 43.18 0)
+			(at 180.34 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10320,7 +10722,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0603,62kΩ")
-		(at 152.4 49.53 0)
+		(at 163.83 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10331,7 +10733,7 @@
 		(fields_autoplaced yes)
 		(uuid "f7590363-7721-426b-b227-08117774bfcc")
 		(property "Reference" "R15"
-			(at 154.94 49.5299 0)
+			(at 166.37 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10342,7 +10744,7 @@
 			)
 		)
 		(property "Value" "62kΩ"
-			(at 152.4 49.53 90)
+			(at 163.83 49.53 90)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -10352,7 +10754,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:R_0603"
-			(at 150.622 49.53 90)
+			(at 162.052 49.53 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10363,7 +10765,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF6202T5E_C23221.pdf"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10374,7 +10776,7 @@
 			)
 		)
 		(property "Description" "-55°C~+155°C 100mW 62kΩ 75V Thick Film Resistor ±1% ±100ppm/°C 0603 Chip Resistor - Surface Mount ROHS"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10385,7 +10787,7 @@
 			)
 		)
 		(property "LCSC" "C23221"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10396,7 +10798,7 @@
 			)
 		)
 		(property "Stock" "622867"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10407,7 +10809,7 @@
 			)
 		)
 		(property "Price" "0.005USD"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10418,7 +10820,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10429,7 +10831,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10440,7 +10842,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10451,7 +10853,7 @@
 			)
 		)
 		(property "Class" "Preferred Component"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10462,7 +10864,7 @@
 			)
 		)
 		(property "Category" "Resistors,Chip Resistor - Surface Mount"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10473,7 +10875,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10484,7 +10886,7 @@
 			)
 		)
 		(property "Part" "0603WAF6202T5E"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10495,7 +10897,7 @@
 			)
 		)
 		(property "Resistance" "62kΩ"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10506,7 +10908,7 @@
 			)
 		)
 		(property "Power(Watts)" "100mW"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10517,7 +10919,7 @@
 			)
 		)
 		(property "Type" "Thick Film Resistors"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10528,7 +10930,7 @@
 			)
 		)
 		(property "Overload Voltage (Max)" "75V"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10539,7 +10941,7 @@
 			)
 		)
 		(property "Operating Temperature Range" "-55°C~+155°C"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10550,7 +10952,7 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10561,7 +10963,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "±100ppm/°C"
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10572,7 +10974,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10583,7 +10985,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10594,7 +10996,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10605,7 +11007,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10616,7 +11018,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10627,7 +11029,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10638,7 +11040,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10649,7 +11051,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10660,7 +11062,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10671,7 +11073,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 152.4 49.53 0)
+			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10698,7 +11100,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 152.4 60.96 0)
+		(at 163.83 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10709,7 +11111,7 @@
 		(fields_autoplaced yes)
 		(uuid "fe568823-e39f-459e-a56f-64602af5c6a6")
 		(property "Reference" "#PWR051"
-			(at 152.4 67.31 0)
+			(at 163.83 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10720,7 +11122,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 152.4 66.04 0)
+			(at 163.83 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10730,7 +11132,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 60.96 0)
+			(at 163.83 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10741,7 +11143,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 60.96 0)
+			(at 163.83 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10752,7 +11154,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 60.96 0)
+			(at 163.83 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
