@@ -1883,6 +1883,16 @@
 		)
 		(uuid "962c0b80-b0d7-47ec-8286-ba030ae856ed")
 	)
+	(text "USB VBUS is not intended to be a power source for this board.\nAllowing power to be supplied from USB complicates the design, requires another\nregulator and adds significant concerns around power pathing and galvanic isolation."
+		(exclude_from_sim no)
+		(at 72.39 85.852 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ddb1cb31-e259-4ee4-a0b4-e847364f6717")
+	)
 	(junction
 		(at 64.77 36.83)
 		(diameter 0)
