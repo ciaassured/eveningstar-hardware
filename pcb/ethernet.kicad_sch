@@ -9323,10 +9323,6 @@
 		(uuid "6efd45e0-36bd-41bd-91ae-05d970d8a97e")
 	)
 	(no_connect
-		(at 44.45 99.06)
-		(uuid "7597f93c-5067-4f5d-8ed7-1620702fd78d")
-	)
-	(no_connect
 		(at 74.93 83.82)
 		(uuid "88b2376c-8392-4b1e-9ad2-54cdf8ebdcb3")
 	)
@@ -9601,6 +9597,16 @@
 			(type default)
 		)
 		(uuid "26a2f06c-0888-4a67-9140-fa5d00b165ae")
+	)
+	(wire
+		(pts
+			(xy 43.18 100.33) (xy 43.18 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "283d6247-27dc-4916-8262-824fba3607ba")
 	)
 	(wire
 		(pts
@@ -10801,6 +10807,16 @@
 			(type default)
 		)
 		(uuid "df619561-3fd9-4121-9315-a22785472648")
+	)
+	(wire
+		(pts
+			(xy 43.18 99.06) (xy 44.45 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0b49b44-780d-4bc0-aa7f-dffcf20ec3a1")
 	)
 	(wire
 		(pts
@@ -12758,6 +12774,85 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/561d5dbe-6020-48c7-be42-1a6149a1119b"
 					(reference "RJ1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 43.18 100.33 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1be50ab3-99d5-4087-8973-501b120fb076")
+		(property "Reference" "#PWR076"
+			(at 43.18 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 43.18 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 43.18 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d43ebdda-10f6-4c4a-ab31-6a94c8f582ac")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/561d5dbe-6020-48c7-be42-1a6149a1119b"
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
