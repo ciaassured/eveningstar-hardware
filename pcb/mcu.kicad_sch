@@ -7,6 +7,7 @@
 	(title_block
 		(title "Processor")
 		(company "CIA Assured")
+		(comment 1 "ESP32-C6 processor and supporting components.")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint_Square"

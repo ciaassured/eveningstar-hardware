@@ -7,6 +7,7 @@
 	(title_block
 		(title "Ethernet")
 		(company "CIA Assured")
+		(comment 1 "Ethernet interface including a W5500 for MAC and PHY, and a jack.")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint_Square"
