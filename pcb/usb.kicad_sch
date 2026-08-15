@@ -7,6 +7,7 @@
 	(title_block
 		(title "USB Programming Interface")
 		(company "CIA Assured")
+		(comment 1 "USB-C connector for programming and debugging the ESP32.")
 	)
 	(lib_symbols
 		(symbol "EasyEDA:GT-USB-7055BB"
