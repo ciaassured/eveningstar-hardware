@@ -10,6 +10,129 @@
 		(comment 1 "3.3V buck power supply for processor side of the board.")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint_Square"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Square"
+				(at 0 2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_Square_0_1"
+				(rectangle
+					(start -0.762 0.762)
+					(end 0.762 -0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Square_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 0)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "EasyEDA:0451001.MRL"
 			(pin_numbers
 				(hide yes)
@@ -4154,13 +4277,13 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 31.75) (xy 91.44 31.75)
+			(xy 91.44 31.75) (xy 81.28 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "28399738-5a96-48ea-9a94-465a8fba2451")
+		(uuid "22e29baf-cc3b-4bca-aa93-8e8599dd00a0")
 	)
 	(wire
 		(pts
@@ -4271,6 +4394,16 @@
 			(type default)
 		)
 		(uuid "5e938ba7-59e4-4644-b5a5-3d9345005c8f")
+	)
+	(wire
+		(pts
+			(xy 91.44 27.94) (xy 91.44 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "655d0def-1926-41f8-97bd-1198ac2c1f3c")
 	)
 	(wire
 		(pts
@@ -7897,6 +8030,193 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Square")
+		(at 91.44 27.94 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75142703-b4aa-448d-be07-dc552ba48992")
+		(property "Reference" "TP36"
+			(at 91.44 22.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VIN_PROTECTED"
+			(at 91.44 25.4 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
+			(at 91.44 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Average Rectified Current (Io)" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Clamping Voltage" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Number of Channels" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak Pulse Current (Ipp)" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak Pulse Power Dissipation (Ppp)" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Peak forward surge current" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Polarity" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage - Breakdown" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "level of protection" ""
+			(at 91.44 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4ef8d92b-066e-4579-aa8a-d9bdaafc962c")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "TP36")
 					(unit 1)
 				)
 			)
