@@ -31,13 +31,26 @@ if [ -n "$worktree_drift" ]; then
   exit 1
 fi
 
+# Prefer the most recent marker reachable from HEAD, so a check running on one
+# branch cannot pick up the subtree metadata of an unrelated branch. Searching
+# every ref stays as a fallback for detached or partially fetched checkouts.
 squash_commit="$(
   git log \
-    --all \
+    HEAD \
     --grep="^git-subtree-dir: $subtree_dir$" \
     --format=%H \
     -n 1
 )"
+
+if [ -z "$squash_commit" ]; then
+  squash_commit="$(
+    git log \
+      --all \
+      --grep="^git-subtree-dir: $subtree_dir$" \
+      --format=%H \
+      -n 1
+  )"
+fi
 
 if [ -z "$squash_commit" ]; then
   echo "::error::Could not find git-subtree metadata for '$subtree_dir'"
@@ -51,14 +64,38 @@ split_commit="$(
     | tail -n 1
 )"
 
+# `git subtree` writes the vendored tree at the root of its squash commit, but a
+# merge that flattens history (GitHub "Squash and merge" or "Rebase and merge")
+# replays that commit as an ordinary repository commit, which leaves the
+# git-subtree footers attached to a whole-repository tree instead. Both shapes
+# record the same upstream state, so accept either one.
+expected_refs="$squash_commit"
+if git cat-file -e "$squash_commit:$subtree_dir" 2>/dev/null; then
+  expected_refs="$squash_commit:$subtree_dir $expected_refs"
+fi
+
 expected_dir="$(mktemp -d)"
 actual_dir="$(mktemp -d)"
 trap 'rm -rf "$expected_dir" "$actual_dir"' EXIT
 
-git archive "$squash_commit" | tar -x -C "$expected_dir"
 git archive "HEAD:$subtree_dir" | tar -x -C "$actual_dir"
 
-if ! diff_output="$(git diff --no-index --name-status -- "$expected_dir" "$actual_dir")"; then
+matched_ref=""
+diff_output=""
+for expected_ref in $expected_refs; do
+  rm -rf "${expected_dir:?}"
+  mkdir -p "$expected_dir"
+  git archive "$expected_ref" | tar -x -C "$expected_dir"
+
+  if ref_diff="$(git diff --no-index --name-status -- "$expected_dir" "$actual_dir")"; then
+    matched_ref="$expected_ref"
+    break
+  fi
+
+  diff_output="$ref_diff"
+done
+
+if [ -z "$matched_ref" ]; then
   echo "::error::Vendored subtree drift detected in '$subtree_dir'"
   echo
   echo "The vendored JLCPCB subtree differs from its recorded subtree squash commit:"
@@ -71,7 +108,8 @@ if ! diff_output="$(git diff --no-index --name-status -- "$expected_dir" "$actua
   echo "into a project-owned library and reference that copy instead."
   echo
   echo "Changed files:"
-  echo "$diff_output"
+  echo "$diff_output" \
+    | sed -e "s|$expected_dir/|recorded/|g" -e "s|$actual_dir/|worktree/|g"
   exit 1
 fi
 
