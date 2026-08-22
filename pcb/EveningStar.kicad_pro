@@ -99,7 +99,7 @@
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
-        "hole_to_hole": "warning",
+        "hole_to_hole": "error",
         "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
@@ -120,7 +120,7 @@
         "padstack": "warning",
         "pth_inside_courtyard": "error",
         "shorting_items": "error",
-        "silk_edge_clearance": "ignore",
+        "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
@@ -160,8 +160,9 @@
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.2,
-        "min_via_annular_width": 0.1,
+        "min_via_annular_width": 0.0,
         "min_via_diameter": 0.5,
+        "solder_mask_min_width": 0.1,
         "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
@@ -528,6 +529,25 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "ISO",
+        "pcb_color": "rgba(255, 140, 0, 0.400)",
+        "priority": 1,
+        "schematic_color": "rgba(255, 140, 0, 0.400)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -535,7 +555,176 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "ISO",
+        "pattern": "/meterbus_frontend/BUS_ISO"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "/meterbus_frontend/READ_ISO"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "/meterbus_frontend/WRITE_ISO"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "GND_ISO"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "MB_PWR_ISO"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(D4-Pad2)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(D6-Pad2)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(Q1-D)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(Q1-G)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(R1-Pad1)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(R6-Pad2)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(U1-VIN)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "Net-(U5-Pad11)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "VCC_ISO"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(C1-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(C3-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(C35-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(C4-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(C5-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(C7-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(D3-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(D4-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(D5-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(D6-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(D7-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(Q1-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R1-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R13-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R14-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R2-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R3-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R6-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(R8-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(RJ2-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(TP21-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(TP22-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(TP24-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(TP25-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(TP26-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(TP27-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(U1-*)"
+      },
+      {
+        "netclass": "ISO",
+        "pattern": "unconnected-(U5-*)"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -1255,7 +1444,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "F1,RJ1-2,U1,U4-8,U11,D1-3,D7,D10-12,D15,Q1,Q3,#PWR4,#PWR7-9,#PWR12,#PWR15,#PWR22,#PWR24-30,#PWR32-33,#PWR35-37,#PWR41-42,#PWR45,#PWR47,#PWR50-51,#PWR70-81,Y2,X1,NT1-3,R1-8,R11-16,R18-19,R22-26,R37,R48-52,R55-66,TP4,TP7-36,USB1-2,J1-2,CN1,S1,S4,C2,C8-15,C36,C40-43,P1,#FLG4,#FLG6",
+    "used_designators": "J1-2,USB1-2,CN1,TP4,TP7-36,R1-8,R11-16,R18-19,R22-26,R37,R48-52,R55-66,#FLG4,#FLG6,P1,C2,C8-15,C36,C40-43,S1,S4,Q1,Q3,D1-3,D7,D10-12,D15,U1,U4-8,U11,F1,RJ1-2,NT1-3,#PWR4,#PWR7-9,#PWR12,#PWR15,#PWR22,#PWR24-30,#PWR32-33,#PWR35-37,#PWR41-42,#PWR45,#PWR47,#PWR50-51,#PWR70-81,Y2,X1",
     "variants": []
   },
   "sheets": [

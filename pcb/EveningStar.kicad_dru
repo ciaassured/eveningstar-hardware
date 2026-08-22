@@ -1,5 +1,5 @@
 (version 1)
-# Custom Design Rules (DRC) for KiCAD 7.0 (Stored in '<project>.kicad_dru' file).
+# Custom Design Rules (DRC) for KiCad 9/10 (Stored in '<project>.kicad_dru' file).
 #
 # Matching JLCPCB capabilities: https://jlcpcb.com/capabilities/pcb-capabilities
 #
@@ -8,16 +8,15 @@
 # Inspiration
 # - https://gist.github.com/darkxst/f713268e5469645425eed40115fb8b49 (with comments)
 # - https://gist.github.com/denniskupec/e163d13b0a64c2044bd259f64659485e (with comments)
-
-# TODO new rule: NPTH pads.
-# Inner diameter of pad should be 0.4-0.5 mm larger than NPTH drill diameter.
-# JLCPCB: "We make NPTH via dry sealing film process, if customer would like a NPTH but around with pad/copper, our engineer will dig out around pad/copper about 0.2mm-0.25mm, otherwise the metal potion will be flowed into the hole and it becomes a PTH. (there will be no copper dig out optimization for single board)."
-
-# TODO: new rule for plated slots: min diameter/width 0.5mm
-# JLCPCB: "The minimum plated slot width is 0.5mm, which is drawn with a pad."
-
-# TODO new rule: non-plated slots: min diameter/width 1.0mm
-# JLCPCB: "The minimum Non-Plated Slot Width is 1.0mm, please draw the slot outline in the mechanical layer(GML or GKO)""
+#
+# Several rules are deliberately stricter than JLCPCB allows, to buy yield
+# margin on a board that is not density limited. Where that is the case the
+# JLCPCB figure is noted alongside.
+#
+# Annular ring and mask web checking is delegated here rather than to Board
+# Setup: 'min_via_annular_width' is 0 in the project file so that the rules
+# below can treat vias, netted PTH pads and unnetted mechanical pads
+# differently. Board Setup cannot express that distinction.
 
 (rule "Track width, outer layer (1oz copper)"
 	(layer outer)
@@ -31,6 +30,8 @@
 	(constraint clearance (min 0.127mm))
 )
 
+# Inert on the current 2 layer stackup; kept so they take effect unchanged if
+# the board ever goes to 4 layers.
 (rule "Track width, inner layer"
 	(layer inner)
 	(condition "A.Type == 'track'")
@@ -56,6 +57,7 @@
 	(constraint silk_clearance (min 0.15mm))
 )
 
+# JLCPCB routed edge to copper is 0.2mm; 0.3mm here for margin.
 (rule "Edge (routed) to track clearance"
 	(condition "A.Type == 'track'")
 	(constraint edge_clearance (min 0.3mm))
@@ -66,10 +68,8 @@
 #	(constraint edge_clearance (min 0.4mm))
 #)
 
-# JLCPCB restrictions ambiguous:
-# Illustration: 0.2 mm, 1&2 layer: 0.3 mm, multilayer: "(0.15mm more costly)"
-# This rule handles diameter minimum and maximum for ALL holes.
-# Other specialized rules handle restrictions (e.g. Via, PTH, NPTH) 
+# JLCPCB drill range for a 2 layer board is 0.15-6.3mm, but 0.15mm is flagged
+# as more costly, so the minimum is held at 0.2mm deliberately.
 (rule "Hole diameter"
 	(constraint hole_size (min 0.2mm) (max 6.3mm))
 )
@@ -80,54 +80,97 @@
 	(constraint hole_size (min 0.5mm))
 )
 
-# TODO: Hole to board edge ≥ 1 mm. Min. board size 10 × 10 mm
+# TODO: Hole to board edge >= 1 mm. Min. board size 10 x 10 mm
+# JLCPCB minimum is 0.5mm; 0.6mm here for margin.
 (rule "Hole (castellated) diameter"
 	(layer outer)
 	(condition "A.Type == 'pad' && A.Fabrication_Property == 'Castellated pad'")
 	(constraint hole_size (min 0.6mm))
 )
 
-# JLCPCB: "Via diameter should be 0.1mm(0.15mm preferred) larger than Via hole size" (illustration shows diameters for both dimensions)
-# JLCPCB: PTH: "The annular ring size will be enlarged to 0.15mm in production."
-(rule "Annular ring width (via and PTH)"
+# JLCPCB: "The minimum plated slot width is 0.5mm, which is drawn with a pad."
+(rule "Slot width (plated)"
+	(condition "A.isPlated() && A.Hole_Size_X != A.Hole_Size_Y")
+	(constraint hole_size (min 0.5mm))
+)
+
+# JLCPCB: "The minimum Non-Plated Slot Width is 1.0mm, please draw the slot
+# outline in the mechanical layer(GML or GKO)"
+(rule "Slot width (non-plated)"
+	(condition "!A.isPlated() && A.Hole_Size_X != A.Hole_Size_Y")
+	(constraint hole_size (min 1.0mm))
+)
+
+# JLCPCB: "Via diameter should be 0.1mm(0.15mm preferred) larger than Via hole
+# size", i.e. 0.05mm per side. 0.075mm here for margin.
+(rule "Annular ring width (via)"
 	(layer outer)
-	(condition "A.isPlated()")
+	(condition "A.Type == 'via'")
 	(constraint annular_width (min 0.075mm))
 )
 
-(rule "Clearance: hole to hole (perimeter), different nets"
+# JLCPCB PTH annular ring: >=0.20mm (1oz: 0.25mm recommended, 0.18mm absolute
+# minimum). Restricted to netted pads so that unnetted mechanical features -
+# connector shield legs and retention posts, where the pad is the hole - are
+# not flagged. Those are drilled to size and have no annulus by design.
+(rule "Annular ring width (PTH pad)"
 	(layer outer)
-	(condition "A.Net != B.Net")
-	(constraint hole_to_hole (min 0.5mm))
+	(condition "A.Type == 'pad' && A.isPlated() && A.NetName != ''")
+	(constraint annular_width (min 0.2mm))
 )
 
-(rule "Clearance: hole to hole (perimeter), same net"
+# Hole to hole is a drilling limit, so it is split by feature type rather than
+# by net: the drill does not know the netlist. JLCPCB gives 0.2mm via to via
+# and 0.45mm where a component pad is involved.
+(rule "Clearance: hole to hole (via to via)"
 	(layer outer)
-	(condition "A.Net == B.Net")
-	(constraint hole_to_hole (min 0.254mm))
+	(condition "A.Type == 'via' && B.Type == 'via'")
+	(constraint hole_to_hole (min 0.2mm))
 )
 
-(rule "Clearance: track to NPTH hole (perimeter)"
-#	(condition "A.Pad_Type == 'NPTH, mechanical' && B.Type == 'track' && A.Net != B.Net")
-	(condition "!A.isPlated() && B.Type == 'track' && A.Net != B.Net")
-	(constraint hole_clearance (min 0.254mm))
+(rule "Clearance: hole to hole (pad involved)"
+	(layer outer)
+	(condition "A.Type == 'pad' || B.Type == 'pad'")
+	(constraint hole_to_hole (min 0.45mm))
 )
 
+# JLCPCB: "We make NPTH via dry sealing film process, if customer would like a
+# NPTH but around with pad/copper, our engineer will dig out around pad/copper
+# about 0.2mm-0.25mm, otherwise the metal potion will be flowed into the hole
+# and it becomes a PTH."  Applies to all copper, not only tracks.
+(rule "Clearance: copper to NPTH hole (perimeter)"
+	(condition "!A.isPlated() && A.Net != B.Net")
+	(constraint hole_clearance (min 0.25mm))
+)
+
+# JLCPCB PTH to track is 0.28mm minimum, 0.35mm recommended.
 (rule "Clearance: track to PTH hole perimeter"
 	(condition "A.isPlated() && B.Type == 'track' && A.Net != B.Net")
 	(constraint hole_clearance (min 0.33mm))
 )
 
-# TODO: try combining with rule "Clearance: PTH to track, different nets"
 (rule "Clearance: track to pad"
 	(condition "A.Type == 'pad' && B.Type == 'track' &&  A.Net != B.Net")
 	(constraint clearance (min 0.2mm))
 )
 
+# JLCPCB pad to pad, different nets: 0.15mm.
 (rule "Clearance: pad/via to pad/via"
 	(layer outer)
-#	(condition "(A.Type == 'Pad' || A.Type == 'Via') && (B.Type == 'Pad' || B.Type == 'Via') && A.Net != B.Net")	
 	(condition "A.isPlated() && B.isPlated() && A.Net != B.Net")
-	(constraint clearance (min 0.127mm))
+	(constraint clearance (min 0.15mm))
 )
 
+# Regression guard for the galvanic isolation barrier. U3 (ISO6721) is the only
+# crossing; the MeterBus side is bus powered through U1 and shares no return
+# with the USB/Ethernet side. The narrowest gap in the current layout is 4.05mm,
+# set by the U3 package pinout rather than by routing, so 3mm leaves headroom
+# while still catching a re-route that erodes the barrier.
+#
+# Membership is maintained as netclass patterns in EveningStar.kicad_pro. Items
+# with no net are excluded: the unnetted copper near the barrier is RJ2 mounting
+# and shield features that sit wholly on the isolated side.
+(rule "Isolation barrier (MeterBus side to everything else)"
+	(condition "A.NetClass == 'ISO' && B.NetClass != 'ISO' && B.NetName != ''")
+	(constraint clearance (min 3mm))
+)

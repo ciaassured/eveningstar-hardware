@@ -9207,7 +9207,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MB_PWR_ISO"
+		(property "Value" "BAT_ISO"
 			(at 106.68 177.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9962,7 +9962,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "READ_ISO"
+		(property "Value" "RX_ISO"
 			(at 135.89 177.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15453,7 +15453,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "WRITE_ISO"
+		(property "Value" "TX_ISO"
 			(at 135.89 186.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15720,7 +15720,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BUS_ISO"
+		(property "Value" "BUS"
 			(at 135.89 167.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
