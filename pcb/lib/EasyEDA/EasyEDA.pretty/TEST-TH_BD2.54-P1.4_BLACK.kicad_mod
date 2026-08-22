@@ -113,7 +113,7 @@
 		(uuid "1ee24bb0-5c58-46eb-acc0-06657e6ea2bd")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/TEST-TH_BD2.54-P1.4_BLACK.step"
 		(offset
 			(xyz 0 0 0)
 		)

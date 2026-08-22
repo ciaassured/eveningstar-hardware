@@ -26,7 +26,7 @@
 	(fp_line (start -0.60 -0.82) (end 0.60 -0.82) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 0.60 -0.82) (end 0.60 0.83) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 0.60 0.83) (end -0.60 0.83) (layer F.CrtYd) (width 0.05))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/SOT-666-6P_L1.6-W1.2-H0.6-LS1.6-P0.50.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/SOT-666-6P_L1.6-W1.2-H0.6-LS1.6-P0.50.step"
 		(offset (xyz 0.000 0.000 0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 180))

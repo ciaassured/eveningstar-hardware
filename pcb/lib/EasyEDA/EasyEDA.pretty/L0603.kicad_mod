@@ -224,9 +224,9 @@
 		(uuid "10be58a5-b133-45c6-aac6-9db94e00c137")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/L0603_L1.6-W0.8-H0.5_BEAD.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/L0603_L1.6-W0.8-H0.5_BEAD.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 0 0.25)
 		)
 		(scale
 			(xyz 1 1 1)

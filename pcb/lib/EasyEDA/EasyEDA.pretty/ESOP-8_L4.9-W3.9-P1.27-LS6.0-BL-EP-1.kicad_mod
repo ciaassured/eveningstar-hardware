@@ -31,8 +31,8 @@
 	(fp_line (start -2.50 -1.95) (end 2.50 -1.95) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 2.50 -1.95) (end 2.50 1.95) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 2.50 1.95) (end -2.50 1.95) (layer F.CrtYd) (width 0.05))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP-1.wrl"
-		(offset (xyz 0.000 0.000 0.000))
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP-1.step"
+		(offset (xyz 0 0 0.8))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
 	)

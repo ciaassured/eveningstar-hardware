@@ -22,8 +22,8 @@
 	(fp_line (start -4.25 -1.60) (end 4.25 -1.60) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 4.25 -1.60) (end 4.25 7.55) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 4.25 7.55) (end -4.25 7.55) (layer F.CrtYd) (width 0.05))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/CONN-TH_2P_L8.5-W9.2-H7.0-P3.81.wrl"
-		(offset (xyz 0.000 0.000 0.000))
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/CONN-TH_2P_L8.5-W9.2-H7.0-P3.81.step"
+		(offset (xyz -1.905 -0.025 0))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
 	)

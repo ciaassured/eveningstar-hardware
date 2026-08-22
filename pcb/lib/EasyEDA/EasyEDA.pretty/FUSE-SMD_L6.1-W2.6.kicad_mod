@@ -26,8 +26,8 @@
 	(fp_line (start -3.05 -1.30) (end 3.05 -1.30) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 3.05 -1.30) (end 3.05 1.30) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 3.05 1.30) (end -3.05 1.30) (layer F.CrtYd) (width 0.05))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/FUSE-SMD_L6.1-W2.6-H2.6.wrl"
-		(offset (xyz 0.000 0.000 0.000))
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/FUSE-SMD_L6.1-W2.6-H2.6.step"
+		(offset (xyz 0 0 1.3))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
 	)

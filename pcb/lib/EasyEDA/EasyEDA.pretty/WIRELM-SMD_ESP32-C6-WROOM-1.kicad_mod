@@ -82,4 +82,9 @@
 	(fp_poly (pts (xy -3.429051 -11.683975) (xy -6.985025 -11.683975) (xy -6.985025 -12.064975) (xy -3.429051 -12.064975) (xy -3.429051 -11.683975)) (stroke (width 0) (type solid)) (fill solid) (layer "F.SilkS"))
 	(fp_poly (pts (xy -6.985025 -11.683975) (xy -6.985025 -15.239975) (xy -7.366025 -15.239975) (xy -7.366025 -11.683975) (xy -6.985025 -11.683975)) (stroke (width 0) (type solid)) (fill solid) (layer "F.SilkS"))
 	(fp_poly (pts (xy -7.366025 -15.239975) (xy -8.636025 -15.239975) (xy -8.636025 -10.921975) (xy -8.255025 -10.921975) (xy -8.255025 -14.858975) (xy -7.366025 -14.858975) (xy -7.366025 -15.239975)) (stroke (width 0) (type solid)) (fill solid) (layer "F.SilkS"))
+	(model "${KIPRJMOD}/lib/custom/custom.3dshapes/ESP32-C6-WROOM-1.step"
+		(offset (xyz -9 -9.75 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
+	)
 )

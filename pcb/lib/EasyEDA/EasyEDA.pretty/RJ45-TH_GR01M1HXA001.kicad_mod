@@ -39,8 +39,8 @@
 	(fp_line (start -8.05 -9.12) (end 8.05 -9.12) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 8.05 -9.12) (end 8.05 7.73) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 8.05 7.73) (end -8.05 7.73) (layer F.CrtYd) (width 0.05))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/RJ45-TH_GR01M1HXA001.wrl"
-		(offset (xyz 0.000 0.000 0.000))
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/RJ45-TH_GR01M1HXA001.step"
+		(offset (xyz -0.005 0.695 17.45))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
 	)

@@ -36,8 +36,8 @@
 	(fp_line (start -6.73 -2.45) (end 6.73 -2.45) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 6.73 -2.45) (end 6.73 14.05) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 6.73 14.05) (end -6.73 14.05) (layer F.CrtYd) (width 0.05))
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/RJ45-TH_RRCH-5201-6P6C.wrl"
-		(offset (xyz 0.000 0.000 0.000))
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/RJ45-TH_RRCH-5201-6P6C.step"
+		(offset (xyz 0 -5.85 -0.2))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
 	)
