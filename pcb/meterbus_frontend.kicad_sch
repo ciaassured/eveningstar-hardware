@@ -9207,7 +9207,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BAT_ISO"
+		(property "Value" "BAT"
 			(at 106.68 177.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
