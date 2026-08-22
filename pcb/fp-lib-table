@@ -2,4 +2,5 @@
 	(version 7)
 	(lib (name "EasyEDA") (type "KiCad") (uri "${KIPRJMOD}/lib/EasyEDA/EasyEDA.pretty") (options "") (descr ""))
 	(lib (name "PCM_JLCPCB") (type "KiCad") (uri "${KIPRJMOD}/lib/JLCPCB-Kicad-Library/footprints/JLCPCB.pretty") (options "") (descr ""))
+	(lib (name "custom") (type "KiCad") (uri "${KIPRJMOD}/lib/custom/custom.pretty") (options "") (descr ""))
 )

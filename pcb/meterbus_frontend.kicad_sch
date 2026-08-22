@@ -9218,7 +9218,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
+		(property "Footprint" "custom:TestPoint_Plated_Hole_D2.0mm"
 			(at 109.22 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -9973,7 +9973,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 138.43 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -10240,7 +10240,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
+		(property "Footprint" "custom:TestPoint_Plated_Hole_D2.0mm"
 			(at 109.22 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -12778,7 +12778,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_JLCPCB:SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR"
+		(property "Footprint" "custom:SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR"
 			(at 66.04 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -15464,7 +15464,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 138.43 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -15731,7 +15731,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 138.43 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -17203,7 +17203,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 162.56 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -17815,7 +17815,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 162.56 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -18569,7 +18569,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EasyEDA:RJ45-TH_RRCH-5201-6P6C"
+		(property "Footprint" "custom:RJ45-TH_RRCH-5201-6P6C"
 			(at 50.8 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -21964,7 +21964,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 109.22 166.37 0)
 			(hide yes)
 			(show_name no)
