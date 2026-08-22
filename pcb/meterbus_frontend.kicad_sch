@@ -14499,7 +14499,7 @@
 	)
 	(symbol
 		(lib_id "custom_symbols:74HC14")
-		(at 158.75 93.98 180)
+		(at 30.48 147.32 0)
 		(unit 3)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14510,7 +14510,7 @@
 		(fields_autoplaced yes)
 		(uuid "657976f3-0735-49eb-be1f-8b1a969ce9d4")
 		(property "Reference" "U5"
-			(at 158.75 85.09 0)
+			(at 30.48 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14520,7 +14520,7 @@
 			)
 		)
 		(property "Value" "74HC14D"
-			(at 158.75 87.63 0)
+			(at 30.48 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14530,7 +14530,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL"
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14541,7 +14541,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241044_Nexperia-74HC14D-653_C5605.pdf"
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14552,7 +14552,7 @@
 			)
 		)
 		(property "Description" "-40°C~+125°C 1 1.5V~4.2V 21ns@6V,50pF 2V~6V 2uA 300mV~1.2V 5.2mA 5.2mA 6 74HC Schmitt trigger SOIC-14 Inverters ROHS"
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14563,7 +14563,7 @@
 			)
 		)
 		(property "LCSC" "C5605"
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14574,7 +14574,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14585,7 +14585,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14596,7 +14596,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14607,7 +14607,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14618,7 +14618,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14629,7 +14629,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14640,7 +14640,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14651,7 +14651,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14662,7 +14662,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14673,7 +14673,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 158.75 93.98 0)
+			(at 30.48 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18774,7 +18774,7 @@
 	)
 	(symbol
 		(lib_id "custom_symbols:74HC14")
-		(at 160.02 31.75 0)
+		(at 30.48 162.56 0)
 		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18785,7 +18785,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9217b0a-ffde-4495-973f-f78555339624")
 		(property "Reference" "U5"
-			(at 160.02 22.86 0)
+			(at 30.48 153.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18795,7 +18795,7 @@
 			)
 		)
 		(property "Value" "74HC14D"
-			(at 160.02 25.4 0)
+			(at 30.48 156.21 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18805,7 +18805,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL"
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18816,7 +18816,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241044_Nexperia-74HC14D-653_C5605.pdf"
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18827,7 +18827,7 @@
 			)
 		)
 		(property "Description" "-40°C~+125°C 1 1.5V~4.2V 21ns@6V,50pF 2V~6V 2uA 300mV~1.2V 5.2mA 5.2mA 6 74HC Schmitt trigger SOIC-14 Inverters ROHS"
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18838,7 +18838,7 @@
 			)
 		)
 		(property "LCSC" "C5605"
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18849,7 +18849,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18860,7 +18860,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18871,7 +18871,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18882,7 +18882,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18893,7 +18893,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18904,7 +18904,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18915,7 +18915,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18926,7 +18926,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18937,7 +18937,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18948,7 +18948,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 160.02 31.75 0)
+			(at 30.48 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19467,7 +19467,7 @@
 	)
 	(symbol
 		(lib_id "custom_symbols:74HC14")
-		(at 144.78 31.75 0)
+		(at 30.48 177.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19478,7 +19478,7 @@
 		(fields_autoplaced yes)
 		(uuid "d226d681-ad26-4305-b4ba-38c10eb59079")
 		(property "Reference" "U5"
-			(at 144.78 22.86 0)
+			(at 30.48 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19488,7 +19488,7 @@
 			)
 		)
 		(property "Value" "74HC14D"
-			(at 144.78 25.4 0)
+			(at 30.48 171.45 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19498,7 +19498,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL"
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19509,7 +19509,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241044_Nexperia-74HC14D-653_C5605.pdf"
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19520,7 +19520,7 @@
 			)
 		)
 		(property "Description" "-40°C~+125°C 1 1.5V~4.2V 21ns@6V,50pF 2V~6V 2uA 300mV~1.2V 5.2mA 5.2mA 6 74HC Schmitt trigger SOIC-14 Inverters ROHS"
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19531,7 +19531,7 @@
 			)
 		)
 		(property "LCSC" "C5605"
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19542,7 +19542,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19553,7 +19553,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19564,7 +19564,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19575,7 +19575,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19586,7 +19586,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19597,7 +19597,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19608,7 +19608,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19619,7 +19619,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19630,7 +19630,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19641,7 +19641,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 144.78 31.75 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19704,7 +19704,7 @@
 	)
 	(symbol
 		(lib_id "custom_symbols:74HC14")
-		(at 30.48 162.56 0)
+		(at 160.02 31.75 0)
 		(unit 5)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19715,7 +19715,7 @@
 		(fields_autoplaced yes)
 		(uuid "d7f0a35a-4bf9-43e4-9bdf-4fa1e816dbc0")
 		(property "Reference" "U5"
-			(at 30.48 153.67 0)
+			(at 160.02 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19725,7 +19725,7 @@
 			)
 		)
 		(property "Value" "74HC14D"
-			(at 30.48 156.21 0)
+			(at 160.02 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19735,7 +19735,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL"
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19746,7 +19746,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241044_Nexperia-74HC14D-653_C5605.pdf"
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19757,7 +19757,7 @@
 			)
 		)
 		(property "Description" "-40°C~+125°C 1 1.5V~4.2V 21ns@6V,50pF 2V~6V 2uA 300mV~1.2V 5.2mA 5.2mA 6 74HC Schmitt trigger SOIC-14 Inverters ROHS"
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19768,7 +19768,7 @@
 			)
 		)
 		(property "LCSC" "C5605"
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19779,7 +19779,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19790,7 +19790,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19801,7 +19801,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19812,7 +19812,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19823,7 +19823,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19834,7 +19834,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19845,7 +19845,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19856,7 +19856,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19867,7 +19867,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19878,7 +19878,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 30.48 162.56 0)
+			(at 160.02 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21002,7 +21002,7 @@
 	)
 	(symbol
 		(lib_id "custom_symbols:74HC14")
-		(at 30.48 177.8 0)
+		(at 158.75 93.98 180)
 		(unit 4)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21013,7 +21013,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea1b455c-8360-4876-9aab-66e81e3b883e")
 		(property "Reference" "U5"
-			(at 30.48 168.91 0)
+			(at 158.75 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21023,7 +21023,7 @@
 			)
 		)
 		(property "Value" "74HC14D"
-			(at 30.48 171.45 0)
+			(at 158.75 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21033,7 +21033,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL"
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21044,7 +21044,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241044_Nexperia-74HC14D-653_C5605.pdf"
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21055,7 +21055,7 @@
 			)
 		)
 		(property "Description" "-40°C~+125°C 1 1.5V~4.2V 21ns@6V,50pF 2V~6V 2uA 300mV~1.2V 5.2mA 5.2mA 6 74HC Schmitt trigger SOIC-14 Inverters ROHS"
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21066,7 +21066,7 @@
 			)
 		)
 		(property "LCSC" "C5605"
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21077,7 +21077,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21088,7 +21088,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21099,7 +21099,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21110,7 +21110,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21121,7 +21121,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21132,7 +21132,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21143,7 +21143,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21154,7 +21154,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21165,7 +21165,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21176,7 +21176,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 30.48 177.8 0)
+			(at 158.75 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21239,7 +21239,7 @@
 	)
 	(symbol
 		(lib_id "custom_symbols:74HC14")
-		(at 30.48 147.32 0)
+		(at 144.78 31.75 0)
 		(unit 6)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21250,7 +21250,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea5ed33b-b8cc-4fa8-9567-7a517245d831")
 		(property "Reference" "U5"
-			(at 30.48 138.43 0)
+			(at 144.78 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21260,7 +21260,7 @@
 			)
 		)
 		(property "Value" "74HC14D"
-			(at 30.48 140.97 0)
+			(at 144.78 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21270,7 +21270,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL"
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21281,7 +21281,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241044_Nexperia-74HC14D-653_C5605.pdf"
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21292,7 +21292,7 @@
 			)
 		)
 		(property "Description" "-40°C~+125°C 1 1.5V~4.2V 21ns@6V,50pF 2V~6V 2uA 300mV~1.2V 5.2mA 5.2mA 6 74HC Schmitt trigger SOIC-14 Inverters ROHS"
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21303,7 +21303,7 @@
 			)
 		)
 		(property "LCSC" "C5605"
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21314,7 +21314,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21325,7 +21325,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21336,7 +21336,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21347,7 +21347,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21358,7 +21358,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21369,7 +21369,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21380,7 +21380,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21391,7 +21391,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21402,7 +21402,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21413,7 +21413,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 30.48 147.32 0)
+			(at 144.78 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
