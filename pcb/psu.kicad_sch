@@ -949,6 +949,227 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "EasyEDA:ULV2C220MNL1GS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ULV2C220MNL1GS"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "EasyEDA:CAP-SMD_BD10.0-L10.3-W10.3-FD"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C2164587.pdf"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Nichicon(尼吉康)"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "ULV2C220MNL1GS"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C2164587"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Pre-ordered RLCs"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ULV2C220MNL1GS_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.51 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.29 1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.78 1.78) (xy -1.78 0.76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 1.78) (xy -0.51 -1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.13 -1.75)
+					(mid 0.4201 0.0241)
+					(end 1.15 1.79)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "EasyEDA:WJ15EDGK-3.81-02P-14-00A"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4100,6 +4321,12 @@
 		(uuid "0da9df23-ee80-45ef-ab38-97feb5aabf59")
 	)
 	(junction
+		(at 90.17 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13699e98-b7cb-4af4-9b7f-d7065e5190d0")
+	)
+	(junction
 		(at 163.83 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4110,12 +4337,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "46839939-2ecf-499c-b055-246d7844f414")
-	)
-	(junction
-		(at 91.44 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5e734011-1e0f-4524-b403-21ee2b2a0f2c")
 	)
 	(junction
 		(at 53.34 31.75)
@@ -4142,10 +4363,10 @@
 		(uuid "7b5aaaf1-be70-42f5-9f97-f3b70983c933")
 	)
 	(junction
-		(at 101.6 31.75)
+		(at 97.79 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "829737f5-97ad-408f-b35f-5b526a74a617")
+		(uuid "815ffe60-46c8-4317-bcac-c90fa11f2874")
 	)
 	(junction
 		(at 180.34 31.75)
@@ -4154,22 +4375,22 @@
 		(uuid "9ba8d48c-5101-4dd3-9df7-cd556583e209")
 	)
 	(junction
-		(at 207.01 31.75)
+		(at 90.17 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b6f4d507-a36c-4997-8833-e151a6059ba3")
-	)
-	(junction
-		(at 91.44 41.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b837addd-1f3e-4541-b51d-679f37a4f04c")
+		(uuid "ae929719-fe88-4295-a36d-e618a39c23d7")
 	)
 	(junction
 		(at 81.28 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c71e5c42-d0d0-4e4f-8885-c7ca336cff44")
+		(uuid "b5940aa0-6e28-4a7a-afa0-6a0af6da7f6b")
+	)
+	(junction
+		(at 207.01 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b6f4d507-a36c-4997-8833-e151a6059ba3")
 	)
 	(junction
 		(at 111.76 31.75)
@@ -4267,23 +4488,13 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 41.91) (xy 101.6 40.64)
+			(xy 97.79 41.91) (xy 97.79 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "174bd3a3-fcff-484c-8df9-d1912dd294a4")
-	)
-	(wire
-		(pts
-			(xy 91.44 31.75) (xy 81.28 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22e29baf-cc3b-4bca-aa93-8e8599dd00a0")
 	)
 	(wire
 		(pts
@@ -4297,16 +4508,6 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 31.75) (xy 81.28 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30c540ba-437b-4a10-a26c-190b6853a2ab")
-	)
-	(wire
-		(pts
 			(xy 189.23 41.91) (xy 189.23 40.64)
 		)
 		(stroke
@@ -4314,6 +4515,16 @@
 			(type default)
 		)
 		(uuid "352c88e4-5ce7-4984-a9f1-32d8bf01a0a6")
+	)
+	(wire
+		(pts
+			(xy 90.17 41.91) (xy 81.28 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "382d863a-f2a1-4943-9780-db86b5d69dc6")
 	)
 	(wire
 		(pts
@@ -4337,6 +4548,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 31.75) (xy 106.68 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d9bc672-50c1-4282-8f10-70281ba89c01")
+	)
+	(wire
+		(pts
 			(xy 73.66 31.75) (xy 81.28 31.75)
 		)
 		(stroke
@@ -4354,16 +4575,6 @@
 			(type default)
 		)
 		(uuid "55c3e9ee-91b6-4060-aa79-5a6514757767")
-	)
-	(wire
-		(pts
-			(xy 101.6 31.75) (xy 106.68 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "593a3856-98d2-4753-bd00-c00e7baffce7")
 	)
 	(wire
 		(pts
@@ -4387,17 +4598,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 31.75) (xy 91.44 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e938ba7-59e4-4644-b5a5-3d9345005c8f")
-	)
-	(wire
-		(pts
-			(xy 91.44 27.94) (xy 91.44 31.75)
+			(xy 90.17 27.94) (xy 90.17 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4437,23 +4638,33 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 40.64) (xy 91.44 41.91)
+			(xy 81.28 31.75) (xy 90.17 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6f183724-a343-49c9-b468-52e535a4f43b")
+		(uuid "69f7ddc5-ef44-4e9c-a968-300c80e15326")
 	)
 	(wire
 		(pts
-			(xy 91.44 41.91) (xy 81.28 41.91)
+			(xy 90.17 41.91) (xy 97.79 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "732cd780-3b4d-4382-8ceb-2b3811e67108")
+	)
+	(wire
+		(pts
+			(xy 90.17 31.75) (xy 97.79 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b035ebd-c9e0-4b57-8160-162e4774c7a4")
 	)
 	(wire
 		(pts
@@ -4467,16 +4678,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 31.75) (xy 101.6 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7fe7179a-d951-4882-882e-43e6198c8ec5")
-	)
-	(wire
-		(pts
 			(xy 180.34 43.18) (xy 180.34 41.91)
 		)
 		(stroke
@@ -4487,7 +4688,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 31.75) (xy 101.6 33.02)
+			(xy 97.79 31.75) (xy 97.79 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4537,16 +4738,6 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 41.91) (xy 81.28 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a3b6018-15b1-41bf-a297-09cd5ba185a5")
-	)
-	(wire
-		(pts
 			(xy 50.8 31.75) (xy 53.34 31.75)
 		)
 		(stroke
@@ -4554,16 +4745,6 @@
 			(type default)
 		)
 		(uuid "9b3e0232-9487-4d49-89d3-2370efb7b55f")
-	)
-	(wire
-		(pts
-			(xy 91.44 41.91) (xy 101.6 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9eab0003-f8b2-4c38-814b-3a5c4f6479d3")
 	)
 	(wire
 		(pts
@@ -4697,7 +4878,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 43.18) (xy 91.44 41.91)
+			(xy 90.17 43.18) (xy 90.17 41.91)
 		)
 		(stroke
 			(width 0)
@@ -5402,7 +5583,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 91.44 43.18 0)
+		(at 90.17 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5413,7 +5594,7 @@
 		(fields_autoplaced yes)
 		(uuid "13df5846-a619-4e43-ae9b-4bf59d5caf7b")
 		(property "Reference" "#PWR037"
-			(at 91.44 49.53 0)
+			(at 90.17 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5424,7 +5605,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 91.44 48.26 0)
+			(at 90.17 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5434,7 +5615,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 43.18 0)
+			(at 90.17 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5445,7 +5626,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 43.18 0)
+			(at 90.17 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5456,7 +5637,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 91.44 43.18 0)
+			(at 90.17 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5473,698 +5654,6 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
 					(reference "#PWR037")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
-		(at 81.28 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1dc4b680-f4ed-4ec4-b8b2-f8da0b8b56a1")
-		(property "Reference" "C43"
-			(at 83.82 34.2899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7uF"
-			(at 83.82 36.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PCM_JLCPCB:C_1206"
-			(at 79.502 36.83 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM31CZ72A475KE11-01A-EN_PDF_CERAMICCAPACITORSMD"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "100V 4.7uF X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C3864744"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "a" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "b" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Process" "SMT"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "c" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "d" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "e" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part" "GRJ31CZ72A475KE01L"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage Rated" "100V"
-			(at 83.82 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "4.7uF"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Average Rectified Current (Io)" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Clamping Voltage" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Number of Channels" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak Pulse Current (Ipp)" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak forward surge current" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Polarity" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage - Breakdown" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "level of protection" ""
-			(at 81.28 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "3d58912b-f993-4a6f-bdc2-6c8faea9f8b6")
-		)
-		(pin "1"
-			(uuid "2cdb9212-4cae-486f-b9e9-79d3449344ea")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "C43")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
-		(at 91.44 36.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2ff70ba7-3bfc-442f-b0a0-8d6fe1774bdb")
-		(property "Reference" "C42"
-			(at 93.98 34.2899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7uF"
-			(at 93.98 36.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PCM_JLCPCB:C_1206"
-			(at 89.662 36.83 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM31CZ72A475KE11-01A-EN_PDF_CERAMICCAPACITORSMD"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "100V 4.7uF X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C3864744"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "a" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "b" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Process" "SMT"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "c" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "d" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "e" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part" "GRJ31CZ72A475KE01L"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage Rated" "100V"
-			(at 93.98 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "±10%"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Capacitance" "4.7uF"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Average Rectified Current (Io)" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Clamping Voltage" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Number of Channels" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak Pulse Current (Ipp)" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Peak forward surge current" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Polarity" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage - Breakdown" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "level of protection" ""
-			(at 91.44 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "845214aa-dcba-4c85-aafa-5112e506f96a")
-		)
-		(pin "1"
-			(uuid "455505a2-2bef-410c-985f-8b7860b591f6")
-		)
-		(instances
-			(project "EveningStar"
-				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
-					(reference "C42")
 					(unit 1)
 				)
 			)
@@ -6854,7 +6343,7 @@
 	)
 	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0805,100nF")
-		(at 101.6 36.83 0)
+		(at 97.79 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6865,7 +6354,7 @@
 		(fields_autoplaced yes)
 		(uuid "578af6be-82ae-42fc-abc2-43ad2c020c66")
 		(property "Reference" "C14"
-			(at 104.14 34.2899 0)
+			(at 100.33 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6876,7 +6365,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 104.14 36.83 0)
+			(at 100.33 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6887,7 +6376,7 @@
 			)
 		)
 		(property "Footprint" "PCM_JLCPCB:C_0805"
-			(at 99.822 36.83 90)
+			(at 96.012 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6898,7 +6387,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21B104KCFNNNE_C28233.pdf"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6909,7 +6398,7 @@
 			)
 		)
 		(property "Description" "100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6920,7 +6409,7 @@
 			)
 		)
 		(property "LCSC" "C28233"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6931,7 +6420,7 @@
 			)
 		)
 		(property "Stock" "3222467"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6942,7 +6431,7 @@
 			)
 		)
 		(property "Price" "0.012USD"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6953,7 +6442,7 @@
 			)
 		)
 		(property "Process" "SMT"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6964,7 +6453,7 @@
 			)
 		)
 		(property "Minimum Qty" "20"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6975,7 +6464,7 @@
 			)
 		)
 		(property "Attrition Qty" "10"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6986,7 +6475,7 @@
 			)
 		)
 		(property "Class" "Basic Component"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6997,7 +6486,7 @@
 			)
 		)
 		(property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7008,7 +6497,7 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7019,7 +6508,7 @@
 			)
 		)
 		(property "Part" "CL21B104KCFNNNE"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7030,7 +6519,7 @@
 			)
 		)
 		(property "Voltage Rated" "100V"
-			(at 104.14 39.37 0)
+			(at 100.33 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7041,7 +6530,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7052,7 +6541,7 @@
 			)
 		)
 		(property "Capacitance" "100nF"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7063,7 +6552,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7074,7 +6563,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7085,7 +6574,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7096,7 +6585,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7107,7 +6596,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7118,7 +6607,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7129,7 +6618,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7140,7 +6629,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7151,7 +6640,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7162,7 +6651,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7173,7 +6662,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 101.6 36.83 0)
+			(at 97.79 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8037,7 +7526,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Square")
-		(at 91.44 27.94 90)
+		(at 90.17 27.94 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8048,7 +7537,7 @@
 		(fields_autoplaced yes)
 		(uuid "75142703-b4aa-448d-be07-dc552ba48992")
 		(property "Reference" "TP36"
-			(at 91.44 22.86 90)
+			(at 90.17 22.86 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8058,7 +7547,7 @@
 			)
 		)
 		(property "Value" "VIN_PROTECTED"
-			(at 91.44 25.4 90)
+			(at 90.17 25.4 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8068,7 +7557,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
-			(at 91.44 22.86 0)
+			(at 90.17 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8079,7 +7568,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 91.44 22.86 0)
+			(at 90.17 22.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8090,7 +7579,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8101,7 +7590,7 @@
 			)
 		)
 		(property "Average Rectified Current (Io)" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8112,7 +7601,7 @@
 			)
 		)
 		(property "Clamping Voltage" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8123,7 +7612,7 @@
 			)
 		)
 		(property "LSCS Part" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8134,7 +7623,7 @@
 			)
 		)
 		(property "Number of Channels" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8145,7 +7634,7 @@
 			)
 		)
 		(property "Peak Pulse Current (Ipp)" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8156,7 +7645,7 @@
 			)
 		)
 		(property "Peak Pulse Power Dissipation (Ppp)" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8167,7 +7656,7 @@
 			)
 		)
 		(property "Peak forward surge current" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8178,7 +7667,7 @@
 			)
 		)
 		(property "Polarity" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8189,7 +7678,7 @@
 			)
 		)
 		(property "Voltage - Breakdown" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8200,7 +7689,7 @@
 			)
 		)
 		(property "level of protection" ""
-			(at 91.44 27.94 0)
+			(at 90.17 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8563,6 +8052,121 @@
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
 					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EasyEDA:ULV2C220MNL1GS")
+		(at 81.28 36.83 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8c42da05-4930-4627-8a29-5f8c4026db7e")
+		(property "Reference" "C36"
+			(at 83.82 35.5599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF 160V"
+			(at 83.82 38.0999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:CAP-SMD_BD10.0-L10.3-W10.3-FD"
+			(at 73.66 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2164587.pdf"
+			(at 71.12 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nichicon(尼吉康)"
+			(at 68.58 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ULV2C220MNL1GS"
+			(at 66.04 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2164587"
+			(at 63.5 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b2718ee1-f4b2-4f58-9690-6ffa99e4911e")
+		)
+		(pin "2"
+			(uuid "2b4b06d5-3b9b-47c1-96f6-e9b93293878b")
+		)
+		(instances
+			(project "EveningStar"
+				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
+					(reference "C36")
 					(unit 1)
 				)
 			)
