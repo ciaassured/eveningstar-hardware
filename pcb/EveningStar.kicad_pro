@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 3.54,
-          "width": 2.465
+          "height": 0.3,
+          "width": 1.475
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -60,9 +60,9 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.3,
           "min_island_area": 10.0,
-          "min_thickness": 0.25,
+          "min_thickness": 0.2,
           "pad_connection": 1,
           "remove_islands": 0,
           "thermal_relief_gap": 0.5,
@@ -531,10 +531,17 @@
         "wire_width": 6
       },
       {
+        "clearance": 1.0,
+        "name": "CGND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -723,6 +730,10 @@
       {
         "netclass": "ISO",
         "pattern": "unconnected-(U5-*)"
+      },
+      {
+        "netclass": "CGND",
+        "pattern": "CGND"
       }
     ]
   },
@@ -1444,7 +1455,7 @@
         "uuid": "4c61f5a2-f8d4-462a-9bc3-d74437d30372"
       }
     ],
-    "used_designators": "F1,RJ1-2,U1,U4-8,U11,D1-3,D7,D10-12,D15,Q1,Q3,X1,Y2,#PWR4,#PWR7-9,#PWR12,#PWR15,#PWR22,#PWR24-30,#PWR32-33,#PWR35-37,#PWR41-42,#PWR45,#PWR47,#PWR50-51,#PWR70-81,NT1-3,TP4,TP7-36,R1-8,R11-16,R18-19,R22-26,R37,R48-52,R55-66,USB1-2,J1-2,CN1,S1,S4,#FLG4,#FLG6,P1,C2,C8-15,C36,C40-43",
+    "used_designators": "F1,RJ1-2,U1,U4-8,U11,D1-3,D7,D10-12,D15,Q1,Q3,#PWR4,#PWR7-9,#PWR12,#PWR15,#PWR22,#PWR24-30,#PWR32-33,#PWR35-37,#PWR41-42,#PWR45,#PWR47,#PWR50-51,#PWR70-81,Y2,X1,NT1-3,R1-8,R11-16,R18-19,R22-26,R37,R48-52,R55-66,TP4,TP7-36,USB1-2,J1-2,CN1,S1,S4,C2,C8-15,C36,C40-43,P1,#FLG4,#FLG6",
     "variants": []
   },
   "sheets": [

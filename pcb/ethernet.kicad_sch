@@ -1364,6 +1364,18 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 15.24 -6.35) (xy 17.78 -6.35) (xy 17.78 -7.62)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
 			(symbol "GR01M1HXA001_1_0"
 				(text "1000pF"
@@ -2153,7 +2165,25 @@
 							)
 						)
 					)
-					(number "SH"
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 -10.16 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8886,6 +8916,12 @@
 		(uuid "75c7be0c-71e7-4a54-ae40-f6d9995112a1")
 	)
 	(junction
+		(at 248.92 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "802b1ff6-2371-4922-a62b-d4f9d3f2369c")
+	)
+	(junction
 		(at 243.84 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9390,6 +9426,16 @@
 			(type default)
 		)
 		(uuid "3fb17496-82c8-42f7-8de9-fc13709d440f")
+	)
+	(wire
+		(pts
+			(xy 251.46 55.88) (xy 251.46 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "437cea59-74c7-4b41-91e3-8a49e1fd40f2")
 	)
 	(wire
 		(pts
@@ -10613,6 +10659,16 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 55.88) (xy 251.46 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9c3a247-c0e5-4246-aacf-756581f6c70c")
+	)
+	(wire
+		(pts
 			(xy 149.86 168.91) (xy 153.67 168.91)
 		)
 		(stroke
@@ -10761,6 +10817,16 @@
 		)
 		(uuid "054d2d48-3593-4bb6-9b91-3e9e065b62cf")
 	)
+	(label "RDMID+"
+		(at 165.1 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "06a9a597-aaad-4d35-bb9d-7ca7cf98575d")
+	)
 	(label "TOCAP"
 		(at 76.2 96.52 0)
 		(effects
@@ -10780,6 +10846,16 @@
 			(justify right bottom)
 		)
 		(uuid "105e41fd-d396-461d-b30a-e765ef314093")
+	)
+	(label "RDMID-"
+		(at 165.1 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1665d942-f184-4790-bbe7-4c708d0c4fef")
 	)
 	(label "PMODE0"
 		(at 100.33 176.53 180)
@@ -12458,7 +12534,7 @@
 		(pin "6"
 			(uuid "b7665dc7-33cb-439a-9525-0ca67fa1b87c")
 		)
-		(pin "SH"
+		(pin "14"
 			(uuid "06f43412-9818-4f74-810b-c4422b655bf5")
 		)
 		(pin "7"
@@ -12472,6 +12548,9 @@
 		)
 		(pin "8"
 			(uuid "2d8ac576-3e89-4cd0-8700-df98581b250d")
+		)
+		(pin "13"
+			(uuid "1889ec15-c529-4d94-b4e4-8a5305576d94")
 		)
 		(instances
 			(project "EveningStar"

@@ -8541,6 +8541,18 @@
 					(type none)
 				)
 			)
+			(polyline
+				(pts
+					(xy 15.24 -6.35) (xy 17.78 -6.35) (xy 17.78 -7.62)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
 		)
 		(symbol "GR01M1HXA001_1_0"
 			(text "1000pF"
@@ -9330,7 +9342,25 @@
 						)
 					)
 				)
-				(number "SH"
+				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 17.78 -10.16 90)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -19141,6 +19171,221 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "ULV2C220MNL1GS"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ULV2C220MNL1GS"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "EasyEDA:CAP-SMD_BD10.0-L10.3-W10.3-FD"
+			(at 0 -7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2164587.pdf"
+			(at 0 -10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nichicon(尼吉康)"
+			(at 0 -12.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ULV2C220MNL1GS"
+			(at 0 -15.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2164587"
+			(at 0 -17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "Pre-ordered RLCs"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "ULV2C220MNL1GS_0_1"
+			(polyline
+				(pts
+					(xy -2.54 0) (xy -0.51 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.29 1.27) (xy -1.27 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.78 1.78) (xy -1.78 0.76)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.51 1.78) (xy -0.51 -1.78)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.51 0) (xy 2.54 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 1.13 -1.75)
+				(mid 0.4201 0.0241)
+				(end 1.15 1.79)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin input line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 5.08 0 180)
+				(length 2.54)
+				(name "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "USBLC6-2P6"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21093,120 +21338,4 @@
 		)
 		(embedded_fonts no)
 	)
-
-  (symbol "ULV2C220MNL1GS"
-    (exclude_from_sim no)
-    (in_bom yes)
-    (on_board yes)
-    (property
-      "Reference"
-      "C"
-      (at 0 5.08 0)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "Value"
-      "ULV2C220MNL1GS"
-      (at 0 -5.08 0)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "Footprint"
-      "EasyEDA:CAP-SMD_BD10.0-L10.3-W10.3-FD"
-      (at 0 -7.62 0)
-      (hide yes)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "Datasheet"
-      "https://www.lcsc.com/datasheet/C2164587.pdf"
-      (at 0 -10.16 0)
-      (hide yes)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "Manufacturer"
-      "Nichicon(尼吉康)"
-      (at 0 -12.70 0)
-      (hide yes)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "MPN"
-      "ULV2C220MNL1GS"
-      (at 0 -15.24 0)
-      (hide yes)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "LCSC Part"
-      "C2164587"
-      (at 0 -17.78 0)
-      (hide yes)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (property
-      "ki_keywords"
-      "Pre-ordered RLCs"
-      (at 0 -20.32 0)
-      (hide yes)
-      (effects (font (size 1.27 1.27) ))
-    )
-    (symbol "ULV2C220MNL1GS_0_1"
-      (arc
-        (start 1.15 1.79)
-        (mid 0.42 0.02)
-        (end 1.13 -1.75)
-        (stroke (width 0) (type default))
-        (fill (type none))
-      )
-      (polyline
-        (pts
-          (xy -0.51 1.78) (xy -0.51 -1.78)
-        )
-        (stroke (width 0) (type default))
-        (fill (type none))
-      )
-      (polyline
-        (pts
-          (xy -2.54 -0.00) (xy -0.51 -0.00)
-        )
-        (stroke (width 0) (type default))
-        (fill (type none))
-      )
-      (polyline
-        (pts
-          (xy 0.51 -0.00) (xy 2.54 -0.00)
-        )
-        (stroke (width 0) (type default))
-        (fill (type none))
-      )
-      (polyline
-        (pts
-          (xy -2.29 1.27) (xy -1.27 1.27)
-        )
-        (stroke (width 0) (type default))
-        (fill (type none))
-      )
-      (polyline
-        (pts
-          (xy -1.78 1.78) (xy -1.78 0.76)
-        )
-        (stroke (width 0) (type default))
-        (fill (type none))
-      )
-      (pin input line
-        (at -5.08 -0.00 0)
-        (length 2.54)
-        (name "1" (effects (font (size 1.27 1.27))))
-        (number "1" (effects (font (size 1.27 1.27))))
-      )
-      (pin input line
-        (at 5.08 -0.00 180)
-        (length 2.54)
-        (name "2" (effects (font (size 1.27 1.27))))
-        (number "2" (effects (font (size 1.27 1.27))))
-      )
-    )
-  )
 )
