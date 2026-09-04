@@ -9028,9 +9028,8 @@
 				)
 			)
 		)
-		(property "Description" "-55°C~+155°C 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS"
-			(at 29.21 180.34 0)
-			(hide yes)
+		(property "Description" "J_RST"
+			(at 27.686 175.768 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10249,7 +10248,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "custom:NetTie-3_SMD_Pad0.5mm"
 			(at 43.18 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -15145,7 +15144,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "NetTie:NetTie-3_SMD_Pad0.5mm"
 			(at 46.99 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -18683,10 +18682,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f9df1324-7764-4a77-976d-2eea1c8f514a")
 		(property "Reference" "R7"
-			(at 83.82 175.26 90)
+			(at 83.82 174.498 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18727,9 +18725,8 @@
 				)
 			)
 		)
-		(property "Description" "-55°C~+155°C 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS"
-			(at 83.82 179.07 0)
-			(hide yes)
+		(property "Description" "J_3V3"
+			(at 83.566 176.276 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

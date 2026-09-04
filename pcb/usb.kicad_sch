@@ -2171,7 +2171,7 @@
 		)
 		(uuid "3ededef1-dc38-456c-a829-7f7561d5faa1")
 	)
-	(label "D-_RAW"
+	(label "D_RAW-"
 		(at 45.72 46.99 0)
 		(effects
 			(font
@@ -2181,7 +2181,7 @@
 		)
 		(uuid "42308aa1-369d-4800-a407-0436a7c9df38")
 	)
-	(label "D+_RAW"
+	(label "D_RAW+"
 		(at 45.72 41.91 0)
 		(effects
 			(font
@@ -2191,7 +2191,7 @@
 		)
 		(uuid "434d5409-a46a-4169-a6cb-10ccf01b3030")
 	)
-	(label "D-_RAW"
+	(label "D_RAW-"
 		(at 82.55 46.99 180)
 		(effects
 			(font
@@ -2211,7 +2211,7 @@
 		)
 		(uuid "7e0194c8-5ad1-44d1-acf9-3943911c8ce8")
 	)
-	(label "D+_RAW"
+	(label "D_RAW+"
 		(at 82.55 31.75 180)
 		(effects
 			(font
