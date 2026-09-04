@@ -762,6 +762,27 @@
 					)
 				)
 			)
+			(symbol "LMR38020SDDAR_1_1"
+				(pin power_in line
+					(at 0 -30.48 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
 			(embedded_fonts no)
 		)
 		(symbol "EasyEDA:SMBJ40CA_C151262"
@@ -9046,6 +9067,9 @@
 		(pin "7"
 			(uuid "7127e760-c8ed-452d-85f8-e728d2742b72")
 		)
+		(pin "9"
+			(uuid "e551b5f9-6b6f-404e-8357-7e5fddf08065")
+		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/2e538fbd-4766-4d3c-804f-b602af6e3385"
@@ -9067,7 +9091,7 @@
 		(dnp no)
 		(uuid "c8a464f3-4e2f-4ee0-a7a1-a57591b1a1ee")
 		(property "Reference" "R25"
-			(at 199.136 29.21 90)
+			(at 199.644 27.432 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9108,14 +9132,14 @@
 				)
 			)
 		)
-		(property "Description" "-55°C~+155°C 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS"
-			(at 199.39 31.75 0)
-			(hide yes)
+		(property "Description" "3V3_JMP"
+			(at 199.898 29.464 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.1588)
 				)
 			)
 		)

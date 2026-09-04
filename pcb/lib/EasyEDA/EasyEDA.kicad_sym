@@ -15494,6 +15494,27 @@
 				)
 			)
 		)
+		(symbol "LMR38020SDDAR_1_1"
+			(pin power_in line
+				(at 0 -30.48 90)
+				(length 2.54)
+				(hide yes)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
 		(embedded_fonts no)
 	)
 	(symbol "PRTR5V0U2X_C2827688"
