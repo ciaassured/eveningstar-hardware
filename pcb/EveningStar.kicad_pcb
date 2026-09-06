@@ -76679,6 +76679,17 @@
 		(uuid "7278ff58-26cd-4d2b-982c-f66b8b318f5b")
 	)
 	(gr_rect
+		(start 42.2 113.4)
+		(end 52.2 115.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "cee11890-62a2-4f5c-ab7f-6fc068d122c2")
+	)
+	(gr_rect
 		(start 38.375 45.67)
 		(end 119.575 117.27)
 		(stroke
