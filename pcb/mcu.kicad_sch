@@ -1278,6 +1278,25 @@
 					)
 					(alternate "SPI2_MISO" input line)
 				)
+				(pin power_in line
+					(at -3.81 -25.4 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin passive line
 					(at -3.81 -25.4 90)
 					(length 2.54)
@@ -7792,7 +7811,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_JLCPCB:FC-135R_L3.2-W1.5"
+		(property "Footprint" "custom:FC-135R_L3.2-W1.5"
 			(at 260.35 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -9816,6 +9835,9 @@
 		(pin "29"
 			(uuid "1c28c435-694d-4bd5-87a3-5fd515ad6172")
 		)
+		(pin "28"
+			(uuid "b96ef21a-3106-471a-8396-55392034831d")
+		)
 		(instances
 			(project "EveningStar"
 				(path "/4c61f5a2-f8d4-462a-9bc3-d74437d30372/83e90eda-4c3c-4f86-9f5b-c472ac53896a"
@@ -10876,7 +10898,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
+		(property "Footprint" "custom:TestPoint_Plated_Hole_D2.0mm"
 			(at 196.85 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -13844,10 +13866,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
+		(in_pos_files no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "943ebec9-6680-4938-8558-4746f48f159c")
 		(property "Reference" "J2"
@@ -16495,7 +16517,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 196.85 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -18460,7 +18482,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "custom:TestPoint_Pad_D1.0mm"
 			(at 196.85 135.89 0)
 			(hide yes)
 			(show_name no)

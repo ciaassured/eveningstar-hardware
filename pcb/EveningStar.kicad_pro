@@ -1387,9 +1387,15 @@
           "label": "Output Polarity",
           "name": "Output Polarity",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Reverse Transfer Capacitance (Crss@Vds)",
+          "name": "Reverse Transfer Capacitance (Crss@Vds)",
+          "show": false
         }
       ],
-      "filter_string": "tp",
+      "filter_string": "u7",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
