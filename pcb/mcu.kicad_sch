@@ -1278,6 +1278,25 @@
 					)
 					(alternate "SPI2_MISO" input line)
 				)
+				(pin passive line
+					(at -3.81 -25.4 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
@@ -9793,6 +9812,9 @@
 		)
 		(pin "24"
 			(uuid "f6ea444d-efcc-44be-9959-79107f006c53")
+		)
+		(pin "29"
+			(uuid "1c28c435-694d-4bd5-87a3-5fd515ad6172")
 		)
 		(instances
 			(project "EveningStar"
