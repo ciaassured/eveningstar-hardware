@@ -38622,7 +38622,7 @@
 				(pins "1" "3" "2")
 			)
 		)
-		(attr exclude_from_bom allow_missing_courtyard)
+		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
 		(net_tie_pad_groups "1, 2, 3")
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
@@ -59824,7 +59824,7 @@
 				(pins "1" "3" "2")
 			)
 		)
-		(attr exclude_from_bom allow_missing_courtyard)
+		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
 		(net_tie_pad_groups "1, 2, 3")
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
