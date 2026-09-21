@@ -44,7 +44,7 @@ The ratings above come from component datasheets. The board has not been indepen
 
 ## Installation
 
-* **Power:** connect 8–40 V DC to the terminal block, observing the + and − markings beside it. Fuse the positive supply with a 1 A fuse close to the power source, and use wiring rated to carry at least 1 A continuously. The 1 A fuse on the board protects the board itself; the fuse at the source protects the wiring between them, so choose one that is rated for the supply's DC voltage and can break the current a battery can deliver into a short.
+* **Power:** connect 8–40 V DC to the terminal block, observing the + and − markings beside it. Fuse the positive supply with a 1 A fuse close to the power source, and use wiring rated to carry at least 1 A continuously. This fuse protects the wiring, so any ordinary fuse type will do and it does not need to be fast-acting; the board's own very-fast-acting 1 A fuse is what protects the board, in a predictable way. Choose one rated for the supply's DC voltage that can break the current a battery can deliver into a short.
 * **MeterBus:** connect the RJ11 jack to the Morningstar device's MeterBus port. The MeterBus side takes its power from that port.
 * **Ethernet:** connect a standard Ethernet cable. The board is not powered over Ethernet.
 
