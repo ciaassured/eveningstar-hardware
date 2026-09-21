@@ -271,7 +271,7 @@
 		(uuid "e7cb87c4-71bb-432b-9e46-99f2dd84fb96")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/CAP-SMD_BD10.0-L10.3-W10.3-FD.wrl"
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/CAP-SMD_BD10.0-L10.3-W10.3-FD.step"
 		(offset
 			(xyz 0 0 0)
 		)
