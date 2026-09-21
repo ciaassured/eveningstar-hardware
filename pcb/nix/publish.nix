@@ -275,10 +275,7 @@ let
   } ''
     mkdir -p "$out"
 
-    cp ${productionArtifacts}/EveningStar.zip "$out/EveningStar-gerbers.zip"
-    cp ${productionArtifacts}/bom.csv "$out/EveningStar-bom.csv"
-    cp ${productionArtifacts}/positions.csv "$out/EveningStar-cpl.csv"
-    cp ${productionArtifacts}/netlist.ipc "$out/EveningStar-netlist.ipc"
+    cp ${productionArtifacts}/* "$out/"
 
     cp ${schematicDocuments}/EveningStar-schematic.pdf "$out/"
     qpdf --deterministic-id --empty --pages \

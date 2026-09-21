@@ -171,9 +171,15 @@ def main() -> None:
         for path in gerber_files:
             normalize_timestamps(path)
 
-        write_deterministic_zip(gerber_path, args.output / "EveningStar.zip")
-        for name in ("bom.csv", "designators.csv", "netlist.ipc", "positions.csv"):
-            shutil.copyfile(tables_path / name, args.output / name)
+        # Named as the GitHub release names them. The Toolkit's designators.csv
+        # only repeats the BOM, so it is left out, as it is from the release.
+        write_deterministic_zip(gerber_path, args.output / "EveningStar-gerbers.zip")
+        for source, name in (
+            ("bom.csv", "EveningStar-bom.csv"),
+            ("positions.csv", "EveningStar-cpl.csv"),
+            ("netlist.ipc", "EveningStar-netlist.ipc"),
+        ):
+            shutil.copyfile(tables_path / source, args.output / name)
 
 
 if __name__ == "__main__":
