@@ -4,17 +4,25 @@ This guide includes instructions on how to order an assembled PCB from [JLCPCB](
 
 ## Production files
 
-Use the production files attached to the GitHub release for the exact hardware
-tag being ordered. Releases up to v1.0.1 name them `EveningStar.zip`,
-`bom.csv`, and `positions.csv`. To generate the same payload from a checkout
-instead, run the following command from the repository root:
+Download the production files from the latest GitHub release:
+
+- [`EveningStar-gerbers.zip`](https://github.com/ciaassured/eveningstar-hardware/releases/latest/download/EveningStar-gerbers.zip)
+- [`EveningStar-bom.csv`](https://github.com/ciaassured/eveningstar-hardware/releases/latest/download/EveningStar-bom.csv)
+- [`EveningStar-cpl.csv`](https://github.com/ciaassured/eveningstar-hardware/releases/latest/download/EveningStar-cpl.csv)
+
+To order an older hardware version, take the files from that version's release
+instead. Releases up to v1.0.1 name them `EveningStar.zip`, `bom.csv`, and
+`positions.csv`.
+
+Alternatively, build them from a checkout of the tag being ordered by running
+the following command from the repository root:
 
 ```sh
-nix run .#production
+nix build .#production
 ```
 
-This links the files under `reports/production/`. Do not use manufacturing
-files from a different tag or an unreviewed working tree.
+This leaves the same files under `result/`. Do not use manufacturing files from
+a different tag or an unreviewed working tree.
 
 ## Instant Quote
 
@@ -22,8 +30,7 @@ files from a different tag or an unreviewed working tree.
 
 2. Sign In. You must sign in later anyway, and if you don't sign in now the form sometimes glitches out and changes options.
 
-3. Select **Add gerber file** and upload `reports/production/EveningStar.zip`
-   or `EveningStar-gerbers.zip` from the GitHub release.
+3. Select **Add gerber file** and upload `EveningStar-gerbers.zip`.
 
 4. Select the number of PCBs you want to order.
 
@@ -31,23 +38,33 @@ files from a different tag or an unreviewed working tree.
 
 6. Update **Mark on PCB** to **2D barcode (Serial Number)**.
 
-    1. Update **Printing** to **2D barcode & Number**.
+   1. Update **Printing** to **Number Only**.
 
-    2. Update **Prefix** to **github_ciaassured**.
+   2. Update **2D Barcode Position** to **Specify Position**.
 
-    3. Update **2D Barcode Size** to **10*10mm**.
-
-    4. Update **2D Barcode Position** to **Specify Position**.
+   3. Click **Submit**.
 
 7. Enable PCB Assembly.
 
 8. Update **Tooling holes** to **Added by Customer**
 
-9. Select desired lead-time and shipping options on the right-hand side-bar.
+9. Update **Assembly remark** to **Yes**
 
-10. Review options and compare with this [screenshot](/image/jlcpcb_quote_screenshot.png).
+   1. Enter the following remark
 
-11. Click **Next**.
+   ```plain
+   Please fit CN1 by plugging it into P1 on every board after soldering.
+
+   CN1 is the plug half of the pluggable terminal block (LCSC C8466, KANGNEX WJ15EDGK-3.81-02P-14-00A) and mates with the soldered header P1 (LCSC C8387, WJ15EDGRC-3.81-2P). CN1 is not soldered, so it is in the BOM but has no entry in the CPL file.
+
+   Please insert it fully.
+   ```
+
+10. Select desired lead-time and shipping options on the right-hand side-bar.
+
+11. Review options and compare with this [screenshot](/assets/jlcpcb_quote_screenshot.png).
+
+12. Click **Next**.
 
 ## Assembly Parts
 
@@ -61,16 +78,28 @@ At this point you should be looking at a render of the PCB with no parts.
 
 2. Click **NEXT**.
 
-3. Click **Add BOM File** and upload `reports/production/bom.csv` or
-   `EveningStar-bom.csv` from the release.
+3. Click **Add BOM File** and upload `EveningStar-bom.csv`.
 
-4. Click **Add CPL File** and upload `reports/production/positions.csv` or
-   `EveningStar-cpl.csv` from the release.
+4. Click **Add CPL File** and upload `EveningStar-cpl.csv`.
 
 5. Click **Process BOM & CPL**.
 
+> [!NOTE]
+> JLCPCB warns about CN1:
+>
+> ```plain
+> The below parts won't be assembled due to data missing.
+> CN1 designator don't exist in the CPL file.
+> ```
+>
+> This is expected. CN1 is the plug half of the pluggable terminal block. It
+> is not soldered, so it has no placement in the CPL file, and the assembly
+> remark asks JLCPCB to plug it into P1 instead.
+>
+> Ignore the warning and continue.
+
 6. At this point you should see a list of all the parts and how much they cost.
-It's important that all parts are selected otherwise they will be missing when you get your board.
+It's important that all parts are selected in the right hand column otherwise they will be missing when you get your board.
 
 If parts are missing un unavailable, substitutes must be found.
 

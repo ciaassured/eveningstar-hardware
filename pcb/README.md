@@ -155,10 +155,10 @@ because releases hold no folders:
 
 Names carry no version, so `releases/latest/download/<name>` always links the
 newest board, and the output depends only on the source rather than on the tag
-it is released under. The production files are the `.#production` payload
-renamed; its `designators.csv` is left out because it only repeats the BOM. The
-per-sheet and per-layer SVGs are review artifacts rather than release assets,
-built by `nix run .#review`.
+it is released under. The production files are the `.#production` payload, which
+uses the same names; the Toolkit's `designators.csv` is left out of both because
+it only repeats the BOM. The per-sheet and per-layer SVGs are review artifacts
+rather than release assets, built by `nix run .#review`.
 
 `nix build` exposes the Nix store output through `result`; the command form also links that immutable output at
 `reports/publish`. Because this is a derivation of the filtered PCB source and
@@ -178,21 +178,29 @@ eveningstar-production
 ```
 
 The production payload contains the Gerber/drill archive, BOM, placement list,
-designator counts, and IPC-D-356 netlist. Its settings pin the Fabrication
-Toolkit 5.3.1 JLCPCB placement translations used for V1. The build runs DRC and
-schematic-parity validation, then plots the zone fills committed in the KiCad
-board without refilling them. Fill and save zones in the pinned KiCad editor
-after relevant design changes; plotting the reviewed stored fills avoids
-nondeterministic polygon decomposition between independent KiCad processes.
-Project-specific corrections live as hidden `FT Rotation Offset` fields on the
-affected KiCad footprints; update them only after checking component pin 1
-orientation against the datasheet and assembly preview. Generated timestamps,
-ZIP entry metadata, permissions, and file order are normalized for reproducible
-builds. The Toolkit source revision is pinned by the root `flake.lock` alongside
-KiCad and the rest of the toolchain.
-KiCad provides the underlying fabrication exporters; the pinned Toolkit is
-retained for its JLCPCB-specific component-origin and rotation translations and
-for compatibility with the production process used for the original board.
+and IPC-D-356 netlist, under the same names as the GitHub release. Its settings
+pin the Fabrication Toolkit 5.3.1 JLCPCB placement translations used for V1. The
+build runs DRC and schematic-parity validation, then plots the zone fills
+committed in the KiCad board without refilling them. Fill and save zones in the
+pinned KiCad editor after relevant design changes; plotting the reviewed stored
+fills avoids nondeterministic polygon decomposition between independent KiCad
+processes. Project-specific corrections live as hidden `FT Rotation Offset`
+fields on the affected KiCad footprints; update them only after checking
+component pin 1 orientation against the datasheet and assembly preview. The
+Toolkit's built-in rotations match footprint names by pattern, such as
+`^SOT-23`, and are meant for KiCad's standard footprints, so EasyEDA-named
+footprints that happen to match, such as D7's
+`SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR`, carry a 180° offset that cancels them.
+Through-hole parts are placed at the centre of their pads unless `FT Origin` is
+`Anchor`, which RJ2 uses because JLCPCB's model for it sits on the footprint
+anchor. U1's SOT-89 counts as through-hole because its tab has plated holes, so
+it needs the same. Generated timestamps, ZIP entry metadata, permissions, and
+file order are normalized for reproducible builds. The Toolkit source revision
+is pinned by the root `flake.lock` alongside KiCad and the rest of the
+toolchain. KiCad provides the underlying fabrication exporters; the pinned
+Toolkit is retained for its JLCPCB-specific component-origin and rotation
+translations and for compatibility with the production process used for the
+original board.
 
 Production files are build artifacts and are not committed. Local output is
 ignored under `pcb/production` and `reports`; published manufacturing files
