@@ -24,8 +24,8 @@ MeterBus communication is half-duplex and open-drain. The interface includes a S
 | Real-time clock | 32.768 kHz crystal |
 | Ethernet | 10/100 Mbit/s, WIZnet W5500 with a hardware TCP/IP stack, RJ45 jack with integrated magnetics |
 | MeterBus | RJ11 (6P6C) jack to the Morningstar MeterBus port |
-| USB | USB-C for firmware flashing and console access only; it does not power the board |
-| Debug | Unpopulated header for an ESP-Prog debugger |
+| USB | USB-C to the ESP32-C6's native USB, for flashing, a serial console, and JTAG debugging; it does not power the board |
+| Debug | Unpopulated 2.54 mm 2×3 header with serial, reset, and boot pins |
 | Power input | 8–40 V DC through a 3.81 mm pluggable terminal block, ESP32 side |
 | MeterBus supply | Powered by the Morningstar device through the MeterBus port, up to the 15.5 V Morningstar specifies, MeterBus side |
 | Isolation | ISO6721 digital isolator between the two sides, rated 3000 V rms withstand and 450 V rms working voltage (basic isolation, UL 1577); only data crosses it |
@@ -50,6 +50,37 @@ The ratings above come from component datasheets. The board has not been indepen
 
 > [!WARNING]
 > Do not leave USB connected while the system is in service. USB ground is connected directly to the power input's negative terminal, so a connected USB host that is grounded elsewhere creates a second ground path. Current can then flow through the board's unfused ground and the USB cable, which can damage equipment or start a fire. Use USB only for flashing or debugging, and disconnect it afterwards.
+
+## Debugging
+
+### USB
+
+The USB-C port connects straight to the ESP32-C6's native USB; there is no USB-to-serial chip in between. The chip's built-in USB Serial/JTAG controller gives a serial console, flashing, and JTAG debugging over one cable. The controller is part of the chip's hardware and is supported by its ROM bootloader, so it works on a blank module with no bootloader or firmware in flash, and the chip can enter download mode over USB by itself.
+
+Firmware can still make the USB device disappear, by reconfiguring the USB pins, disabling the controller, or entering a sleep mode. If that happens, force the chip into its ROM download mode through the debug header, as below.
+
+Remember that USB is for flashing and debugging only; see the warning under [Installation](#installation).
+
+### Debug header
+
+The unpopulated 2.54 mm 2×3 header, marked DEBUG, breaks out the ESP32's first serial port and its reset and boot pins:
+
+| Pin | Label | Signal |
+| --- | --- | --- |
+| 1 | RST | ESP32 reset (EN), active low |
+| 2 | 3V3 | Board 3.3 V rail, through jumper J_3V3 |
+| 3 | TX | ESP32 UART0 transmit; connect to the adapter's receive |
+| 4 | GND | Ground |
+| 5 | RX | ESP32 UART0 receive; connect to the adapter's transmit |
+| 6 | BOOT | ESP32 GPIO9; held low at reset, it enters ROM download mode |
+
+Use it to flash over serial, including the bootloader, or to recover a board whose firmware has disabled native USB: hold BOOT low while releasing RST, and the chip starts in ROM download mode. Programmers that drive both pins can do this automatically.
+
+When using the header, power the board with an external DC supply through its normal power input and on-board converter, and remove jumper J_3V3 so that the programmer's 3.3 V cannot backfeed the converter.
+
+If the converter's power-good signal holds the reset line low while you are trying to flash or debug through the header, remove jumper J_RST as well; it connects the power-good signal to the ESP32's reset line.
+
+J_3V3 and J_RST are 0603 0 Ω resistors beside the header, fitted at assembly and marked on the silkscreen.
 
 ## Resources
 
