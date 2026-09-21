@@ -51,6 +51,7 @@
           inherit source;
           fabricationToolkit = ${inputs.fabrication-toolkit};
           productionScript = ${./scripts/production.py};
+          turntableScript = ${./scripts/turntable.py};
         }).artifacts
       '';
       productionExpression = pkgs.writeText "eveningstar-production-expression.nix" ''
@@ -141,8 +142,6 @@
             pkgs.gh
             pkgs.git
             pkgs.gnugrep
-            pkgs.gnutar
-            pkgs.gzip
           ];
           text = ''
             export EVENINGSTAR_CHECKS="${self'.packages.checks}/bin/eveningstar-checks"

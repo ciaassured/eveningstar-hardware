@@ -5,8 +5,9 @@ This guide includes instructions on how to order an assembled PCB from [JLCPCB](
 ## Production files
 
 Use the production files attached to the GitHub release for the exact hardware
-tag being ordered. To generate the same payload from a checkout instead, run
-the following command from the repository root:
+tag being ordered. Releases up to v1.0.1 name them `EveningStar.zip`,
+`bom.csv`, and `positions.csv`. To generate the same payload from a checkout
+instead, run the following command from the repository root:
 
 ```sh
 nix run .#production
@@ -22,7 +23,7 @@ files from a different tag or an unreviewed working tree.
 2. Sign In. You must sign in later anyway, and if you don't sign in now the form sometimes glitches out and changes options.
 
 3. Select **Add gerber file** and upload `reports/production/EveningStar.zip`
-   or the corresponding file from the GitHub release.
+   or `EveningStar-gerbers.zip` from the GitHub release.
 
 4. Select the number of PCBs you want to order.
 
@@ -60,11 +61,11 @@ At this point you should be looking at a render of the PCB with no parts.
 
 2. Click **NEXT**.
 
-3. Click **Add BOM File** and upload `reports/production/bom.csv` or the
-   corresponding release file.
+3. Click **Add BOM File** and upload `reports/production/bom.csv` or
+   `EveningStar-bom.csv` from the release.
 
-4. Click **Add CPL File** and upload `reports/production/positions.csv` or the
-   corresponding release file.
+4. Click **Add CPL File** and upload `reports/production/positions.csv` or
+   `EveningStar-cpl.csv` from the release.
 
 5. Click **Process BOM & CPL**.
 

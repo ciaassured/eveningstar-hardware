@@ -8,11 +8,9 @@ Build, tag, and publish an EveningStar hardware release from the latest main
 commit. The notes file becomes the GitHub release body.
 
 The command requires a clean main checkout, refreshes origin/main and tags,
-runs the complete validation suite, builds all publish artifacts, and stages:
-
-  - a deterministic archive containing every publish output;
-  - the production and 3D model files as individual release assets; and
-  - SHA256SUMS covering every uploaded asset.
+runs the complete validation suite, builds the publish output, and stages it
+unchanged as the release assets. The publish output is the release file for
+file, SHA256SUMS included.
 
 Use --dry-run to perform every step except creating/pushing the tag and creating
 the GitHub release. Staged assets are left under reports/release/<tag>/.
@@ -94,44 +92,19 @@ echo "Building publish artifacts"
 
 publish_dir="$repo_root/reports/publish"
 release_dir="$repo_root/reports/release/$tag"
-archive="$release_dir/EveningStar-$tag-publish.tar.gz"
 
-if [[ ! -d "$publish_dir/production" || ! -d "$publish_dir/models" ]]; then
-  echo "error: publish output is missing production or model artifacts" >&2
+# Check the publish output is whole before anything is tagged. The top-level
+# README embeds the turntable through releases/latest/download/, so a release
+# without it would break the README.
+if [[ ! -f "$publish_dir/EveningStar-turntable.webp" ]]; then
+  echo "error: publish output is missing the turntable animation" >&2
   exit 1
 fi
+(cd "$publish_dir" && sha256sum --check --quiet SHA256SUMS)
 
 rm -rf "$release_dir"
 mkdir -p "$release_dir"
-
-tar \
-  --dereference \
-  --sort=name \
-  --mtime=@0 \
-  --owner=0 \
-  --group=0 \
-  --numeric-owner \
-  -C "$publish_dir" \
-  -cf - . | gzip -n > "$archive"
-
-for asset_dir in production models; do
-  for asset in "$publish_dir/$asset_dir"/*; do
-    if [[ -f "$asset" ]]; then
-      cp --dereference "$asset" "$release_dir/"
-    fi
-  done
-done
-
-checksum_temp="$(mktemp)"
-trap 'rm -f "$checksum_temp"' EXIT
-(
-  cd "$release_dir"
-  find . -maxdepth 1 -type f ! -name SHA256SUMS -printf '%f\0' \
-    | sort -z \
-    | xargs -0 sha256sum
-) > "$checksum_temp"
-mv "$checksum_temp" "$release_dir/SHA256SUMS"
-trap - EXIT
+cp --dereference "$publish_dir"/* "$release_dir/"
 
 echo "Release assets staged under $release_dir"
 find "$release_dir" -maxdepth 1 -type f -printf '  %f\n' | sort

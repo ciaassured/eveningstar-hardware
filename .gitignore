@@ -1,3 +1,4 @@
 /reports/
 /result
 /pcb/production/
+__pycache__/

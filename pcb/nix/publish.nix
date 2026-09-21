@@ -247,11 +247,44 @@ let
     cp -R ${glbModel}/. "$out/models/"
   '';
 
-  artifacts = pkgs.runCommand "eveningstar-publish-artifacts" { } ''
+  # Exactly the GitHub release assets, flat because releases hold no folders.
+  # Names carry no version so releases/latest/download/<name> always links the
+  # newest board; the README embeds the turntable that way.
+  artifacts = pkgs.runCommand "eveningstar-publish-artifacts" {
+    nativeBuildInputs = [
+      pkgs.qpdf
+      pkgs.zip
+    ];
+  } ''
     mkdir -p "$out"
-    cp -R ${reviewArtifacts}/. "$out/"
-    mkdir -p "$out/production"
-    cp -R ${productionArtifacts}/. "$out/production/"
+
+    cp ${productionArtifacts}/EveningStar.zip "$out/EveningStar-gerbers.zip"
+    cp ${productionArtifacts}/bom.csv "$out/EveningStar-bom.csv"
+    cp ${productionArtifacts}/positions.csv "$out/EveningStar-cpl.csv"
+    cp ${productionArtifacts}/netlist.ipc "$out/EveningStar-netlist.ipc"
+
+    cp ${schematicDocuments}/EveningStar-schematic.pdf "$out/"
+    qpdf --deterministic-id --empty --pages \
+      ${pcbDocuments}/pdf/EveningStar-front.pdf \
+      ${pcbDocuments}/pdf/EveningStar-back.pdf \
+      ${pcbDocuments}/pdf/EveningStar-layers.pdf \
+      -- "$out/EveningStar-board.pdf"
+
+    # Zipped straight from the store so the entry keeps the store's fixed
+    # timestamp, and without extra attributes, for a reproducible archive.
+    (cd ${stepModel} && zip -X -9 -q "$out/EveningStar-step.zip" EveningStar.step)
+    cp ${glbModel}/EveningStar.glb "$out/"
+
+    cp ${renderPlan}/top.png "$out/EveningStar-render-top.png"
+    cp ${renderPlan}/bottom.png "$out/EveningStar-render-bottom.png"
+    cp ${renderSides}/front.png "$out/EveningStar-render-front.png"
+    cp ${renderSides}/back.png "$out/EveningStar-render-back.png"
+    cp ${renderIsometric}/isometric-front.png "$out/EveningStar-render-isometric-front.png"
+    cp ${renderIsometric}/isometric-back.png "$out/EveningStar-render-isometric-back.png"
+    cp ${renderTurntable}/EveningStar-turntable.webp "$out/"
+
+    export LC_ALL=C
+    (cd "$out" && sha256sum -- * > SHA256SUMS)
   '';
 in
 {
