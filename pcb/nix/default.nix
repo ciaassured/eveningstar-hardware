@@ -49,9 +49,9 @@
         (import ${./publish.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
           inherit source;
-          fabricationToolkit = ${inputs.fabrication-toolkit};
-          productionScript = ${./scripts/production.py};
-          turntableScript = ${./scripts/turntable.py};
+          fabricationToolkit = builtins.storePath "${inputs.fabrication-toolkit}";
+          productionScript = builtins.storePath "${./scripts/production.py}";
+          turntableScript = builtins.storePath "${./scripts/turntable.py}";
         }).artifacts
       '';
       productionExpression = pkgs.writeText "eveningstar-production-expression.nix" ''
@@ -59,17 +59,17 @@
         (import ${./publish.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
           inherit source;
-          fabricationToolkit = ${inputs.fabrication-toolkit};
-          productionScript = ${./scripts/production.py};
+          fabricationToolkit = builtins.storePath "${inputs.fabrication-toolkit}";
+          productionScript = builtins.storePath "${./scripts/production.py}";
         }).productionArtifacts
       '';
       reviewInputsExpression = pkgs.writeText "eveningstar-review-inputs-expression.nix" ''
         { destinationSource, sourceSource }:
         import ${./review-inputs.nix} {
           pkgs = import ${pkgs.path} { system = "${pkgs.stdenv.hostPlatform.system}"; };
-          fabricationToolkit = ${inputs.fabrication-toolkit};
+          fabricationToolkit = builtins.storePath "${inputs.fabrication-toolkit}";
           publishNix = ${./publish.nix};
-          productionScript = ${./scripts/production.py};
+          productionScript = builtins.storePath "${./scripts/production.py}";
           inherit destinationSource sourceSource;
         }
       '';
@@ -188,9 +188,13 @@
 
         render-turntable = publishTools.renderTurntable;
 
+        turntable-frames = publishTools.turntableFrames;
+
         model-step = publishTools.stepModel;
 
         model-glb = publishTools.glbModel;
+
+        board-glb = publishTools.boardGlb;
 
         drc = pkgs.writeShellApplication {
           name = "eveningstar-drc";

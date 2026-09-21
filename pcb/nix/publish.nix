@@ -171,20 +171,31 @@ let
     '';
   };
 
-  renderTurntable = mkKicadDerivation {
-    name = "eveningstar-renders-turntable";
-    nativeBuildInputs = [
-      pkgs.imagemagick
-      pkgs.libwebp
-      pkgs.python3
-    ];
-    build = modelEnvironment + ''
-      mkdir -p "$out"
-      python3 ${turntableScript} \
-        --board "$src/pcb/EveningStar.kicad_pcb" \
-        --output "$out"
-    '';
-  };
+  # One PNG per frame, rendered with Cycles from the board GLB. Only the
+  # script's progress lines are passed on from Blender's output.
+  turntableFrames = pkgs.runCommand "eveningstar-turntable-frames" {
+    nativeBuildInputs = [ pkgs.blender ];
+  } ''
+    export HOME="$TMPDIR"
+    set -o pipefail
+    blender -b --factory-startup --python-exit-code 1 \
+      -P ${turntableScript} -- \
+      --model ${boardGlb}/EveningStar.glb \
+      --output "$out" \
+      | grep --line-buffered '^turntable:'
+  '';
+
+  # 33 ms is the closest WebP frame duration to 30 fps. Method 6 took around
+  # forty times longer than method 4 on one core for about 4% smaller output at
+  # the same measured quality.
+  renderTurntable = pkgs.runCommand "eveningstar-renders-turntable" {
+    nativeBuildInputs = [ pkgs.libwebp ];
+  } ''
+    mkdir -p "$out"
+    img2webp -loop 0 -d 33 -lossy -q 65 -m 4 \
+      ${turntableFrames}/*.png \
+      -o "$out/EveningStar-turntable.webp"
+  '';
 
   stepModel = mkKicadDerivation {
     name = "eveningstar-step-model";
@@ -198,21 +209,26 @@ let
     '';
   };
 
-  glbModel = mkKicadDerivation {
-    name = "eveningstar-glb-model";
-    nativeBuildInputs = [ (pkgs.lib.getBin pkgs.meshoptimizer) ];
+  # The board as fitted, without do-not-populate parts, uncompressed so that
+  # both the browser model and the turntable render can build on it.
+  boardGlb = mkKicadDerivation {
+    name = "eveningstar-board-glb";
     build = modelEnvironment + ''
       mkdir -p "$out"
       kicad-cli pcb export glb \
-        --force --subst-models --include-tracks --include-pads --include-zones \
-        --include-silkscreen --include-soldermask \
-        --output "$TMPDIR/EveningStar.glb" \
+        --force --subst-models --no-dnp --include-tracks --include-pads \
+        --include-zones --include-silkscreen --include-soldermask \
+        --output "$out/EveningStar.glb" \
         "$src/pcb/EveningStar.kicad_pcb"
-      gltfpack -cc \
-        -i "$TMPDIR/EveningStar.glb" \
-        -o "$out/EveningStar.glb"
     '';
   };
+
+  glbModel = pkgs.runCommand "eveningstar-glb-model" {
+    nativeBuildInputs = [ (pkgs.lib.getBin pkgs.meshoptimizer) ];
+  } ''
+    mkdir -p "$out"
+    gltfpack -cc -i ${boardGlb}/EveningStar.glb -o "$out/EveningStar.glb"
+  '';
 
   productionArtifacts = mkKicadDerivation {
     name = "eveningstar-production-artifacts";
@@ -290,6 +306,7 @@ in
 {
   inherit
     artifacts
+    boardGlb
     glbModel
     pcbDocuments
     productionArtifacts
@@ -300,5 +317,6 @@ in
     renderTurntable
     schematicDocuments
     stepModel
+    turntableFrames
     ;
 }

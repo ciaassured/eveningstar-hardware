@@ -1,479 +1,297 @@
-#!/usr/bin/env python3
+"""Render turntable frames of the board's GLB export with Blender's Cycles.
 
-"""Render a looping turntable animation of a KiCad board on a transparent background.
+Run inside Blender:
+
+    blender -b --factory-startup --python-exit-code 1 -P turntable.py -- \\
+        --model EveningStar.glb --output frames/
 
 The board stands upright on its bottom edge, the way round it is drawn, leans,
-and rides an upright turntable with the camera level and in perspective. The
-lean belongs to the board rather than to the viewer, so it swings round with the
-spin: the component side is seen from above, the bare copper side from below
-half a turn later, and the board rocks from side to side through the edge-on
-quarters.
+and rides a turntable under lights that stay put while it turns, so shadows
+sweep across it the way they would in a studio. The lean belongs to the board
+rather than to the viewer, so it swings round with the spin: the component side
+is seen from above, the bare copper side from below half a turn later, and the
+board rocks from side to side through the edge-on quarters.
 
-`kicad-cli pcb render --rotate` takes one set of Euler angles per image and
-applies them X outermost, which puts the X rotation in view space. Leaning the
-viewer is all that can be expressed directly. To lean the board instead, each
-frame composes spin * lean * stand itself and decomposes the result back into
-the angles KiCad expects.
+The camera stays level and still. Its distance is solved once from the geometry
+so that the widest point of the whole revolution lands at the requested fill,
+which keeps the board the same size in every frame.
 
-KiCad's automatic framing fits each projection to the canvas individually, which
-would make the board pulse in size and clip at the angles where its silhouette
-is widest. The zoom is instead calibrated once from a low resolution probe pass
-over the same angles, refined at the widest of them, and then held constant for
-the render pass.
+Frames are written as 0000.png, 0001.png, and so on, with a transparent
+background. Progress lines start with "turntable:" so a caller can filter
+Blender's own output down to them.
 """
 
-from __future__ import annotations
-
 import argparse
-from collections.abc import Callable
-from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+import colorsys
 import math
 import os
-from pathlib import Path
-import queue
-import re
-import subprocess
-import tempfile
+import sys
 import time
 
-TRIM_GEOMETRY = re.compile(r"(?P<width>\d+)x(?P<height>\d+)(?P<x>[+-]\d+)(?P<y>[+-]\d+)")
+import bpy
+import numpy as np
+from mathutils import Matrix, Vector
 
-# Zoom used for the probe pass. It must keep the board inside the probe canvas
-# at every angle, and stay above roughly 0.33, below which KiCad clamps the zoom
-# and the rendered size stops following it.
-PROBE_ZOOM = 0.4
+# A 36 mm wide sensor, so --focal-length reads like a full-frame lens.
+SENSOR_WIDTH = 36.0
 
-# Perspective scale is not linear in zoom, so the zoom is settled against the
-# angles that probed widest, re-rendered at full size, until the widest lands
-# within this fraction of the requested fill. The first step aims at a fill
-# short enough that perspective cannot push it off the canvas.
-REFINE_ANGLES = 32
-REFINE_TOLERANCE = 0.005
-REFINE_PASSES = 5
-FIRST_STEP_FILL = 0.7
+# Blender's AgX view transform with its punchy look keeps the mask a deep blue
+# and plastics dark; the default look washes both out under studio lights. The
+# world adds a little soft fill but is not itself visible, as the film is
+# transparent.
+VIEW_TRANSFORM = "AgX"
+LOOK = "AgX - Punchy"
+WORLD_COLOUR = (0.8, 0.82, 0.85, 1.0)
+WORLD_STRENGTH = 0.12
 
-# Stackup mask layers, which is where the 3D render takes its mask colour from.
-MASK_LAYER = re.compile(
-    r'(?P<head>\(layer "[FB]\.Mask"\n(?P<indent>\s*)\(type "[^"]*"\))'
-    r'(?:\n\s*\(color "[^"]*"\))?'
+# Area lights as (name, position, power, size). Positions and sizes are in
+# multiples of the camera distance and power is scaled to match, so the lighting
+# looks the same whatever distance the framing settles on. The camera looks
+# along +Y with +Z up: the key is above and to the left of it, the fill low on
+# the right, and the rim behind the board.
+LIGHTS = (
+    ("key", (-0.8, -1.0, 0.9), 40.0, 0.8),
+    ("fill", (1.0, -0.7, 0.1), 12.0, 1.2),
+    ("rim", (0.3, 1.0, 0.9), 30.0, 0.6),
 )
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--board", required=True, type=Path)
-    parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--name", default="EveningStar-turntable")
+    argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+    parser = argparse.ArgumentParser(prog="turntable.py")
+    parser.add_argument("--model", required=True, help="GLB exported by kicad-cli")
+    parser.add_argument("--output", required=True, help="directory for the frames")
     parser.add_argument("--frames", type=int, default=180)
+    parser.add_argument("--only", default="",
+                        help="comma-separated frame indices to render, for previews")
     # How far the board leans off its turntable. Negative leans the top of the
-    # board away from the camera at the front of the spin, so the component side
-    # is seen from above and the bare copper side from below half a turn later.
+    # board away from the camera at the front of the spin.
     parser.add_argument("--tilt", type=float, default=-20.0)
     # Turn the board within its own plane before it is stood up. Zero keeps it
     # the way round it is drawn, standing on its bottom edge.
     parser.add_argument("--stand", type=float, default=0.0)
-    parser.add_argument("--projection", choices=("perspective", "orthographic"),
-                        default="perspective")
-    # Canvas sized to the aspect of the widest silhouette in a spin, which for
-    # this board in perspective is slightly wider than tall. Leaning the board
-    # rather than the viewer adds height, because the board rocks from side to
-    # side through the edge-on quarters.
     parser.add_argument("--width", type=int, default=760)
     parser.add_argument("--height", type=int, default=720)
-    # Frames are rendered at this multiple of the output size and downscaled,
-    # which anti-aliases silkscreen text and board edges.
-    parser.add_argument("--supersample", type=int, default=2)
-    # Fraction of the canvas the widest angle is allowed to occupy.
+    # Fraction of the canvas the widest point of the revolution may reach, from
+    # the centre towards the nearer edge.
     parser.add_argument("--fill", type=float, default=0.94)
-    # Applied to a throwaway copy of the board; see tinted_board. KiCad lightens
-    # the mask considerably over copper, so this sits well below the blue it is
-    # meant to read as on screen.
+    parser.add_argument("--focal-length", type=float, default=50.0, help="mm")
+    # With denoising, 32 samples came within 45 dB PSNR of 64 at well under
+    # two thirds of the time.
+    parser.add_argument("--samples", type=int, default=32)
     parser.add_argument("--mask-colour", default="#123A7A", help="solder mask colour")
-    # 33 ms is the closest WebP frame duration to 30 fps.
-    parser.add_argument("--frame-delay", type=int, default=33, help="milliseconds")
-    parser.add_argument("--quality", type=int, default=65, help="WebP quality")
-    parser.add_argument("--jobs", type=int, default=default_jobs(),
-                        help="frames rendered at once")
-    return parser.parse_args()
-
-
-def default_jobs() -> int:
-    # Nix exports the cores it granted the build, with 0 meaning all of them.
-    # Each kicad-cli process already keeps a few cores busy in Mesa's software
-    # rasteriser and peaks around 0.6 GB, so half the cores is plenty.
-    cores = int(os.environ.get("NIX_BUILD_CORES", "0")) or os.cpu_count() or 1
-    return max(1, cores // 2)
-
-
-def angles(count: int) -> list[float]:
-    return [360.0 * index / count for index in range(count)]
-
-
-def tinted_board(board: Path, work: Path, colour: str) -> Path:
-    """Copy the board next to its libraries with a solder mask colour applied.
-
-    A colour reaches the 3D render only through the board stackup; `kicad-cli`
-    ignores KiCad's colour themes entirely, and the stackup this board carries
-    leaves the mask colour unset, so it renders in the default green. Rather
-    than set a colour in the design, where it would also become fabrication
-    metadata, the render colours the mask layers of a throwaway copy.
-
-    The copy sits in a directory of symlinks to the real project so that
-    ${KIPRJMOD} still resolves the project's footprints and 3D models.
-    """
-    work.mkdir(parents=True, exist_ok=True)
-    for entry in sorted(board.parent.iterdir()):
-        if entry.name != board.name:
-            (work / entry.name).symlink_to(entry)
-
-    text, count = MASK_LAYER.subn(
-        lambda layer: f'{layer["head"]}\n{layer["indent"]}(color "{colour}")',
-        board.read_text(),
-    )
-    if count != 2:
-        raise RuntimeError(f"expected 2 stackup mask layers to colour, found {count}")
-    tinted = work / board.name
-    tinted.write_text(text)
-    return tinted
-
-
-Matrix = tuple[tuple[float, float, float], ...]
-
-
-def rotation(axis: int, degrees: float) -> Matrix:
-    angle = math.radians(degrees)
-    cos, sin = math.cos(angle), math.sin(angle)
-    if axis == 0:
-        return ((1.0, 0.0, 0.0), (0.0, cos, -sin), (0.0, sin, cos))
-    if axis == 1:
-        return ((cos, 0.0, sin), (0.0, 1.0, 0.0), (-sin, 0.0, cos))
-    return ((cos, -sin, 0.0), (sin, cos, 0.0), (0.0, 0.0, 1.0))
-
-
-def multiply(left: Matrix, right: Matrix) -> Matrix:
-    return tuple(
-        tuple(sum(left[row][k] * right[k][col] for k in range(3)) for col in range(3))
-        for row in range(3)
-    )
-
-
-def euler_xyz(matrix: Matrix) -> tuple[float, float, float]:
-    """Decompose into the X-outermost Euler angles KiCad's --rotate applies.
-
-    Returns degrees for a rotation equal to Rx * Ry * Rz.
-    """
-    sin_y = min(1.0, max(-1.0, matrix[0][2]))
-    y = math.asin(sin_y)
-    if abs(sin_y) < 1.0 - 1e-9:
-        x = math.atan2(-matrix[1][2], matrix[2][2])
-        z = math.atan2(-matrix[0][1], matrix[0][0])
-    else:
-        # Gimbal lock: X and Z act on the same axis, so fold the whole residual
-        # rotation into Z.
-        x = 0.0
-        z = math.atan2(matrix[1][0], matrix[1][1])
-    return math.degrees(x), math.degrees(y), math.degrees(z)
-
-
-def pose(spin: float, tilt: float, stand: float) -> tuple[float, float, float]:
-    """Angles that lean the board by `tilt` and turn it `spin` about the vertical.
-
-    Composing the lean inside the spin is what makes it belong to the board: at
-    a spin of zero this is exactly (tilt, 0, stand), and half a turn later the
-    same lean is pointing at the camera instead of away from it.
-    """
-    return euler_xyz(
-        multiply(rotation(1, spin), multiply(rotation(0, tilt), rotation(2, stand)))
-    )
-
-
-def render(board: Path, destination: Path, rotation: float, tilt: float,
-           stand: float, zoom: float, width: int, height: int,
-           perspective: bool) -> None:
-    subprocess.run(
-        [
-            "kicad-cli", "pcb", "render",
-            *(["--perspective"] if perspective else []),
-            "--rotate", "{:.4f},{:.4f},{:.4f}".format(*pose(rotation, tilt, stand)),
-            "--use-board-stackup-colors",
-            "--zoom", f"{zoom:.6f}",
-            "--width", str(width),
-            "--height", str(height),
-            # "basic" omits the floor plane that the higher quality settings
-            # cast a shadow onto; that shadow would be baked into the otherwise
-            # transparent background.
-            "--quality", "basic",
-            "--background", "transparent",
-            "--output", str(destination),
-            str(board),
-        ],
-        check=True,
-        stdout=subprocess.DEVNULL,
-    )
-
-
-def extents(frames: list[Path], requested: tuple[int, int]) -> list[float]:
-    """Return how far each silhouette reaches from the canvas centre.
-
-    KiCad keeps the pivot at the canvas centre, so what has to fit is the
-    largest distance from the centre to a silhouette edge, taken per axis as a
-    fraction of the half canvas.
-
-    Silhouettes are measured against the requested canvas rather than the
-    returned one. KiCad renders into a canvas a fixed border smaller than asked
-    for, but scales the projection by the size it was asked for. Normalising
-    against the returned size would therefore read a different aspect at probe
-    scale than at render scale, and the small probe canvas is where that
-    distortion is worst. A silhouette that touches the edge of the returned
-    canvas has been clipped, so how far it really reaches is unknown; it reads
-    as infinite.
-    """
-    reported = subprocess.run(
-        ["magick", "identify", "-format", "%w %h %@\n", *(str(f) for f in frames)],
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout
-
-    requested_x = requested[0] / 2.0
-    requested_y = requested[1] / 2.0
-
-    reaches = []
-    for line in reported.splitlines():
-        canvas_width, canvas_height, geometry = line.split()
-        bounds = TRIM_GEOMETRY.fullmatch(geometry)
-        if bounds is None:
-            raise RuntimeError(f"unexpected trim geometry: {geometry}")
-        left = int(bounds["x"])
-        top = int(bounds["y"])
-        right = left + int(bounds["width"])
-        bottom = top + int(bounds["height"])
-        if (left <= 0 or top <= 0 or right >= int(canvas_width)
-                or bottom >= int(canvas_height)):
-            reaches.append(math.inf)
-            continue
-        centre_x = int(canvas_width) / 2.0
-        centre_y = int(canvas_height) / 2.0
-        reaches.append(max(
-            abs(left - centre_x) / requested_x,
-            abs(right - centre_x) / requested_x,
-            abs(top - centre_y) / requested_y,
-            abs(bottom - centre_y) / requested_y,
-        ))
-
-    if max(reaches, default=0.0) <= 0.0:
-        raise RuntimeError("probe pass produced no visible board")
-    return reaches
-
-
-def settle_zoom(measure: Callable[[float], float], probe_zoom: float,
-                probe_reach: float, fill: float) -> float:
-    """Find the zoom at which the widest silhouette reaches `fill`.
-
-    KiCad's perspective camera zooms by moving in, so a point nearer the camera
-    grows faster than the zoom does: its reach r follows r = a z / (1 - c z),
-    which makes z / r a straight line in z. Orthographic projection is the case
-    c = 0. A secant on z / r through the last two measurements therefore lands
-    on the fill in a pass or two. A clipped measurement says only that the zoom
-    was too far in, so the next step backs off halfway to the last good one.
-    """
-    known = [(probe_zoom, probe_reach)]
-    zoom = probe_zoom * FIRST_STEP_FILL / probe_reach
-    for _ in range(REFINE_PASSES):
-        reach = measure(zoom)
-        if abs(reach - fill) <= REFINE_TOLERANCE * fill:
-            return zoom
-        if math.isinf(reach):
-            zoom = (known[-1][0] + zoom) / 2.0
-            continue
-        known.append((zoom, reach))
-        (zoom_0, reach_0), (zoom_1, reach_1) = known[-2:]
-        slope = (zoom_1 / reach_1 - zoom_0 / reach_0) / (zoom_1 - zoom_0)
-        intercept = zoom_0 / reach_0 - slope * zoom_0
-        zoom = intercept / (1.0 / fill - slope)
-    raise RuntimeError(f"zoom did not settle within {REFINE_PASSES} passes")
-
-
-def downscale(source: Path, destination: Path, width: int, height: int) -> None:
-    subprocess.run(
-        [
-            "magick", str(source),
-            # Resize with associated alpha so the fully transparent black
-            # background cannot bleed a dark fringe into the board edges.
-            "-alpha", "associate",
-            "-filter", "Lanczos",
-            "-resize", f"{width}x{height}",
-            "-alpha", "disassociate",
-            # KiCad returns a canvas slightly smaller than the requested size,
-            # so pad back to the exact output geometry.
-            "-background", "none",
-            "-gravity", "center",
-            "-extent", f"{width}x{height}",
-            "-strip",
-            str(destination),
-        ],
-        check=True,
-    )
-
-
-def in_parallel(stage: str, tasks: list[Callable[[Path], None]],
-                boards: list[Path], started: float) -> None:
-    """Run independent frame tasks on a pool, reporting each as it lands.
-
-    Every frame is a separate kicad-cli process, so threads are enough to keep
-    several in flight. Each task borrows a board of its own for the duration:
-    KiCad locks the project beside the board file, and processes sharing one
-    trip over each other's lock files. The first failure cancels whatever has
-    not started.
-    """
-    available: queue.SimpleQueue[Path] = queue.SimpleQueue()
-    for board in boards:
-        available.put(board)
-
-    def borrowing(task: Callable[[Path], None]) -> None:
-        board = available.get()
-        try:
-            task(board)
-        finally:
-            available.put(board)
-
-    with ThreadPoolExecutor(max_workers=len(boards)) as pool:
-        futures: list[Future] = [pool.submit(borrowing, task) for task in tasks]
-        try:
-            for done, future in enumerate(as_completed(futures), start=1):
-                future.result()
-                status(f"{stage} {done}/{len(futures)} "
-                       f"({time.monotonic() - started:.0f}s)")
-        except BaseException:
-            for future in futures:
-                future.cancel()
-            raise
+    return parser.parse_args(argv)
 
 
 def status(message: str) -> None:
-    # Nix hands the builder a pipe rather than a terminal, so stdout is block
-    # buffered and nothing would appear until the render had finished.
     print(f"turntable: {message}", flush=True)
+
+
+def linear_rgba(hex_colour: str) -> tuple[float, float, float, float]:
+    """Convert an sRGB hex colour into the linear RGBA Blender's nodes expect."""
+    channels = [int(hex_colour.lstrip("#")[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+    return (*(c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+              for c in channels), 1.0)
+
+
+def set_surface(material: bpy.types.Material, colour=None, metallic=None,
+                roughness=None, **inputs) -> None:
+    bsdf = material.node_tree.nodes["Principled BSDF"]
+    if colour is not None:
+        inputs["Base Color"] = colour
+    if metallic is not None:
+        inputs["Metallic"] = metallic
+    if roughness is not None:
+        inputs["Roughness"] = roughness
+    for name, value in inputs.items():
+        bsdf.inputs[name].default_value = value
+
+
+def board_layers(root: bpy.types.Object) -> dict[str, list[bpy.types.Object]]:
+    """Map each board layer, PCB, copper, pad, via, and so on, to its meshes.
+
+    kicad-cli names these meshes <board>_<layer> and hangs them straight off
+    the root, while component models sit under an empty named after their
+    reference designator.
+    """
+    layers: dict[str, list[bpy.types.Object]] = {}
+    for child in root.children:
+        if child.type == "MESH":
+            layer = child.data.name.split(".")[0].rsplit("_", 1)[-1]
+            layers.setdefault(layer, []).append(child)
+    return layers
+
+
+def fix_materials(layers: dict[str, list[bpy.types.Object]], mask_colour) -> None:
+    """Give the exported materials surfaces that read as a real board.
+
+    kicad-cli sets the board layers' materials itself but carries only a colour
+    over from the component models, so those arrive at glTF's defaults of fully
+    metallic and fully rough, which renders plastic as dull metal. Colour is all
+    there is to go on for them: near-grey and gold-ish parts become metal, the
+    rest plastic.
+    """
+    gold = (0.83, 0.63, 0.30, 1.0)
+    board_surfaces = {
+        "soldermask": dict(colour=mask_colour, metallic=0.0, roughness=0.35,
+                           **{"Coat Weight": 0.3}),
+        "pad": dict(colour=gold, metallic=1.0, roughness=0.25),
+        "via": dict(colour=gold, metallic=1.0, roughness=0.25),
+        "copper": dict(colour=(0.75, 0.45, 0.30, 1.0), metallic=1.0, roughness=0.35),
+        "silkscreen": dict(colour=(0.9, 0.9, 0.9, 1.0), metallic=0.0, roughness=0.8),
+        "PCB": dict(colour=(0.30, 0.28, 0.16, 1.0), metallic=0.0, roughness=0.7),
+    }
+    board_materials = set()
+    for layer, meshes in layers.items():
+        for mesh in meshes:
+            for slot in mesh.material_slots:
+                board_materials.add(slot.material)
+                if layer in board_surfaces:
+                    set_surface(slot.material, **board_surfaces[layer])
+
+    for material in bpy.data.materials:
+        if material in board_materials or not material.use_nodes:
+            continue
+        colour = material.node_tree.nodes["Principled BSDF"].inputs["Base Color"]
+        hue, saturation, value = colorsys.rgb_to_hsv(*colour.default_value[:3])
+        grey_metal = saturation < 0.12 and 0.4 < value < 0.95
+        gold_metal = 0.07 < hue < 0.16 and saturation > 0.5 and value > 0.5
+        if grey_metal or gold_metal:
+            set_surface(material, metallic=1.0, roughness=0.3)
+        else:
+            set_surface(material, metallic=0.0, roughness=0.45)
+
+
+def world_points() -> np.ndarray:
+    chunks = []
+    for obj in bpy.data.objects:
+        if obj.type != "MESH":
+            continue
+        local = np.empty(len(obj.data.vertices) * 3)
+        obj.data.vertices.foreach_get("co", local)
+        world = np.array(obj.matrix_world)
+        chunks.append(local.reshape(-1, 3) @ world[:3, :3].T + world[:3, 3])
+    return np.concatenate(chunks)
+
+
+def camera_distance(points: np.ndarray, focal: float, aspect: float,
+                    fill: float) -> float:
+    """Distance at which the widest point of the whole revolution reaches `fill`.
+
+    Every point rides a circle of radius r at height z about the vertical spin
+    axis. Seen from distance D along the camera axis, across the frame it
+    reaches at most r / sqrt(D^2 - r^2), and up or down at most |z| / (D - r),
+    each scaled by the lens against the half sensor. The maximum over points is
+    therefore exact for the continuous revolution, so no frame can exceed it.
+    """
+    radius = np.hypot(points[:, 0], points[:, 1])
+    height = np.abs(points[:, 2])
+    across_scale = focal / (SENSOR_WIDTH / 2.0)
+    up_scale = focal / (SENSOR_WIDTH / aspect / 2.0)
+
+    def reach(distance: float) -> float:
+        across = across_scale * radius / np.sqrt(distance ** 2 - radius ** 2)
+        up = up_scale * height / (distance - radius)
+        return float(max(across.max(), up.max()))
+
+    near, far = radius.max() * 1.0001, radius.max() * 1000.0
+    for _ in range(100):
+        middle = (near + far) / 2.0
+        if reach(middle) > fill:
+            near = middle
+        else:
+            far = middle
+    return far
 
 
 def main() -> None:
     args = parse_args()
-    args.output.mkdir(parents=True, exist_ok=True)
-    # Frames stay out of the build output. KiCad resolves a handful of pixels
-    # differently between runs at a few angles, which the lossy encode absorbs
-    # but which would leave the retained PNGs, and so the derivation, not
-    # reproducible.
-    with tempfile.TemporaryDirectory() as scratch:
-        run(args, Path(scratch))
-
-
-def run(args: argparse.Namespace, scratch: Path) -> None:
-    probe_dir = scratch / "probe"
-    refine_dir = scratch / "refine"
-    raw_dir = scratch / "raw"
-    frame_dir = scratch / "frames"
-    for directory in (probe_dir, refine_dir, raw_dir, frame_dir):
-        directory.mkdir(parents=True, exist_ok=True)
-
-    boards = [
-        tinted_board(args.board, scratch / f"board-{worker}", args.mask_colour)
-        for worker in range(max(1, args.jobs))
-    ]
-    rotations = angles(args.frames)
-
     started = time.monotonic()
-    count = len(rotations)
-    perspective = args.projection == "perspective"
-    status(f"{count} frames, {args.projection}, {len(boards)} at a time")
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.ops.import_scene.gltf(filepath=args.model)
+    scene = bpy.context.scene
 
-    probe_size = (max(args.width // 3, 1), max(args.height // 3, 1))
+    root = next(obj for obj in scene.objects if obj.parent is None)
+    layers = board_layers(root)
+    fix_materials(layers, linear_rgba(args.mask_colour))
 
-    # A first render on its own lets KiCad create its configuration directories
-    # and fill its 3D model cache before several processes could race to write
-    # them, which in a fresh build sandbox they otherwise do.
-    render(boards[0], scratch / "warm-up.png", 0.0, args.tilt, args.stand,
-           PROBE_ZOOM, *probe_size, perspective)
-    status(f"warm-up ({time.monotonic() - started:.0f}s)")
+    # kicad-cli exports the board lying flat, component side up (+Z), with the
+    # top edge of the drawing towards +Y. Centre it on the board outline, turn
+    # it in its own plane, stand it up facing the camera, and lean it; the spin
+    # then turns all of that about the vertical.
+    pcb = layers["PCB"][0]
+    centre = sum((pcb.matrix_world @ Vector(c) for c in pcb.bound_box), Vector()) / 8.0
+    spin = bpy.data.objects.new("spin", None)
+    scene.collection.objects.link(spin)
+    root.parent = spin
+    root.matrix_basis = (Matrix.Rotation(math.radians(args.tilt), 4, "X")
+                         @ Matrix.Rotation(math.radians(90.0), 4, "X")
+                         @ Matrix.Rotation(math.radians(args.stand), 4, "Z")
+                         @ Matrix.Translation(-centre)
+                         @ root.matrix_basis)
+    bpy.context.view_layer.update()
 
-    probe_frames = [probe_dir / f"{index:04d}.png" for index in range(count)]
-    in_parallel("probe", [
-        lambda board, frame=frame, rotation=rotation: render(
-            board, frame, rotation, args.tilt, args.stand, PROBE_ZOOM,
-            *probe_size, perspective)
-        for frame, rotation in zip(probe_frames, rotations)
-    ], boards, started)
+    distance = camera_distance(world_points(), args.focal_length,
+                               args.width / args.height, args.fill)
+    camera = bpy.data.objects.new("camera", bpy.data.cameras.new("camera"))
+    camera.data.lens = args.focal_length
+    camera.data.sensor_fit = "HORIZONTAL"
+    camera.data.sensor_width = SENSOR_WIDTH
+    camera.data.clip_start = distance / 100.0
+    camera.data.clip_end = distance * 10.0
+    camera.location = (0.0, -distance, 0.0)
+    camera.rotation_euler = (math.radians(90.0), 0.0, 0.0)
+    scene.collection.objects.link(camera)
+    scene.camera = camera
+    status(f"camera {distance * 1000:.1f} mm from the board centre")
 
-    probed = extents(probe_frames, probe_size)
-    if math.isinf(max(probed)):
-        raise RuntimeError("the probe zoom clips the board; lower PROBE_ZOOM")
+    for name, position, power, size in LIGHTS:
+        light = bpy.data.objects.new(name, bpy.data.lights.new(name, "AREA"))
+        light.data.energy = power * (distance / 0.5) ** 2
+        light.data.size = size * distance
+        light.location = [c * distance for c in position]
+        light.rotation_euler = (-light.location).to_track_quat("-Z", "Y").to_euler()
+        scene.collection.objects.link(light)
 
-    # The zoom is settled at the full render size: KiCad returns a canvas a
-    # fixed border smaller than requested, and on the small probe canvas that
-    # border cuts into the very fill being aimed for.
-    render_size = (args.width * args.supersample, args.height * args.supersample)
-    widest_angles = [
-        rotation
-        for _, rotation in sorted(zip(probed, rotations), reverse=True)[:REFINE_ANGLES]
-    ]
-    passes = 0
+    scene.world = bpy.data.worlds.new("world")
+    scene.world.use_nodes = True
+    background = scene.world.node_tree.nodes["Background"]
+    background.inputs["Color"].default_value = WORLD_COLOUR
+    background.inputs["Strength"].default_value = WORLD_STRENGTH
+    scene.view_settings.view_transform = VIEW_TRANSFORM
+    scene.view_settings.look = LOOK
 
-    def widest_at(zoom: float) -> float:
-        nonlocal passes
-        passes += 1
-        checks = [refine_dir / f"{passes}-{index:04d}.png"
-                  for index in range(len(widest_angles))]
-        in_parallel(f"refine {passes}", [
-            lambda board, frame=frame, rotation=rotation: render(
-                board, frame, rotation, args.tilt, args.stand, zoom,
-                *render_size, perspective)
-            for frame, rotation in zip(checks, widest_angles)
-        ], boards, started)
-        widest = max(extents(checks, render_size))
-        status(f"zoom {zoom:.6f} fills {widest:.3f} of the canvas")
-        return widest
+    scene.render.engine = "CYCLES"
+    scene.cycles.device = "CPU"
+    scene.cycles.samples = args.samples
+    scene.cycles.use_adaptive_sampling = True
+    scene.cycles.use_denoising = True
+    # A fixed seed makes the frames reproducible from one run to the next.
+    scene.cycles.seed = 0
+    scene.cycles.use_animated_seed = False
+    scene.render.film_transparent = True
+    scene.render.resolution_x = args.width
+    scene.render.resolution_y = args.height
+    scene.render.resolution_percentage = 100
+    scene.render.image_settings.file_format = "PNG"
+    scene.render.image_settings.color_mode = "RGBA"
+    # Keep the scene's acceleration structures between frames, since only the
+    # spin changes.
+    scene.render.use_persistent_data = True
+    # Nix exports the cores it granted the build, with 0 meaning all of them.
+    cores = int(os.environ.get("NIX_BUILD_CORES", "0"))
+    if cores:
+        scene.render.threads_mode = "FIXED"
+        scene.render.threads = cores
 
-    zoom = settle_zoom(widest_at, PROBE_ZOOM, max(probed), args.fill)
-
-    frames = [frame_dir / f"{index:04d}.png" for index in range(count)]
-
-    reaches = [0.0] * count
-
-    def frame_task(board: Path, index: int, rotation: float) -> None:
-        raw = raw_dir / f"{index:04d}.png"
-        render(board, raw, rotation, args.tilt, args.stand, zoom, *render_size,
-               perspective)
-        reaches[index] = extents([raw], render_size)[0]
-        downscale(raw, frames[index], args.width, args.height)
-    in_parallel("render", [
-        lambda board, index=index, rotation=rotation: frame_task(
-            board, index, rotation)
-        for index, rotation in enumerate(rotations)
-    ], boards, started)
-
-    # The zoom was settled on the angles that probed widest, which in
-    # perspective need not be the ones that end up widest; check them all.
-    widest = max(reaches)
-    if math.isinf(widest):
-        clipped = [index for index, reach in enumerate(reaches) if math.isinf(reach)]
-        raise RuntimeError(f"frames {clipped} run off the canvas")
-    status(f"widest frame fills {widest:.3f} of the canvas")
-
-    status(f"encoding {count} frames")
-    subprocess.run(
-        [
-            "img2webp",
-            "-loop", "0",
-            "-d", str(args.frame_delay),
-            # Method 6 took around forty times longer on one core for about 4%
-            # smaller output at the same measured quality.
-            "-lossy", "-q", str(args.quality), "-m", "4",
-            *(str(frame) for frame in frames),
-            "-o", str(args.output / f"{args.name}.webp"),
-        ],
-        check=True,
-    )
-    status(f"done ({time.monotonic() - started:.0f}s)")
+    indices = ([int(index) for index in args.only.split(",")] if args.only
+               else range(args.frames))
+    os.makedirs(args.output, exist_ok=True)
+    for done, index in enumerate(indices, start=1):
+        spin.rotation_euler = (0.0, 0.0, 2.0 * math.pi * index / args.frames)
+        scene.render.filepath = os.path.join(args.output, f"{index:04d}.png")
+        bpy.ops.render.render(write_still=True)
+        status(f"render {done}/{len(indices)} ({time.monotonic() - started:.0f}s)")
 
 
-if __name__ == "__main__":
-    main()
+main()

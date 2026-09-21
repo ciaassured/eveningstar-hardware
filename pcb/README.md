@@ -229,126 +229,92 @@ survives future releases untouched. Print the store path with
 `nix build --print-out-paths` if something needs to consume the output without
 relying on `result`.
 
-`.#render-turntable` is an ordinary derivation of the filtered PCB source and
-the pinned toolchain, so unchanged boards reuse the store output and can share
-it through Cachix.
+The render is a chain of derivations of the filtered PCB source and the pinned
+toolchain, each reused from the store, and shareable through Cachix, while its
+inputs are unchanged:
 
-The output holds `EveningStar-turntable.webp`. The board stands upright on its
-bottom edge, the way round it is drawn, leans 20°, and rides an upright
-turntable with the camera level and in perspective, sweeping front face to
-edge-on sliver to back face. The lean belongs to the board rather than to the
-viewer, so it swings round with the spin: the component side is seen from
+| Package              | Produces                                              |
+| -------------------- | ----------------------------------------------------- |
+| `.#board-glb`        | the board as fitted, as an uncompressed kicad-cli GLB |
+| `.#turntable-frames` | one PNG per frame, rendered from it by Cycles         |
+| `.#render-turntable` | `EveningStar-turntable.webp`, encoded from the frames |
+
+`.#model-glb`, the browser model in the release, is `.#board-glb` compressed
+with `gltfpack`. Changing the render script re-renders the frames without
+re-exporting the board, and changing the encoding re-encodes without rendering.
+
+The board stands upright on its bottom edge, the way round it is drawn, leans
+20°, and rides a turntable in front of a level, still camera, sweeping front
+face to edge-on sliver to back face. The lean belongs to the board rather than
+to the viewer, so it swings round with the spin: the component side is seen from
 above, the bare copper side from below half a turn later, and the board rocks
-from side to side through the edge-on quarters. `--tilt 20` reverses the lean.
-`--stand` turns the board within its own plane before it is stood up, and
-`--projection orthographic` flattens the view. The animation is 180 frames of a
-full revolution at a 33 ms frame delay, so it runs at 30 fps and takes just
-under six seconds to come round. It is encoded as an animated WebP with an alpha
-channel, so it sits on light and dark README backgrounds alike.
+from side to side through the edge-on quarters. Key, fill, and rim area lights
+stay put while the board turns, so shadows sweep across it as they would in a
+studio. The animation is 180 frames of a full revolution at a 33 ms frame delay,
+so it runs at 30 fps and takes just under six seconds to come round. It is
+encoded as an animated WebP with an alpha channel, so it sits on light and dark
+README backgrounds alike.
 
-At a 760x720 canvas that lands around 5 MB. `--frames`, `--width`,
-`--height`, `--frame-delay`, and `--quality` are the knobs if that needs to come
-down; WebP quality is already low enough that the frames are visually
-indistinguishable from the source PNGs, so the frame count and canvas size are
-where the remaining bytes are.
+`pcb/nix/scripts/turntable.py` runs inside Blender. Its options are the knobs:
+`--tilt` (`20` reverses the lean), `--stand` to turn the board within its own
+plane before it is stood up, `--frames`, `--width`, `--height`, `--fill`,
+`--focal-length`, `--samples`, and `--mask-colour`. `--only` renders just the
+listed frames, which is the quick way to try a change:
 
-`kicad-cli pcb render --rotate` takes one set of Euler angles per image and
-applies them X outermost, which puts the X rotation in view space. Leaning the
-viewer is therefore the only lean it can express directly, and that reads as a
-camera above a board which stays upright on screen. To lean the board instead,
-each frame composes spin × lean × stand itself and decomposes the result back
-into the angles KiCad expects. A spin of zero decomposes to exactly
-`(tilt, 0, stand)`, which is a useful check that the composition is right.
+```sh
+nix build .#board-glb
+nix shell --inputs-from . nixpkgs#blender -c blender -b --factory-startup \
+  --python-exit-code 1 -P pcb/nix/scripts/turntable.py -- \
+  --model result/EveningStar.glb --output reports/turntable --only 0,45,90
+```
 
-The solder mask renders in JLCPCB blue rather than the KiCad default green,
-selected with `--mask-colour`.
+At a 760x720 canvas the animation lands around 4.5 MB. The WebP settings live
+in the `.#render-turntable` derivation. Quality 65 is already low enough that the
+frames are visually indistinguishable from the PNGs, and method 6 took around
+forty times longer than method 4 on one core for about 4% smaller output, so the
+frame count and canvas size are where the remaining bytes are.
 
-The value passed is `#123A7A`, far below the `#4990E2` usually quoted for
-JLCPCB blue. KiCad renders the mask as a translucent layer over copper and
-substrate, which lightens it substantially, so the number that goes in is not
-the colour that comes out. Measured on the board face in orthographic
-projection, before the render moved to perspective:
+The camera distance is solved once from the geometry, so that the widest point
+of the whole revolution reaches `--fill` of the canvas and the board stays the
+same size in every frame. Every vertex rides a circle of radius r at height z
+about the spin axis. Seen from distance D, it reaches at most r / sqrt(D² − r²)
+across the frame and |z| / (D − r) up or down, each scaled by the lens, so the
+maximum over the vertices bounds the continuous revolution exactly, and a
+bisection on D lands it on the fill.
 
-| `--mask-colour` | renders as |
-| --------------- | ---------- |
-| `#4990E2`       | `#68B6F0`  |
-| `#2B6DCA`       | `#498FF0`  |
-| `#1B4FA0`       | `#4270BB`  |
-| `#123A7A`       | `#395D97`  |
-| `#0D2A5C`       | `#344E7B`  |
+kicad-cli gives the board layers materials of their own, on meshes named
+`<board>_soldermask`, `<board>_pad`, and so on, and the script sets those to a
+coated mask in `--mask-colour`, gold pads and vias, white silkscreen, and FR4.
+Component models carry only a colour through the export, so they arrive at
+glTF's defaults of fully metallic and fully rough, which renders plastic as dull
+metal; the script makes near-grey and gold-ish ones metal and the rest plastic.
+Do-not-populate parts are left out of the export. The frames use Blender's AgX
+view transform with its punchy look, which keeps the mask a deep blue and the
+plastics dark under studio lights.
 
-Pick from the rendered column, not the input column. Go to `#0D2A5C` for a
-deeper navy. In perspective `#123A7A` reads a little lighter, around `#4664A8`
-on the back face.
+Cycles renders on the CPU, since the build sandbox has no GPU, at 32 samples
+with denoising, which came within 45 dB PSNR of 64 samples at well under two
+thirds of the time. One Blender process uses every core Nix grants the build;
+splitting the frames across several processes measured no faster. With a fixed
+seed the frames are reproducible: two runs on the same machine render identical
+pixels. On a 32-core machine the frames take about nine minutes. Blender's
+closure is about 3.8 GB, fetched once from the binary cache.
 
-A colour reaches the 3D render only through the board stackup. `kicad-cli`
-ignores KiCad's colour themes: a theme carrying a `3d_viewer` section is loaded
-but never consulted by `pcb render`, at any schema version. The stackup in
-`EveningStar.kicad_pcb` leaves the mask colour unset, which is why it renders
-green by default. Setting one there would fix the colour, but mask colour is
-also an ordering attribute, so the design file should only gain one when
-somebody decides what to actually order.
-
-The render therefore builds a throwaway copy of the board with a colour set on
-both stackup mask layers and renders that with `--use-board-stackup-colors`. The
-copy lives in a directory of symlinks to the real project so `${KIPRJMOD}` still
-resolves the project's footprints and 3D models. Nothing is written back.
-
-The intermediate PNG frames are not kept; only the encoded animation is.
-
-The render is not bit-reproducible. KiCad resolves a few pixels differently
-between runs on roughly one frame in fifty, one to five pixels out of the 1.7
-million in a supersampled frame. That is invisible in the result but enough to
-change the encoded bytes, so `nix build .#render-turntable --rebuild` will
-sometimes report that the output differs. Forcing single-threaded software
-rasterisation with `LP_NUM_THREADS=0` roughly halves the rate without removing
-it, which points at KiCad's own draw order rather than the Mesa backend.
+The render used to be done by `kicad-cli pcb render`, which cannot keep lights
+still while the board turns. It builds its own lights fixed to the board and
+ignores any in its settings, so cast shadows stayed glued to the board while its
+view-following camera light, which casts none, moved the shading. Its framing
+also took probe renders, since it fits each image to the canvas individually and
+zooms in perspective by moving the camera.
 
 Because the animation is hosted rather than committed, a rebuild does not
 disturb anything that is already published. Each release attaches the animation
 rendered from its own source, so the README always shows the latest released
 board.
 
-Including the animation in `.#publish` adds over a minute to a publish whenever
-the board has changed, more on machines with fewer cores, and it means
-`nix build .#publish --rebuild` can report a differing output because of the
-render alone. It is not part of the
-review artifacts, so `nix run .#review` does not render it.
-
-KiCad fits each projection to the canvas individually, which would make the
-board pulse in size and clip at the angles where its silhouette is widest. The
-build therefore finds one zoom that contains every silhouette and holds it
-constant for the render pass, so the framing follows board changes without
-manual tuning. A low-resolution probe pass over every angle measures how far
-each silhouette reaches. In perspective KiCad zooms by moving the camera in, so
-nearer parts grow faster than the zoom and a straight scale-up from the probe
-would overshoot. The zoom is instead settled on the angles that probed widest,
-re-rendered at full size: a point's reach r follows r = a·z / (1 − c·z), so
-z / r is a straight line in the zoom z, and a secant on it lands on the fill in
-two or three passes. Once rendered, every frame is checked, and the build fails
-if any silhouette touches the canvas edge.
-Silhouettes are measured against the requested canvas rather than the one KiCad
-returns: KiCad renders into a canvas a fixed border smaller than asked for
-(about 32 by 16 pixels), while scaling the projection by the size it was asked
-for. Measuring the returned canvas reads a different aspect at probe scale than
-at render scale, and on the small probe canvas the border cuts into the fill
-itself, which is why the zoom is settled at full size. Below a zoom of about
-0.33 KiCad clamps the zoom, so the probe runs at 0.4.
-Frames are rendered at twice the output size and downscaled with associated
-alpha, and `--quality basic` is used because the higher quality settings bake a
-floor shadow into the otherwise transparent background.
-
-Every frame is its own `kicad-cli` process, and much of each one goes on loading
-the board and its 3D models, so frames render in parallel: by default on half
-the cores Nix grants the build, or as many at a time as `--jobs` says. One
-render runs alone first so that KiCad creates its configuration directories and
-fills its 3D model cache before parallel processes could race to write them,
-and each worker renders from a board directory of its own because KiCad locks
-the project beside the board file. The script prints a flushed line per frame,
-so `nix build -L` and `nom` show progress. The WebP is encoded with method 4;
-method 6 took around forty times longer on one core for about 4% smaller output
-at the same measured PSNR. On a 32-core machine the whole render takes about 100
-seconds.
+Including the animation in `.#publish` adds about nine minutes to a
+publish whenever the board has changed, more on machines with fewer cores. It is
+not part of the review artifacts, so `nix run .#review` does not render it.
 
 ### Releases and hardware versioning
 
