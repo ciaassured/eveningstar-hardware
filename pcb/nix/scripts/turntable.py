@@ -36,13 +36,20 @@ from mathutils import Matrix, Vector
 SENSOR_WIDTH = 36.0
 
 # Blender's AgX view transform with its punchy look keeps the mask a deep blue
-# and plastics dark; the default look washes both out under studio lights. The
-# world adds a little soft fill but is not itself visible, as the film is
-# transparent.
+# and plastics dark; the default look washes both out under studio lights.
 VIEW_TRANSFORM = "AgX"
 LOOK = "AgX - Punchy"
-WORLD_COLOUR = (0.8, 0.82, 0.85, 1.0)
-WORLD_STRENGTH = 0.12
+
+# The world is a studio backdrop, bright overhead and dark underfoot, as
+# (height, colour) stops from straight down to straight up. The film is
+# transparent, so it only shows in reflections, where it gives metal something
+# to mirror, and as a little soft fill.
+WORLD_STOPS = (
+    (0.0, (0.06, 0.06, 0.06, 1.0)),
+    (0.5, (0.55, 0.56, 0.58, 1.0)),
+    (1.0, (1.0, 1.0, 1.0, 1.0)),
+)
+WORLD_STRENGTH = 0.6
 
 # Area lights as (name, position, power, size). Positions and sizes are in
 # multiples of the camera distance and power is scaled to match, so the lighting
@@ -128,8 +135,10 @@ def fix_materials(layers: dict[str, list[bpy.types.Object]], mask_colour) -> Non
     kicad-cli sets the board layers' materials itself but carries only a colour
     over from the component models, so those arrive at glTF's defaults of fully
     metallic and fully rough, which renders plastic as dull metal. Colour is all
-    there is to go on for them: near-grey and gold-ish parts become metal, the
-    rest plastic.
+    there is to go on for them. These models paint bare metal in light neutral
+    colours up to pure white: leads, terminals, the magjack and ESP32 shields,
+    and the electrolytic's can, some with a blue cast. Those become polished
+    metal, as do gold-ish ones, and the dark and strongly coloured rest plastic.
     """
     gold = (0.83, 0.63, 0.30, 1.0)
     board_surfaces = {
@@ -154,10 +163,12 @@ def fix_materials(layers: dict[str, list[bpy.types.Object]], mask_colour) -> Non
             continue
         colour = material.node_tree.nodes["Principled BSDF"].inputs["Base Color"]
         hue, saturation, value = colorsys.rgb_to_hsv(*colour.default_value[:3])
-        grey_metal = saturation < 0.12 and 0.4 < value < 0.95
+        light_metal = saturation < 0.35 and value > 0.35
         gold_metal = 0.07 < hue < 0.16 and saturation > 0.5 and value > 0.5
-        if grey_metal or gold_metal:
-            set_surface(material, metallic=1.0, roughness=0.3)
+        if light_metal or gold_metal:
+            # Even polished silver reflects a little less than everything.
+            tint = [min(channel, 0.92) for channel in colour.default_value[:3]]
+            set_surface(material, colour=(*tint, 1.0), metallic=1.0, roughness=0.25)
         else:
             set_surface(material, metallic=0.0, roughness=0.45)
 
@@ -255,9 +266,26 @@ def main() -> None:
 
     scene.world = bpy.data.worlds.new("world")
     scene.world.use_nodes = True
-    background = scene.world.node_tree.nodes["Background"]
-    background.inputs["Color"].default_value = WORLD_COLOUR
+    nodes = scene.world.node_tree.nodes
+    links = scene.world.node_tree.links
+    background = nodes["Background"]
     background.inputs["Strength"].default_value = WORLD_STRENGTH
+    # A world's generated coordinates are the view direction, so its Z runs
+    # from -1 straight down to 1 straight up.
+    direction = nodes.new("ShaderNodeTexCoord")
+    axes = nodes.new("ShaderNodeSeparateXYZ")
+    height = nodes.new("ShaderNodeMapRange")
+    height.inputs["From Min"].default_value = -1.0
+    ramp = nodes.new("ShaderNodeValToRGB")
+    stops = ramp.color_ramp.elements
+    for index, (position, colour) in enumerate(WORLD_STOPS):
+        stop = stops[index] if index < len(stops) else stops.new(position)
+        stop.position = position
+        stop.color = colour
+    links.new(direction.outputs["Generated"], axes.inputs["Vector"])
+    links.new(axes.outputs["Z"], height.inputs["Value"])
+    links.new(height.outputs["Result"], ramp.inputs["Fac"])
+    links.new(ramp.outputs["Color"], background.inputs["Color"])
     scene.view_settings.view_transform = VIEW_TRANSFORM
     scene.view_settings.look = LOOK
 

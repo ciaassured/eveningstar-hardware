@@ -268,8 +268,8 @@ nix shell --inputs-from . nixpkgs#blender -c blender -b --factory-startup \
   --model result/EveningStar.glb --output reports/turntable --only 0,45,90
 ```
 
-At a 760x720 canvas the animation lands around 4.5 MB. The WebP settings live
-in the `.#render-turntable` derivation. Quality 65 is already low enough that the
+At a 760x720 canvas the animation lands around 4.5 MB. The WebP settings live in
+the `.#render-turntable` derivation. Quality 65 is already low enough that the
 frames are visually indistinguishable from the PNGs, and method 6 took around
 forty times longer than method 4 on one core for about 4% smaller output, so the
 frame count and canvas size are where the remaining bytes are.
@@ -287,10 +287,14 @@ kicad-cli gives the board layers materials of their own, on meshes named
 coated mask in `--mask-colour`, gold pads and vias, white silkscreen, and FR4.
 Component models carry only a colour through the export, so they arrive at
 glTF's defaults of fully metallic and fully rough, which renders plastic as dull
-metal; the script makes near-grey and gold-ish ones metal and the rest plastic.
-Do-not-populate parts are left out of the export. The frames use Blender's AgX
-view transform with its punchy look, which keeps the mask a deep blue and the
-plastics dark under studio lights.
+metal. These models paint bare metal in light neutral colours up to pure white:
+leads, terminals, the magjack and ESP32 shields, and the electrolytic's can,
+some with a blue cast. The script makes those and gold-ish ones polished metal,
+and the dark and strongly coloured rest plastic. Metal needs something to
+mirror, so the world behind the transparent film is a studio backdrop, bright
+overhead and dark underfoot. Do-not-populate parts are left out of the export.
+The frames use Blender's AgX view transform with its punchy look, which keeps
+the mask a deep blue and the plastics dark under studio lights.
 
 Cycles renders on the CPU, since the build sandbox has no GPU, at 32 samples
 with denoising, which came within 45 dB PSNR of 64 samples at well under two
