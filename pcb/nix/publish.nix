@@ -247,6 +247,7 @@ let
         "$src/pcb/EveningStar.kicad_pcb"
       python3 ${productionScript} \
         --board "$src/pcb/EveningStar.kicad_pcb" \
+        --schematic "$src/pcb/EveningStar.kicad_sch" \
         --output "$out" \
         --toolkit "${fabricationToolkit}"
     '';

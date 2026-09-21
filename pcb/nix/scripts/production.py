@@ -5,10 +5,12 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import zipfile
@@ -37,6 +39,7 @@ GERBER_TIMESTAMP_PATTERNS = (
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--board", required=True, type=Path)
+    parser.add_argument("--schematic", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--toolkit", required=True, type=Path)
     return parser.parse_args()
@@ -60,6 +63,48 @@ def normalize_ipcd356(path: Path) -> None:
         encoding="utf-8",
         newline="",
     )
+
+
+def append_off_board_parts(schematic: Path, bom: Path, workdir: Path) -> None:
+    """Add parts that are in the schematic BOM but never placed on the board.
+
+    The Fabrication Toolkit builds the BOM from the board's footprints, so a part
+    without one, such as CN1, the plug half of the pluggable terminal block that
+    mates with P1, would be left out. kicad-cli exports every schematic symbol;
+    those it reports as excluded from the board but not from the BOM are
+    appended in the Toolkit's own row format and grouping.
+    """
+    exported = workdir / "schematic-bom.csv"
+    subprocess.run(
+        [
+            "kicad-cli", "sch", "export", "bom",
+            "--fields",
+            "Reference,Value,Footprint,LCSC Part,${EXCLUDE_FROM_BOARD},${EXCLUDE_FROM_BOM}",
+            "--labels", "Reference,Value,Footprint,LCSC,Off board,Off BOM",
+            "--group-by", "",
+            "--output", str(exported),
+            str(schematic),
+        ],
+        check=True,
+        stdout=subprocess.DEVNULL,
+    )
+
+    groups: dict[tuple[str, str, str], list[str]] = {}
+    with exported.open(newline="", encoding="utf-8") as rows:
+        for row in csv.DictReader(rows):
+            if row["Off board"] and not row["Off BOM"]:
+                footprint = row["Footprint"].split(":")[-1]
+                key = (footprint, row["Value"], row["LCSC"])
+                groups.setdefault(key, []).append(row["Reference"])
+
+    with bom.open("a", newline="", encoding="utf-8") as output:
+        writer = csv.writer(output, lineterminator="\r\n")
+        for (footprint, value, lcsc), references in sorted(
+            groups.items(), key=lambda group: sorted(group[1])
+        ):
+            writer.writerow(
+                [", ".join(sorted(references)), footprint, len(references), value, lcsc]
+            )
 
 
 def write_deterministic_zip(source: Path, destination: Path) -> None:
@@ -114,6 +159,9 @@ def main() -> None:
 
         manager.generate_positions(str(tables_path))
         manager.generate_bom(str(tables_path))
+        append_off_board_parts(
+            args.schematic.resolve(), tables_path / "bom.csv", temporary_path
+        )
 
         gerber_files = sorted(path for path in gerber_path.iterdir() if path.is_file())
         if len(gerber_files) != 13:

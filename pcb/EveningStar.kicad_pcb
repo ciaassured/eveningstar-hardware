@@ -1261,6 +1261,18 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a7baaf9-9c92-46e8-8f16-736bc63b0c0f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/20698281-7733-498d-8537-9736b11e1ce7/9259af75-f58f-42b0-986f-f0f1bbdf7285")
 		(sheetname "/meterbus_frontend/")
 		(sheetfile "meterbus_frontend.kicad_sch")
@@ -24353,6 +24365,18 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b1ad641e-fb93-4897-9957-c3a675ccf9af")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Q_*")
 		(path "/20698281-7733-498d-8537-9736b11e1ce7/40db7954-a437-48b7-92bd-707689984013")
 		(sheetname "/meterbus_frontend/")
@@ -27136,6 +27160,30 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "180"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f19ad519-dc27-46f5-87f7-070d4c484561")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Origin" "Anchor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cbb806e2-e4c6-4788-8d28-cc66237b8457")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -40244,6 +40292,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Origin" "Anchor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "29e28f98-7ae4-49dc-9b58-0d40d1217f78")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
