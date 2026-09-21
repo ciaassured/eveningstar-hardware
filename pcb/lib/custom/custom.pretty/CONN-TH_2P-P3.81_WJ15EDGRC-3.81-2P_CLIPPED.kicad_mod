@@ -1,0 +1,173 @@
+(footprint "CONN-TH_2P-P3.81_WJ15EDGRC-3.81-2P_CLIPPED"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "WJ15EDGRC-3.81-2P")
+	(property "Reference" "REF**"
+		(at 0 -4 0)
+		(layer "F.SilkS")
+		(uuid "f21efc19-8f5b-4190-a84d-22497f2ed7ff")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CONN-TH_2P-P3.81_WJ15EDGRC-3.81-2P_CLIPPED"
+		(at 0 4 0)
+		(layer "F.Fab")
+		(uuid "14bd6c8c-9097-4650-9b65-33cf25a5ac6f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3979ae34-3630-4561-b7d8-2b41718321cc")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fc2c53fd-5cc6-43f9-ae2c-5231aad59ceb")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "LCSC Part" "C8387"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ed5e71b9-9bc7-4497-8004-d92a52503c11")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.25 -1.6)
+		(end -4.25 5.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "db8ae993-9fe5-4561-a3bf-831436197219")
+	)
+	(fp_line
+		(start 4.25 -1.6)
+		(end -4.25 -1.6)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8fff3c2f-11b0-439b-8050-fce29e6a3bd3")
+	)
+	(fp_line
+		(start 4.25 5.5)
+		(end 4.25 -1.6)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0090c276-9725-4ae2-b7ac-e8d2043a9f74")
+	)
+	(fp_line
+		(start -4.25 -1.6)
+		(end 4.25 -1.6)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1f963155-2ac2-46cd-a37e-5706558a54ae")
+	)
+	(fp_line
+		(start -4.25 7.55)
+		(end -4.25 -1.6)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7c7d65a3-1d23-41fb-8a17-62f5ddd142f3")
+	)
+	(fp_line
+		(start 4.25 -1.6)
+		(end 4.25 7.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "11c937ec-7ccb-48e5-a62c-f2144bfc6364")
+	)
+	(fp_line
+		(start 4.25 7.55)
+		(end -4.25 7.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "933ff768-dd49-42ef-9690-ec6e4196ab6e")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "5a53b854-6f5b-4e0b-904d-a05985b76e2a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -1.91 0)
+		(size 2.2 2.2)
+		(drill 1.259992)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3cf6bbfa-feda-4348-a025-1523d871c03b")
+	)
+	(pad "2" thru_hole circle
+		(at 1.91 0)
+		(size 2.2 2.2)
+		(drill 1.259992)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "811f7a6b-76b7-4fc3-affa-1e97e12175d3")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/EasyEDA/EasyEDA.3dshapes/CONN-TH_2P_L8.5-W9.2-H7.0-P3.81.step"
+		(offset
+			(xyz -1.905 -0.025 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

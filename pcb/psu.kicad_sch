@@ -8224,7 +8224,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EasyEDA:CONN-TH_2P-P3.81_WJ15EDGRC-3.81-2P"
+		(property "Footprint" "custom:CONN-TH_2P-P3.81_WJ15EDGRC-3.81-2P_CLIPPED"
 			(at 30.48 24.13 0)
 			(hide yes)
 			(show_name no)
