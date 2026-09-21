@@ -44,9 +44,9 @@ The ratings above come from component datasheets. The board has not been indepen
 
 ## Installation
 
-* **Power:** connect 8–40 V DC to the terminal block, observing the + and − markings beside it. Fuse the positive supply with a 1 A fuse close to the power source, and use wiring rated to carry at least 1 A continuously. This fuse protects the wiring, so any ordinary fuse type will do and it does not need to be fast-acting; the board's own very-fast-acting 1 A fuse is what protects the board, in a predictable way. Choose one rated for the supply's DC voltage that can break the current a battery can deliver into a short.
-* **MeterBus:** connect the RJ11 jack to the Morningstar device's MeterBus port. The MeterBus side takes its power from that port.
-* **Ethernet:** connect a standard Ethernet cable. The board is not powered over Ethernet.
+* **Power:** connect 8–40 V DC to the terminal block, observing the + and − markings on the bottom of the board. Add a Fuse the positive supply with a 1 A fuse close to the power source, and use wiring rated to carry at least 1 A continuously. This fuse protects the wiring in case of a short circuit. Choose a fuse that is appropriately rated for the system's voltages and currents.
+* **MeterBus:** connect the RJ11 jack to the Morningstar device's MeterBus port using a standard straight through cable. The MeterBus side takes its power from that port. The outer two pins on each side of the 6P6C connector are shorted which means it is possible to use a four pin cable, but six pin is recommended.
+* **Ethernet:** connect a standard Ethernet cable. The board is not powered over Ethernet. Note that this device does not support Auto-MDIX so a crossover cable may be needed in some cases if the other device also doesn't support auto Auto-MDIX.
 
 > [!WARNING]
 > Do not leave USB connected while the system is in service. USB ground is connected directly to the power input's negative terminal, so a connected USB host that is grounded elsewhere creates a second ground path. Current can then flow through the board's unfused ground and the USB cable, which can damage equipment or start a fire. Use USB only for flashing or debugging, and disconnect it afterwards.
