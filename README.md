@@ -34,7 +34,7 @@ MeterBus communication is half-duplex and open-drain. The interface includes a S
 
 ## Protection
 
-* **Power input:** a 1 A very-fast-acting fuse, a series Schottky diode against reverse polarity, and a 40 V TVS diode that clamps surges. The TVS diode sets the 40 V upper limit, well within the 80 V rating of the LMR38020S converter behind it.
+* **Power input:** a 1 A fuse, a series Schottky diode against reverse polarity, and a 40 V TVS diode that clamps surges. The TVS diode sets the 40 V upper limit, well within the 80 V rating of the LMR38020S converter behind it.
 * **Brown-out:** the ESP32 is held in reset until the converter reports that the 3.3 V rail is in regulation.
 * **MeterBus:** galvanic isolation, since the MeterBus side is powered by the Morningstar device and shares no power or ground with the rest of the board. Its supply has a series Schottky diode against reverse polarity and a 17 V TVS diode, and the data line has a TVS clamp for positive and negative spikes.
 * **USB:** ESD protection on the data lines. VBUS is not connected to any power rail, so the board cannot draw power from USB or feed power back into it.
