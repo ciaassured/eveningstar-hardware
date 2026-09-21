@@ -7129,7 +7129,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_QFP:LQFP-48_7x7mm_P0.5mm"
+			(property "Footprint" "custom:LQFP-48_7x7mm_P0.5mm"
 				(at 0 41.91 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26208,7 +26208,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_QFP:LQFP-48_7x7mm_P0.5mm"
+		(property "Footprint" "custom:LQFP-48_7x7mm_P0.5mm"
 			(at 59.69 31.75 0)
 			(hide yes)
 			(show_name no)

@@ -31859,7 +31859,7 @@
 			)
 		)
 	)
-	(footprint "Package_QFP:LQFP-48_7x7mm_P0.5mm"
+	(footprint "custom:LQFP-48_7x7mm_P0.5mm"
 		(layer "F.Cu")
 		(uuid "81a3d0b8-e036-4ab0-ae49-dc2b8d4439ae")
 		(at 106 83.252 -90)
@@ -38426,7 +38426,7 @@
 			)
 		)
 	)
-	(footprint "NetTie:NetTie-3_SMD_Pad0.5mm"
+	(footprint "custom:NetTie-3_SMD_Pad0.5mm_Stock"
 		(layer "F.Cu")
 		(uuid "9435971f-b66e-4529-99c4-2a91cbe6009a")
 		(at 100.6 103.4 -90)
@@ -67470,7 +67470,7 @@
 			)
 		)
 	)
-	(footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
+	(footprint "custom:PinHeader_2x03_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "eaec24cb-5063-42ff-8b6e-ab1f1da7dde4")
 		(at 88.05 77.05 180)

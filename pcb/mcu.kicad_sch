@@ -13892,7 +13892,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
+		(property "Footprint" "custom:PinHeader_2x03_P2.54mm_Vertical"
 			(at 72.39 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -15188,7 +15188,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "NetTie:NetTie-3_SMD_Pad0.5mm"
+		(property "Footprint" "custom:NetTie-3_SMD_Pad0.5mm_Stock"
 			(at 46.99 130.81 0)
 			(hide yes)
 			(show_name no)
