@@ -4,7 +4,7 @@ usage() {
   cat <<'EOF'
 Usage: eveningstar-release [--dry-run] <vMAJOR.MINOR.PATCH> <notes-file>
 
-Build, tag, and publish an EveningStar hardware release from the latest main
+Build, tag, and publish an Eveningstar hardware release from the latest main
 commit. The notes file becomes the GitHub release body.
 
 The command requires a clean main checkout, refreshes origin/main and tags,
@@ -115,7 +115,7 @@ if $dry_run; then
 fi
 
 if [[ -z "$tagged_commit" ]]; then
-  git tag -a "$tag" -m "EveningStar $tag"
+  git tag -a "$tag" -m "Eveningstar $tag"
 fi
 
 if ! git ls-remote --exit-code --tags origin "refs/tags/$tag" >/dev/null 2>&1; then
@@ -130,8 +130,8 @@ done < <(find "$release_dir" -maxdepth 1 -type f -print0 | sort -z)
 gh release create "$tag" \
   "${assets[@]}" \
   --repo "$(gh repo view --json nameWithOwner --jq .nameWithOwner)" \
-  --title "EveningStar $tag" \
+  --title "Eveningstar $tag" \
   --notes-file "$notes_file" \
   --verify-tag
 
-echo "Published EveningStar $tag from $head_commit"
+echo "Published Eveningstar $tag from $head_commit"

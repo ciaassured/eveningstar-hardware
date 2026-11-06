@@ -97,7 +97,7 @@ function main() {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EveningStar hardware review</title>
+  <title>Eveningstar hardware review</title>
 </head>
 <body>
   <script>${viewerBundle}</script>
