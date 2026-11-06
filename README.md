@@ -6,6 +6,13 @@
 
 Eveningstar is a gateway between a Morningstar MeterBus network and a standard Ethernet/IP network. It connects to the MeterBus port of a Morningstar solar charge controller or other compatible device, making the bus accessible over Ethernet for monitoring, automation, and control.
 
+> [!TIP]
+> ### Looking for the firmware?
+>
+> The firmware that runs on this board lives in
+> [ciaassured/eveningstar-firmware](https://github.com/ciaassured/eveningstar-firmware).
+> This repository holds only the hardware design.
+
 The hardware is built around an ESP32-C6 and divided into two galvanically isolated sections:
 
 * A MeterBus interface, powered from the connected Morningstar device.
