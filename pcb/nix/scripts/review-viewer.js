@@ -857,7 +857,7 @@ export function mountReview(review) {
   async function chooseAsset() {
     const sequence = ++assetSequence;
     const asset = review.assets[activeAssetIndex];
-    document.title = `${asset.name} · EveningStar review`;
+    document.title = `${asset.name} · Eveningstar review`;
     try {
       await Promise.all([
         destinationViewer.load({ kind: asset.kind, url: asset.destination }),
