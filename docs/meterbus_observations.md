@@ -38,7 +38,9 @@ The bus is weakly pulled up, and has a short circuit current to ground of about 
 
 ### Bus Pull-Up
 
-The bus does not appear to be pulled up to a dedicated 7.5VDC rail. Instead, the 7.5VDC idle level appears to come from a zener diode from the bus to ground, fed through a series 10kOhm resistor from the controller's main supply rail (the same rail that powers the RJ11 supply pins):
+The internal circuit has not been confirmed by taking a controller apart. The model below is a theory based on how the bus behaves externally.
+
+The bus behaves as if a zener diode from the bus to ground sets the 7.5VDC idle level, fed through a series 10kOhm resistor from the controller's main supply rail (the same rail that powers the RJ11 supply pins), rather than a 10kOhm pull-up to a dedicated 7.5VDC rail:
 
 ```
 supply rail ---[ 10k ]---+--- bus pin
@@ -48,7 +50,7 @@ supply rail ---[ 10k ]---+--- bus pin
                         GND
 ```
 
-When the bus is unloaded, the zener clamps it to about 7.5VDC. When the bus is pulled below the zener voltage, the zener stops conducting and the bus behaves like the supply rail behind a 10kOhm resistor.
+In this model, the zener clamps the unloaded bus to about 7.5VDC. When the bus is pulled below the zener voltage, the zener stops conducting and the bus behaves like the supply rail behind a 10kOhm resistor.
 
 Open question: this model does not fully match the measurements yet. With an 11.9-14VDC supply rail behind 10kOhm, the short circuit current should be about 1.2-1.4mA, but 700-800uA was measured, which implies only about 7-8VDC behind the 10kOhm resistor.
 
@@ -62,4 +64,4 @@ The oscilloscope traces can be found in [this folder](../assets/bus_drive_resist
 
 The results showed that the controller stopped responding consistently at around 2.733kOhm, when the LOW level was around 1.3VDC.
 
-Below the zener voltage, the bus should behave as a voltage divider between the internal 10kOhm resistor and **R**. The measured LOW levels are lower than a divider from an 11.9-14VDC supply would predict (about 2.6-3.0VDC at 2.733kOhm), and instead imply roughly 6VDC behind the 10kOhm resistor. This is the same mismatch noted under [Bus Pull-Up](#bus-pull-up).
+If the zener model is correct, then below the zener voltage the bus should behave as a voltage divider between the internal 10kOhm resistor and **R**. The measured LOW levels are lower than a divider from an 11.9-14VDC supply would predict (about 2.6-3.0VDC at 2.733kOhm), and instead imply roughly 6VDC behind the 10kOhm resistor. This is the same mismatch noted under [Bus Pull-Up](#bus-pull-up).
