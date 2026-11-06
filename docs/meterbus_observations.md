@@ -12,7 +12,7 @@ The Morningstar controllers supply some power via the RJ11 interface.
 
 When testing the supply from a ProStar MPPT controller, the voltage appeared to be regulated to a maximum of 11.9VDC, but fell as the battery voltage dropped below 12.9VDC. Similar testing with a SunSaver MPPT controller seemed to show the output was regulated to about 14VDC. Battery voltage for the testing ranged from 5VDC up to and above 24VDC.
 
-These observations fit within the range of 8VDC - 15.5VDC specified by Morningstar in [`Meterbus Adapter Instructions`](./docs/operation-manual-pc-meterbus-adapter-en.pdf).
+These observations fit within the range of 8VDC - 15.5VDC specified by Morningstar in [`Meterbus Adapter Instructions`](./operation-manual-pc-meterbus-adapter-en.pdf).
 
 All power pins on the RJ11 connector appear to be bridged together, as do the ground pins.
 
@@ -34,18 +34,32 @@ Overall, the supply voltage sags heavily under load, while current rises into ro
 
 Measurements of the bus pin on both ProStar MPPT and SunSaver MPPT controllers show that the bus idles high at about 7.5VDC, and is pulled down to 0VDC when the controller transmits. The bus is a half-duplex serial line running at 9600 baud, with 8 data bits, 2 stop bits and no parity. 
 
-The bus is weakly pulled up, and has a short circuit current to ground of about 700-800uA for both controllers
+The bus is weakly pulled up, and has a short circuit current to ground of about 700-800uA for both controllers.
 
-If we assume that the bus is pulled to an internal rail of 7.5VDC with a resistor, Ohms Law `7.5V/850uA=10kOhm` says the internal resistor is 10kOhms.
+### Bus Pull-Up
+
+The bus does not appear to be pulled up to a dedicated 7.5VDC rail. Instead, the 7.5VDC idle level appears to come from a zener diode from the bus to ground, fed through a series 10kOhm resistor from the controller's main supply rail (the same rail that powers the RJ11 supply pins):
+
+```
+supply rail ---[ 10k ]---+--- bus pin
+                         |
+                       zener (~7.5V)
+                         |
+                        GND
+```
+
+When the bus is unloaded, the zener clamps it to about 7.5VDC. When the bus is pulled below the zener voltage, the zener stops conducting and the bus behaves like the supply rail behind a 10kOhm resistor.
+
+Open question: this model does not fully match the measurements yet. With an 11.9-14VDC supply rail behind 10kOhm, the short circuit current should be about 1.2-1.4mA, but 700-800uA was measured, which implies only about 7-8VDC behind the 10kOhm resistor.
 
 ### Low Level Threshold
 
 In order to figure out what bus voltage the controllers consider as a logic LOW, we tested several values of **R** in the test circuit pictured below while probing the bus with an oscilloscope.
 
-![Bus test circuit](/image/bus_drive_resistors/test_circuit.png)
+![Bus test circuit](../assets/bus_drive_resistors/test_circuit.png)
 
-The oscilloscope traces can be found in [this folder](/image/bus_drive_resistors). The first block of data in the traces is the test circuit requesting the controller voltage over modbus, and the second block is the controller responding. Traces only show the first block of data when the controller did not respond.
+The oscilloscope traces can be found in [this folder](../assets/bus_drive_resistors). The first block of data in the traces is the test circuit requesting the controller voltage over modbus, and the second block is the controller responding. Traces only show the first block of data when the controller did not respond.
 
 The results showed that the controller stopped responding consistently at around 2.733kOhm, when the LOW level was around 1.3VDC.
 
-The observed voltages also roughly match a voltage divider with the top resistor being 10kOhms, which seems to confirm that the controller probably has a 10kOhm pullup resistor internally.
+Below the zener voltage, the bus should behave as a voltage divider between the internal 10kOhm resistor and **R**. The measured LOW levels are lower than a divider from an 11.9-14VDC supply would predict (about 2.6-3.0VDC at 2.733kOhm), and instead imply roughly 6VDC behind the 10kOhm resistor. This is the same mismatch noted under [Bus Pull-Up](#bus-pull-up).
