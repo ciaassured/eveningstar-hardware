@@ -1,6 +1,6 @@
-# EveningStar PCB
+# Eveningstar PCB
 
-This directory contains the KiCad project for the EveningStar PCB.
+This directory contains the KiCad project for the Eveningstar PCB.
 
 ## Reproducibility Goal
 

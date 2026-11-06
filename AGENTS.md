@@ -1,4 +1,4 @@
-# EveningStar Hardware Agent Guide
+# Eveningstar Hardware Agent Guide
 
 ## Scope
 
@@ -6,7 +6,7 @@ These instructions apply to the entire repository.
 
 ## Project Context
 
-This repository contains the hardware design for EveningStar, an isolated
+This repository contains the hardware design for Eveningstar, an isolated
 ESP32-based Morningstar MeterBus interface. Firmware is maintained separately
 at <https://github.com/ciaassured/eveningstar-firmware>; do not add firmware or
 prototype application code here.
