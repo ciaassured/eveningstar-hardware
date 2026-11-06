@@ -40,7 +40,7 @@ The bus is weakly pulled up, and has a short circuit current to ground of about 
 
 The internal circuit has not been confirmed by taking a controller apart. The model below is a theory based on how the bus behaves externally.
 
-The bus behaves as if a zener diode from the bus to ground sets the 7.5VDC idle level, fed through a series 10kOhm resistor from the controller's main supply rail (the same rail that powers the RJ11 supply pins), rather than a 10kOhm pull-up to a dedicated 7.5VDC rail:
+The bus behaves as if a zener diode from the bus to ground sets the 7.5VDC idle level, fed through a series 10kOhm resistor from a supply of roughly 12-14VDC, rather than a 10kOhm pull-up to a dedicated 7.5VDC rail:
 
 ```
 supply rail ---[ 10k ]---+--- bus pin
@@ -51,6 +51,8 @@ supply rail ---[ 10k ]---+--- bus pin
 ```
 
 In this model, the zener clamps the unloaded bus to about 7.5VDC. When the bus is pulled below the zener voltage, the zener stops conducting and the bus behaves like the supply rail behind a 10kOhm resistor.
+
+The RJ11 supply pins are heavily current limited (see [Current](#current)), so they are not the controller's main internal rail. It is not known whether the 10kOhm resistor is fed from the current-limited RJ11 supply or from an internal rail before the current limiting.
 
 Open question: this model does not fully match the measurements yet. With an 11.9-14VDC supply rail behind 10kOhm, the short circuit current should be about 1.2-1.4mA, but 700-800uA was measured, which implies only about 7-8VDC behind the 10kOhm resistor.
 
