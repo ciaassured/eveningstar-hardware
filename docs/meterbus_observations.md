@@ -12,7 +12,7 @@ The Morningstar controllers supply some power via the RJ11 interface.
 
 When testing the supply from a ProStar MPPT controller, the voltage appeared to be regulated to a maximum of 11.9VDC, but fell as the battery voltage dropped below 12.9VDC. Similar testing with a SunSaver MPPT controller seemed to show the output was regulated to about 14VDC. Battery voltage for the testing ranged from 5VDC up to and above 24VDC.
 
-These observations fit within the range of 8VDC - 15.5VDC specified by Morningstar in [`Meterbus Adapter Instructions`](./operation-manual-pc-meterbus-adapter-en.pdf).
+These observations fit within the range of 8VDC - 15.5VDC specified by Morningstar in [`Meterbus Adapter Instructions`](https://www.morningstarcorp.com/wp-content/uploads/operation-manual-pc-meterbus-adapter-en.pdf).
 
 All power pins on the RJ11 connector appear to be bridged together, as do the ground pins.
 
