@@ -1,5 +1,5 @@
 {
-  description = "EveningStar project tooling";
+  description = "Eveningstar project tooling";
 
   inputs = {
     fabrication-toolkit = {
